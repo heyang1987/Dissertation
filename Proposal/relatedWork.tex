@@ -1,0 +1,29 @@
+% !TeX root = proposal.tex
+\chapter{Related Work}
+\section{A Data Driven approach to Designing for Privacy in Household IoT}
+
+Our goal is to develop intuitive interfaces for IoT privacy settings, using a data-driven approach. In this section we therefore discuss existing research on privacy-setting interfaces and on privacy prediction.
+
+\subsection{Existing privacy control schemes}
+Smartphones give users control over their privacy settings in the form of prompts that ask whether the user allows or denies a certain app access to a certain type of information. Such prompts are problematic for IoT, because IoT devices are supposed to operate in the background. Moreover, as the penetration of IoT devices in our homes continues to increase, prompts would become a constant noise which users will soon start to ignore, like software EULAs~\cite{good2005spyware} or privacy policies~\cite{jensen2004privacy}.
+
+In~\cite{Pejovic2014}, Pejovic and Musolesi presented the design and implementation of an efficient online learner that can serve as a basis for recognizing opportune moments for interruption. The design of the library is based on an in-depth study of human interruptibility. Comparatively, our work tries to find the most suitable privacy-setting profile for each user based on their privacy preference on different household IoT scenarios.
+
+\subsection{Privacy-Setting Interfaces}
+Beyond prompts, one can regulate privacy with global settings. The most basic privacy-setting interface is the traditional ``access control matrix'', which allows users to indicate which entity gets to access what type of information~\cite{sandhu1994access}. This approach can be further simplified by grouping recipients into relevant semantic categories, such as Google+'s \emph{circles}~\cite{watson12}. Taking a step further, Raber et al.~\cite{197908} proposed \emph{Privacy Wedges} to manipulate privacy settings. Privacy Wedges allow users to make privacy decisions using a combination of semantic categorization (the various wedges) and inter-personal distance (the position of a person on the wedge). Users can decide who gets to see various posts or personal information by ``coloring'' parts of each wedge. 
+
+Privacy wedges have been tested on limited numbers of friends, and in the case of household IoT they are likely to be insufficient, due to the complexity of the decision space. To wit, IoT privacy decisions involve a large selection of devices, each with various sensors that collect data for a range of different purposes. This makes it complicated to design an interface that covers every possible setting~\cite{williams2016perfect}. A wedge-based interface will arguably not be able to succinctly represent such complexity, and therefore either be impossible, or still lead to a significant amount of information and choice overload. 
+
+We propose a data-driven approach to solve this problem: statistical analysis informs the construction of a layered settings interface, while machine learning-based privacy prediction helps us find smart privacy profiles.
+
+
+\subsection{Privacy Prediction}
+Several researchers have proposed privacy prediction as a solution to the privacy settings complexity problem. Sadeh et al. used a k-nearest neighbor algorithm and a random forest algorithm to predict users' privacy preferences in a location-sharing system~\cite{sadeh2009understanding}, based on the type of recipient and the time and location of the request. They demonstrated that users had difficulties setting their privacy preferences, and that the applied machine learning techniques can help users to choose more accurate disclosure preferences. Similarly, Pallapa et al.~\cite{pallapa2014adaptive} present a system which can determine the required privacy level in new situations based on the history of interaction between users. Their system can efficiently deal with the rise of privacy concerns and help users in a pervasive system full of dynamic interactions.
+
+Dong et al.~\cite{dong2016ppm} use a binary classification algorithms to give users personalized advice regarding their privacy decision-making practices on online social networks. They found that J48 decision trees provided the best results. Li and et al.~\cite{li2017cross} similarly use J48 to demonstrate that taking the user's cultural background into account when making privacy predictions improves the prediction accuracy. Our data stems from a culturally homogeneous population (U.S. Mechanical Turk workers), so cultural variables are outside the scope of our study. We do however follow these previous works in using J48 decision trees in our prediction approach.
+
+We further extend our approach using \emph{clustering} to find several smart default policies (``profiles''). This is in line with Fang et al.~\cite{fang2010privacy}, who present an active learning algorithm that comes up with privacy profiles for users in real time. Since our approach is based on an existing dataset, our algorithm does not classify users in real time, but instead creates a static set of profiles `offline', from which users can subsequently choose. This avoids cold start problems, and does not rely on the availability of continuous real-time behaviors. This is beneficial for household IoT privacy settings, because users often specify their settings in these systems in a ``single shot'', leaving the settings interface alone afterwards.
+
+Ravichandran et al.~\cite{ravichandran2009capturing} employ an approach similar to ours, using $k$-means clustering on users' contextualized location sharing decisions to come up with several default policies. They showed that a small number of policies could accurately reflect a large part of the location sharing preferences. We extend their approach to find the best profiles based on various novel clustering approaches, and take the additional step of designing user interfaces that incorporate the best solutions.
+
+
