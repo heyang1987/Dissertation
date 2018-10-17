@@ -1,0 +1,12 @@
+
+*.aux
+*.blg
+Proposal/proposal.bbl
+*.log
+*.out
+*.gz
+Proposal/proposal.toc
+Proposal/proposal.pdf
+Proposal/proposal.pdf
+*.pdf
+Proposal/proposal.pdf
