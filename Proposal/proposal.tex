@@ -31,8 +31,7 @@
 % Make the document your own -- fill in these values to reflect the type of
 % document you are writing.
 %
-\title{Theorizing the Author/Format Editor Relational Dynamic:  A Study
-       of the Manual Manuscript Review Process at Clemson University}
+\title{A Data-Driven Approach to Recommending Privacy Preference for IoT systems}
 \department{School of Computing}
 \documentType{Dissertation Proposal}
 \major{Computer Science}
@@ -52,16 +51,16 @@
 % PDF Setup -- most of this you do not need to touch
 %
 \hypersetup{
-    colorlinks,
-    linkcolor={black},
-    citecolor={black},
-    filecolor={black},
-    urlcolor={black},
-    pdftitle={\theTitle},
-    pdfauthor={\theAuthor},
-    pdfsubject={\theDocumentType},
-    pdfkeywords={Clemson University, \theDepartment, \theDocumentType, \theMajor, \theDegree},
-    pdfstartpage={1},
+	colorlinks,
+	linkcolor={black},
+	citecolor={black},
+	filecolor={black},
+	urlcolor={black},
+	pdftitle={\theTitle},
+	pdfauthor={\theAuthor},
+	pdfsubject={\theDocumentType},
+	pdfkeywords={Clemson University, \theDepartment, \theDocumentType, \theMajor, \theDegree},
+	pdfstartpage={1},
 }
 
 
@@ -79,78 +78,80 @@
 \renewcommand*\contentsname{Outline}
 
 \begin{document}
-%  ============================================================================
-    \frontmatter % Begin front matter (pages are numbered with Roman numerals)
-%  ============================================================================
-
-    \maketitle          % Generate the title page
-    \singlespacing                             % Single space the lists
-    \input{publication.tex} \clearpage
-    \tableofcontents \clearpage                % Generate the Table of Contents
-    %\addtotoc{List of Tables}{\listoftables}   % Generate the List of Tables
-    %\addtotoc{List of Figures}{\listoffigures} % Generate the List of Figures
-    %% \addtotoc{List of Listings}{\lstlistoflistings}
-    
-    \doublespacing % Text should be double spaced
+	%  ============================================================================
+	\frontmatter % Begin front matter (pages are numbered with Roman numerals)
+	%  ============================================================================
+	
+	\maketitle          % Generate the title page
+	\singlespacing                             % Single space the lists
+	\input{publication.tex} \clearpage
+	\tableofcontents \clearpage                % Generate the Table of Contents
+	%\addtotoc{List of Tables}{\listoftables}   % Generate the List of Tables
+	%\addtotoc{List of Figures}{\listoffigures} % Generate the List of Figures
+	%% \addtotoc{List of Listings}{\lstlistoflistings}
+	
+	\doublespacing % Text should be double spaced
 	\addtotoc{Abstract}{\input{abstract.tex}}  % Generate the abstract
 	
 	%  ===========================================================================
 	\mainmatter % Begin main matter (pages are numbered with Arabic numerals)
 	%  ===========================================================================
-
-    
-    \setcounter{page}{1}
-    \input{introduction.tex}
-    \input{motivation.tex}
-    \input{workcompleted.tex}
-    \input{proposedwork.tex}
-    \input{relatedWork.tex}
-    \input{conclusion.tex}
-
-    %
-    % The appendices are optional.  This is the format for two or more.
-    % If you do not wish to include an appendix, comment out these lines.
-    % If you want just one, see the formatting guidelines.
-    %
-    \begin{appendices}
-        \begin{subappendices}
-            \inputfile{appendixA.tex}
-            \inputfile{appendixB.tex}
-            \inputfile{appendixC.tex}
-        \end{subappendices}
-    \end{appendices}
-
-
-
-    \singlespacing                             % Single space the Bibliography
-
-    %
-    % The bibliography style.  Set this to whatever matches you discipline.
-    % For example, Computer Science would likely use 'plain'.  You might
-    % also want to change the name from 'Bibliography' to 'References'
-    % or 'Work Cited'.
-    %
-    % 'plain'   gets you numbered references and citations (e.g., [1] Dyson).
-    %
-    % 'alpha'   gets you labels formed from an abbreviation of the authors'
-    %           names and the year of publication.  If there is more than
-    %           one author, it will use the first letter of up to the first
-    %           three authors' last names.
-    %
-    %           Some examples:
-    %               [DED01] F.W. Dyson, A.G. Edgar, and D.B. Denny ... 2001
-    %               [DE01] F.W. Dyson, A.G. Edgar ... 2001
-    %               [Dys01] F.W. Dyson ... 2001
-    %
-    % 'apalike' gets you labels formed from the authors' names and year of
-    %           publication.
-    %
-    %           Some examples:
-    %               [Dyson et al., 2001] F.W. Dyson, A.G. Edgar, and
-    %                 D.B. Denny ... 2001
-    %               [Dyson and Edgar, 2001] F.W. Dyson, A.G. Edgar ... 2001
-    %               [Dyson, 2001] F.W. Dyson ... 2001
-    %
-    \bibliographystyle{plain}
-    \addtotoc{Bibliography}{\bibliography{bibliography}}
+	
+	
+	\setcounter{page}{1}
+	\input{introduction.tex}
+	\input{motivation.tex}
+	\input{relatedWork.tex}
+	\input{chapter4.tex}
+	\input{chapter5.tex}
+	\input{chapter6.tex}
+	\input{proposedwork.tex}
+	\input{conclusion.tex}
+	
+	%
+	% The appendices are optional.  This is the format for two or more.
+	% If you do not wish to include an appendix, comment out these lines.
+	% If you want just one, see the formatting guidelines.
+	%
+	\begin{appendices}
+		\begin{subappendices}
+			\inputfile{appendixA.tex}
+			\inputfile{appendixB.tex}
+			\inputfile{appendixC.tex}
+		\end{subappendices}
+	\end{appendices}
+	
+	
+	
+	\singlespacing                             % Single space the Bibliography
+	
+	%
+	% The bibliography style.  Set this to whatever matches you discipline.
+	% For example, Computer Science would likely use 'plain'.  You might
+	% also want to change the name from 'Bibliography' to 'References'
+	% or 'Work Cited'.
+	%
+	% 'plain'   gets you numbered references and citations (e.g., [1] Dyson).
+	%
+	% 'alpha'   gets you labels formed from an abbreviation of the authors'
+	%           names and the year of publication.  If there is more than
+	%           one author, it will use the first letter of up to the first
+	%           three authors' last names.
+	%
+	%           Some examples:
+	%               [DED01] F.W. Dyson, A.G. Edgar, and D.B. Denny ... 2001
+	%               [DE01] F.W. Dyson, A.G. Edgar ... 2001
+	%               [Dys01] F.W. Dyson ... 2001
+	%
+	% 'apalike' gets you labels formed from the authors' names and year of
+	%           publication.
+	%
+	%           Some examples:
+	%               [Dyson et al., 2001] F.W. Dyson, A.G. Edgar, and
+	%                 D.B. Denny ... 2001
+	%               [Dyson and Edgar, 2001] F.W. Dyson, A.G. Edgar ... 2001
+	%               [Dyson, 2001] F.W. Dyson ... 2001
+	%
+	\bibliographystyle{plain}
+	\addtotoc{Bibliography}{\bibliography{bibliography}}
 \end{document}
