@@ -1,7 +1,7 @@
 % !TeX root = proposal.tex
-\chapter{Recommending Privacy Preference for General IoT}\label{chapter:generalIoT}
-\section{Introduction}
-In chapter~\ref{chapter:Motivation} and \ref{chapter:Relatedwork}, we have discussed \textcolor{red}{what are the key factors that affecting users to accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.}
+\chapter{Recommending Privacy Preference for General Public IoT}\label{chapter:generalIoT}
+
+In chapter~\ref{chapter:Motivation} and \ref{chapter:Relatedwork}, we have discussed \textcolor{red}{what are the key factors that affecting users to adopt or accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.}
 
 In this chapter, we demonstrate our work completed in exploring recommending privacy preference for general IoT, including the data-driven design, the dataset that we use, the inspection of users' behaviors using statistical analyses, prediction of users' behaviors using machine learning techniques, and the privacy-setting prototypes that we create based on both statistical and machine learning results.
 
@@ -17,7 +17,7 @@ Furthermore, neighbourhood-based recommendations are made from crowdsourcing sou
 which means that their performance may be better than that of model-based recommenders when
 the data of individual users are insufficient.}
 
-\subsection{Dataset and design}
+\section{Dataset and design}
 As we have discussed in Chapter \ref{chapter:Motivation}, the development of usable privacy interfaces commonly relies on user studies with existing systems. Since the Intel control framework has yet to be implemented~\cite{chow2015hci}, this method is not possible. We therefore leverage an existing dataset collected by Lee and Kobsa~\cite{lee2016understanding}, who asked users whether they would allow or deny IoT devices in their environment to collect information about them. A total of 2800 scenarios were presented to 200 participants (100 male, 99 female, 1 undisclosed) through Amazon Mechanical Turk. Four participants were aged between 18 and 20, 75 aged 20--30, 68 aged 30--40, 31 aged 40--50, 20 aged 50--60, and 2 aged $>$ 60. 
 
 Each participant was presented with 14 scenarios describing a situation where an IoT device would collect information about the participant. Each scenario was a combination of five contextual parameters (Table~\ref{tab:parameter}), manipulated at several levels using a mixed fractional factorial design that allowed us to test main effects and two-way interactions between all parameters.
