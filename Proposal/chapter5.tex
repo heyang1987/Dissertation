@@ -1,44 +1,24 @@
 % !TeX root = proposal.tex
-\chapter{Recommending Privacy Perference for Household IoT}
+\chapter{Recommending Privacy Perference for Household IoT}\label{chapter:householdIoT}
 
-\section{Introduction}
-In Chapter~\ref{chapter:generalIoT}, we have discussed recommending privacy preference for general IoT users. In this chapter, we present the work completed to date in the areas of designing for privacy for Household IoT. We extend and improve upon the previously-developed data-driven approach to design privacy-setting interfaces for users of household IoT devices.
-
-In general IoT scenarios that discussed in Chapter~\ref{chapter:generalIoT},  five parameters, (\textbf{who, what, reason, persistance, and where}), in total were given to users as the dimensions when they are making privacy decisions. However, these dimensions are not appropriated in household IoT scenarios because of following reasons:
-
-\begin{itemize}
-	\item In Chapter~\ref{chapter:generalIoT}, we found that "where" does not have significant effect on disclosure decisions; also the usage environment of household IoT systems/devices are always in users' home. Moreover, the structure of users' houses are different from case to case, it would be too complicated if we define "where" to a more finer-granulated level, such as bedroom, kitchen, etc.,  Hence there there is no need to retain the parameter "where".
-	\item  ``Persistence" of tracking is more relevant in public IoT, where encounters are often ephemeral, hence persistent tracking is less common than in household IoT.
-	\item ``storage" and ``action" allow us to explore secondary uses of the information; something we learned from the
-	qualitative feedback in our previous study was a prominent concern among users.
-\end{itemize}
-
-Because of the above reasons, we conducted a new user study focusing on household IoT in particular, and further refine our approach to allow us to create more carefully tailored user interfaces. Moving the context to a more narrow environment shifts the focus of the privacy decision from the entity collecting information (which was the dominant parameter in our previous work) to a more contextual evaluation of the content or nature of the information~\cite{nissenbaum_privacy_2004}. This results in more complex decisions, and thereby advances our previous approach.
-
-The main contributions of our paper are:
-\begin{itemize}
-	\item Using an intricate mixed fractional factorial study design, we collect a dataset of 1133 participants making 13596 privacy decisions on 4608 scenarios.
-	\item We perform statistical analysis on this dataset to develop a layered IoT privacy-setting interface. As our analysis shows more complex decision patterns than our previous work, we present guidelines to translate our statistical results into a more sophisticated settings interface design.
-	\item We perform machine learning analysis on our dataset to create a set of ``smart profiles" for our IoT privacy-setting interface. Beyond our previous work, we conduct a deeper analysis regarding the trade-off between parsimony and accuracy of our prediction models, leading to a better-informed selection of smart profiles.
-	\item Aside from the privacy-setting interface and the smart profiles, we make specific design recommendations for household IoT devices that can help to minimize users' privacy concerns. 
-\end{itemize}
+In Chapter~\ref{chapter:generalIoT}, we have discussed recommending privacy preference for general IoT users. In this chapter, we present the work completed to date in the areas of designing for privacy for Household IoT. We expand and improve upon the previously-developed data-driven approach to design privacy-setting interfaces for users of household IoT devices. Moving the context to a more narrow environment shifts the focus of the privacy decision from the entity collecting information (which was the dominant parameter in our previous work) to a more contextual evaluation of the content or nature of the information ~\cite{nissenbaum_privacy_2004}.
 
 \section{Experimental Setup}\label{sec:exp_setup}
-\textcolor{blue}{To develop our data-driven design approach, we collected a new dataset of users' privacy behaviors in various IoT contexts. In this section, we first discuss the factorial procedure by which we developed 4608 highly specific IoT scenarios, as well as the questions we asked participants to evaluate these scenarios. We then describe the participant selection and experimental procedures used to collect over 13500 responses from 1133 participants.}
+In Chapter~\ref{chapter:generalIoT}, we found that "where" does not have significant effect on disclosure decisions; also the usage environment of household IoT systems/devices are always in users' home. Moreover, the structure of users' houses are different from case to case, it would be too complicated if we define "where" to a more finer-granulated level, such as bedroom, kitchen, etc.,  Hence there there is no need to retain the parameter "where". ``Persistence" of tracking is more relevant in public IoT, where encounters are often ephemeral, hence persistent tracking is less common than in household IoT. ``storage" and ``action" allow us to explore secondary uses of the information; something we learned from the qualitative feedback in our previous study was a prominent concern among users.
+
+Because of the above reasons, we conducted a new user study focusing on household IoT in particular, and further refine our approach to allow us to create more carefully tailored user interfaces. In this section, we first discuss the factorial procedure by which we developed 4608 highly specific IoT scenarios, as well as the questions we asked participants to evaluate these scenarios. We then describe the participant selection and experimental procedures used to collect over 13500 responses from 1133 participants.
 
 \subsection{Contextual Scenarios}
 The scenarios evaluated in our study are based on a full factorial combination of five different Parameters: Who, What, Purpose, Storage and Action. A total of $8(who)*12(what)*4(purpose)*4(storage)*3(action) = 4608$ scenarios were tested this way. 
 
-\textcolor{blue}{The scenarios asked participants to imagine that they were owners and active users of the presented IoT devices, trying to decide whether to turn on or off certain functionalities and/or data sharing practices. To avoid endowment effects, the scenarios themselves made no indication as to whether the functionality was currently turned on or off (such endowment effects were instead introduced by manipulating the framing of the Decision question; see section \ref{sec:questions}).} An example scenarios is: \emph{``Your smart TV (Who) uses a camera (What) to give you timely alerts (Purpose). The data is stored locally (Storage) and used to optimize the service (Action).''} \textcolor{blue}{This scenario may for example represent a situation where the smarthome system has detected (via camera) a delivery of package and then alerts the user (via the smart TV) about its arrival. In this particular scenario we note that the video data is stored locally to optimize service; this could mean that the smarthome system uses the video stream to (locally) train a package detection algorithm. Similarly, another example of scenario is: \emph{``Your Smart Assistant uses a microphone to detect your location in house. The data is stored on a remote server and shared with third parties to recommend you other services.''} Similarly, this scenario could represent a situation where the smarthome has detected (via microphone) it's user's location in the house and this information is shared to smart assistant. In the scenario, the data is stored on remote server and shared with third parties so that it can recommend additional services (like weather or local transportation) via third parties to the user.} 
+The scenarios asked participants to imagine that they were owners and active users of the presented IoT devices, trying to decide whether to turn on or off certain functionalities and/or data sharing practices. To avoid endowment effects, the scenarios themselves made no indication as to whether the functionality was currently turned on or off (such endowment effects were instead introduced by manipulating the framing of the Decision question; see section \ref{sec:questions}). An example scenarios is: \emph{``Your smart TV (Who) uses a camera (What) to give you timely alerts (Purpose). The data is stored locally (Storage) and used to optimize the service (Action).''} This scenario may for example represent a situation where the smarthome system has detected (via camera) a delivery of package and then alerts the user (via the smart TV) about its arrival. In this particular scenario we note that the video data is stored locally to optimize service; this could mean that the smarthome system uses the video stream to (locally) train a package detection algorithm. Similarly, another example of scenario is: \emph{``Your Smart Assistant uses a microphone to detect your location in house. The data is stored on a remote server and shared with third parties to recommend you other services.''} Similarly, this scenario could represent a situation where the smarthome has detected (via microphone) it's user's location in the house and this information is shared to smart assistant. In the scenario, the data is stored on remote server and shared with third parties so that it can recommend additional services (like weather or local transportation) via third parties to the user.
 
-The levels of all five parameters used in our experiment are shown in Table~\ref{tab:parameter}. The parameters were highlighted in the scenario for easy identification, and upon hovering the mouse cursor over them each parameter would show a succinct description of the parameter. \textcolor{blue}{Figure~\ref{fig:scenario} in the Appendix shows a screenshot of a scenario as shown to participants in the study.} A thirteenth scenario regarding the interrelated control of various IoT devices (e.g. \emph{``You can use your smart TV to control your smart refrigerator''}) was also asked, but our current analysis focuses on the information-sharing scenarios only.
-
-\textcolor{blue}{The parameters used in the current study deviate from the ones in the Lee and Kobsa~\cite{lee2016understanding} dataset. In our previous work we observed that the \emph{Where} parameter in this dataset did not have a significant effect on user decision making~\cite{bahiratiui2018}, hence we removed it from the scenarios in the current study. Likewise, in public IoT encounters are often ephemeral, so persistent tracking is rather uncommon. Hence, we removed \emph{Persistence} of tracking from the scenarios as well, since this parameter is much more relevant in public IoT than in household IoT. The original \emph{Reason} parameter is similar to the current \emph{Purpose} and \emph{Action}  parameters, although the reasons/purpose for tracking are obviously different in public IoT than in household IoT.}
-\textcolor{blue}{Moreover, we learned from the qualitative feedback in our previous study that the secondary use of information was a prominent concern among users of IoT systems. Hence, we consider \emph{Purpose} as the primary purpose of tracking, separate from \emph{Action}, a secondary purpose that requires \emph{Storage}---a parameter we added because it is possible for household IoT systems to operate (and thus store data) locally, and because the sharing of data with third parties is not as common in household IoT as in public IoT.}
+The levels of all five parameters used in our experiment are shown in Table~\ref{tab:parameter2}. The parameters were highlighted in the scenario for easy identification, and upon hovering the mouse cursor over them each parameter would show a succinct description of the parameter. %\textcolor{blue}{Figure~\ref{fig:scenario} in the Appendix shows a screenshot of a scenario as shown to participants in the study.}
+A thirteenth scenario regarding the interrelated control of various IoT devices (e.g. \emph{``You can use your smart TV to control your smart refrigerator''}) was also asked, but our current analysis focuses on the information-sharing scenarios only.
 
 \subsection{Scenario Evaluation Questions}
 \label{sec:questions}
-The first question participants were asked about each scenario was whether they would enable or disable the particular feature mentioned in scenario (Decision). Subsequently, they were asked about their attitudes regarding the scenario in terms of their perceived Risk, Appropriateness, Comfort, Expectedness and Usefulness regarding the presented scenario (e.g., \emph{``How appropriate do you think this scenario is?''}). These questions were answered on a 7-point scale (e.g., \emph{``very inappropriate''} to \emph{``very appropriate''}). In every 4th scenario, the Risk and Usefulness questions were followed by an open question asking the participants to describe the potential Risk and Usefulness of the scenario. We asked these question mainly to encourage participants to carefully evaluate the scenarios. A screenshot of the questions asked about each scenario is depicted in Figure~\ref{fig:scenario} in the Appendix.
+The first question participants were asked about each scenario was whether they would enable or disable the particular feature mentioned in scenario (Decision). Subsequently, they were asked about their attitudes regarding the scenario in terms of their perceived Risk, Appropriateness, Comfort, Expectedness and Usefulness regarding the presented scenario (e.g., \emph{``How appropriate do you think this scenario is?''}). These questions were answered on a 7-point scale (e.g., \emph{``very inappropriate''} to \emph{``very appropriate''}). In every 4th scenario, the Risk and Usefulness questions were followed by an open question asking the participants to describe the potential Risk and Usefulness of the scenario. We asked these question mainly to encourage participants to carefully evaluate the scenarios.%A screenshot of the questions asked about each scenario is depicted in Figure~\ref{fig:scenario} in the Appendix.
 
 %In addition to the twelve scenarios, the participants were also presented with a 13th scenario. This scenario was focused on giving the participants an ability to control for collection of information by devices. This was done by changing the for \emph{Who} and \emph{What} parameters. However, the rest of the parameters were kept same while forming the scenario. 
 The framing and default of the Decision question were manipulated between-subjects at three levels each: positive framing (``Would you enable this feature?'', options: Yes/No), negative framing (``Would you disable this feature?'', options: Yes/No) or neutral framing (``What would you do with this feature?'', options: Enable/Disable); combined with a positive default (enabled by default), negative default (disabled by default), or no default (forced choice).
@@ -47,7 +27,7 @@ The framing and default of the Decision question were manipulated between-subjec
 \begin{table}
 	\centering
 	\caption{Parameters used to construct the information-sharing scenarios. The ``codes'' are used as abbreviations in graphs and figures throughout the paper and the Appendix.}
-	\label{tab:parameter}
+	\label{tab:parameter2}
 	\begin{tabular} {l|l|l}
 		\hline
 		\textbf{Parameter} & \textbf{Levels} & \textbf{Code} 	 \\ \hline
@@ -99,304 +79,300 @@ The framing and default of the Decision question were manipulated between-subjec
 \end{table}
 
 \subsection{Participants and Procedures}
-To collect our dataset, 1133 adult U.S.-based participants (53.53\% Female, 45.75\% Male, 8 participants did not disclose) were recruited through Amazon Mechanical Turk. \textcolor{blue}{Participation was restricted to Mechanical Turk workers with a high reputation (at least 50 completed tasks, average accuracy of > 95\%). Participants were paid \$2.00 upon successful completion of the study. The participants were warned about not getting paid in case they failed attention checks (see below).} 
+To collect our dataset, 1133 adult U.S.-based participants (53.53\% Female, 45.75\% Male, 8 participants did not disclose) were recruited through Amazon Mechanical Turk. Participation was restricted to Mechanical Turk workers with a high reputation (at least 50 completed tasks completed with an average accuracy greater than 95\%). Participants were paid \$2.00 upon successful completion of the study. The participants were warned about not getting paid in case they failed attention checks.
 
 The study participants represented a wide range of ages, with 9 participants less than 20 years old, 130 aged 20-25, 273 aged 25-30, 418 aged 30-40, 175 aged 40-50, 80 aged 50-60, and 43 participants over 60 years old (5 participants did not disclose their age). This significant increase in participants over the Lee and Kobsa~\cite{lee2016understanding} dataset is commensurate with our expectation of more complex privacy decision behaviors in household IoT compared to public IoT.
 
-Each participant was first shown a video with a brief introduction to various smart home devices, which also mentioned various ways in which the different appliances would cooperate and communicate within a home. After the video, participants were asked to answer \textcolor{blue}{three attention check questions depicted in Figure~\ref{fig:attn1} in the Appendix.
-	If they got any of these questions wrong, they would be asked to read the transcript of the video and re-answer the questions. The transcript is depicted in Figure~\ref{fig:attn2} in the Appendix.}
+Each participant was first shown a video with a brief introduction to various smart home devices, which also mentioned various ways in which the different appliances would cooperate and communicate within a home. After the video, participants were asked to answer three attention check questions. If they got any of these questions wrong, they would be asked to read the transcript of the video and re-answer the questions.
 
-\textcolor{blue}{After the introduction video, each participant was presented with 12 information-sharing scenarios (and a 13th control scenario, not considered in this paper). These scenarios were selected from the available 4608 scenarios using fractional factorial design\footnote{The scenario assignment scheme is available at \url{https://www.usabart.nl/scenarios.csv}} that balances the within- and between-subjects assignment of each parameter's main effect, and creates a uniform exposure for each participant to the various parameters (i.e., to avoid ``runs'' of near-similar scenarios). Participants were asked to carefully read the scenario and then answer all questions about it. Two of the 13 scenarios had an additional attention check question (e.g., ``Please answer this question with Completely Agree'', see Figure~\ref{fig:attn_S} in the Appendix), and there was an additional attention check question asking participants about the remaining time to finish the study (which was displayed right there on the same page, see~\ref{fig:attn_time} in the Appendix). Participants rushing through the experiment and/or repeatedly failing the attention check questions were removed from the dataset.}
+After the introduction video, each participant was presented with 12 information-sharing scenarios (and a 13th control scenario, not considered in this paper). These scenarios were selected from the available 4608 scenarios using fractional factorial design\footnote{The scenario assignment scheme is available at \url{https://www.usabart.nl/scenarios.csv}} that balances the within- and between-subjects assignment of each parameter's main effect, and creates a uniform exposure for each participant to the various parameters (i.e., to avoid ``runs'' of near-similar scenarios). Participants were asked to carefully read the scenario and then answer all questions about it. Two of the 13 scenarios had an additional attention check question (e.g., ``Please answer this question with Completely Agree'', and there was an additional attention check question asking participants about the remaining time to finish the study (which was displayed right there on the same page. Participants rushing through the experiment and/or repeatedly failing the attention check questions were removed from the dataset.
+%
+%\section{Inspecting Users' Decisions}\label{sec:inspect}
+%In this section we explain the different regression analyses performed on the dataset to understand how different scenario parameters affected the decisions made by participants. We begin by explaining the effects of scenario parameters on participants' decision to enable or disable the feature mentioned in the scenario. Similar to Bahirat et. al., we also present the results of the mediation analysis, which are on the lines of attitude-behavior models~\cite{bahiratiui2018,ajzen1977attitude}. As shown in Figure~\ref{fig:mediation_test}, we test whether participants' attitudes mediate the effects of the scenario parameters on their decisions. This mediation analysis involves the following tests:
+%
+%\textbf{Test 1}: The effect of parameters (Who, What, Purpose, Storage, Action) on attitudes (Risk, Comfort, Appropriateness, Expectedness and Usefulness).
+%
+%\textbf{Test 2}: The effect of attitudes on decision.
+%
+%\textbf{Test 3}: The effect of both parameters \emph{and} attitudes on decision.
+%
+%If, tests 1 and 2 are significant and test 3 reveals a drastic reduction in the conditional direct effect of parameters, then we can say that the effects of scenario parameters on participant's decision are mediated by their attitudes~\cite{bahiratiui2018}.
+%
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.75\textwidth]{figures/mediation_test.pdf}
+%	\caption{Different tests conducted for mediation analysis}
+%	\label{fig:mediation_test}
+%\end{figure}
+%
+%
+%Finally, we present a post-hoc analysis of differences between individual levels of the parameters on attitudes and decision.
+%
+%\subsection{Effect of scenario parameters on decision}
+%To understand the effect of the scenario parameters on participants' allow/reject decision, we developed a \emph{generalized linear mixed effects regression} (\emph{glmer}) with a random intercept (to account for repeated measures on the same participant) and a logit link function (to account for the fact that the outcome variable is binary). We used a forward stepwise approach, where we added the strongest remaining parameter into the model into the model at each step and then comparing it using ANOVA tests against the previous model. If new parameter makes a significant improvement to the previous model, it has a significant overall effect on the outcome variable. Once all significant main effects are added to the model, two-way interaction effects are tested one by one. 
+%
+%Table~\ref{tab:para_decision} shows the effects of the parameters on the allow/reject decision. All parameters had a significant effect. Particularly, \textbf{Storage} had the strongest effect on participants' decisions, followed by \textbf{What}, \textbf{Who} and \textbf{Purpose} (all similar) and finally \textbf{Action}.
+%
+%Moreover, we find many significant interaction effects, but some of them are not substantial compared to the main effects\footnote{Very small but still significant interaction effects are a common occurrence in the analysis of large datasets.}. Substantial two-way interaction effects were observed between \textbf{Who}, \textbf{What} and \textbf{Purpose}. It should be noted that the interactions are added separately, not accumulatively. This reduces overfitting and multicollinearity.
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of scenario parameters on decision}
+%	\label{tab:para_decision}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$\chi^2$ & $df$ & $p$-value 	\\ \hline
+%		$decision\sim(1 | sid)$ &		  	&	    &				\\
+%		+storage &					1487.76	& 	  2 & 		$<$ .0001 	\\
+%		+purpose &					206.97 &		  11 &		$<$ .0001 	\\
+%		+what &				202.48 & 	  3 & 		  	$<$ .0001	\\
+%		+who &			195.91 &		  7 & 		$<$ .0001 	\\
+%		+action &			77.20 &		  3 & 		$<$ .0001\\\hline
+%		\emph{Interactions}&			 &		  & \\\hline
+%		+what:who &			138.03 &		  77 & 		$<$ .0001\\
+%		+who:purpose &			87.92 &		  21 & 		$<$ .0001\\
+%		+what:purpose &			68.30 &		  33 & 		.0002\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\subsection{Effect of scenario parameters on attitudes}
+%Test 1 of the mediation model is a test of the effect of the scenario parameters on participants' attitudes. For this we developed a separate \emph{linear mixed effects regression model} (\emph{lmer}) model with a random intercept (to account for repeated measures on the same participant) for each dependent variable (Risk, Comfort, Appropriateness, Expectedness and Usefulness), using the scenario parameters as independent variables. As in the previous section, we took a forward stepwise approach.
+%
+%Tables~\ref{tab:para_approp}-\ref{tab:para_exp} show the effects of the parameters on the different attitudes. All parameters had a significant effect on all attitudes. Substantial two-way interaction effects were again observed between \textbf{Who}, \textbf{What} and \textbf{Purpose}. Again, the interactions are added separately, not accumulatively.
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of scenario parameters on appropriateness}
+%	\label{tab:para_approp}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
+%		$appropriateness\sim(1 | sid)$ &	3	  	&	    &				\\
+%		+storage &					5	& 	  2346.19 & 		$<$ .0001 	\\
+%		+what &					16 &		  398.63 &		$<$ .0001 	\\
+%		+purpose &				19 & 	  359.98 & 		  	$<$ .0001	\\
+%		+who &			26 &		  179.09 & 		$<$ .0001 	\\
+%		+action &			29 &		  91.05& 		$<$ .0001\\\hline
+%		\emph{Interactions}&			 &		  & \\\hline
+%		+what:who &			106 &		  167.01 & 		$<$ .0001\\
+%		+who:purpose &			50 &		  113.73 & 		$<$ .0001\\
+%		+what:purpose &			62 &		  55.67 & 		.0081\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of scenario parameters on comfort}
+%	\label{tab:para_comfort}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
+%		$comfort\sim(1 | sid)$ &	3	  	&	    &				\\
+%		+storage &					5	& 	  2822.57 & 		$<$ .0001 	\\
+%		+what &					16 &		  391.10 &		$<$ .0001 	\\
+%		+purpose &				19 & 	  381.69 & 		  	$<$ .0001	\\
+%		+action &			22 &		  113.68 & 		$<$ .0001 	\\
+%		+who &			29 &		  90.57& 		$<$ .0001\\\hline
+%		\emph{Interactions}&			 &		  & \\\hline
+%		+what:who &			106 &		  132.86 & 		$<$ .0001\\
+%		+who:purpose &			50 &		  89.20 & 		$<$ .0001\\
+%		+what:purpose &			62 &		  58.24 & 		 .0043\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of scenario parameters on risk}
+%	\label{tab:para_risk}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
+%		$risk\sim(1 | sid)$ &	3	  	&	    &				\\
+%		+storage &					5	& 	  47240.72 & 		$<$ .0001 	\\
+%		+purpose &					16 &		  421.08 &		$<$ .0001	\\
+%		+action &				19 & 	  355.65 & 		  	$<$ .0001	\\
+%		+who &			26 &		  81.35 & 		 $<$ .0001 	\\
+%		+what &			29 &		  70.64 & 		 $<$ .0001\\\hline
+%		\emph{Interactions}&			 &		  & \\\hline
+%		+what:who &			106 &		  77.14 & 		 0.0017\\
+%		+who:purpose &			50 &		  19.91 & 		$<$ .0001\\
+%		+what:purpose &			62 &		  37.19 & 		0.0352\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of scenario parameters on usefulness}
+%	\label{tab:para_use}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
+%		$usefulness\sim(1 | sid)$ &	3	  	&	    &				\\
+%		+what &					5	& 	  939.91 & 		$<$.0001 	\\
+%		+storage &					12 &		  457.36 &		$<$.0001	\\
+%		+purpose &				23 & 	  401.18 & 		  	$<$.0001	\\
+%		+action &			26 &		  328.88 & 		 $<$.0001 	\\
+%		+who &			29 &		  117.57& 		 $<$.0001\\\hline
+%		\emph{Interactions}&			 &		  & \\\hline
+%		+what:who &			106 &		 214.48 & 		 $<$.0001\\
+%		+who:purpose &			50 &		  184.48 & 		$<$.0001\\
+%		+what:purpose &			62 &		  85.39 & 		$<$.0001\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of scenario parameters on expectedness}
+%	\label{tab:para_exp}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
+%		$expectedness\sim(1 | sid)$ &	3	  	&	    &				\\
+%		+storage &					5	& 	  841.24 & 		$<$ .0001 	\\
+%		+who &					16 &		  425.92 &		$<$ .0001 	\\
+%		+what &				19 & 	  422.31 & 		  	$<$ .0001	\\
+%		+purpose &			22 &		  231.98 & 		$<$ .0001 	\\
+%		+action &			29 &		  29.45& 		$<$ .0001\\\hline
+%		\emph{Interactions}&			 &		  & \\\hline
+%		+what:who &			106 &		  262.80 & 		$<$ .0001\\
+%		+who:purpose &			50 &		  138.73 & 		$<$ .0001\\
+%		+what:purpose &			62 &		  84.89 & 		$<$ .0001\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\subsection{Effect of attitudes on decision}
+%Test 2 of the mediation model is a test of the effect of participants' attitudes on their allow/reject decision. We perform this test by creating a \emph{glmer} model with a random intercept and a logit link function. Using a forward stepwise approach, we find that all attitudes except \textbf{Expectedness} have a significant effect on decision (see the top part of Table~\ref{tab:att_decision}). Specific effects are as follows:
+%\begin{itemize}
+%	\item Each 1-point increase in \textbf{Comfort} (measured on a 7-point scale) results in a 2.30-fold increase in the odds that the participant will allow the scenario ($p < 0.001$). 
+%	\item Each 1-point increase in \textbf{Usefulness} results in a 2.09-fold increase in the odds that the participant will allow the scenario ($p < 0.001$).
+%	\item Each 1-point increase in \textbf{Appropriateness} results in a 44\% increase in the odds that the participant will allow the scenario ($p < 0.001$).
+%	\item Each 1-point increase in \textbf{Risk} results in a 14\% decrease in the odds that the participant will allow the scenario ($p < 0.001$).
+%	\item \textbf{Expectedness} had no signficant influence on the participant's decision (p = 0.201).
+%\end{itemize}
+%
+%
+%\begin{table}
+%	\centering
+%	\caption{Effect of attitudes on decision; conditional effects of parameters are added subsequently}
+%	\label{tab:att_decision}
+%	\begin{tabular}{ l | r | r | r }
+%		\hline
+%		Model &	$\chi^2$ & $df$ & $p$-value 	\\ \hline
+%		$decision\sim(1 | sid)$ &		  	&	    &				\\
+%		+Comfort &					7934.72	& 	  1 & 		$<$ .0001 	\\
+%		+Usefulness &					1249.51 &		  1 &		$<$ .0001 	\\
+%		+Appropriateness &				149.15 & 	  1 & 		  	$<$ .0001	\\
+%		+Risk  &			10.90 &		  1 & 		 .0009 	\\
+%		+Expectedness &			1.62 &		  1 & 		 .201\\\hline
+%		\emph{Adding Scenario Parameters}&			 &		  & \\\hline
+%		+action &			0.332 &		  3 & 		 0.953\\
+%		+what &			13.871 &		  11 & 		0.2401\\
+%		+purpose &			3.60 &		  3 & 		0.3069\\
+%		+storage &			14.57 &		  2 & 		0.0006\\
+%		+who &			24.53 &		  7 & 		0.0009\\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\textcolor{blue}{The strongly significant relationship between attitudes and behavior is interesting in light of the ``privacy paradox''~\cite{norberg07}, an attitude-behavior gap that has been studied extensively by privacy researchers. Arguably, the privacy paradox is an artifact of the fact that \emph{general} privacy concerns (which are commonly high) do not match \emph{specific} behaviors (which subsequently ignore these general concerns). Since in our study attitudes and behaviors are measured at the same contextual level, their relationship is much stronger than in other studies. This may explain why we do not find an attitude-behavior gap.}
+%
+%
+%\subsection{Mediation analysis}
+%With tests 1 and 2 of our mediation analysis confirmed, we conduct test 3 by adding the scenario parameters to the \emph{glmer} of participants' decisions on their attitudes. The bottom half of Table~\ref{tab:att_decision} shows these conditional effects of the significant scenario parameters on participants' allow/reject decision, controlling for their attitudes. \textbf{Action}, \textbf{What} and \textbf{Purpose} are no longer significant in this model, suggesting that these effects are \emph{fully mediated} by participants' attitudes. \textbf{Storage} and \textbf{Who} are still significant, but their conditional effects are smaller than their marginal effects on decision (without controlling for attitude, see Table~\ref{tab:para_decision}). Their $chi^2$s are reduced drastically by 98\% and 87\%, respectively. Overall, there was a substantial mediation effect. Figure~\ref{fig:mediation_model} shows the final model mediation model.
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.95\textwidth]{figures/mediation.pdf}
+%	\caption{Final mediation model.}
+%	\label{fig:mediation_model}
+%\end{figure}
+%
+%
+%\subsection{Post-hoc Results}
+%To understand the effects of different values of each parameter on participants' various attitudes and their allow/reject decision, we conducted \textcolor{blue}{post-hoc tests using Tukey's method to adjust $p$-values to account for familywise error.} This subsection highlights the key insights from these tests. For an overview of the differences between parameter values, the reader is invited to visually inspect them by referring to Figures~\ref{fig:storage_post}-\ref{fig:what_post} in the Appendix.
+%
+%\textbf{Storage}: Participants perceive more risk ($d$ range $= [0.568, 1.707]$, all $p$s $< .001$), are less comfortable ($d$ range $= [0.538, 1.741]$, all $p$s $< .001$) and find it inappropriate ($d$ range  $=  [0.436, 1.550]$, all $p$s $< .001$) when their information is shared to `third parties' or `stored on a remote server' as compared to when it is stored `locally'. Participants also found it less useful to share their information with third parties as compared to storing it locally or on a remote server ($d$ range $= [0.28, 1.02]$,  $p < .001$). Interestingly, participants expected it less that the information is stored locally rather than stored on remote server or shared to third parties ($d$ range $= [0.212, 0.894]$, all $p$s $< .001$). Finally, the odds of enabling a feature when information is stored locally were 1.96 times higher than when information is stored on a remote server ($p < .001$) and 8.36 times higher than when information is shared with third parties ($p < .001$).
+%
+%\textbf{Action}: Participants were less comfortable ($d$ range $= [0.158, 0.348]$, all $p$s $< .001$) and found it more risky ($d$ range $= [0.145, 0.262]$, all $p$s $< .001$) when their information is used to give them recommendations instead of optimizing services or giving them insight into their behavior. Sharing information was also found less useful ($d = 0.293$, $p < .001$) and less appropriate ($d = 0.256$, $p < .001$) for recommendation purposes as opposed to when the scenario did not specify any purpose. Participants also expected it less ($d = 0.123$, $p = .0021$) when their information was being shared for recommendation purposes as opposed to when the scenario did not specify any purpose. Finally, the odds of enabling a feature for recommendation purposes were 1.53 times lower as opposed to when the scenario did not specify any purpose ($p < .001$). Additionally, the odds of enabling a feature for optimization purposes were 1.65 times higher than for recommendation purposes ($p < .001$) and 1.26 times higher than for giving behavioral insights ($p < .001$). 
+%
+%\textbf{Purpose}: Participants found it inappropriate ($d$ range $= [0.343, 0.411]$, all $p$s $< .001$) when information is collected for the purpose of detecting their presence in the house as compared to the purposes of automating operations or giving timely alerts, and it was even more inappropriate to collect information for the purpose of detecting their location in the house ($d$ range $= [0.163, 0.574]$, all $p$s $< .001$). Participants also found it more risky when information is used for location detection as compared to presence detection ($d = 0.598$, $p < .001$), but they found it less risky to share information for the purpose of giving timely alerts or for automating operations ($d$ range  $= [0.550, 0.601]$, $p$ range $= [0.002, 0.004]$). Participants also found it more useful when information is collected for the purpose of providing alerts ($d = 0.558$, $p < .001$) or for automating operations ($d = 0.603$, $p < .001$) compared to the purpose of detecting their location in the house. Finally, the odds of enabling a feature were 1.29 times higher for detecting their presence in house than for detecting their location ($p = 0.0002$). Moreover, the odds of enabling a feature for the purpose of giving timely alerts and automating operations were 1.59 ($p < .001$) and 1.65 ($p < .001$) times higher respectively. 
+%
+%\textbf{Who}: Participants expected it more that their smart security systems will access information as compared to other devices such as their smart HVAC, TV, alarm and washing machine ($d$ range $=  [0.267, 0.618]$, all $p$s $< .001$). Users perceived data access by their security systems as more useful compared other devices like their smart refrigerator, washing machine, TV and HVAC ($d$ range $= [0.386, 0.627]$, all $p$s $< .001$). Participants were more comfortable ($d = 0.196$, $p = .002$) and found it less risky ($d = 0.263$, $p < .001$) for their security systems to access collected data as compared to their smart lighting systems. Also, participants were more comfortable ($d$ range $=  [0.173, 0.356]$, all $p$s $< .05$) and found it less risky ($d$ range $= [0.256, 0.338]$, all $p$s $< .05$) for their lighting systems to access collected data compared to their smart assistant, TV and alarm clock. Finally, the odds of users enabling access to their smart security system were higher than to their smart refrigerator and washing machine by 1.8 times($p < .001$), their smart TV by 1.7 times ($p < .001$) and their smart alarm clock by 1.6 times ($p < .001$). We found similar results for participants' smart assistant which had odds higher than their smart TV (1.76 times higher,  $p < .001$), their smart alarm clock (1.68 times higher,  $p < .001$), their smart washing machine (1.90 times higher,  $p < .001$) and their smart refrigerator (1.85 times higher,  $p < .001$).
+%
+%\textbf{What}: This parameter had twelve different values and there were numerous combinations that were significant when we checked the post-hoc effects. We limit our discussion to the differences between the `Smart Assistant' and the other values of this parameter, because these specific differences are consistently significant. The reader is invited to inspect Figure~\ref{fig:who_post} in the Appendix for other differences. Participants found it more appropriate ($d$ range $= [0.213, 0.756]$, all $p$s $< .001$) and useful ($d$ range $= [0.365, 0.683]$, all $p$s $< .01$) when information collected by their smart assistant was being accessed as compared to other devices like cameras or microphones. The participants also found it less risky ($d$ range $= [0.385, 0.759]$, all $p$s $< .05$) and were more comfortable ($d$ range $= [0.430,0.821]$, all $p$s $< .01$) to grant access to information collected by their smart assistant than their camera or microphone. Participants also expected more to share information collected by their smart assistant as compared to other devices such as cameras ($d = 0.62$, $p < .01$), microphones ($d = 0.39$, $p < .01$), or their smart alarm clock ($d = 0.21$, $p = .027$). The odds of giving access to information collected by their smart assistant were higher than for cameras by 2.7 times ($p < .001$), microphones by 1.8 times ($p < .001$), their Smart TV by 1.15 times ($p < .001$) and their smart washing machine by 1.8 times ($p < .001$).
 
-\section{Inspecting Users' Decisions}\label{sec:inspect}
-In this section we explain the different regression analyses performed on the dataset to understand how different scenario parameters affected the decisions made by participants. We begin by explaining the effects of scenario parameters on participants' decision to enable or disable the feature mentioned in the scenario. Similar to Bahirat et. al., we also present the results of the mediation analysis, which are on the lines of attitude-behavior models~\cite{bahiratiui2018,ajzen1977attitude}. As shown in Figure~\ref{fig:mediation_test}, we test whether participants' attitudes mediate the effects of the scenario parameters on their decisions. This mediation analysis involves the following tests:
+\section{Statistical Analysis}\label{sec:statAlys2}
+Our statistical analysis shows that unlike results from~\cite{bahiratiui2018}, all parameters had a significant effect. Particularly, where the information is stored and if/how it is shared with third parties (`Storage' parameter) has the strongest impact on users' decision, followed by `What', `Who' and `Purpose' (all similar) and finally `Action'. Moreover, substantial two-way interaction effects were observed between `Who', `What', and `Purpose', which suggest that when users decide on one parameter, they inherently take another parameter into account. Based on these results, we designed an interface, which separated `Device/Sensor Management' and `Data Storage \& Usage', for users to manually change their privacy settings. 
 
-\textbf{Test 1}: The effect of parameters (Who, What, Purpose, Storage, Action) on attitudes (Risk, Comfort, Appropriateness, Expectedness and Usefulness).
+We also analyze the effects of defaults and framing. As outlined in section \ref{sec:questions}, the framing and default of the Decision question in our study were manipulated between-subjects at three levels each: positive, negative, or neutral framing; combined with a positive, negative, or no default. The analysis shows that defaults and framing have direct effects on disclosure: Participants in the negative default condition are less likely to enable the functionality, while participants in the positive default condition are more likely to enable the scenario (a traditional default effect). Likewise, participants in the negative framing condition are more likely to enable the functionality (a loss aversion effect).
 
-\textbf{Test 2}: The effect of attitudes on decision.
+Moreover, there are interaction effects between defaults/framing and attitudes on disclosure: the effects of attitudes are generally weaker in the positive and negative default conditions than in the no default condition, and they are also weaker in the negative framing condition.
 
-\textbf{Test 3}: The effect of both parameters \emph{and} attitudes on decision.
+Importantly, there are no interaction effects between defaults/framing and parameters on attitude or disclosure. Hence, the main findings in this section regarding the structure and relative importance of the effects of parameters remain the same, regardless of the effects of defaults and framing.
 
-If, tests 1 and 2 are significant and test 3 reveals a drastic reduction in the conditional direct effect of parameters, then we can say that the effects of scenario parameters on participant's decision are mediated by their attitudes~\cite{bahiratiui2018}.
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.75\textwidth]{figures/mediation_test.pdf}
-	\caption{Different tests conducted for mediation analysis}
-	\label{fig:mediation_test}
-\end{figure}
-
-
-Finally, we present a post-hoc analysis of differences between individual levels of the parameters on attitudes and decision.
-
-\subsection{Effect of scenario parameters on decision}
-To understand the effect of the scenario parameters on participants' allow/reject decision, we developed a \emph{generalized linear mixed effects regression} (\emph{glmer}) with a random intercept (to account for repeated measures on the same participant) and a logit link function (to account for the fact that the outcome variable is binary). We used a forward stepwise approach, where we added the strongest remaining parameter into the model into the model at each step and then comparing it using ANOVA tests against the previous model. If new parameter makes a significant improvement to the previous model, it has a significant overall effect on the outcome variable. Once all significant main effects are added to the model, two-way interaction effects are tested one by one. 
-
-Table~\ref{tab:para_decision} shows the effects of the parameters on the allow/reject decision. All parameters had a significant effect. Particularly, \textbf{Storage} had the strongest effect on participants' decisions, followed by \textbf{What}, \textbf{Who} and \textbf{Purpose} (all similar) and finally \textbf{Action}.
-
-Moreover, we find many significant interaction effects, but some of them are not substantial compared to the main effects\footnote{Very small but still significant interaction effects are a common occurrence in the analysis of large datasets.}. Substantial two-way interaction effects were observed between \textbf{Who}, \textbf{What} and \textbf{Purpose}. It should be noted that the interactions are added separately, not accumulatively. This reduces overfitting and multicollinearity.
-
-\begin{table}
-	\centering
-	\caption{Effect of scenario parameters on decision}
-	\label{tab:para_decision}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$\chi^2$ & $df$ & $p$-value 	\\ \hline
-		$decision\sim(1 | sid)$ &		  	&	    &				\\
-		+storage &					1487.76	& 	  2 & 		$<$ .0001 	\\
-		+purpose &					206.97 &		  11 &		$<$ .0001 	\\
-		+what &				202.48 & 	  3 & 		  	$<$ .0001	\\
-		+who &			195.91 &		  7 & 		$<$ .0001 	\\
-		+action &			77.20 &		  3 & 		$<$ .0001\\\hline
-		\emph{Interactions}&			 &		  & \\\hline
-		+what:who &			138.03 &		  77 & 		$<$ .0001\\
-		+who:purpose &			87.92 &		  21 & 		$<$ .0001\\
-		+what:purpose &			68.30 &		  33 & 		.0002\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\subsection{Effect of scenario parameters on attitudes}
-Test 1 of the mediation model is a test of the effect of the scenario parameters on participants' attitudes. For this we developed a separate \emph{linear mixed effects regression model} (\emph{lmer}) model with a random intercept (to account for repeated measures on the same participant) for each dependent variable (Risk, Comfort, Appropriateness, Expectedness and Usefulness), using the scenario parameters as independent variables. As in the previous section, we took a forward stepwise approach.
-
-Tables~\ref{tab:para_approp}-\ref{tab:para_exp} show the effects of the parameters on the different attitudes. All parameters had a significant effect on all attitudes. Substantial two-way interaction effects were again observed between \textbf{Who}, \textbf{What} and \textbf{Purpose}. Again, the interactions are added separately, not accumulatively.
-
-\begin{table}
-	\centering
-	\caption{Effect of scenario parameters on appropriateness}
-	\label{tab:para_approp}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
-		$appropriateness\sim(1 | sid)$ &	3	  	&	    &				\\
-		+storage &					5	& 	  2346.19 & 		$<$ .0001 	\\
-		+what &					16 &		  398.63 &		$<$ .0001 	\\
-		+purpose &				19 & 	  359.98 & 		  	$<$ .0001	\\
-		+who &			26 &		  179.09 & 		$<$ .0001 	\\
-		+action &			29 &		  91.05& 		$<$ .0001\\\hline
-		\emph{Interactions}&			 &		  & \\\hline
-		+what:who &			106 &		  167.01 & 		$<$ .0001\\
-		+who:purpose &			50 &		  113.73 & 		$<$ .0001\\
-		+what:purpose &			62 &		  55.67 & 		.0081\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}
-	\centering
-	\caption{Effect of scenario parameters on comfort}
-	\label{tab:para_comfort}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
-		$comfort\sim(1 | sid)$ &	3	  	&	    &				\\
-		+storage &					5	& 	  2822.57 & 		$<$ .0001 	\\
-		+what &					16 &		  391.10 &		$<$ .0001 	\\
-		+purpose &				19 & 	  381.69 & 		  	$<$ .0001	\\
-		+action &			22 &		  113.68 & 		$<$ .0001 	\\
-		+who &			29 &		  90.57& 		$<$ .0001\\\hline
-		\emph{Interactions}&			 &		  & \\\hline
-		+what:who &			106 &		  132.86 & 		$<$ .0001\\
-		+who:purpose &			50 &		  89.20 & 		$<$ .0001\\
-		+what:purpose &			62 &		  58.24 & 		 .0043\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}
-	\centering
-	\caption{Effect of scenario parameters on risk}
-	\label{tab:para_risk}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
-		$risk\sim(1 | sid)$ &	3	  	&	    &				\\
-		+storage &					5	& 	  47240.72 & 		$<$ .0001 	\\
-		+purpose &					16 &		  421.08 &		$<$ .0001	\\
-		+action &				19 & 	  355.65 & 		  	$<$ .0001	\\
-		+who &			26 &		  81.35 & 		 $<$ .0001 	\\
-		+what &			29 &		  70.64 & 		 $<$ .0001\\\hline
-		\emph{Interactions}&			 &		  & \\\hline
-		+what:who &			106 &		  77.14 & 		 0.0017\\
-		+who:purpose &			50 &		  19.91 & 		$<$ .0001\\
-		+what:purpose &			62 &		  37.19 & 		0.0352\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}
-	\centering
-	\caption{Effect of scenario parameters on usefulness}
-	\label{tab:para_use}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
-		$usefulness\sim(1 | sid)$ &	3	  	&	    &				\\
-		+what &					5	& 	  939.91 & 		$<$.0001 	\\
-		+storage &					12 &		  457.36 &		$<$.0001	\\
-		+purpose &				23 & 	  401.18 & 		  	$<$.0001	\\
-		+action &			26 &		  328.88 & 		 $<$.0001 	\\
-		+who &			29 &		  117.57& 		 $<$.0001\\\hline
-		\emph{Interactions}&			 &		  & \\\hline
-		+what:who &			106 &		 214.48 & 		 $<$.0001\\
-		+who:purpose &			50 &		  184.48 & 		$<$.0001\\
-		+what:purpose &			62 &		  85.39 & 		$<$.0001\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}
-	\centering
-	\caption{Effect of scenario parameters on expectedness}
-	\label{tab:para_exp}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$df$ & $Chi. Sq.$ & $p$-value 	\\ \hline
-		$expectedness\sim(1 | sid)$ &	3	  	&	    &				\\
-		+storage &					5	& 	  841.24 & 		$<$ .0001 	\\
-		+who &					16 &		  425.92 &		$<$ .0001 	\\
-		+what &				19 & 	  422.31 & 		  	$<$ .0001	\\
-		+purpose &			22 &		  231.98 & 		$<$ .0001 	\\
-		+action &			29 &		  29.45& 		$<$ .0001\\\hline
-		\emph{Interactions}&			 &		  & \\\hline
-		+what:who &			106 &		  262.80 & 		$<$ .0001\\
-		+who:purpose &			50 &		  138.73 & 		$<$ .0001\\
-		+what:purpose &			62 &		  84.89 & 		$<$ .0001\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\subsection{Effect of attitudes on decision}
-Test 2 of the mediation model is a test of the effect of participants' attitudes on their allow/reject decision. We perform this test by creating a \emph{glmer} model with a random intercept and a logit link function. Using a forward stepwise approach, we find that all attitudes except \textbf{Expectedness} have a significant effect on decision (see the top part of Table~\ref{tab:att_decision}). Specific effects are as follows:
-\begin{itemize}
-	\item Each 1-point increase in \textbf{Comfort} (measured on a 7-point scale) results in a 2.30-fold increase in the odds that the participant will allow the scenario ($p < 0.001$). 
-	\item Each 1-point increase in \textbf{Usefulness} results in a 2.09-fold increase in the odds that the participant will allow the scenario ($p < 0.001$).
-	\item Each 1-point increase in \textbf{Appropriateness} results in a 44\% increase in the odds that the participant will allow the scenario ($p < 0.001$).
-	\item Each 1-point increase in \textbf{Risk} results in a 14\% decrease in the odds that the participant will allow the scenario ($p < 0.001$).
-	\item \textbf{Expectedness} had no signficant influence on the participant's decision (p = 0.201).
-\end{itemize}
-
-
-\begin{table}
-	\centering
-	\caption{Effect of attitudes on decision; conditional effects of parameters are added subsequently}
-	\label{tab:att_decision}
-	\begin{tabular}{ l | r | r | r }
-		\hline
-		Model &	$\chi^2$ & $df$ & $p$-value 	\\ \hline
-		$decision\sim(1 | sid)$ &		  	&	    &				\\
-		+Comfort &					7934.72	& 	  1 & 		$<$ .0001 	\\
-		+Usefulness &					1249.51 &		  1 &		$<$ .0001 	\\
-		+Appropriateness &				149.15 & 	  1 & 		  	$<$ .0001	\\
-		+Risk  &			10.90 &		  1 & 		 .0009 	\\
-		+Expectedness &			1.62 &		  1 & 		 .201\\\hline
-		\emph{Adding Scenario Parameters}&			 &		  & \\\hline
-		+action &			0.332 &		  3 & 		 0.953\\
-		+what &			13.871 &		  11 & 		0.2401\\
-		+purpose &			3.60 &		  3 & 		0.3069\\
-		+storage &			14.57 &		  2 & 		0.0006\\
-		+who &			24.53 &		  7 & 		0.0009\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\textcolor{blue}{The strongly significant relationship between attitudes and behavior is interesting in light of the ``privacy paradox''~\cite{norberg07}, an attitude-behavior gap that has been studied extensively by privacy researchers. Arguably, the privacy paradox is an artifact of the fact that \emph{general} privacy concerns (which are commonly high) do not match \emph{specific} behaviors (which subsequently ignore these general concerns). Since in our study attitudes and behaviors are measured at the same contextual level, their relationship is much stronger than in other studies. This may explain why we do not find an attitude-behavior gap.}
-
-
-\subsection{Mediation analysis}
-With tests 1 and 2 of our mediation analysis confirmed, we conduct test 3 by adding the scenario parameters to the \emph{glmer} of participants' decisions on their attitudes. The bottom half of Table~\ref{tab:att_decision} shows these conditional effects of the significant scenario parameters on participants' allow/reject decision, controlling for their attitudes. \textbf{Action}, \textbf{What} and \textbf{Purpose} are no longer significant in this model, suggesting that these effects are \emph{fully mediated} by participants' attitudes. \textbf{Storage} and \textbf{Who} are still significant, but their conditional effects are smaller than their marginal effects on decision (without controlling for attitude, see Table~\ref{tab:para_decision}). Their $chi^2$s are reduced drastically by 98\% and 87\%, respectively. Overall, there was a substantial mediation effect. Figure~\ref{fig:mediation_model} shows the final model mediation model.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.95\textwidth]{figures/mediation.pdf}
-	\caption{Final mediation model.}
-	\label{fig:mediation_model}
-\end{figure}
-
-
-\subsection{Post-hoc Results}
-To understand the effects of different values of each parameter on participants' various attitudes and their allow/reject decision, we conducted \textcolor{blue}{post-hoc tests using Tukey's method to adjust $p$-values to account for familywise error.} This subsection highlights the key insights from these tests. For an overview of the differences between parameter values, the reader is invited to visually inspect them by referring to Figures~\ref{fig:storage_post}-\ref{fig:what_post} in the Appendix.
-
-\textbf{Storage}: Participants perceive more risk ($d$ range $= [0.568, 1.707]$, all $p$s $< .001$), are less comfortable ($d$ range $= [0.538, 1.741]$, all $p$s $< .001$) and find it inappropriate ($d$ range  $=  [0.436, 1.550]$, all $p$s $< .001$) when their information is shared to `third parties' or `stored on a remote server' as compared to when it is stored `locally'. Participants also found it less useful to share their information with third parties as compared to storing it locally or on a remote server ($d$ range $= [0.28, 1.02]$,  $p < .001$). Interestingly, participants expected it less that the information is stored locally rather than stored on remote server or shared to third parties ($d$ range $= [0.212, 0.894]$, all $p$s $< .001$). Finally, the odds of enabling a feature when information is stored locally were 1.96 times higher than when information is stored on a remote server ($p < .001$) and 8.36 times higher than when information is shared with third parties ($p < .001$).
-
-\textbf{Action}: Participants were less comfortable ($d$ range $= [0.158, 0.348]$, all $p$s $< .001$) and found it more risky ($d$ range $= [0.145, 0.262]$, all $p$s $< .001$) when their information is used to give them recommendations instead of optimizing services or giving them insight into their behavior. Sharing information was also found less useful ($d = 0.293$, $p < .001$) and less appropriate ($d = 0.256$, $p < .001$) for recommendation purposes as opposed to when the scenario did not specify any purpose. Participants also expected it less ($d = 0.123$, $p = .0021$) when their information was being shared for recommendation purposes as opposed to when the scenario did not specify any purpose. Finally, the odds of enabling a feature for recommendation purposes were 1.53 times lower as opposed to when the scenario did not specify any purpose ($p < .001$). Additionally, the odds of enabling a feature for optimization purposes were 1.65 times higher than for recommendation purposes ($p < .001$) and 1.26 times higher than for giving behavioral insights ($p < .001$). 
-
-\textbf{Purpose}: Participants found it inappropriate ($d$ range $= [0.343, 0.411]$, all $p$s $< .001$) when information is collected for the purpose of detecting their presence in the house as compared to the purposes of automating operations or giving timely alerts, and it was even more inappropriate to collect information for the purpose of detecting their location in the house ($d$ range $= [0.163, 0.574]$, all $p$s $< .001$). Participants also found it more risky when information is used for location detection as compared to presence detection ($d = 0.598$, $p < .001$), but they found it less risky to share information for the purpose of giving timely alerts or for automating operations ($d$ range  $= [0.550, 0.601]$, $p$ range $= [0.002, 0.004]$). Participants also found it more useful when information is collected for the purpose of providing alerts ($d = 0.558$, $p < .001$) or for automating operations ($d = 0.603$, $p < .001$) compared to the purpose of detecting their location in the house. Finally, the odds of enabling a feature were 1.29 times higher for detecting their presence in house than for detecting their location ($p = 0.0002$). Moreover, the odds of enabling a feature for the purpose of giving timely alerts and automating operations were 1.59 ($p < .001$) and 1.65 ($p < .001$) times higher respectively. 
-
-\textbf{Who}: Participants expected it more that their smart security systems will access information as compared to other devices such as their smart HVAC, TV, alarm and washing machine ($d$ range $=  [0.267, 0.618]$, all $p$s $< .001$). Users perceived data access by their security systems as more useful compared other devices like their smart refrigerator, washing machine, TV and HVAC ($d$ range $= [0.386, 0.627]$, all $p$s $< .001$). Participants were more comfortable ($d = 0.196$, $p = .002$) and found it less risky ($d = 0.263$, $p < .001$) for their security systems to access collected data as compared to their smart lighting systems. Also, participants were more comfortable ($d$ range $=  [0.173, 0.356]$, all $p$s $< .05$) and found it less risky ($d$ range $= [0.256, 0.338]$, all $p$s $< .05$) for their lighting systems to access collected data compared to their smart assistant, TV and alarm clock. Finally, the odds of users enabling access to their smart security system were higher than to their smart refrigerator and washing machine by 1.8 times($p < .001$), their smart TV by 1.7 times ($p < .001$) and their smart alarm clock by 1.6 times ($p < .001$). We found similar results for participants' smart assistant which had odds higher than their smart TV (1.76 times higher,  $p < .001$), their smart alarm clock (1.68 times higher,  $p < .001$), their smart washing machine (1.90 times higher,  $p < .001$) and their smart refrigerator (1.85 times higher,  $p < .001$).
-
-\textbf{What}: This parameter had twelve different values and there were numerous combinations that were significant when we checked the post-hoc effects. We limit our discussion to the differences between the `Smart Assistant' and the other values of this parameter, because these specific differences are consistently significant. The reader is invited to inspect Figure~\ref{fig:who_post} in the Appendix for other differences. Participants found it more appropriate ($d$ range $= [0.213, 0.756]$, all $p$s $< .001$) and useful ($d$ range $= [0.365, 0.683]$, all $p$s $< .01$) when information collected by their smart assistant was being accessed as compared to other devices like cameras or microphones. The participants also found it less risky ($d$ range $= [0.385, 0.759]$, all $p$s $< .05$) and were more comfortable ($d$ range $= [0.430,0.821]$, all $p$s $< .01$) to grant access to information collected by their smart assistant than their camera or microphone. Participants also expected more to share information collected by their smart assistant as compared to other devices such as cameras ($d = 0.62$, $p < .01$), microphones ($d = 0.39$, $p < .01$), or their smart alarm clock ($d = 0.21$, $p = .027$). The odds of giving access to information collected by their smart assistant were higher than for cameras by 2.7 times ($p < .001$), microphones by 1.8 times ($p < .001$), their Smart TV by 1.15 times ($p < .001$) and their smart washing machine by 1.8 times ($p < .001$).
-
-\subsection{Defaults and Framing}
-\textcolor{blue}{As outlined in section \ref{sec:questions}, the framing and default of the Decision question in our study were manipulated between-subjects at three levels each: positive, negative, or neutral framing; combined with a positive, negative, or no default. We analyze the effects of defaults and framing in a separate paper~\cite{bahirat_exploring_2018}. In short, the analysis shows that defaults and framing have direct effects on disclosure: Participants in the negative default condition are less likely to enable the functionality, while participants in the positive default condition are more likely to enable the scenario (a traditional default effect). Likewise, participants in the negative framing condition are more likely to enable the functionality (a loss aversion effect).}
-
-\textcolor{blue}{Moreover, there are interaction effects between defaults/framing and attitudes on disclosure: the effects of attitudes are generally weaker in the positive and negative default conditions than in the no default condition, and they are also weaker in the negative framing condition.}
-
-\textcolor{blue}{Importantly, there are no interaction effects between defaults/framing and parameters on attitude or disclosure. Hence, the main findings in this section regarding the structure and relative importance of the effects of parameters remain the same, regardless of the effects of defaults and framing. For a more thorough discussion of the effects of defaults and framing, we refer the reader to~\cite{bahirat_exploring_2018}.}
-
-\subsection{Discussion}
-We split this section in two parts: First, we discuss the consequences of our analyses---and especially our post hoc test results---for the development and adoption of household IoT devices. Second, we discuss how our results can inform the design of household IoT privacy-setting interfaces.
-
-\subsubsection{Consequences for the development and adoption of household IoT devices}
-In the introduction we mentioned that privacy risk is an increasingly important barrier to the adoption of household IoT devices. Interestingly, though, in our study Comfort, Usefulness and Appropriateness had a stronger effect on users' allow/reject decisions than Risk. This suggests that IoT devices with a trust-inspiring design, a strong value proposition, and a clear explanation of the appropriateness of their data collection practices can overcome initial perceptions of privacy risk.
-
-The trade-off between Comfort, Usefulness and Appropriateness embodies an interesting trade-off: Usefulness is associated with the utility of a feature, whereas Appropriateness is a contextual evaluation (is this acceptable given the \emph{situation}?) and Comfort is a self-relevant evaluation (is this acceptable for \emph{me}?).
-
-The interaction between \textbf{What}, \textbf{Who}, and \textbf{Purpose} also suggests that users make context-relevant evaluations: scenarios are not accepted based on the sum of their components; rather, certain combinations of devices and purposes are more acceptable than others. While this is outside the scope of the current paper, future work could look into this context-dependency to find specific synergistic combinations. 
-
-The \textbf{Storage} parameter had the most significant influence on participants' decision and all attitudes, but most prominently on Risk. ($chi^2 = 47240.72$,  $p < .001$). This indicates that users' risk perceptions are mostly dependent on the way household IoT systems store and share their data. Household IoT device manufacturers who want to reduce risk perceptions may want to opt for storing all data locally instead of on a remote server (something users are actually more likely to expect). %This is particularly true for smart assistants, whose collected data is least likely to be shared with other devices anyway. %Interestingly, while most smart assistants collect their data via a microphone or camera, users are less comfortable sharing the data collected data by their smart assistant than the data collected by microphone or camera sensors.
-
-Finally, the \textbf{Action} parameter had the least significant influence. Arguably, once users allow information to be collected, they care less about how exactly it is being used (or possibly, they do not expect to be able to control how it is being used).
-
-\subsubsection{Designing for IoT by prioritizing parameters}
-The results of our analyses uncover an intuitive reality about our household IoT scenarios, namely, they consist of two somewhat separate parts: On the one hand, there is a device (\textbf{Who}) that accesses information collected by another device (\textbf{what}), for a purpose certain \textbf{Purpose}. At the same time, this the collected information may be stored somewhere (\textbf{Storage}) and some \textbf{Action} may be performed on it. 
-
-For the first aspect, we observed substantial interaction effects between all the three parameters, indicating that users want to make intricate decisions about what information is going where and for what purposes. Specifically, Unlike Bahirat et. al. ~\cite{bahiratiui2018}, we cannot use an interface with a separate `layer' for each parameter; the interaction effects suggest that when uses decide on one parameter, they inherently take another parameter into account. Therefore the settings interface for device/sensor management should show all three parameters at the same time to allow users to make these decisions.
-
-For the second aspect, data storage had a very strong impact, while the action had the weakest impact. Additionally, there were no interactions between these two parameters, nor did they interact with any of the other parameters. This suggests that data storage and use can be separated in our privacy-setting interface. 
+%
+%\subsection{Discussion}
+%
+%In Chapter~\ref{chapter:Acceptability}, we found that privacy risk is an increasingly important barrier to the adoption of household IoT devices. Interestingly, though, in our study Comfort, Usefulness and Appropriateness had a stronger effect on users' allow/reject decisions than Risk. This suggests that IoT devices with a trust-inspiring design, a strong value proposition, and a clear explanation of the appropriateness of their data collection practices can overcome initial perceptions of privacy risk.
+%
+%The trade-off between Comfort, Usefulness and Appropriateness embodies an interesting trade-off: Usefulness is associated with the utility of a feature, whereas Appropriateness is a contextual evaluation (is this acceptable given the \emph{situation}?) and Comfort is a self-relevant evaluation (is this acceptable for \emph{me}?).
+%
+%The interaction between \textbf{What}, \textbf{Who}, and \textbf{Purpose} also suggests that users make context-relevant evaluations: scenarios are not accepted based on the sum of their components; rather, certain combinations of devices and purposes are more acceptable than others. While this is outside the scope of the current paper, future work could look into this context-dependency to find specific synergistic combinations. 
+%
+%The \textbf{Storage} parameter had the most significant influence on participants' decision and all attitudes, but most prominently on Risk. ($chi^2 = 47240.72$,  $p < .001$). This indicates that users' risk perceptions are mostly dependent on the way household IoT systems store and share their data. Household IoT device manufacturers who want to reduce risk perceptions may want to opt for storing all data locally instead of on a remote server (something users are actually more likely to expect). %This is particularly true for smart assistants, whose collected data is least likely to be shared with other devices anyway. %Interestingly, while most smart assistants collect their data via a microphone or camera, users are less comfortable sharing the data collected data by their smart assistant than the data collected by microphone or camera sensors.
+%
+%Finally, the \textbf{Action} parameter had the least significant influence. Arguably, once users allow information to be collected, they care less about how exactly it is being used (or possibly, they do not expect to be able to control how it is being used).
+%
+%\subsubsection{Designing for IoT by prioritizing parameters}
+%The results of our analyses uncover an intuitive reality about our household IoT scenarios, namely, they consist of two somewhat separate parts: On the one hand, there is a device (\textbf{Who}) that accesses information collected by another device (\textbf{what}), for a purpose certain \textbf{Purpose}. At the same time, this the collected information may be stored somewhere (\textbf{Storage}) and some \textbf{Action} may be performed on it. 
+%
+%For the first aspect, we observed substantial interaction effects between all the three parameters, indicating that users want to make intricate decisions about what information is going where and for what purposes. Specifically, Unlike Bahirat et. al. ~\cite{bahiratiui2018}, we cannot use an interface with a separate `layer' for each parameter; the interaction effects suggest that when uses decide on one parameter, they inherently take another parameter into account. Therefore the settings interface for device/sensor management should show all three parameters at the same time to allow users to make these decisions.
+%
+%For the second aspect, data storage had a very strong impact, while the action had the weakest impact. Additionally, there were no interactions between these two parameters, nor did they interact with any of the other parameters. This suggests that data storage and use can be separated in our privacy-setting interface. 
 
 \section{Privacy-Setting Prototype Design}\label{sec:design_stat}
-Designers of household IoT privacy-setting interfaces face a difficult challenge. Since there currently exists no centralized system for setting one's household IoT privacy settings, designers must rely on existing data (cf.~\cite{lee2016understanding}) or self-collected survey results (cf. this paper) to inform the design of these interfaces. Moreover, these privacy-setting interfaces will likely be complex, as they require users to navigate settings for the collection of various types of data for multiple purposes across various devices. 
 
 Our dataset presents a simplified version of possible scenarios one might encounter in routine usage of smart home technology. Still it is a daunting task to design an interface, even for these simplified scenarios: We want to enable users to navigate their information collection and sharing preferences across 12 different sources (\emph{What}), 7 different devices trying to access this information \emph{Who} for 4 different \emph{Purposes}. Additionally, this information is being stored/shared in 3 ways (\emph{Storage}) and being used for 4 different longer-term \emph{Actions}. 
 
-In this section we present our prototype, which is based on the observations made from our statistical analysis. Section~\ref{sec:design_ml} extends this prototype to cover findings from our machine learning analysis to create default privacy profiles, but before we do so, we first want to design an intuitive interface that gives users manual control over their privacy settings. This interface should be able to present a vast amount of settings information in a concise and understandable manner, and allow some users to set their settings with little effort at a coarse level while still allowing others to spend the effort to micro-manage their privacy settings in more detail. 
+Based on our statistical analysis in~\ref{sec:statAlys2}, we developed an intuitive interface that gives users manual control over their privacy settings. We split our settings interface into two separate sections: `Device/Sensor Management' and `Data Storage \& Use'. The landing page of our design (screen 1 in Figure~\ref{fig:interface2}) gives users access to these two sections. The former section is based on \emph{Who}, \emph{What} and \emph{Purpose} and allows users to ``Manage device access to data collected in your home'' (screen 2-3). The latter section is based on \emph{Storage} and \emph{Action}, and allows users to ``Manage the storage and long-term use of data collected in your home'' (screen 4). Both sections are explained in more detail below.
 
-Our statistical analysis (see Section~\ref{sec:inspect}) reveals what the most significant parameters are in our dataset, as well as which parameters interact with each other. The results show that the \emph{Storage} parameter had by far the strongest effect on participants' decision to enable/disable the smart home feature described in the scenario. After Storage, \emph{Who}, \emph{What} and \emph{Purpose} had similar-sized effects. Moreover, we found fairly strong significant two-way interaction effects between these parameters. Finally, the \emph{Action} parameter had a weak but still significant effect. 
-
-Based on these results, we decided to split our settings interface into two separate sections: `Device/Sensor Management' and `Data Storage \& Use'. The landing page of our design (screen 1 in Figure~\ref{fig:access_interface}) gives users access to these two sections. The former section is based on \emph{Who}, \emph{What} and \emph{Purpose} and allows users to ``Manage device access to data collected in your home'' (screen 2-3). The latter section is based on \emph{Storage} and \emph{Action}, and allows users to ``Manage the storage and long-term use of data collected in your home'' (screen 4). Both sections are explained in more detail below.
-
-\begin{figure*}
+\begin{figure}
 	\centering
-	\includegraphics[width=0.99\textwidth]{figures/interface.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/interface.pdf}
 	\caption{From left, screen 1 is the landing page of our manual settings interface, screen 2 is the Device/Sensor Management page, screen 3 shows the explanation when you click on ``I want to learn more'', and screen 4 is the Data Storage \& Use page.}
-	\label{fig:access_interface}
-\end{figure*}
+	\label{fig:interface2}
+\end{figure}
 
-\textbf{Device/Sensor Management:} This screen (Figure~\ref{fig:access_interface}, screen 2) allows users to control the \emph{Purposes} for which each device (\emph{Who}) is allowed to access data collected by itself, other devices, and the smart home sensors installed around the house (\emph{What}). This screen has a collapsible list of data-collecting devices and sensors (\emph{What}). For each device/sensor, the user can choose what devices can access the collected data (\emph{Who}; in rows), and what it may use that data for (\emph{Purpose}; in columns).
+\textbf{Device/Sensor Management:} This screen (Figure~\ref{fig:interface2}, screen 2) allows users to control the \emph{Purposes} for which each device (\emph{Who}) is allowed to access data collected by itself, other devices, and the smart home sensors installed around the house (\emph{What}). This screen has a collapsible list of data-collecting devices and sensors (\emph{What}). For each device/sensor, the user can choose what devices can access the collected data (\emph{Who}; in rows), and what it may use that data for (\emph{Purpose}; in columns).
 
-In the example of Figure~\ref{fig:access_interface}, the user does not give the `Refrigerator' access to information collected by the `Smart Assistant' for any of the four purposes, while they give the `Smart TV' access to this data for the purpose of giving `timely alerts'. In this example the `Smart Assistant' is allowed to use its own data to `automate operations' and to `know your location in your home'.
+In the example of Figure~\ref{fig:interface2}, the user does not give the `Refrigerator' access to information collected by the `Smart Assistant' for any of the four purposes, while they give the `Smart TV' access to this data for the purpose of giving `timely alerts'. In this example the `Smart Assistant' is allowed to use its own data to `automate operations' and to `know your location in your home'.
 
-Showing \emph{Who}, \emph{What} and \emph{Purpose} at the same time allows users to enable/disable specific combinations of settings---the significant interaction effects between these parameters suggest that this is a necessity. The icons for the \emph{Purpose} requirement allow this settings grid to fit on a smartphone or in-home control panel. We expect that users will quickly learn the meaning of these icons, but they can always click on `I want to know more' to learn their meaning (see Figure~\ref{fig:access_interface}, screen 3). 
+Showing \emph{Who}, \emph{What} and \emph{Purpose} at the same time allows users to enable/disable specific combinations of settings---the significant interaction effects between these parameters suggest that this is a necessity. The icons for the \emph{Purpose} requirement allow this settings grid to fit on a smartphone or in-home control panel. We expect that users will quickly learn the meaning of these icons, but they can always click on `I want to know more' to learn their meaning (see Figure~\ref{fig:interface2}, screen 3). 
 
 %If users want to further provide access for specific purpose, then they can click on `More'. Once users tap on `More' they are navigated to Screen-1 of the interface where they can see the different levels of `Purpose' parameter. By showing different levels of `Who' and `What' parameters on Screen-2, we account for the interaction effects between them, the user can now see both the levels at a time thereby making a decision on the grounds of both of these parameters. In Screen-1 we also account for interactions between `Who-What' and `Purpose' because at the bottom of this Screen, users see the flow of information across different device of the former parameters.
 
 %Although, `Purpose' seems to be slightly more important parameter as compared to `Who' and `What', while designing, we envisaged that the interaction effects between `Who' and `What' play a more dominant role and showing different devices involved in the latter parameters would help users gain a quicker grasp over the flow of information in the system.
 
-\textbf{Data Storage \& Use:} This screen (Figure~\ref{fig:access_interface}, screen 4) allows users to control how their data is stored and shared (\emph{Storage}), as well as how stored data is used (\emph{Action}). These settings are independent from each other and from the Device/Sensor Management settings. 
+\textbf{Data Storage \& Use:} This screen (Figure~\ref{fig:interface2}, screen 4) allows users to control how their data is stored and shared (\emph{Storage}), as well as how stored data is used (\emph{Action}). These settings are independent from each other and from the Device/Sensor Management settings. 
 
-For `Storage \& Sharing', users can choose to turn storage off altogether, store data locally, store data both locally and on a remote server, or store data locally and on a remote server \emph{and} allow the app to share the data with third parties. Note that the options for \emph{Storage} are presented as ordered, mutually exclusive settings. Our scenarios did not present them as such (i.e., participants were free to reject local storage but allow remote storage). However, the \emph{Storage} parameter showed a very clear separation of levels (see Figure~\ref{fig:storage_post} in the Appendix), so this presentation is justified. For `Data Use', the users can choose to enable/disable the use of the collected data for various secondary purposes: behavioral insights, recommendations, service optimization, and/or other purposes.
+For `Storage \& Sharing', users can choose to turn storage off altogether, store data locally, store data both locally and on a remote server, or store data locally and on a remote server \emph{and} allow the app to share the data with third parties. Note that the options for \emph{Storage} are presented as ordered, mutually exclusive settings. Our scenarios did not present them as such (i.e., participants were free to reject local storage but allow remote storage). However, the \emph{Storage} parameter showed a very clear separation of levels%(see Figure~\ref{fig:storage_post} in the Appendix)
+, so this presentation is justified. For `Data Use', the users can choose to enable/disable the use of the collected data for various secondary purposes: behavioral insights, recommendations, service optimization, and/or other purposes.
 
 In the subsequent sections we describe the results from our machine learning analysis and further explain how these results impact the designs presented in this section. For this purpose, Section~\ref{sec:design_ml} revisits the interface designs presented here.
 
 \section{Predicting users' behaviors}\label{sec:predict}
-In this section we predict participants' \textit{enable}/\textit{disable} decision using machine learning methods. Our goal is to find suitable default settings for our IoT privacy-setting interface. Consequently, we do not attempt to find the best possible solution; instead we make a conscious trade-off between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user.
+In this section we predict participants' \textit{enable}/\textit{disable} decision using machine learning methods. Similarly, we do not attempt to find the best possible solution; instead we make a conscious trade-off between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user.
 
-Our prediction target is the participants' decision to \textit{enable} or \textit{disable} the data collection described in each scenario. The scenario parameters serve as input attributes. These are nominal variables, making decision tree algorithms such as ID3 and J48 a suitable prediction approach. Unlike ID3, J48 uses gain ratio as the root node selection metric, which is not biased towards input attributes with many values. Moreover, by using J48 decision trees, the amount of pruning for the model can be easily manipulated to investigate the trade-off between the accuracy and parsimony. We therefore use J48 throughout our analysis.
+%Our prediction target is the participants' decision to \textit{enable} or \textit{disable} the data collection described in each scenario. The scenario parameters serve as input attributes. These are nominal variables, making decision tree algorithms such as ID3 and J48 a suitable prediction approach. Unlike ID3, J48 uses gain ratio as the root node selection metric, which is not biased towards input attributes with many values. Moreover, by using J48 decision trees, the amount of pruning for the model can be easily manipulated to investigate the trade-off between the accuracy and parsimony. We therefore use J48 throughout our analysis.
 
-Using Java and Weka's Java library~\cite{witten2016data} for modeling and evaluation, we implement progressively sophisticated methods for predicting participants' decisions. After discussing naive (enable/disable all) solutions and One Rule Prediction, we first present a cross-validated tree learning solution that results in a single ``smart default'' setting that is the same for everyone. Subsequently, we discuss three different procedures that create a number of ``smart profiles'' by clustering the participants and creating a separate cross-validated tree for each cluster. For each procedure, we try various numbers of clusters and pruning parameters. The solutions with the most parsimonious trees and the highest accuracies of each approach are reported in Table~\ref{tab:comp_approach}; more detailed results of the parsimony/accuracy trade-off are presented in Figures~\ref{fig:smart_default_optimal}, \ref{fig:attitudesum}, \ref{fig:conglosum} and \ref{fig:fitsum} throughout the paper, and combined in Figure~\ref{fig:summary}.
+Our prediction target is the participants' decision to \textit{enable} or \textit{disable} the data collection described in each scenario. The scenario parameters serve as input attributes. Using Java and Weka's Java library~\cite{witten2016data} for modeling and evaluation, we implement progressively sophisticated methods for predicting participants' decisions. After discussing naive (enable/disable all) solutions and One Rule Prediction, we first present a cross-validated tree learning solution that results in a single ``smart default'' setting that is the same for everyone. Subsequently, we discuss three different procedures that create a number of ``smart profiles'' by clustering the participants and creating a separate cross-validated tree for each cluster. For each procedure, we try various numbers of clusters and pruning parameters. The solutions with the most parsimonious trees and the highest accuracies of each approach are reported in Table~\ref{tab:comp_approach}; more detailed results of the parsimony/accuracy trade-off are presented in Figures~\ref{fig:smart_default_optimal}, \ref{fig:attitudesum}, \ref{fig:conglosum} and \ref{fig:fitsum} throughout the paper, and combined in Figure~\ref{fig:summary}.
 
 \newcommand{\specialcell}[2][c]{%
 	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
@@ -446,8 +422,8 @@ As shown in Figure~\ref{fig:oneR}, the OneR model predicts users' decision solel
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/oneR.png}
-	\caption{A ``smart default'' setting based on the ``One Rule" algorithm (4 nodes, accuracy: 61.39\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/oneR.png}
+	\caption{A ``smart default'' setting based on the ``One Rule" algorithm (4 nodes, accuracy: 61.39\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:oneR}
 \end{figure}
 
@@ -471,8 +447,8 @@ The resulting tree has an accuracy of 63.76\%. As shown in Figure~\ref{fig:smart
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/smartdefault025.png}
-	\caption{A ``smart default'' setting with 264 nodes (accuracy: 63.76\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.7\textwidth]{figures/smartdefault025.png}
+	\caption{A ``smart default'' setting with 264 nodes (accuracy: 63.76\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:smart_default}
 \end{figure}
 
@@ -513,15 +489,15 @@ Figure~\ref{fig:smart_default_optimal} summarizes accuracy as a function of pars
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/smart_default_optimal.pdf}
+	\includegraphics[width=0.6\textwidth]{figures/smart_default_optimal.pdf}
 	\caption{Parsimony/accuracy comparison for Naive, One Rule, and Overall Prediction}
 	\label{fig:smart_default_optimal}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/smartdefault001.png}
-	\caption{A ``smart default'' setting with only 8 nodes (accuracy: 63.32\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/smartdefault001.png}
+	\caption{A ``smart default'' setting with only 8 nodes (accuracy: 63.32\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:smart_default_new}
 \end{figure}
 
@@ -593,7 +569,7 @@ For the 2-cluster solutions (the blue line in Figure~\ref{fig:attitudesum}), the
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/fit_2_profile001.png}
-	\caption{The most parsimonious 2-profile attitude-based solution (2 nodes/profile, accuracy: 69.44\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\caption{The most parsimonious 2-profile attitude-based solution (2 nodes/profile, accuracy: 69.44\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:att_2_profile}
 \end{figure}
 
@@ -611,8 +587,8 @@ The 3-profile solution with an average of 18.33 nodes per profile and 73.26\% ac
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/attitude_3_profile.png}
-	\caption{A 3-profile solution example of attitude-based clustering (18.33 nodes/profile, accuracy: 73.26\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.7\textwidth]{figures/attitude_3_profile.pdf}
+	\caption{A 3-profile solution example of attitude-based clustering (18.33 nodes/profile, accuracy: 73.26\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:attitude_3profile}
 \end{figure}
 
@@ -664,7 +640,7 @@ To fit the trees, we use the J48 classifier with a Confidence Factor ranging fro
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/congloSum2.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/congloSum2.pdf}
 	\caption{Parsimony/accuracy comparison for agglomerative clustering}
 	\label{fig:conglosum}
 \end{figure}
@@ -673,8 +649,8 @@ The best 4-cluster solution has an average of 2 nodes per profile and an accurac
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/conglo_4_profile001.png}
-	\caption{The best 4-profile agglomerative clustering solution (2 nodes/profile, accuracy: 79.40\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/conglo_4_profile001.png}
+	\caption{The best 4-profile agglomerative clustering solution (2 nodes/profile, accuracy: 79.40\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:conglo_4_profile001}
 \end{figure}
 
@@ -682,8 +658,8 @@ The best 5-cluster solution has an average of 2.4 nodes per profile and an accur
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/conglo_5_profile001.png}
-	\caption{The best 5-profile agglomerative clustering solution (2.4 nodes/profile, Accuracy: 80.35\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/conglo_5_profile001.png}
+	\caption{The best 5-profile agglomerative clustering solution (2.4 nodes/profile, Accuracy: 80.35\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:conglo_5_profile001}
 \end{figure}
 
@@ -691,8 +667,8 @@ Finally, the best 6-cluster solution\footnote{There is another solution with sli
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/conglo_6_profile001.png}
-	\caption{The best 6-profile agglomerative clustering solution (3.17 nodes/profile, Accuracy: 80.68\% ). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/conglo_6_profile001.png}
+	\caption{The best 6-profile agglomerative clustering solution (3.17 nodes/profile, Accuracy: 80.68\% ). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:conglo_6_profile001}
 \end{figure}
 
@@ -710,7 +686,7 @@ We perform this approach to obtain 2-, 3-, 4-, and 5-cluster solutions. To fit t
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/fitSum.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/fitSum.pdf}
 	\caption{Parsimony/accuracy comparison for fit-based clustering}
 	\label{fig:fitsum}
 \end{figure}
@@ -721,8 +697,8 @@ For the 3-cluster solutions (the orange line in Figure~\ref{fig:fitsum}), the hi
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/fit_3_profile001.png}
-	\caption{The most parsimonious 3-profile fit-based solution (7 nodes/profile, accuracy: 79.80\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/fit_3_profile001.png}
+	\caption{The most parsimonious 3-profile fit-based solution (7 nodes/profile, accuracy: 79.80\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:fit_3_profile001}
 \end{figure}
 
@@ -730,8 +706,8 @@ For the 4-cluster solutions (the grey line in Figure~\ref{fig:fitsum}), the high
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/fit_4_profile010.png}
-	\caption{The most parsimonious 4-profile fit-based solution (9.25 nodes/profile, accuracy: 81.88\% ). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/fit_4_profile010.png}
+	\caption{The most parsimonious 4-profile fit-based solution (9.25 nodes/profile, accuracy: 81.88\% ). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:fit_4_profile010}
 	\vspace{20px}
 \end{figure}
@@ -740,8 +716,8 @@ For the 5-cluster solutions (the yellow line in Figure~\ref{fig:fitsum}), the hi
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/fit_5_profile001.png}
-	\caption{The most parsimonious 5-profile fit-based solution (4.2 nodes/profile, accuracy: 82.92\% ). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/fit_5_profile001.png}
+	\caption{The most parsimonious 5-profile fit-based solution (4.2 nodes/profile, accuracy: 82.92\% ). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:fit_5_profile001}
 \end{figure}
 
@@ -788,12 +764,12 @@ Figure~\ref{fig:summary} shows a comparison of the presented approaches. The X-a
 
 \begin{figure*}
 	\centering
-	\includegraphics[width=\textwidth]{figures/summaryAll.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/summaryAll.pdf}
 	\caption{Summary of All our Approaches}
 	\label{fig:summary}
 \end{figure*}
 
-The most parsimonious 2-profile fit-based solution (with an accuracy of 74.43\%) is the \emph{simplest} of all ``smart profile'' solutions: one profile is simply ``disable all'', while the other profile is the same as our OneR solution: ``disable sharing with third parties''. In fact, these profiles are so simple, that one might not even want to bother with presenting them to the user: in our current interface (see Figure~\ref{fig:access_interface}) these defaults are incredibly easy for users to implement by themselves.
+The most parsimonious 2-profile fit-based solution (with an accuracy of 74.43\%) is the \emph{simplest} of all ``smart profile'' solutions: one profile is simply ``disable all'', while the other profile is the same as our OneR solution: ``disable sharing with third parties''. In fact, these profiles are so simple, that one might not even want to bother with presenting them to the user: in our current interface (see Figure~\ref{fig:interface2}) these defaults are incredibly easy for users to implement by themselves.
 
 The same is true for the 4-profile agglomerative clustering solution (see Figure~\ref{fig:conglo_4_profile001}) and the 5-profile agglomerative clustering solution (see Figure~\ref{fig:conglo_5_profile001}): these profiles involve little more than a single high-level setting, which users can likely easily make by themselves. 
 
@@ -811,20 +787,20 @@ There is another 5-profile fit-based solution with a slightly higher accuracy (8
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/fit_5_profile003.png}
-	\caption{A good 5-profile fit-based clustering solution (5 nodes/profile, Accuracy: 83.11\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter}.}
+	\includegraphics[width=0.6\textwidth]{figures/fit_5_profile003.png}
+	\caption{A good 5-profile fit-based clustering solution (5 nodes/profile, Accuracy: 83.11\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
 	\label{fig:fit_5_profile003}
 \end{figure}
 
 Other usable solutions are the 3-profile fit-based solution (Figure~\ref{fig:fit_3_profile001}) or the 4-profile fit-based solution (Figure~\ref{fig:fit_4_profile010}. However, like almost all of the less parsimonious solutions, these profiles involve higher-order interaction effects, e.g. between \textbf{Storage}, \textbf{Purpose}, and \textbf{Action}; and between \textbf{Storage}, \textbf{Purpose}, and \textbf{Who}. Consequently, a rather more complex interface is needed to accommodate these default profiles.
 
 \section{Privacy-Setting Prototype Design Using Machine Learning Results}\label{sec:design_ml}
-In Section~\ref{sec:design_stat} we developed a prototype interface that household IoT users can use to manually set their privacy settings (see Figure~\ref{fig:access_interface}). Our machine learning analysis (Section~\ref{sec:predict}) resulted in a number of interesting solutions for ``smart profiles'' that would allow users of this interface to set their privacy settings with a single click (i.e., a choice of profile). While some of these profiles can be integrated in our prototype (e.g., the most parsimonious 2-profile fit-based solution and the 4-profile and 5-profile agglomerative solutions) other profiles have an interaction effect between variables that are modeled as independent in our current prototype interface (e.g., the two 5-profile fit-based solutions presented in Figures~\ref{fig:fit_5_profile001} and~\ref{fig:fit_5_profile003}).
+In Section~\ref{sec:design_stat} we developed a prototype interface that household IoT users can use to manually set their privacy settings (see Figure~\ref{fig:interface2}). Our machine learning analysis (Section~\ref{sec:predict}) resulted in a number of interesting solutions for ``smart profiles'' that would allow users of this interface to set their privacy settings with a single click (i.e., a choice of profile). While some of these profiles can be integrated in our prototype (e.g., the most parsimonious 2-profile fit-based solution and the 4-profile and 5-profile agglomerative solutions) other profiles have an interaction effect between variables that are modeled as independent in our current prototype interface (e.g., the two 5-profile fit-based solutions presented in Figures~\ref{fig:fit_5_profile001} and~\ref{fig:fit_5_profile003}).
 
 In this section we therefore present two modified prototypes that are designed to be compatible with these two 5-profile solutions. These two solutions are not the most accurate, but they produce a parsimonious set of profiles that require only minimal alterations to our interface design. They thus provide the optimal trade-off between reduction accuracy, profile parsimony, and interface complexity.
 
 \subsection{Interface for the 5-profile fit-based solution with an accuracy of 82.92\%}\label{sec:fit_simple}
-This machine learning solution (Figure~\ref{fig:fit_5_profile001}) requires an interaction between the \emph{Storage} parameter and the \emph{Purpose} parameter---two parameters that are controlled independently in the prototype in Figure~\ref{fig:access_interface}. Our solution is to slightly alter the interface, and add the profile selection page at the beginning of the interface (see Figure~\ref{fig:cluster_simple}): 
+This machine learning solution (Figure~\ref{fig:fit_5_profile001}) requires an interaction between the \emph{Storage} parameter and the \emph{Purpose} parameter---two parameters that are controlled independently in the prototype in Figure~\ref{fig:interface2}. Our solution is to slightly alter the interface, and add the profile selection page at the beginning of the interface (see Figure~\ref{fig:cluster_simple}): 
 \begin{itemize}
 	\item \textbf{Screen 1:} On this screen users choose their most applicable default profile. For some users, the selected profile accurately represents their preferences, while others may want to adjust the individual settings manually.
 	\item \textbf{Screen 2:} After clicking `Next', users are given the option to select `Storage/Sharing  \& Device/Sensor Management' or `Data Use'.
@@ -835,7 +811,7 @@ This machine learning solution (Figure~\ref{fig:fit_5_profile001}) requires an i
 
 \begin{figure*}
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/cluster_simple.pdf}
+	\includegraphics[width=0.8\textwidth]{figures/cluster_simple.pdf}
 	\caption{Design for 5-Profile solution presented in Section~\ref{sec:fit_simple}. From top left, screen 1 is the profile selection page, screen 2 is the slightly altered landing page of our manual settings interface, screen 3 is the slightly altered Data Storage page, screen 4 (bottom left) is the Device/Sensor Management page, and screen 5 is the Data Use page.}
 	\label{fig:cluster_simple}
 \end{figure*}
@@ -852,7 +828,7 @@ The alternative machine learning solution presented in Figure~\ref{fig:fit_5_pro
 
 \begin{figure*}
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/cluster_complex.pdf}
+	\includegraphics[width=0.8\textwidth]{figures/cluster_complex.pdf}
 	\caption{Design for 5-Profile solution presented in Section~\ref{sec:fit_complex}. From top left, screen 1 is the profile selection page, screen 2 is the slightly altered Data Storage page, screen 3 follows the `More' button to offer access to screen 4 (bottom left, the Data Use page) and screen 5 (bottom right, the Device/Sensor Management page).}
 	\label{fig:cluster_complex}
 \end{figure*}

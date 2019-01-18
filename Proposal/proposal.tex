@@ -87,12 +87,12 @@
 	\singlespacing                             % Single space the lists
 	\input{publication.tex} \clearpage
 	\tableofcontents \clearpage                % Generate the Table of Contents
-	%\addtotoc{List of Tables}{\listoftables}   % Generate the List of Tables
-	%\addtotoc{List of Figures}{\listoffigures} % Generate the List of Figures
-	%% \addtotoc{List of Listings}{\lstlistoflistings}
+	\addtotoc{List of Tables}{\listoftables}   % Generate the List of Tables
+	\addtotoc{List of Figures}{\listoffigures} % Generate the List of Figures
+	%\addtotoc{List of Listings}{\lstlistoflistings}
 	
 	\doublespacing % Text should be double spaced
-	\addtotoc{Abstract}{\input{abstract.tex}}  % Generate the abstract
+	%\addtotoc{Abstract}{\input{abstract.tex}}  % Generate the abstract
 	
 	%  ===========================================================================
 	\mainmatter % Begin main matter (pages are numbered with Arabic numerals)
@@ -102,11 +102,11 @@
 	\setcounter{page}{1}
 	\input{introduction.tex}
 	\input{motivation.tex}
-	\input{relatedWork.tex}
 	\input{chapter4.tex}
 	\input{chapter5.tex}
-	\input{chapter6.tex}
+%	\input{chapter6.tex}
 	\input{proposedwork.tex}
+	\input{relatedWork.tex}
 	\input{conclusion.tex}
 	
 	%
@@ -114,13 +114,13 @@
 	% If you do not wish to include an appendix, comment out these lines.
 	% If you want just one, see the formatting guidelines.
 	%
-	\begin{appendices}
-		\begin{subappendices}
-			\inputfile{appendixA.tex}
-			\inputfile{appendixB.tex}
-			\inputfile{appendixC.tex}
-		\end{subappendices}
-	\end{appendices}
+%	\begin{appendices}
+%		\begin{subappendices}
+%			\inputfile{appendixA.tex}
+%			\inputfile{appendixB.tex}
+%			\inputfile{appendixC.tex}
+%		\end{subappendices}
+%	\end{appendices}
 	
 	
 	
@@ -155,4 +155,11 @@
 	%
 	\bibliographystyle{plain}
 	\addtotoc{Bibliography}{\bibliography{bibliography}}
+		\begin{appendices}
+		\begin{subappendices}
+			\inputfile{appendixA.tex}
+			\inputfile{appendixB.tex}
+			\inputfile{appendixC.tex}
+		\end{subappendices}
+	\end{appendices}
 \end{document}

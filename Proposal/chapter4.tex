@@ -1,7 +1,7 @@
 % !TeX root = proposal.tex
 \chapter{Recommending Privacy Preference for General Public IoT}\label{chapter:generalIoT}
 
-In chapter~\ref{chapter:Motivation} and \ref{chapter:Relatedwork}, we have discussed \textcolor{red}{what are the key factors that affecting users to adopt or accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.}
+In chapter~\ref{chapter:Acceptability}, we have discussed what are the key factors that affecting users to adopt or accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.
 
 In this chapter, we demonstrate our work completed in exploring recommending privacy preference for general IoT, including the data-driven design, the dataset that we use, the inspection of users' behaviors using statistical analyses, prediction of users' behaviors using machine learning techniques, and the privacy-setting prototypes that we create based on both statistical and machine learning results.
 
@@ -11,16 +11,14 @@ This chapter is to answer the following questions:
 	\item Q2: Can you cluster users of general IoT and provide them effective and accurate smart default/profiles of privacy-settings using machine learning techniques?
 \end{itemize}
 
-\textcolor{red}{As we have already discussed, there is similarity in people’s privacy preferences. Therefore,
+As we have already discussed, there is similarity in people’s privacy preferences. Therefore,
 neighbourhood-based recommendations may be as accurate as model-based recommendations.
 Furthermore, neighbourhood-based recommendations are made from crowdsourcing sources,
 which means that their performance may be better than that of model-based recommenders when
-the data of individual users are insufficient.}
+the data of individual users are insufficient.
 
 \section{Dataset and design}
-As we have discussed in Chapter \ref{chapter:Motivation}, the development of usable privacy interfaces commonly relies on user studies with existing systems. Since the Intel control framework has yet to be implemented~\cite{chow2015hci}, this method is not possible. We therefore leverage an existing dataset collected by Lee and Kobsa~\cite{lee2016understanding}, who asked users whether they would allow or deny IoT devices in their environment to collect information about them. A total of 2800 scenarios were presented to 200 participants (100 male, 99 female, 1 undisclosed) through Amazon Mechanical Turk. Four participants were aged between 18 and 20, 75 aged 20--30, 68 aged 30--40, 31 aged 40--50, 20 aged 50--60, and 2 aged $>$ 60. 
-
-Each participant was presented with 14 scenarios describing a situation where an IoT device would collect information about the participant. Each scenario was a combination of five contextual parameters (Table~\ref{tab:parameter}), manipulated at several levels using a mixed fractional factorial design that allowed us to test main effects and two-way interactions between all parameters.
+As we have discussed in Chapter \ref{chapter:Motivation}, the development of usable privacy interfaces commonly relies on user studies with existing systems. Since the Intel control framework has yet to be implemented~\cite{chow2015hci}, this method is not possible. We therefore we leveraged data collected by Lee and Kobsa~\cite{lee2016understanding}, which asked 200 participants about their intention to allow or reject the IoT features presented in 14 randomized scenarios. They varied the scenarios in a mixed fractional factorial design along the following dimensions: `Who', `What', `Where', `Reason', and `Persistence' (See Table~\ref{tab:parameter}). A total of 2800 scenarios were presented to 200 participants (100 male, 99 female, 1 undisclosed) through Amazon Mechanical Turk. Four participants were aged between 18 and 20, 75 aged 20--30, 68 aged 30--40, 31 aged 40--50, 20 aged 50--60, and 2 aged $>$ 60.
 
 For every scenario, participants were asked a total of 9 questions. Our study focuses on the \textbf{allow/reject} question: ``If you had a choice to allow/reject this, what would you choose?'', with options ``I would allow it'' and ``I would reject it''. We also used participants' answers to three attitudinal questions regarding the scenario:
 \begin{itemize}
@@ -88,142 +86,153 @@ In our second phase, we develop a ``smart'' default setting, which preempts the 
 
 \section{Statistical Analysis}
 
+%
+%In this section we analyze how users' behavioral intentions to allow or reject the information collection described in the scenario are influenced by the scenario parameters. In line with classic attitude-behavior models~\cite{ajzen1977attitude}, we also investigate whether users' attitudes regarding the scenario---their judgment of risk, comfort, and appropriateness---mediate these effects. This mediation analysis~\cite{baron1986moderator} involves the following test:
+%\begin{itemize}
+%\item \textbf{Test 1:} The effect of the scenario parameters (who, what, where, reason, persistence) on participants' attitudes (risk, comfort, appropriateness).
+%\item \textbf{Test 2:} The effect of participants' attitudes on their behavioral intentions (the allow/reject decision).
+%\item \textbf{Test 3:}  The effect of the parameters on behavioral intentions, controlling for attitudes.
+%\end{itemize}
+%
+%If tests 1 and 2 are significant, and test 3 reveals a substantial reduction in conditional direct effect (compared to the marginal effect), then we can say that the effects of the scenario parameters on participants' behavioral intention are mediated by their attitudes. Moreover, if the conditional direct effect is (close to) zero, then the effects are fully (rather than partially) mediated.
+%
+%\subsection{Scenario Parameters and Attitude}\label{subsec:attitude}
+%\subsubsection{ANOVA Test of Main Effects}
+%To understand the effect of the scenario parameters on participants' attitudes, we created a separate \textit{linear mixed effects regression} (\textit{lmer}) model with a random intercept (to account for repeated measures on the same participant) for each dependent variable (risk, comfort, appropriateness), using the scenario parameters as independent variables. We employed a forward stepwise procedure, adding the strongest remaining parameter into the model at each step and comparing it against the previous model. Table~\ref{tab:anovaEffect} shows that all parameters except \textbf{where} have a significant effect on each of the attitudes.
+%
+%\subsubsection{Post-hoc Comparisons}
+%We also conducted Tukey post hoc analyses to better understand how the various values of each parameter influenced the attitudes. \textbf{Where} was excluded from these analyses, as it did not have an overall significant effect. Some key findings of these post hoc analyses are:
+%
+%\begin{table}
+%\centering
+%\caption{Effect of scenario on attitudes. Each model builds upon and is tested against the previous.}
+%\label{tab:anovaEffect}
+%\begin{tabular}{ l | r | r | r}
+%\hline
+%Model &	$\chi^2$ &	$df$ & $p$-value \\ \hline
+%$risk\sim(1|sid)$ &				 &			 &						\\
+%+who &				315.37 &	6 &			$<$ .0001 		\\
+%+what &			67.74 &		23 &		$<$ .0001 		\\
+%+reason & 			15.65 &		5 &		.0079 			\\
+%+persistence &		9.95 &		1 &		.0016 			\\
+%+where	&			7.47 &		3 &		.0586 			\\
+%+who:what &		166.47 &	138 &	.0050			\\
+%\hline
+%Model &	$\chi^2$ &	$df$ & $p$-value \\ \hline
+%$comfort\sim(1|sid)$ & 			 &			&	 					\\
+%+who &				334.06 &	6 &			$<$ .0001 		\\
+%+what &			83.24 &		23 &		$<$ .0001 		\\
+%+reason &			18.68 &		5 &			.0022 		\\
+%+persistence &		14.73 &		1 &			.0001 		\\
+%+where &			3.25 &		3 &			.3544 		\\
+%+who:what &		195.07 &	138 &		.0001			\\
+%\hline
+%Model &	$\chi^2$ &	$df$ & $p$-value \\ \hline
+%$appropriateness\sim(1|sid)$ &	 &		 &						\\
+%+who &				315.77 &	6 &			$<$ .0001 		\\
+%+what &			72.87 &		23 &		$<$ .0001 		\\
+%+reason &			23.27 &		5 &			.0003 		\\
+%+persistence &		8.97 &		1 &			.0027 		\\
+%+where &			5.46 &		3 &			.1411 		\\
+%+who:what &		214.61 &	138 &		$<$ .0001			\\
+%\hline
+%\end{tabular}
+%\end{table}
+%
+%\textbf{Who:} Participants perceive more \emph{risk} when the recipient of the information is `unknown' than for any other recipient ($d$ range = [0.640, 1.450] and all $p$s~$<$~.001, except for `government': $d=0.286$, $p < .05$). `Government' is the next most risky recipient ($d$ range = [0.440, 1.190], all $p$s~$<$~.001). Participants consider their `own device' the least risky ($d$ range = [0.510, 1.450], all $p$s~$<$~.001). Similar patterns were found for \emph{comfort} and \emph{appropriateness}.
+%
+%\textbf{Reason:} Participants were more \emph{comfortable} disclosing information for the purpose of `safety' than for any other reason except `health' ($d$ range = [0.230, 0.355], all $p$s~$<$~.05). They also believe that disclosing information for the purpose of `health' or `safety' is more \emph{appropriate} than for `social' or `commercial' purposes ($d$ range = [0.270, 0.310], all $p$s~$<$~.05).
+%
+%\textbf{Persistence:} Participants were more \emph{comfortable}, found it more \emph{appropriate}, and less \emph{risky} to disclose their information `once' rather than `continuously' ($d = 0.146$, $p < .01$).
+%
+%\textbf{What:} This parameter has a large number of values, so we decided to selectively test planned contrasts instead of post-hoc tests. We first compared different mediums (voice, photo, video) regardless of what is being inferred:
+%\begin{itemize}
+%\item Participants were significantly more \emph{comfortable} with `voice' than `video' ($d = 0.260$, $p = .005$), and found `voice' less \emph{risky} ($d = -0.239$, $p = .005$) and more \emph{appropriate} ($d = 0.217$, $p = .015$) than `video'.
+%\item Participants were significantly more \emph{comfortable} with `voice' than `photo' ($d=0.201$, $p = .007$) and found `voice' more \emph{appropriate} than `photo' ($d = 0.157$, $p$~$=$~$.028$). There was no significant difference in terms of \emph{risk} ($p = .118$).
+%\item No differences were found between `photo' and `video' in terms of \emph{risk} ($p = .24$), \emph{comfort} ($p = .35$) and \emph{appropriateness} ($p = .26$).
+%\end{itemize}
+%
+%We also compared different inferences (e.g. age, gender, mood, identity) across mediums. The following planned contrasts were significant (all others were not):
+%\begin{itemize}
+%\item Participants were significantly more \emph{comfortable} ($d$~$=$~$0.363$, $p = .028$) and found it more \emph{appropriate} ($d = 0.371$, $p = .018$) to reveal their `age' rather than their `identity'.
+%\item Participants were significantly more \emph{comfortable} ($d$~$=$~$0.363$, $p= .008$) and found it more \emph{appropriate} ($d = 0.308$, $p = .024$) to reveal their `presence' rather than their `identity'.
+%\end{itemize}
+%
+%\subsubsection{Interaction effects}
+%We also checked for two-way interactions between the scenario parameters. The only significant interaction effect observed was between \textbf{who} and \textbf{what}. The last line of each section in Table~\ref{tab:anovaEffect} shows the results of adding this interaction to the model. Due to space concerns, we choose not to address the post-hoc analysis of the $7 * 24 = 168$ specific combinations of who and what.
+%
+%\subsection{Attitude and Behavioral intention}
+%To test the effects of participants' attitudes on their allow/reject decision, we ran a \emph{generalized linear mixed effects regression} (\emph{glmer}) with a random intercept and a logit link function to account for the binary dependent variable.
+%We found significant effects of all the three attitudes on participants' allow/reject decision (see Table~\ref{tab:mediationANOVA}). Each 1-point increase in \textbf{risk} results in a 4.04-fold decrease in the odds that the scenario will be allowed ($p < .0001$). Each 1-point increase in \textbf{comfort} results in a 5.04-fold increase ($p < .0001$), and each 1-point increase in \textbf{appropriateness} results in a 3.47-fold increase ($p < .0001$).
+%
+%\subsection{Mediation Analysis}
+%The bottom half of Table~\ref{tab:mediationANOVA} shows the \emph{conditional} effects of the significant parameters (who, what, reason, persistance) on participants' allow/reject decision, controlling for attitude. \textbf{Who} and \textbf{what} are no longer significant; these effects are thus fully mediated by attitude. The effects of \textbf{reason} and \textbf{persistance} are still significant, but smaller than the marginal effects (i.e., without controlling for attitude, see Table~\ref{tab:marginalANOVA})---their $\chi^2$s are reduced by 12\% and 39\%, respectively. This means that the mediation effect was substantial in all cases. The final mediation model is displayed in Figure~\ref{fig:mediationAllow}.
+%
+%
+%\begin{table}
+%\centering
+%\caption{Effect of attitudes and scenario on allow/reject.}
+%\label{tab:mediationANOVA}
+%\begin{tabular}{ l | r | r | r | r }
+%\hline
+%Model & OR	&	\textbf{$\chi^2$} & $df$ & $p$-value 	\\ \hline
+%$allow\sim(1 | sid)$ &	&		  &	    &				\\
+%+risk &				0.25 &	1005.24  &    1 &		$<$ .0001 \\
+%+comfort &			5.04 &	723.27  &     1 &		$<$ .0001 \\
+%+appropriateness &	3.47 &	128.17  &	  1 & 		$<$ .0001 \\ \hline
+%+who &					&	8.80	& 	  6 & 		.1851 	\\
+%+what &					&	26.07 &	  	 23 &		.2976 	\\
+%+reason &				&	19.33 & 	  5 & 		.0017	\\
+%+persistence &			&	12.69 &	 	  1 & 		.0004 	\\
+%\hline
+%\end{tabular}
+%\end{table}
+%
+%\begin{table}
+%\centering
+%\caption{Effect of scenario on allow/reject, \emph{not} controlling for attitudes.}
+%\label{tab:marginalANOVA}
+%\begin{tabular}{ l | r | r | r }
+%\hline
+%Model &	$\chi^2$ & $df$ & $p$-value 	\\ \hline
+%$allow\sim(1 | sid)$ &		  	&	    &				\\
+%+who &					221.36	& 	  6 & 		$<$ .0001 	\\
+%+what &					78.55 &		  23 &		$<$ .0001 	\\
+%+reason &				21.95 & 	  5 & 		  .0005		\\
+%+persistence &			20.64 &		  1 & 		$<$ .0001 	\\
+%\hline
+%\end{tabular}
+%\end{table}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.45\textwidth]{figures/allow.pdf}
+%\caption{Mediation model of the effect of scenario parameters on participants' intention to allow/reject the scenario, mediated by attitudinal factors}
+%\label{fig:mediationAllow}
+%\end{figure}
 
-In this section we analyze how users' behavioral intentions to allow or reject the information collection described in the scenario are influenced by the scenario parameters. In line with classic attitude-behavior models~\cite{ajzen1977attitude}, we also investigate whether users' attitudes regarding the scenario---their judgment of risk, comfort, and appropriateness---mediate these effects. This mediation analysis~\cite{baron1986moderator} involves the following test:
-\begin{itemize}
-\item \textbf{Test 1:} The effect of the scenario parameters (who, what, where, reason, persistence) on participants' attitudes (risk, comfort, appropriateness).
-\item \textbf{Test 2:} The effect of participants' attitudes on their behavioral intentions (the allow/reject decision).
-\item \textbf{Test 3:}  The effect of the parameters on behavioral intentions, controlling for attitudes.
-\end{itemize}
+%\subsection{Discussion of Statistical Results}
+We conducted a statistical analysis on this dataset to determine the effect of each scenario parameter on users' decisions to allow the presented general IoT scenario and how this effect is mediated by the user's attitudes.
 
-If tests 1 and 2 are significant, and test 3 reveals a substantial reduction in conditional direct effect (compared to the marginal effect), then we can say that the effects of the scenario parameters on participants' behavioral intention are mediated by their attitudes. Moreover, if the conditional direct effect is (close to) zero, then the effects are fully (rather than partially) mediated.
+Using this approach, we find that the `Who' parameter has the strongest effect on users' decision to allow the scenario, followed by the `What', the `Reason', and the 'Persistence' parameter. The `Where' parameter has no effect at all. People are generally concerned about IoT scenarios involving unknown and government devices, but less concerned about about data collected by their own devices. Mistrust of government data collection is in line with Li et al.'s finding regarding US audiences~\cite{li2017cross}.
 
-\subsection{Scenario Parameters and Attitude}\label{subsec:attitude}
-\subsubsection{ANOVA Test of Main Effects}
-To understand the effect of the scenario parameters on participants' attitudes, we created a separate \textit{linear mixed effects regression} (\textit{lmer}) model with a random intercept (to account for repeated measures on the same participant) for each dependent variable (risk, comfort, appropriateness), using the scenario parameters as independent variables. We employed a forward stepwise procedure, adding the strongest remaining parameter into the model at each step and comparing it against the previous model. Table~\ref{tab:anovaEffect} shows that all parameters except \textbf{where} have a significant effect on each of the attitudes.
+`What' is the second most important scenario parameter, and its significant interaction with `who' suggests that some users may want to allow/reject the collection of different types of data by different types of recipients. Privacy concerns are higher for photo and video than for voice, arguably because photos and videos are more likely to reveal the identity of a person. Moreover, people are less concerned with revealing their age and presence, and most concerned with revealing their identity.
 
-\subsubsection{Post-hoc Comparisons}
-We also conducted Tukey post hoc analyses to better understand how the various values of each parameter influenced the attitudes. \textbf{Where} was excluded from these analyses, as it did not have an overall significant effect. Some key findings of these post hoc analyses are:
+The `reason' for the data collection is the third most important scenario parameter. Health and safety are generally seen as acceptable reasons. `Persistence' is less important, although one-time collection is more acceptable than continuous collection. `Where' the data is being collected does not influence intention at all. This could be an artifact of the dataset: location is arguably less prominent when reading a scenario than it is in real life.
 
-\begin{table}
-\centering
-\caption{Effect of scenario on attitudes. Each model builds upon and is tested against the previous.}
-\label{tab:anovaEffect}
-\begin{tabular}{ l | r | r | r}
-\hline
-Model &	$\chi^2$ &	$df$ & $p$-value \\ \hline
-$risk\sim(1|sid)$ &				 &			 &						\\
-+who &				315.37 &	6 &			$<$ .0001 		\\
-+what &			67.74 &		23 &		$<$ .0001 		\\
-+reason & 			15.65 &		5 &		.0079 			\\
-+persistence &		9.95 &		1 &		.0016 			\\
-+where	&			7.47 &		3 &		.0586 			\\
-+who:what &		166.47 &	138 &	.0050			\\
-\hline
-Model &	$\chi^2$ &	$df$ & $p$-value \\ \hline
-$comfort\sim(1|sid)$ & 			 &			&	 					\\
-+who &				334.06 &	6 &			$<$ .0001 		\\
-+what &			83.24 &		23 &		$<$ .0001 		\\
-+reason &			18.68 &		5 &			.0022 		\\
-+persistence &		14.73 &		1 &			.0001 		\\
-+where &			3.25 &		3 &			.3544 		\\
-+who:what &		195.07 &	138 &		.0001			\\
-\hline
-Model &	$\chi^2$ &	$df$ & $p$-value \\ \hline
-$appropriateness\sim(1|sid)$ &	 &		 &						\\
-+who &				315.77 &	6 &			$<$ .0001 		\\
-+what &			72.87 &		23 &		$<$ .0001 		\\
-+reason &			23.27 &		5 &			.0003 		\\
-+persistence &		8.97 &		1 &			.0027 		\\
-+where &			5.46 &		3 &			.1411 		\\
-+who:what &		214.61 &	138 &		$<$ .0001			\\
-\hline
-\end{tabular}
-\end{table}
+Finally, participants' attitudes significantly (and in some cases fully) mediated the effect of scenario parameters on behavioral intentions. This means that these attitudes may be used as a valuable source for classifying people into distinct groups. Such attitudinal clustering could capture a significant amount of the variation in participants in terms of their preferred privacy settings, espcially with respect to the `who' and `what' dimensions.
 
-\textbf{Who:} Participants perceive more \emph{risk} when the recipient of the information is `unknown' than for any other recipient ($d$ range = [0.640, 1.450] and all $p$s~$<$~.001, except for `government': $d=0.286$, $p < .05$). `Government' is the next most risky recipient ($d$ range = [0.440, 1.190], all $p$s~$<$~.001). Participants consider their `own device' the least risky ($d$ range = [0.510, 1.450], all $p$s~$<$~.001). Similar patterns were found for \emph{comfort} and \emph{appropriateness}.
-
-\textbf{Reason:} Participants were more \emph{comfortable} disclosing information for the purpose of `safety' than for any other reason except `health' ($d$ range = [0.230, 0.355], all $p$s~$<$~.05). They also believe that disclosing information for the purpose of `health' or `safety' is more \emph{appropriate} than for `social' or `commercial' purposes ($d$ range = [0.270, 0.310], all $p$s~$<$~.05).
-
-\textbf{Persistence:} Participants were more \emph{comfortable}, found it more \emph{appropriate}, and less \emph{risky} to disclose their information `once' rather than `continuously' ($d = 0.146$, $p < .01$).
-
-\textbf{What:} This parameter has a large number of values, so we decided to selectively test planned contrasts instead of post-hoc tests. We first compared different mediums (voice, photo, video) regardless of what is being inferred:
-\begin{itemize}
-\item Participants were significantly more \emph{comfortable} with `voice' than `video' ($d = 0.260$, $p = .005$), and found `voice' less \emph{risky} ($d = -0.239$, $p = .005$) and more \emph{appropriate} ($d = 0.217$, $p = .015$) than `video'.
-\item Participants were significantly more \emph{comfortable} with `voice' than `photo' ($d=0.201$, $p = .007$) and found `voice' more \emph{appropriate} than `photo' ($d = 0.157$, $p$~$=$~$.028$). There was no significant difference in terms of \emph{risk} ($p = .118$).
-\item No differences were found between `photo' and `video' in terms of \emph{risk} ($p = .24$), \emph{comfort} ($p = .35$) and \emph{appropriateness} ($p = .26$).
-\end{itemize}
-
-We also compared different inferences (e.g. age, gender, mood, identity) across mediums. The following planned contrasts were significant (all others were not):
-\begin{itemize}
-\item Participants were significantly more \emph{comfortable} ($d$~$=$~$0.363$, $p = .028$) and found it more \emph{appropriate} ($d = 0.371$, $p = .018$) to reveal their `age' rather than their `identity'.
-\item Participants were significantly more \emph{comfortable} ($d$~$=$~$0.363$, $p= .008$) and found it more \emph{appropriate} ($d = 0.308$, $p = .024$) to reveal their `presence' rather than their `identity'.
-\end{itemize}
-
-\subsubsection{Interaction effects}
-We also checked for two-way interactions between the scenario parameters. The only significant interaction effect observed was between \textbf{who} and \textbf{what}. The last line of each section in Table~\ref{tab:anovaEffect} shows the results of adding this interaction to the model. Due to space concerns, we choose not to address the post-hoc analysis of the $7 * 24 = 168$ specific combinations of who and what.
-
-\subsection{Attitude and Behavioral intention}
-To test the effects of participants' attitudes on their allow/reject decision, we ran a \emph{generalized linear mixed effects regression} (\emph{glmer}) with a random intercept and a logit link function to account for the binary dependent variable.
-We found significant effects of all the three attitudes on participants' allow/reject decision (see Table~\ref{tab:mediationANOVA}). Each 1-point increase in \textbf{risk} results in a 4.04-fold decrease in the odds that the scenario will be allowed ($p < .0001$). Each 1-point increase in \textbf{comfort} results in a 5.04-fold increase ($p < .0001$), and each 1-point increase in \textbf{appropriateness} results in a 3.47-fold increase ($p < .0001$).
-
-\subsection{Mediation Analysis}
-The bottom half of Table~\ref{tab:mediationANOVA} shows the \emph{conditional} effects of the significant parameters (who, what, reason, persistance) on participants' allow/reject decision, controlling for attitude. \textbf{Who} and \textbf{what} are no longer significant; these effects are thus fully mediated by attitude. The effects of \textbf{reason} and \textbf{persistance} are still significant, but smaller than the marginal effects (i.e., without controlling for attitude, see Table~\ref{tab:marginalANOVA})---their $\chi^2$s are reduced by 12\% and 39\%, respectively. This means that the mediation effect was substantial in all cases. The final mediation model is displayed in Figure~\ref{fig:mediationAllow}.
-
-
-\begin{table}
-\centering
-\caption{Effect of attitudes and scenario on allow/reject.}
-\label{tab:mediationANOVA}
-\begin{tabular}{ l | r | r | r | r }
-\hline
-Model & OR	&	\textbf{$\chi^2$} & $df$ & $p$-value 	\\ \hline
-$allow\sim(1 | sid)$ &	&		  &	    &				\\
-+risk &				0.25 &	1005.24  &    1 &		$<$ .0001 \\
-+comfort &			5.04 &	723.27  &     1 &		$<$ .0001 \\
-+appropriateness &	3.47 &	128.17  &	  1 & 		$<$ .0001 \\ \hline
-+who &					&	8.80	& 	  6 & 		.1851 	\\
-+what &					&	26.07 &	  	 23 &		.2976 	\\
-+reason &				&	19.33 & 	  5 & 		.0017	\\
-+persistence &			&	12.69 &	 	  1 & 		.0004 	\\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}
-\centering
-\caption{Effect of scenario on allow/reject, \emph{not} controlling for attitudes.}
-\label{tab:marginalANOVA}
-\begin{tabular}{ l | r | r | r }
-\hline
-Model &	$\chi^2$ & $df$ & $p$-value 	\\ \hline
-$allow\sim(1 | sid)$ &		  	&	    &				\\
-+who &					221.36	& 	  6 & 		$<$ .0001 	\\
-+what &					78.55 &		  23 &		$<$ .0001 	\\
-+reason &				21.95 & 	  5 & 		  .0005		\\
-+persistence &			20.64 &		  1 & 		$<$ .0001 	\\
-\hline
-\end{tabular}
-\end{table}
+Moreover, we found no significant interaction effects between parameters, other than the interaction between `Who' and `What'. The outcome informed the design of a `layered interface', which present privacy settings with the most prominent influence first, relegating less prominent aspects to subsequently lower layers (See Figure~\ref{fig:interface1}). Users can utilize this interface for making manual privacy settings. The explanation to this user interface will be in section~\ref{sec:design1}.
 
 \begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{figures/allow.pdf}
-\caption{Mediation model of the effect of scenario parameters on participants' intention to allow/reject the scenario, mediated by attitudinal factors}
-\label{fig:mediationAllow}
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/interface1.pdf}
+	\caption{From Left, Screen 1 shows three default settings, Screen 2,3 and 4 shows layered interface}
+	\label{fig:interface1}
 \end{figure}
 
-\subsection{Discussion of Statistical Results}
-Our statistical results show several patterns that can inform the development of an IoT privacy-setting interface. We find that \textbf{who} is the most important scenario parameter, and should thus end up at the top layer of our interface. People are generally concerned about IoT scenarios involving unknown and government devices, but less concerned about about data collected by their own devices. Mistrust of government data collection is in line with Li et al.'s finding regarding US audiences~\cite{li2017cross}.
-
-\textbf{What} is the next most important scenario parameter, and its significant interaction with \textbf{who} suggests that some users may want to allow/reject the collection of different types of data by different types of recipients. Privacy concerns are higher for photo and video than for voice, arguably because photos and videos are more likely to reveal the identity of a person. Moreover, people are less concerned with revealing their age and presence, and most concerned with revealing their identity.
-
-The \textbf{reason} for the data collection may be used as the next layer in the interface. Health and safety are generally seen as acceptable reasons. \textbf{Persistence} is less important, although one-time collection is more acceptable than continuous collection. \textbf{Where} the data is being collected does not influence intention at all. This could be an artifact of the dataset: location is arguably less prominent when reading a scenario than it is in real life.
-
-Finally, participants' attitudes significantly (and in some cases fully) mediated the effect of scenario parameters on behavioral intentions. This means that these attitudes may be used as a valuable source for classifying people into distinct groups. Such attitudinal clustering could capture a significant amount of the variation in participants in terms of their preferred privacy settings, espcially with respect to the \textbf{who} and \textbf{what} dimensions.
-
-\section{Predicting users' behaviors}\label{sec:predict}
-In this section we predict participants' allow/reject decision using machine learning methods. Our goal is to find suitable \emph{default settings} for an IoT privacy-setting interface. Consequently, we do not attempt to find the best possible solution; instead we make a conscious tradeoff between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
+\section{Predicting users' behaviors}\label{sec:predict1}
+To further simplify the task of manually setting privacy preferences, we used machine learning to predict users' decisions based on the scenario parameters. Our goal is to find suitable \emph{default settings} for an IoT privacy-setting interface. Consequently, we do not attempt to find the best possible solution; instead we make a conscious tradeoff between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
 
 Our prediction target is the participants' decision to allow or reject the data collection described in each scenario, classifying a scenario as either `yes' or `no'. The scenario parameters serve as input attributes. These are nominal variables, making decision tree algorithms such as ID3 and J48 a suitable prediction approach. Unlike ID3, J48 uses gain ratio as the root node selection metric, which is not biased towards input attributes with many values. We therefore use J48 throughout our analysis.
 
@@ -275,7 +284,7 @@ We next create a ``smart default'' by predicting the allow/reject decision with 
 	\end{tabular}
 \end{table}
 
-Figure~\ref{fig:naive_cls} shows that this model predicts `no' for every recipient (\textbf{who}) except `Own device'. For this value, the default setting depends on \textbf{what} is being collected (see Table~\ref{tab:decisions}). For some levels of \textbf{what}, there is a further drill down based on \textbf{where}, \textbf{persistence} and \textbf{reason}.
+Figure~\ref{fig:naive_cls} shows that this model predicts `no' for every recipient (`who') except `Own device'. For this value, the default setting depends on `what' is being collected (see Table~\ref{tab:decisions}). For some levels of `what', there is a further drill down based on `where', `persistence' and `reason'.
 
 We can use this tree to create a ``smart default'' setting; in that case, users would on average be content with 73.10\% of these settings---a 2\% improvement over the naive ``no to everything'' default setting. 
 
@@ -284,13 +293,13 @@ Given that people differ substantially in their privacy preferences, it is not u
 \begin{figure}
 	\centering
 	\includegraphics[width=.22\textwidth]{figures/overall.pdf}
-	\caption{The Overall Prediction decision tree. Further drill down for \textbf{who} = `Own device' is provided in Table~\ref{tab:decisions}}
+	\caption{The Overall Prediction decision tree. Further drill down for `who' = `Own device' is provided in Table~\ref{tab:decisions}}
 	\label{fig:naive_cls}
 \end{figure}
 
 \begin{table}
 	\centering
-	\caption{Drill down of the Overall Prediction tree for \textbf{who} = `Own device'}
+	\caption{Drill down of the Overall Prediction tree for `who' = `Own device'}
 	\label{tab:decisions}
 	\begin{tabular}{ l | l }
 		\hline
@@ -450,24 +459,14 @@ In line with our statistical results, the factor \textbf{who} seems to be the mo
 
 Even our most accurate solution is not without fault, and its accuracy depends most on the \textbf{who} parameter. Specifically, the solution is most accurate for the user's own device, the device of a friend, and when the recipient is unknown. It is however less accurate when the recipient is a colleague, a nearby business, an employer, or the government. In these scenarios, more misclassifications tend to happen, so it would be useful to `guide' users to specifically have a look at these default settings, should they opt to make any manual overrides.
 
-\begin{figure*}
-	\centering
-	\includegraphics[width=0.95\textwidth]{figures/interface.pdf}
-	\caption{From Left, Screen 1 shows three default settings, Screen 2,3 and 4 shows layered interface}
-	\label{fig:access_interface}
-\end{figure*}
-
-\section{Privacy-setting Prototypes}\label{sec:design}
-Designers of IoT privacy-setting interfaces face a difficult challenge. Since there currently exists no system for setting one's privacy preferences for public IoT scenarios, designers  must rely on existing data such as the Lee and Kobsa~\cite{lee2016understanding} dataset to inform the design of these interfaces. Moreover, even for the simplified scenarios in this dataset, a privacy-setting interface will likely be complex, as it requires users to navigate settings for 7 types of recipients (\textbf{who}), 24 types of information (\textbf{what}), 4 different locations (\textbf{where}), 6 purposes (\textbf{reason}), and decide whether they want to allow the collection once or continuously (\textbf{persistence}). In this section we employ our data-driven design methodology to develop a prototype for an IoT privacy-setting interface based on the results of our statistical and machine learning analyses.
-
-
-
+\section{Privacy-setting Prototypes}\label{sec:design1}
+In this section we employ our data-driven design methodology to develop a prototype for an IoT privacy-setting interface based on the results of our statistical and machine learning analyses.
 
 \subsection{Manual Settings}
 The first challenge is to design an interface that users can navigate manually. Using the results of our statistical analyses, we design a ``layered'' settings interface: users can make a decision based on a single parameter only, and choose `yes', `no', or `it depends' for each parameter value. If they choose `it depends', they move to a next layer, where the decision for that parameter value is broken down by another parameter. 
 
 
-The manual interface is shown in Screens 2-4 of Figure~\ref{fig:access_interface}. At the top layer of this interface should be the scenario parameter that is most influential in our dataset. Our statistical results inform us that this is the \textbf{who} parameter. Screen 2 shows how users can allow/reject data collection for each of the 7 types of recipients. Users can choose ``more'', which brings them to the second-most important scenario parameter, i.e. the \textbf{what} parameter. Screen 3 shows the data type options for when the user clicks on ``more'' for ``Friends' devices''. We have conveniently grouped the options by collection medium. Users can turn the collection of various data types by their friends' devices on or off. If only some types of data are allowed, the toggle at the higher level gets a yellow color and turns to a middle option, indicating that it is not completely `on' (see ``Friends' devices'' in Screen 2).
+The manual interface is shown in Screens 2-4 of Figure~\ref{fig:interface1}. At the top layer of this interface should be the scenario parameter that is most influential in our dataset. Our statistical results inform us that this is the \textbf{who} parameter. Screen 2 shows how users can allow/reject data collection for each of the 7 types of recipients. Users can choose ``more'', which brings them to the second-most important scenario parameter, i.e. the \textbf{what} parameter. Screen 3 shows the data type options for when the user clicks on ``more'' for ``Friends' devices''. We have conveniently grouped the options by collection medium. Users can turn the collection of various data types by their friends' devices on or off. If only some types of data are allowed, the toggle at the higher level gets a yellow color and turns to a middle option, indicating that it is not completely `on' (see ``Friends' devices'' in Screen 2).
 
 
 Screen 4 shows how users can drill down even further to specify \textbf{reasons} for which collection is allowed, and the allowed \textbf{persistence} (we combined these two parameters in a single screen to reduce the ``depth'' of our interface). Since \textbf{reason} and \textbf{persistence} explain relatively little variance in behavioral intention, we expect that only a few users will go this deep into the interface for a small number of their settings. We leave out \textbf{where} altogether, because our statistical results deemed this parameter to be non-significant.
@@ -479,11 +478,11 @@ Using the results from our Overall Prediction (see Figure~\ref{fig:naive_cls}), 
 As this default setting is on average only 73.10\% accurate, we expect users to still change some of their settings. They can do this by navigating the manual settings interface.
 
 \subsection{Smart Profiles}
-To improve the accuracy of the default setting, we can instead build two ``smart profiles'', and allow the user to choose among them. Using the 3-cluster solution of the fit-based approach (see Figure~\ref{fig:3clustersFit}), we can attain an accuracy of 81.54\%. Screen 1 in Figure~\ref{fig:access_interface} shows a selection screen where the user can choose between these profiles. The ``Limited collection'' profile allows the collection of any information by the user's own devices, their friends' devices, their employer/school's devices, and devices of nearby businesses. Devices of colleagues are only allowed to collect information for certain reasons. The ``Limited collection, personal devices only'' profile only allows the collection of certain types of information by the user's own devices. The ``No collection'' profile does not allow any data collection to take place by default.
+To improve the accuracy of the default setting, we can instead build two ``smart profiles'', and allow the user to choose among them. Using the 3-cluster solution of the fit-based approach (see Figure~\ref{fig:3clustersFit}), we can attain an accuracy of 81.54\%. Screen 1 in Figure~\ref{fig:interface1} shows a selection screen where the user can choose between these profiles. The ``Limited collection'' profile allows the collection of any information by the user's own devices, their friends' devices, their employer/school's devices, and devices of nearby businesses. Devices of colleagues are only allowed to collect information for certain reasons. The ``Limited collection, personal devices only'' profile only allows the collection of certain types of information by the user's own devices. The ``No collection'' profile does not allow any data collection to take place by default.
 
 Once the user chooses a profile, they will move to the manual settings interface (Screens 2--4), where they can further change some of their settings.
 
-\begin{figure}[t!]
+\begin{figure}[htb]
 	\centering
 	\begin{subfigure}[t]{0.24\textwidth}
 		\centering
@@ -498,6 +497,7 @@ Once the user chooses a profile, they will move to the manual settings interface
 		\caption{3-profile choice interface}
 		\label{fig:3profile_default_setting}
 	\end{subfigure}%
+	\caption{Two types of profile choice interfaces}
 \end{figure}
 
 \section{Summary}
