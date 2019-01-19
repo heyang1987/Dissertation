@@ -1,0 +1,61 @@
+\contentsline {chapter}{List of Tables}{iv}{section*.2}
+\contentsline {chapter}{List of Figures}{v}{section*.3}
+\contentsline {chapter}{\numberline {1}Motivation}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}The Acceptability of IoT}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Experimental Setup}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Results Analysis}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}IoT Privacy and Acceptability}{6}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Type of Information: \textit {What is collected/shared}}{7}{subsubsection.2.2.1.1}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Trust in IoT: \textit {Who is collecting, storing, and sharing my data?}}{8}{subsubsection.2.2.1.2}
+\contentsline {subsection}{\numberline {2.2.2}IoT Usability and Acceptability}{10}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Convenience and Usability}{11}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2}Being in Control and Usability}{12}{subsubsection.2.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.3}Being Notified and Being in Control}{13}{subsubsection.2.2.2.3}
+\contentsline {section}{\numberline {2.3}Summary}{14}{section.2.3}
+\contentsline {chapter}{\numberline {3}Recommending Privacy Preference for General Public IoT}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}Dataset and design}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}Statistical Analysis}{20}{section.3.2}
+\contentsline {section}{\numberline {3.3}Predicting users' behaviors}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Naive Prediction Methods}{23}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Overall Prediction}{23}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Attitude-Based Clustering}{24}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Fit-based clustering}{27}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Agglomerative clustering}{28}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Discussion of Machine Learning Results}{29}{subsection.3.3.6}
+\contentsline {section}{\numberline {3.4}Privacy-setting Prototypes}{30}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Manual Settings}{30}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Smart Default Setting}{31}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Smart Profiles}{32}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Summary}{32}{section.3.5}
+\contentsline {chapter}{\numberline {4}Recommending Privacy Perference for Household IoT}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}Experimental Setup}{36}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Contextual Scenarios}{37}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Scenario Evaluation Questions}{39}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Participants and Procedures}{39}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Statistical Analysis}{42}{section.4.2}
+\contentsline {section}{\numberline {4.3}Privacy-Setting Prototype Design}{43}{section.4.3}
+\contentsline {section}{\numberline {4.4}Predicting users' behaviors}{45}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Naive Prediction Model}{46}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}One Rule Prediction}{48}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Overall Prediction}{49}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Attitude-Based Clustering}{53}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Agglomerative Clustering}{56}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Fit-Based Clustering}{60}{subsection.4.4.6}
+\contentsline {subsection}{\numberline {4.4.7}Discussion of machine learning results}{64}{subsection.4.4.7}
+\contentsline {section}{\numberline {4.5}Privacy-Setting Prototype Design Using Machine Learning Results}{67}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Interface for the 5-profile fit-based solution with an accuracy of 82.92\%}{67}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Interface for the 5-profile fit-based solution with an accuracy of 83.11\%}{68}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Reflection on design complexity}{70}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {5}Proposed Work}{73}{chapter.5}
+\contentsline {section}{\numberline {5.1}Planned Experimental Setup}{73}{section.5.1}
+\contentsline {chapter}{\numberline {6}Related Work}{78}{chapter.6}
+\contentsline {section}{\numberline {6.1}Personalization in Iot Systems}{78}{section.6.1}
+\contentsline {section}{\numberline {6.2}Privacy in Personalized systems}{79}{section.6.2}
+\contentsline {section}{\numberline {6.3}Privacy in IoT}{79}{section.6.3}
+\contentsline {section}{\numberline {6.4}Existing privacy control schemes}{80}{section.6.4}
+\contentsline {section}{\numberline {6.5}Privacy-Setting Interfaces}{81}{section.6.5}
+\contentsline {section}{\numberline {6.6}Privacy Prediction}{82}{section.6.6}
+\contentsline {section}{\numberline {6.7}Data-driven design}{83}{section.6.7}
+\contentsline {chapter}{\numberline {7}Conclusion}{85}{chapter.7}
+\contentsline {chapter}{Bibliography}{85}{section*.48}
+\contentsline {chapter}{Appendices}{91}{section*.50}

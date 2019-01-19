@@ -1,0 +1,324 @@
+\begin{thebibliography}{10}
+
+\bibitem{awad_2006}
+Naveen~Farag Awad and M.~S. Krishnan.
+\newblock The {Personalization} {Privacy} {Paradox}: {An} {Empirical}
+  {Evaluation} of {Information} {Transparency} and the {Willingness} to be
+  {Profiled} {Online} for {Personalization}.
+\newblock {\em MIS Quarterly}, 30(1):13--28, March 2006.
+
+\bibitem{bahiratiui2018}
+Paritosh Bahirat, Yangyang He, Abhilash Menon, and Bart Knijnenburg.
+\newblock A {Data}-{Driven} {Approach} to {Developing} {IoT}
+  {Privacy}-{Setting} {Interfaces}.
+\newblock In {\em 23rd {International} {Conference} on {Intelligent} {User}
+  {Interfaces}}, {IUI} '18, pages 165--176, Toyko, Japan, 2018. ACM.
+
+\bibitem{chellappa_2005}
+Ramnath~K. Chellappa and Raymond~G. Sin.
+\newblock Personalization versus privacy: {An} empirical examination of the
+  online consumer's dilemma.
+\newblock {\em Information Technology and Management}, 6(2-3):181--202, 2005.
+
+\bibitem{chow2015hci}
+Richard Chow, Serge Egelman, Raghudeep Kannavara, Hosub Lee, Suyash Misra, and
+  Edward Wang.
+\newblock {HCI} in {Business}: {A} {Collaboration} with {Academia} in {IoT}
+  {Privacy}.
+\newblock In Fiona Fui-Hoon Nah and Chuan-Hoo Tan, editors, {\em {HCI} in
+  {Business}}, number 9191 in Lecture Notes on Computer Science. Springer,
+  2015.
+
+\bibitem{davies_privacy_2016}
+Nigel Davies, Nina Taft, Mahadev Satyanarayanan, Sarah Clinch, and Brandon
+  Amos.
+\newblock Privacy {Mediators}: {Helping} {IoT} {Cross} the {Chasm}.
+\newblock In {\em Proceedings of the 17th {International} {Workshop} on
+  {Mobile} {Computing} {Systems} and {Applications}}, {HotMobile} '16, pages
+  39--44, New York, NY, USA, 2016. ACM.
+
+\bibitem{dong2016ppm}
+Cailing Dong, Hongxia Jin, and Bart~P Knijnenburg.
+\newblock Ppm: A privacy prediction model for online social networks.
+\newblock In {\em International Conference on Social Informatics}, pages
+  400--420, 2016.
+
+\bibitem{etzion2014personalization}
+Opher Etzion and Fabiana Forunier.
+\newblock On the personalization of event-based systems.
+\newblock In {\em Proceedings of the 1st ACM International Workshop on Human
+  Centered Event Understanding from Multimedia}, pages 45--48. ACM, 2014.
+
+\bibitem{fang2010privacy}
+Lujun Fang and Kristen LeFevre.
+\newblock Privacy wizards for social networking sites.
+\newblock In {\em Proceedings of the 19th international conference on World
+  wide web}, pages 351--360, 2010.
+
+\bibitem{feth_user-centered_2017}
+Denis Feth, Andreas Maier, and Svenja Polst.
+\newblock A {User}-{Centered} {Model} for {Usable} {Security} and {Privacy}.
+\newblock In Theo Tryfonas, editor, {\em Human {Aspects} of {Information}
+  {Security}, {Privacy} and {Trust}}, Lecture {Notes} in {Computer} {Science},
+  pages 74--89. Springer International Publishing, 2017.
+
+\bibitem{hemant2015internet}
+Hemant Ghayvat, S.C. Mukhopadhyay, Jie Liu, Arun Babu, Md~Alahi, and Xiang Gui.
+\newblock Internet of things for smart homes and buildings: Opportunities and
+  challenges.
+\newblock {\em Australian Journal of Telecommunications and the Digital
+  Economy}, 3:33--47, 12 2015.
+
+\bibitem{good2005spyware}
+Nathaniel Good, Rachna Dhamija, Jens Grossklags, David Thaw, Steven Aronowitz,
+  Deirdre Mulligan, and Joseph Konstan.
+\newblock Stopping {Spyware} at the {Gate}: {A} {User} {Study} of {Privacy},
+  {Notice} and {Spyware}.
+\newblock In {\em Proceedings of the 2005 {Symposium} on {Usable} {Privacy} and
+  {Security}}, pages 43--52, 2005.
+
+\bibitem{hall2009weka}
+Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
+  and Ian~H Witten.
+\newblock The weka data mining software: an update.
+\newblock {\em ACM SIGKDD explorations newsletter}, 11(1):10--18, 2009.
+
+\bibitem{henka2016personalizing}
+Alexander Henka, Lukas Smirek, and Gottfried Zimmermann.
+\newblock Personalizing smart environments.
+\newblock In {\em Proceedings of the 6th International Conference on the
+  Internet of Things}, pages 159--160. ACM, 2016.
+
+\bibitem{ho_2006}
+Shuk~Ying Ho and Kar Tam.
+\newblock Understanding the {Impact} of {Web} {Personalization} on {User}
+  {Information} {Processing} and {Decision} {Outcomes}.
+\newblock {\em MIS Quarterly}, 30(4):865--890, December 2006.
+
+\bibitem{Holte1993}
+Robert~C. Holte.
+\newblock Very simple classification rules perform well on most commonly used
+  datasets.
+\newblock {\em Machine Learning}, 11(1):63--90, Apr 1993.
+
+\bibitem{hui_2006}
+Kai-Lung Hui, Bernard C.~Y. Tan, and Chyan-Yee Goh.
+\newblock Online information disclosure: {Motivators} and measurements.
+\newblock {\em ACM Transactions on Internet Technology}, 6(4):415--441,
+  November 2006.
+
+\bibitem{jayaraman_privacy_2017}
+Prem~Prakash Jayaraman, Xuechao Yang, Ali Yavari, Dimitrios Georgakopoulos, and
+  Xun Yi.
+\newblock Privacy preserving {Internet} of {Things}: {From} privacy techniques
+  to a blueprint architecture and efficient implementation.
+\newblock {\em Future Generation Computer Systems}, 76:540--549, November 2017.
+
+\bibitem{jensen2004privacy}
+Carlos Jensen and Colin Potts.
+\newblock Privacy {Policies} as {Decision}-{Making} {Tools}: {An} {Evaluation}
+  of {Online} {Privacy} {Notices}.
+\newblock In {\em 2004 {Conference} on {Human} {Factors} in {Computing}
+  {Systems}}, pages 471--478, 2004.
+
+\bibitem{knijnenburg2017}
+Bart~P. Knijnenburg.
+\newblock Privacy? {I} {Can}'t {Even}! {Making} a {Case} for {User}-{Tailored}
+  {Privacy}.
+\newblock {\em IEEE Security \& Privacy}, 15(4):62--67, 2017.
+
+\bibitem{knijnenburg2013dimensionality}
+Bart~P Knijnenburg, Alfred Kobsa, and Hongxia Jin.
+\newblock Dimensionality of information disclosure behavior.
+\newblock {\em International Journal of Human-Computer Studies},
+  71(12):1144--1162, 2013.
+
+\bibitem{kobsa_2016}
+Alfred Kobsa, Hichang Cho, and Bart~P. Knijnenburg.
+\newblock The {Effect} of {Personalization} {Provider} {Characteristics} on
+  {Privacy} {Attitudes} and {Behaviors}: {An} {Elaboration} {Likelihood}
+  {Model} {Approach}.
+\newblock {\em Journal of the Association for Information Science and
+  Technology}, 67:2587--2606, February 2016.
+
+\bibitem{lee2016understanding}
+Hosub Lee and Alfred Kobsa.
+\newblock Understanding user privacy in internet of things environments.
+\newblock {\em 2016 IEEE 3rd World Forum on Internet of Things (WF-IoT)}, pages
+  407--412, 2016.
+
+\bibitem{li2017cross}
+Yao Li, Alfred Kobsa, Bart~P Knijnenburg, and MH~Carolyn Nguyen.
+\newblock Cross-cultural privacy prediction.
+\newblock {\em Proceedings on Privacy Enhancing Technologies}, 2:93--112, 2017.
+
+\bibitem{loi_systematically_2017}
+Franco Loi, Arunan Sivanathan, Hassan~Habibi Gharakheili, Adam Radford, and
+  Vijay Sivaraman.
+\newblock Systematically {Evaluating} {Security} and {Privacy} for {Consumer}
+  {IoT} {Devices}.
+\newblock In {\em Proceedings of the 2017 {Workshop} on {Internet} of {Things}
+  {Security} and {Privacy}}, {IoTS}\&{P} '17, pages 1--6, New York, NY, USA,
+  2017. ACM.
+
+\bibitem{nissenbaum_privacy_2004}
+Helen Nissenbaum.
+\newblock Privacy as {Contextual} {Integrity} {Symposium} - {Technology},
+  {Values}, and the {Justice} {System}.
+\newblock {\em Washington Law Review}, 79:119--158, 2004.
+
+\bibitem{olson2005study}
+Judith~S Olson, Jonathan Grudin, and Eric Horvitz.
+\newblock A study of preferences for sharing and privacy.
+\newblock In {\em CHI'05 extended abstracts on Human factors in computing
+  systems}, pages 1985--1988, 2005.
+
+\bibitem{pallapa2014adaptive}
+Gautham Pallapa, Sajal~K Das, Mario Di~Francesco, and Tuomas Aura.
+\newblock Adaptive and context-aware privacy preservation exploiting user
+  interactions in smart environments.
+\newblock {\em Pervasive and Mobile Computing}, 12:232--243, 2014.
+
+\bibitem{Pejovic2014}
+Veljko Pejovic and Mirco Musolesi.
+\newblock Interruptme: Designing intelligent prompting mechanisms for pervasive
+  applications.
+\newblock In {\em Proceedings of the 2014 ACM International Joint Conference on
+  Pervasive and Ubiquitous Computing}, UbiComp '14, pages 897--908, New York,
+  NY, USA, 2014. ACM.
+
+\bibitem{perera_privacy-by-design_2016}
+Charith Perera, Ciaran McCormick, Arosha~K. Bandara, Blaine~A. Price, and
+  Bashar Nuseibeh.
+\newblock Privacy-by-{Design} {Framework} for {Assessing} {Internet} of
+  {Things} {Applications} and {Platforms}.
+\newblock In {\em Proceedings of the 6th {International} {Conference} on the
+  {Internet} of {Things}}, {IoT}'16, pages 83--92, New York, NY, USA, 2016.
+  ACM.
+
+\bibitem{phelps_2000}
+Joseph Phelps, Glen Nowak, and Elizabeth Ferrell.
+\newblock Privacy {Concerns} and {Consumer} {Willingness} to {Provide}
+  {Personal} {Information}.
+\newblock {\em Journal of Public Policy \& Marketing}, 19(1):27--41, 2000.
+
+\bibitem{197908}
+Frederic Raber, Alexander~De Luca, and Moritz Graus.
+\newblock Privacy wedges: Area-based audience selection for social network
+  posts.
+\newblock In {\em Proceedings of the 2016 {Symposium} on {Usable} {Privacy} and
+  {Security}}, 2016.
+
+\bibitem{ravichandran2009capturing}
+Ramprasad Ravichandran, Michael Benisch, Patrick~Gage Kelley, and Norman~M
+  Sadeh.
+\newblock Capturing social networking privacy preferences.
+\newblock In {\em Proceedings of the 2009 {Symposium} on {Usable} {Privacy} and
+  {Security}}, pages 1--18, 2009.
+
+\bibitem{russell2015personalization}
+Luke Russell, Rafik Goubran, and Felix Kwamena.
+\newblock Personalization using sensors for preliminary human detection in an
+  iot environment.
+\newblock In {\em Distributed Computing in Sensor Systems (DCOSS), 2015
+  International Conference on}, pages 236--241. IEEE, 2015.
+
+\bibitem{sadeh2009understanding}
+Norman Sadeh, Jason Hong, Lorrie Cranor, Ian Fette, Patrick Kelley, Madhu
+  Prabaker, and Jinghai Rao.
+\newblock Understanding and capturing people's privacy policies in a mobile
+  social networking application.
+\newblock {\em Personal and Ubiquitous Computing}, 13(6):401--412, 2009.
+
+\bibitem{sandhu1994access}
+R.~S. Sandhu and P.~Samarati.
+\newblock Access control: principle and practice.
+\newblock {\em IEEE Communications Magazine}, 32(9):40--48, 1994.
+
+\bibitem{sheng_experimental_2008}
+Hong Sheng, Fiona Fui-Hoon Nah, and Keng Siau.
+\newblock An {Experimental} {Study} on {Ubiquitous} commerce {Adoption}:
+  {Impact} of {Personalization} and {Privacy} {Concerns}.
+\newblock {\em Journal of the Association for Information Systems},
+  9(6):344--376, June 2008.
+
+\bibitem{smith2013choice}
+N.~Craig Smith, Daniel~G. Goldstein, and Eric~J. Johnson.
+\newblock Choice {Without} {Awareness}: {Ethical} and {Policy} {Implications}
+  of {Defaults}.
+\newblock {\em Journal of Public Policy \& Marketing}, 32(2):159--172, 2013.
+
+\bibitem{sutanto_2013}
+Juliana Sutanto, Elia Palme, Chuan-Hoo Tan, and Chee~Wei Phang.
+\newblock Addressing the {Personalization}-{Privacy} {Paradox}: {An}
+  {Empirical} {Assessment} from a {Field} {Experiment} on {Smartphone} {Users}.
+\newblock {\em MIS Quarterly}, 37(4):1141--1164, 2013.
+
+\bibitem{teltzrow_2004}
+Max Teltzrow and Alfred Kobsa.
+\newblock Impacts of {User} {Privacy} {Preferences} on {Personalized}
+  {Systems}: a {Comparative} {Study}.
+\newblock In Clare-Marie Karat, Jan Blom, and John Karat, editors, {\em
+  Designing {Personalized} {User} {Experiences} for {eCommerce}}, pages
+  315--332. Kluwer Academic Publishers, Dordrecht, Netherlands, 2004.
+\newblock DOI 10.1007/1-4020-2148-8\_17.
+
+\bibitem{treiblmaier_2007}
+Horst Treiblmaier and Irene Pollach.
+\newblock Users' {Perceptions} of {Benefits} and {Costs} of {Personalization}.
+\newblock In {\em {ICIS} 2007 {Proceedings}}, 2007.
+
+\bibitem{ur_intruders_2014}
+Blase Ur, Jaeyeon Jung, and Stuart Schechter.
+\newblock Intruders {Versus} {Intrusiveness}: {Teens}' and {Parents}'
+  {Perspectives} on {Home}-entryway {Surveillance}.
+\newblock In {\em Proceedings of the 2014 {ACM} {International} {Joint}
+  {Conference} on {Pervasive} and {Ubiquitous} {Computing}}, {UbiComp} '14,
+  pages 129--139, New York, NY, USA, 2014. ACM.
+
+\bibitem{vallee2016personalization}
+Thibaut Vall{\'e}e, Karima Sedki, Sylvie Despres, M-Christine Jaulant, Karim
+  Tabia, and Adrien Ugon.
+\newblock On personalization in iot.
+\newblock In {\em Computational Science and Computational Intelligence (CSCI),
+  2016 International Conference on}, pages 186--191. IEEE, 2016.
+
+\bibitem{vanderheiden2011creating}
+Gregg Vanderheiden and Jutta Treviranus.
+\newblock Creating a global public inclusive infrastructure.
+\newblock In {\em International Conference on Universal Access in
+  Human-Computer Interaction}, pages 517--526. Springer, 2011.
+
+\bibitem{watson12}
+Jason Watson, Andrew Besmer, and Heather~Richter Lipford.
+\newblock +{Your} circles: sharing behavior on {Google}+.
+\newblock In {\em Proceedings of the 8th {Symposium} on {Usable} {Privacy} and
+  {Security}}, pages 12:1--12:10, 2012.
+
+\bibitem{williams2016perfect}
+Meredydd Williams, Jason~RC Nurse, and Sadie Creese.
+\newblock The perfect storm: The privacy paradox and the internet-of-things.
+\newblock In {\em 11th International Conference on Availability, Reliability
+  and Security}, pages 644--652, 2016.
+
+\bibitem{wisniewski2017making}
+Pamela~J Wisniewski, Bart~P Knijnenburg, and Heather~Richter Lipford.
+\newblock Making privacy personal: Profiling social network users to inform
+  privacy education and nudging.
+\newblock {\em International Journal of Human-Computer Studies}, 98:95--108,
+  2017.
+
+\bibitem{witten2016data}
+Ian~H Witten, Eibe Frank, Mark~A Hall, and Christopher~J Pal.
+\newblock {\em Data Mining: Practical machine learning tools and techniques}.
+\newblock Morgan Kaufmann, 2016.
+
+\bibitem{worthy_trust_2016}
+Peter Worthy, Ben Matthews, and Stephen Viller.
+\newblock Trust {Me}: {Doubts} and {Concerns} {Living} with the {Internet} of
+  {Things}.
+\newblock In {\em Proceedings of the 2016 {ACM} {Conference} on {Designing}
+  {Interactive} {Systems}}, {DIS} '16, pages 427--434, New York, NY, USA, 2016.
+  ACM.
+
+\end{thebibliography}
