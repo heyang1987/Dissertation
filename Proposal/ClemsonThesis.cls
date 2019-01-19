@@ -225,8 +225,7 @@
           {\sc{{\Large \theTitle}}}
           \normalsize\\[2.5ex]
           \rule{4in}{0.5pt}\\[2.5ex]
-          A \theDocumentType\\
-          by\\
+          A \theDocumentType \ by\\
           \theAuthor\\
           {\theGraduationMonth} {\theGraduationYear}\\[2.5ex]
           \rule{4in}{0.5pt}\\[2.5ex]
@@ -237,7 +236,7 @@
           and subsequent Ph.D. in \theMajor\\[2.5ex]
           \rule{4in}{0.5pt}\\[2.5ex]
        \end{center}
-   {\ }\\[1in]
+  % {\ }\\[1in]
 Approved By:\\\\
 \underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\
 {\@ClemsonCommitteeChair}\\
