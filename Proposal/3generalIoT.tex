@@ -3,7 +3,7 @@
 
 In chapter~\ref{chapter:acceptability}, we have discussed what are the key factors that affecting users to adopt or accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.
 
-In this chapter, we demonstrate our work completed in exploring recommending privacy preference for general IoT, including the data-driven design, the dataset that we use, the inspection of users' behaviors using statistical analyses, prediction of users' behaviors using machine learning techniques, and the privacy-setting prototypes that we create based on both statistical and machine learning results.
+In this chapter, we demonstrate our work completed in exploring recommending privacy settings for general IoT, including the dataset that we use, our methodology, the inspection of users' behaviors using statistical analyses, prediction of users' behaviors using machine learning techniques, and the privacy-setting prototypes that we create based on both statistical and machine learning results.
 
 This chapter is to answer the following questions:
 \begin{itemize}
@@ -212,7 +212,7 @@ In our second phase, we develop a ``smart'' default setting, which preempts the 
 %\end{figure}
 
 %\subsection{Discussion of Statistical Results}
-We conducted a statistical analysis on this dataset to determine the effect of each scenario parameter on users' decisions to allow the presented general IoT scenario and how this effect is mediated by the user's attitudes.
+We conducted a statistical analysis on this dataset to determine the effect of each scenario parameter on users' decisions to allow the presented general IoT scenario and how this effect is mediated by the user's attitudes. \footnote{The statistical analysis and the subsequent layered interface were developed by my co-author Paritosh Bahirat. These endeavors are presented in summarized form since they are not an official part of this dissertation. For more details, please refer to~\cite{bahiratiui2018}.}
 
 Using this approach, we find that the `Who' parameter has the strongest effect on users' decision to allow the scenario, followed by the `What', the `Reason', and the 'Persistence' parameter. The `Where' parameter has no effect at all. People are generally concerned about IoT scenarios involving unknown and government devices, but less concerned about about data collected by their own devices. Mistrust of government data collection is in line with Li et al.'s finding regarding US audiences~\cite{li2017cross}.
 
@@ -222,7 +222,11 @@ The `reason' for the data collection is the third most important scenario parame
 
 Finally, participants' attitudes significantly (and in some cases fully) mediated the effect of scenario parameters on behavioral intentions. This means that these attitudes may be used as a valuable source for classifying people into distinct groups. Such attitudinal clustering could capture a significant amount of the variation in participants in terms of their preferred privacy settings, espcially with respect to the `who' and `what' dimensions.
 
-Moreover, we found no significant interaction effects between parameters, other than the interaction between `Who' and `What'. The outcome informed the design of a `layered interface', which present privacy settings with the most prominent influence first, relegating less prominent aspects to subsequently lower layers (See Figure~\ref{fig:interface1}). Users can utilize this interface for making manual privacy settings. The explanation to this user interface will be in section~\ref{sec:design1}.
+Moreover, we found no significant interaction effects between parameters, other than the interaction between `Who' and `What'. The outcome informed the design of a `layered interface', which present privacy settings with the most prominent influence first, relegating less prominent aspects to subsequently lower layers (See Figure~\ref{fig:interface1}). Users can make a decision based on a single parameter only, and choose `yes', `no', or `it depends' for each parameter value. If they choose `it depends', they move to a next layer, where the decision for that parameter value is broken down by another parameter.
+
+The manual interface is shown in Screens 2-4 of Figure~\ref{fig:interface1}. At the top layer of this interface should be the scenario parameter that is most influential in our dataset. Our statistical results inform us that this is the \textbf{who} parameter. Screen 2 shows how users can allow/reject data collection for each of the 7 types of recipients. Users can choose ``more'', which brings them to the second-most important scenario parameter, i.e. the \textbf{what} parameter. Screen 3 of Figure~\ref{fig:interface1} shows the data type options for when the user clicks on ``more'' for ``Friends' devices''. We have conveniently grouped the options by collection medium. Users can turn the collection of various data types by their friends' devices on or off. If only some types of data are allowed, the toggle at the higher level gets a yellow color and turns to a middle option, indicating that it is not completely `on' (see ``Friends' devices'' in Screen 2).
+
+Screen 4 of Figure~\ref{fig:interface1} shows how users can drill down even further to specify \textbf{reasons} for which collection is allowed, and the allowed \textbf{persistence} (we combined these two parameters in a single screen to reduce the ``depth'' of our interface). Since \textbf{reason} and \textbf{persistence} explain relatively little variance in behavioral intention, we expect that only a few users will go this deep into the interface for a small number of their settings. We leave out \textbf{where} altogether, because our statistical results deemed this parameter to be non-significant.
 
 \begin{figure}
 	\centering
@@ -232,7 +236,7 @@ Moreover, we found no significant interaction effects between parameters, other 
 \end{figure}
 
 \section{Predicting users' behaviors (original work)}\label{sec:predict1}
-To further simplify the task of manually setting privacy preferences, we used machine learning to predict users' decisions based on the scenario parameters. Our goal is to find suitable \emph{default settings} for an IoT privacy-setting interface. Consequently, we do not attempt to find the best possible solution; instead we make a conscious tradeoff between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
+To further simplify the task of manually setting privacy preferences, we used machine learning to predict users' decisions based on the scenario parameters. Our goal is to find suitable \emph{default settings} for an IoT privacy-setting interface. Consequently, we do not attempt to find the most accurate solution; instead we make a conscious tradeoff between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
 
 Our prediction target is the participants' decision to allow or reject the data collection described in each scenario, classifying a scenario as either `yes' or `no'. The scenario parameters serve as input attributes. These are nominal variables, making decision tree algorithms such as ID3 and J48 a suitable prediction approach. Unlike ID3, J48 uses gain ratio as the root node selection metric, which is not biased towards input attributes with many values. We therefore use J48 throughout our analysis.
 
@@ -269,7 +273,7 @@ We start with naive or ``information-less'' predictions. Our dataset contains 79
 \end{table}
 
 \subsection{Overall Prediction}
-We next create a ``smart default'' by predicting the allow/reject decision with the scenario parameters using J48 with Weka's~\cite{hall2009weka} default settings. The resulting tree (Figure~\ref{fig:naive_cls}) has an accuracy of 63.53\%. The confusion matrix (Table~\ref{tab:confusion_matrix}) shows that this model results in overly conservative settings; only 208 `yes'es are predicted.
+We next create a ``smart default'' by predicting the allow/reject decision with the scenario parameters using J48 with Weka's~\cite{hall2009weka} default settings. The resulting tree is shown in Figure~\ref{fig:naive_cls}). The confusion matrix (Table~\ref{tab:confusion_matrix}) shows that this model results in overly conservative settings; only 208 `yes'es are predicted.
 
 \begin{table}
 	\centering
@@ -461,15 +465,6 @@ Even our most accurate solution is not without fault, and its accuracy depends m
 
 \section{Privacy-setting Prototypes (original work)}\label{sec:design1}
 In this section we employ our data-driven design methodology to develop a prototype for an IoT privacy-setting interface based on the results of our statistical and machine learning analyses.
-
-\subsection{Manual Settings}
-The first challenge is to design an interface that users can navigate manually. Using the results of our statistical analyses, we design a ``layered'' settings interface: users can make a decision based on a single parameter only, and choose `yes', `no', or `it depends' for each parameter value. If they choose `it depends', they move to a next layer, where the decision for that parameter value is broken down by another parameter. 
-
-
-The manual interface is shown in Screens 2-4 of Figure~\ref{fig:interface1}. At the top layer of this interface should be the scenario parameter that is most influential in our dataset. Our statistical results inform us that this is the \textbf{who} parameter. Screen 2 shows how users can allow/reject data collection for each of the 7 types of recipients. Users can choose ``more'', which brings them to the second-most important scenario parameter, i.e. the \textbf{what} parameter. Screen 3 shows the data type options for when the user clicks on ``more'' for ``Friends' devices''. We have conveniently grouped the options by collection medium. Users can turn the collection of various data types by their friends' devices on or off. If only some types of data are allowed, the toggle at the higher level gets a yellow color and turns to a middle option, indicating that it is not completely `on' (see ``Friends' devices'' in Screen 2).
-
-
-Screen 4 shows how users can drill down even further to specify \textbf{reasons} for which collection is allowed, and the allowed \textbf{persistence} (we combined these two parameters in a single screen to reduce the ``depth'' of our interface). Since \textbf{reason} and \textbf{persistence} explain relatively little variance in behavioral intention, we expect that only a few users will go this deep into the interface for a small number of their settings. We leave out \textbf{where} altogether, because our statistical results deemed this parameter to be non-significant.
 
 \subsection{Smart Default Setting}
 The next challenge is to decide on a default setting, so that users only have to make minimal adjustments to their settings. We can use a simple ``yes to everything'' or ``no to everything'' default, but these are on average only accurate 28.33\% and 71.67\% of the time, respectively. 

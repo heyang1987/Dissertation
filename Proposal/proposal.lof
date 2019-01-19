@@ -5,9 +5,9 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Trust Chain\relax }}{9}{figure.caption.6}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces An interface for providing the user with "control"\relax }}{12}{figure.caption.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces From Left, Screen 1 shows three default settings, Screen 2,3 and 4 shows layered interface\relax }}{18}{figure.caption.9}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces The Overall Prediction decision tree. Further drill down for `who' = `Own device' is provided in Table\nobreakspace {}\ref {tab:decisions}\relax }}{20}{figure.caption.12}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Attitude-based clustering: 2-cluster tree. Further drill down for \textbf {who} = `Friend' or `Employer/School' in Cluster 0 is hidden for space reasons.\relax }}{22}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces From Left, Screen 1 shows three default settings, Screen 2,3 and 4 shows layered interface\relax }}{19}{figure.caption.9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The Overall Prediction decision tree. Further drill down for `who' = `Own device' is provided in Table\nobreakspace {}\ref {tab:decisions}\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Attitude-based clustering: 2-cluster tree. Further drill down for \textbf {who} = `Friend' or `Employer/School' in Cluster 0 is hidden for space reasons.\relax }}{23}{figure.caption.14}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Fit-based clustering: 3-cluster tree. Further drill down is hidden for space reasons.\relax }}{24}{figure.caption.15}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Accuracy of our clustering approaches\relax }}{25}{figure.caption.16}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Two types of profile choice interfaces\relax }}{27}{figure.caption.17}
@@ -39,5 +39,6 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces User Consent Form\relax }}{62}{figure.caption.44}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Introduction to Household IoT\relax }}{62}{figure.caption.45}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Simple User-Interface condition with all settings turned off\relax }}{63}{figure.caption.46}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Expected Model for Proposed User Study\relax }}{63}{figure.caption.47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
