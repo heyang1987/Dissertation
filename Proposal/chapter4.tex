@@ -231,7 +231,7 @@ Moreover, we found no significant interaction effects between parameters, other 
 	\label{fig:interface1}
 \end{figure}
 
-\section{Predicting users' behaviors}\label{sec:predict1}
+\section{Predicting users' behaviors (original work)}\label{sec:predict1}
 To further simplify the task of manually setting privacy preferences, we used machine learning to predict users' decisions based on the scenario parameters. Our goal is to find suitable \emph{default settings} for an IoT privacy-setting interface. Consequently, we do not attempt to find the best possible solution; instead we make a conscious tradeoff between parsimony and prediction accuracy. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments. Parsimony, on the other hand, prevents overfitting and promotes fairness: we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
 
 Our prediction target is the participants' decision to allow or reject the data collection described in each scenario, classifying a scenario as either `yes' or `no'. The scenario parameters serve as input attributes. These are nominal variables, making decision tree algorithms such as ID3 and J48 a suitable prediction approach. Unlike ID3, J48 uses gain ratio as the root node selection metric, which is not biased towards input attributes with many values. We therefore use J48 throughout our analysis.
@@ -459,7 +459,7 @@ In line with our statistical results, the factor \textbf{who} seems to be the mo
 
 Even our most accurate solution is not without fault, and its accuracy depends most on the \textbf{who} parameter. Specifically, the solution is most accurate for the user's own device, the device of a friend, and when the recipient is unknown. It is however less accurate when the recipient is a colleague, a nearby business, an employer, or the government. In these scenarios, more misclassifications tend to happen, so it would be useful to `guide' users to specifically have a look at these default settings, should they opt to make any manual overrides.
 
-\section{Privacy-setting Prototypes}\label{sec:design1}
+\section{Privacy-setting Prototypes (original work)}\label{sec:design1}
 In this section we employ our data-driven design methodology to develop a prototype for an IoT privacy-setting interface based on the results of our statistical and machine learning analyses.
 
 \subsection{Manual Settings}
