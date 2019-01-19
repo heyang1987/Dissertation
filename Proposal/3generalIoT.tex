@@ -407,15 +407,17 @@ The 3-cluster solution has a slightly lower accuracy of 75.17\%, but is more par
 %\end{figure}
 
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.42\textwidth]{figures/flowchartFit.png}
-%	\caption{The Flow Chart for Fit-based Clustering}
-%	\label{fig:flow_chart_fit}
-%\end{figure}
+
 
 \subsection{Fit-based clustering}
-Our fit-based clustering approach clusters participants without using any additional information. It instead uses the fit of the tree models to bootstrap the process of sorting participants into clusters. Like many bootstrapping methods, ours uses \emph{random starts} and \emph{iterative improvements} to find the optimal solution.
+Our fit-based clustering approach clusters participants without using any additional information. It instead uses the fit of the tree models to bootstrap the process of sorting participants into clusters. Like many bootstrapping methods, ours uses \emph{random starts} and \emph{iterative improvements} to find the optimal solution. The process is depicted in Figure~\ref{fig:flow_chart_fit}, and described in detail below. Accuracies of the resulting solutions are reported in Table~\ref{tab:comp_approach} under ``fit-based clustering''.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.42\textwidth]{figures/flowchartFit.png}
+	\caption{The Flow Chart for Fit-based Clustering}
+	\label{fig:flow_chart_fit}
+\end{figure}
 
 \textbf{Random starts:} We randomly divide particpants over $N$ separate groups, and learn a tree for each group. This is repeated until a non-trivial starting solution (i.e., with distinctly different trees per cluster) is found. 
 

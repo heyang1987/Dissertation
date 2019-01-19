@@ -22,10 +22,10 @@
 \contentsline {subsection}{\numberline {3.3.3}Attitude-Based Clustering}{21}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Fit-based clustering}{23}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Agglomerative clustering}{25}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Discussion of Machine Learning Results}{25}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.6}Discussion of Machine Learning Results}{26}{subsection.3.3.6}
 \contentsline {section}{\numberline {3.4}Privacy-setting Prototypes (original work)}{26}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Smart Default Setting}{26}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Smart Profiles}{26}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.1}Smart Default Setting}{27}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Smart Profiles}{27}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}Summary}{27}{section.3.5}
 \contentsline {chapter}{\numberline {4}Recommending Privacy Settings for Household IoT}{30}{chapter.4}
 \contentsline {section}{\numberline {4.1}Experimental Setup}{30}{section.4.1}
@@ -58,5 +58,5 @@
 \contentsline {section}{\numberline {7.6}Privacy Prediction}{68}{section.7.6}
 \contentsline {section}{\numberline {7.7}Data-driven design}{69}{section.7.7}
 \contentsline {chapter}{\numberline {8}Conclusion}{71}{chapter.8}
-\contentsline {chapter}{Bibliography}{71}{section*.48}
-\contentsline {chapter}{Appendices}{76}{section*.50}
+\contentsline {chapter}{Bibliography}{71}{section*.49}
+\contentsline {chapter}{Appendices}{76}{section*.51}
