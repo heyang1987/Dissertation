@@ -236,7 +236,7 @@
           and subsequent Ph.D. in \theMajor\\[2.5ex]
           \rule{4in}{0.5pt}\\[2.5ex]
        \end{center}
-  % {\ }\\[1in]
+   {\ }\\[0.5in]
 Approved By:\\\\
 \underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\
 {\@ClemsonCommitteeChair}\\
