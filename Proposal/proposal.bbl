@@ -43,6 +43,11 @@ Cailing Dong, Hongxia Jin, and Bart~P Knijnenburg.
 \newblock In {\em International Conference on Social Informatics}, pages
   400--420, 2016.
 
+\bibitem{eddy2015gartner}
+Nathan Eddy.
+\newblock Gartner: 21 billion iot devices to invade by 2020.
+\newblock {\em InformationWeek, Nov}, 10, 2015.
+
 \bibitem{etzion2014personalization}
 Opher Etzion and Fabiana Forunier.
 \newblock On the personalization of event-based systems.
@@ -202,6 +207,11 @@ Joseph Phelps, Glen Nowak, and Elizabeth Ferrell.
   {Personal} {Information}.
 \newblock {\em Journal of Public Policy \& Marketing}, 19(1):27--41, 2000.
 
+\bibitem{pricewaterhousecoopers_smart_nodate}
+PwC.
+\newblock Smart home, seamless life: Unlocking a culture of convenience, 2017.
+\newblock [Online; accessed 1-Jan-2019].
+
 \bibitem{197908}
 Frederic Raber, Alexander~De Luca, and Moritz Graus.
 \newblock Privacy wedges: Area-based audience selection for social network
@@ -320,5 +330,12 @@ Peter Worthy, Ben Matthews, and Stephen Viller.
 \newblock In {\em Proceedings of the 2016 {ACM} {Conference} on {Designing}
   {Interactive} {Systems}}, {DIS} '16, pages 427--434, New York, NY, USA, 2016.
   ACM.
+
+\bibitem{yu2015handling}
+Tianlong Yu, Vyas Sekar, Srinivasan Seshan, Yuvraj Agarwal, and Chenren Xu.
+\newblock Handling a trillion (unfixable) flaws on a billion devices:
+  Rethinking network security for the internet-of-things.
+\newblock In {\em Proceedings of the 14th ACM Workshop on Hot Topics in
+  Networks}, page~5. ACM, 2015.
 
 \end{thebibliography}

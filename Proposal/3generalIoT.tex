@@ -1,7 +1,7 @@
 % !TeX root = proposal.tex
 \chapter{Recommending Privacy Settings for General Public IoT}\label{chapter:generalIoT}
 
-In chapter~\ref{chapter:acceptability}, we have discussed what are the key factors that affecting users to adopt or accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.
+In chapter~\ref{chapter:acceptability}, we have discussed what are the key factors affecting users to adopt or accept IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques have been applied to predicting people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. But none similar research has been done in IoT domain yet. Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.
 
 In this chapter, we demonstrate our work completed in exploring recommending privacy settings for general IoT, including the dataset that we use, our methodology, the inspection of users' behaviors using statistical analyses, prediction of users' behaviors using machine learning techniques, and the privacy-setting prototypes that we create based on both statistical and machine learning results.
 
@@ -84,7 +84,7 @@ We use this dataset in two phases. In our first phase, we develop a ``layered'' 
 
 In our second phase, we develop a ``smart'' default setting, which preempts the need for many users to manually change their settings~\cite{smith2013choice}. However, since people differ extensively in their privacy preferences~\cite{olson2005study}, it is not possible to achieve an optimal default that is the same for everyone. Instead, different people may require different settings. Outside the field of IoT, researchers have been able to establish distinct clusters or ``profiles'' based on user behavioral data~\cite{knijnenburg2013dimensionality, olson2005study, wisniewski2017making}. We perform machine learning analysis on this dataset to create a similar set of ``smart profiles'' for our general IoT privacy-setting interface.
 
-\section{Statistical Analysis}
+\section{Statistical Analysis}\label{sec:sa1}
 
 %
 %In this section we analyze how users' behavioral intentions to allow or reject the information collection described in the scenario are influenced by the scenario parameters. In line with classic attitude-behavior models~\cite{ajzen1977attitude}, we also investigate whether users' attitudes regarding the scenario---their judgment of risk, comfort, and appropriateness---mediate these effects. This mediation analysis~\cite{baron1986moderator} involves the following test:
@@ -376,7 +376,7 @@ The 2-cluster solution (Figure~\ref{fig:2clusters}) has a 75.28\% accuracy --- a
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.45\textwidth]{figures/attitude-based-2.pdf}
+	\includegraphics[width=0.8\textwidth]{figures/attitude-based-2.pdf}
 	\caption{Attitude-based clustering: 2-cluster tree. Further drill down for \textbf{who} = `Friend' or `Employer/School' in Cluster 0 is hidden for space reasons.}
 	\label{fig:2clusters}
 \end{figure}
@@ -384,12 +384,12 @@ The 2-cluster solution (Figure~\ref{fig:2clusters}) has a 75.28\% accuracy --- a
 The 3-cluster solution has a slightly lower accuracy of 75.17\%, but is more parsimonious than the 2-cluster solution. There is one profile with `no' for everything, one profile that allows collection by the user's `Own device' only, and one profile that allows any collection except when the recipient is `Unknown' or the `Government'. The 4- and 5-cluster solutions have several clusters with the same sub-tree, and therefore reduce to a 3-cluster solution with 75.60\% and 75.25\% accuracy, respectively.
 
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.48\textwidth]{figures/attitude-based-3.pdf}
-%	\caption{Attitude-based clustering: 3-cluster tree}
-%	\label{fig:3clusters}
-%\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/attitude-based-3.pdf}
+	\caption{Attitude-based clustering: 3-cluster tree}
+	\label{fig:3clusters}
+\end{figure}
 
 
 %\subsection{Trait-based clustering}
@@ -412,9 +412,9 @@ The 3-cluster solution has a slightly lower accuracy of 75.17\%, but is more par
 \subsection{Fit-based clustering}
 Our fit-based clustering approach clusters participants without using any additional information. It instead uses the fit of the tree models to bootstrap the process of sorting participants into clusters. Like many bootstrapping methods, ours uses \emph{random starts} and \emph{iterative improvements} to find the optimal solution. The process is depicted in Figure~\ref{fig:flow_chart_fit}, and described in detail below. Accuracies of the resulting solutions are reported in Table~\ref{tab:comp_approach} under ``fit-based clustering''.
 
-\begin{figure}
+\begin{figure}[htp]
 	\centering
-	\includegraphics[width=0.42\textwidth]{figures/flowchartFit.png}
+	\includegraphics[width=0.8\textwidth]{figures/flowchartFit.png}
 	\caption{The Flow Chart for Fit-based Clustering}
 	\label{fig:flow_chart_fit}
 \end{figure}
@@ -439,7 +439,7 @@ The 3-cluster solution (Figure~\ref{fig:3clustersFit}) has a 81.54\% accuracy --
 
 \begin{figure*}
 	\centering
-	\includegraphics[width=.81\textwidth]{figures/fit-based-3c.pdf}
+	\includegraphics[width=\textwidth]{figures/fit-based-3c.pdf}
 	\caption{Fit-based clustering: 3-cluster tree. Further drill down is hidden for space reasons.}
 	\label{fig:3clustersFit}
 \end{figure*}
@@ -459,19 +459,19 @@ We were able to reach a 5- and 4-cluster solution. The 3-cluster solution collap
 \end{figure}
 
 \subsection{Discussion of Machine Learning Results}
-Figure~\ref{fig:comp_approach} shows a comparison of the presented approaches. Compared to a naive default setting (all `no'), a ``smart default'' makes a 2.0\% improvement. The fit-based 2-cluster solution results in two ``smart profiles'' that make another 6.7\% improvement over the ``smart default'', while the three ``smart profiles'' of the fit-based 3-cluster solution make an 11.5\% improvement. If we let users choose the best option among these three profiles, they will on average be content with 81.54\% of the settings. This rivals the accuracy of some of the ``active tracking'' machine learning approaches (cf.~\cite{sadeh2009understanding}).
+Figure~\ref{fig:comp_approach} shows a comparison of the presented approaches. Compared to a naive default setting (all `no'), a ``smart default'' makes a 2.0\% improvement. The fit-based 2-cluster solution results in two ``smart profiles'' that make another 6.7\% improvement over the ``smart default'', while the three ``smart profiles'' of the fit-based 3-cluster solution make an 11.5\% improvement. If we let users choose the best option among these three profiles, they will on average be content with 81.54\% of the settings. This rivals the accuracy of some of the ``active tracking'' machine learning approaches~\cite{sadeh2009understanding}.
 
 In line with our statistical results, the factor \textbf{who} seems to be the most prominent parameter, followed by \textbf{what}. In some cases the settings are more complex, depending on a combination of \textbf{who} and \textbf{what}. This is in line with the interaction effect observed in our statistical results.
 
 Even our most accurate solution is not without fault, and its accuracy depends most on the \textbf{who} parameter. Specifically, the solution is most accurate for the user's own device, the device of a friend, and when the recipient is unknown. It is however less accurate when the recipient is a colleague, a nearby business, an employer, or the government. In these scenarios, more misclassifications tend to happen, so it would be useful to `guide' users to specifically have a look at these default settings, should they opt to make any manual overrides.
 
 \section{Privacy-setting Prototypes (original work)}\label{sec:design1}
-In this section we employ our data-driven design methodology to develop a prototype for an IoT privacy-setting interface based on the results of our statistical and machine learning analyses.
+In Section~\ref{sec:sa1}, we developed a ``layered" interface that general IoT users can use to manually set their privacy settings (see Figure~\ref{fig:interface1}). Our machine learning analysis (Section~\ref{sec:predict1}) resulted in a number of interesting solutions for ``smart profiles'' that would allow users of this interface to set their privacy settings with a single click (i.e., a choice of profile). In this section we therefore present how we integrate the ``smart profiles" with our prototype. 
 
 \subsection{Smart Default Setting}
-The next challenge is to decide on a default setting, so that users only have to make minimal adjustments to their settings. We can use a simple ``yes to everything'' or ``no to everything'' default, but these are on average only accurate 28.33\% and 71.67\% of the time, respectively. 
+The design of ``layered" interface is based on our statistical results that there exists no interaction effect between the parameters, our ``smart default" settings can be integrated to this prototype in nature. For ``yes to everything'' or ``no to everything'' default, we can just simply set all the settings in the Screen 4 of Figure~\ref{fig:interface1} to all `on' or `off'.
 
-Using the results from our Overall Prediction (see Figure~\ref{fig:naive_cls}), we can create a ``smart default'' setting that is 73.10\% accurate on average. In this version, the IoT settings for all devices are set to `off', except for `My own device', which will be set to the middle option. Table~\ref{tab:decisions} shows the default settings at deeper levels.
+For the results from our Overall Prediction (see Figure~\ref{fig:naive_cls}), we can create a ``smart default'' setting that is 73.10\% accurate on average. In this version, the IoT settings for all devices are set to `off', except for `My own device', which will be set to the middle option. Table~\ref{tab:decisions} shows the default settings at deeper levels.
 As this default setting is on average only 73.10\% accurate, we expect users to still change some of their settings. They can do this by navigating the manual settings interface.
 
 \subsection{Smart Profiles}
@@ -507,9 +507,7 @@ In this chapter, we have presented the following:
 	\item Develop a prototype for an IoT privacy-setting interface that integrates the layered interface with the smart default or the smart profiles.
 \end{itemize}
 
-The statistical and machine learning results both indicated that recipient of the information (\textbf{who}) is the most significant parameter in users' decision to allow or reject IoT-based information collection. This parameter therefore features at the forefront in our layered settings interface, and plays an important role in our smart profiles.
-
-The \textbf{what} parameter was the second-most important decision parameter, and interacted significantly with the \textbf{who} parameter. This parameter therefore features at the second level of our settings interface, and further qualifies some of the settings in our smart profiles.
+Our statistical and machine learning results both indicated that recipient of the information (\textbf{who}) is the most significant parameter in users' decision to allow or reject IoT-based information collection. This parameter therefore features at the forefront in our layered settings interface, and plays an important role in our smart profiles. The \textbf{what} parameter was the second-most important decision parameter, and interacted significantly with the \textbf{who} parameter. This parameter therefore features at the second level of our settings interface, and further qualifies some of the settings in our smart profiles.
 
 Our layered interface allows a further drill-down to the \textbf{reason} and \textbf{persistence} parameters, but given the relatively lesser importance of these parameters, we expect few users to engage with the interface at this level. Moreover, the \textbf{where} parameter was not significant, so we left it out of the interface.
 
@@ -517,8 +515,8 @@ While a naive (`no' to all) default setting in our interface would have provided
 
 The fit-based clustering approach, which iteratively clusters users and fits an optimal tree in each cluster, provided the best solution. This resulted in an interface where users can choose from 3 profiles, which increases the accuracy by another 11.5\%.
 
-Our analysis allowed us to use \emph{data-driven design} to bootstrap the development of a privacy-setting interface, but a future user experiment could investigate whether users are comfortable with the layered interface, and whether they prefer a single ``smart default'' setting or a choice among ``smart profiles''.
-
 The scenario-based method presented in this paper is particularly suited for novel domains where few real interaction exist. We note, though, that this novelty may hamper our approach: users' decisions are inherently limited by the knowledge they have about IoT. Lee and Kobsa~\cite{lee2016understanding} made sure to educate users about the presented scenarios, hence their data is arguably better in this regard than data from ``live'' systems. However, as the adaptation of IoT becomes more widespread, the mindset and knowledge regarding such technologies---and thus their privacy preferences---might change. Our ``smart profiles'' may thus eventually have to be updated in future work, but for now, our current profiles can at least help users make make better privacy decisions in their initial stages of usage.
+
+Our analysis allowed us to use \emph{data-driven design} to bootstrap the development of a privacy-setting interface, but a future user experiment could investigate whether users are comfortable with the layered interface, and whether they prefer a single ``smart default'' setting or a choice among ``smart profiles''.
 
 In the next chapter, we discuss the challenges and solutions when we extended work that we have done in the domain of household IoT ("smart home") domain.
