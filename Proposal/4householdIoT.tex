@@ -1,10 +1,10 @@
 % !TeX root = proposal.tex
 \chapter{Recommending Privacy Settings for Household IoT}\label{chapter:householdIoT}
 
-In Chapter~\ref{chapter:generalIoT}, we have discussed recommending privacy preference for general IoT users. In this chapter, we present the work completed to date in the areas of designing for privacy for Household IoT. We expand and improve upon the previously-developed data-driven approach to design privacy-setting interfaces for users of household IoT devices. Moving the context to a more narrow environment shifts the focus of the privacy decision from the entity collecting information (which was the dominant parameter in our previous work) to a more contextual evaluation of the content or nature of the information ~\cite{nissenbaum_privacy_2004}.
+In Chapter~\ref{chapter:generalIoT}, we have discussed recommending privacy preference for general IoT users. In this chapter, we present the work completed to date in the areas of designing for privacy for Household IoT. We expand and improve upon the previously-developed data-driven approach to design privacy-setting interfaces for users of household IoT devices. Moving the context to a more narrow environment shifts the focus of the privacy decision from the entity collecting information (which was the dominant parameter in our previous work) to a more contextual evaluation of the content or nature of the information ~\cite{nissenbaum_privacy_2004}. 
 
 \section{Experimental Setup}\label{sec:exp_setup}
-In Chapter~\ref{chapter:generalIoT}, we found that "where" does not have significant effect on disclosure decisions; also the usage environment of household IoT systems/devices are always in users' home. Moreover, the structure of users' houses are different from case to case, it would be too complicated if we define "where" to a more finer-granulated level, such as bedroom, kitchen, etc.,  Hence there there is no need to retain the parameter "where". ``Persistence" of tracking is more relevant in public IoT, where encounters are often ephemeral, hence persistent tracking is less common than in household IoT. ``storage" and ``action" allow us to explore secondary uses of the information; something we learned from the qualitative feedback in our previous study was a prominent concern among users.
+In Chapter~\ref{chapter:generalIoT}, we found that "where" does not have significant effect on disclosure decisions; also the usage environment of household IoT systems/devices are always in users' home. Moreover, the structure of users' houses are different from case to case, it would be too complicated if we define "where" to a more finer-granulated level, such as bedroom, kitchen, etc.,  Hence there there is no need to retain the parameter "where". ``Persistence" of tracking is more relevant in public IoT, where encounters are often ephemeral, hence persistent tracking is less common than in household IoT. ``Storage" and ``Action" allow us to explore secondary uses of the information; something we learned from the qualitative feedback in our previous study was a prominent concern among users.
 
 Because of the above reasons, we conducted a new user study focusing on household IoT in particular, and further refine our approach to allow us to create more carefully tailored user interfaces. In this section, we first discuss the factorial procedure by which we developed 4608 highly specific IoT scenarios, as well as the questions we asked participants to evaluate these scenarios. We then describe the participant selection and experimental procedures used to collect over 13500 responses from 1133 participants.
 
@@ -339,14 +339,14 @@ Importantly, there are no interaction effects between defaults/framing and param
 
 \section{Privacy-Setting Prototype Design}\label{sec:design_stat}
 
-Our dataset presents a simplified version of possible scenarios one might encounter in routine usage of smart home technology. Still it is a daunting task to design an interface, even for these simplified scenarios: We want to enable users to navigate their information collection and sharing preferences across 12 different sources (\emph{What}), 7 different devices trying to access this information \emph{Who} for 4 different \emph{Purposes}. Additionally, this information is being stored/shared in 3 ways (\emph{Storage}) and being used for 4 different longer-term \emph{Actions}. 
+Our dataset presents a simplified version of possible scenarios one might encounter in routine usage of smart home technology. Still it is a daunting task to design an interface, even for these simplified scenarios: We want to enable users to navigate their information collection and sharing preferences across 12 different sources (\emph{What}), 7 different devices trying to access this information (\emph{Who}) for 4 different \emph{Purposes}. Additionally, this information is being stored/shared in 3 ways (\emph{Storage}) and being used for 4 different longer-term (\emph{Actions}). 
 
 Based on our statistical analysis in~\ref{sec:statAlys2}, we developed an intuitive interface that gives users manual control over their privacy settings. We split our settings interface into two separate sections: `Device/Sensor Management' and `Data Storage \& Use'. The landing page of our design (screen 1 in Figure~\ref{fig:interface2}) gives users access to these two sections. The former section is based on \emph{Who}, \emph{What} and \emph{Purpose} and allows users to ``Manage device access to data collected in your home'' (screen 2-3). The latter section is based on \emph{Storage} and \emph{Action}, and allows users to ``Manage the storage and long-term use of data collected in your home'' (screen 4). Both sections are explained in more detail below.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/interface.pdf}
-	\caption{From left, screen 1 is the landing page of our manual settings interface, screen 2 is the Device/Sensor Management page, screen 3 shows the explanation when you click on ``I want to learn more'', and screen 4 is the Data Storage \& Use page.}
+	\includegraphics[width=0.7\textwidth]{figures/interface_new.png}
+	\caption{Screen 1 (top left) is the landing page of our manual settings interface, screen 2 (top right) is the Device/Sensor Management page, screen 3 (bottom left) shows the explanation when you click on ``I want to learn more'', and screen 4 (bottom right) is the Data Storage \& Use page.}
 	\label{fig:interface2}
 \end{figure}
 
@@ -372,7 +372,7 @@ In this section we predict participants' \textit{enable}/\textit{disable} decisi
 
 %Our prediction target is the participants' decision to \textit{enable} or \textit{disable} the data collection described in each scenario. The scenario parameters serve as input attributes. These are nominal variables, making decision tree algorithms such as ID3 and J48 a suitable prediction approach. Unlike ID3, J48 uses gain ratio as the root node selection metric, which is not biased towards input attributes with many values. Moreover, by using J48 decision trees, the amount of pruning for the model can be easily manipulated to investigate the trade-off between the accuracy and parsimony. We therefore use J48 throughout our analysis.
 
-Our prediction target is the participants' decision to \textit{enable} or \textit{disable} the data collection described in each scenario. The scenario parameters serve as input attributes. Using Java and Weka's Java library~\cite{witten2016data} for modeling and evaluation, we implement progressively sophisticated methods for predicting participants' decisions. After discussing naive (enable/disable all) solutions and One Rule Prediction, we first present a cross-validated tree learning solution that results in a single ``smart default'' setting that is the same for everyone. Subsequently, we discuss three different procedures that create a number of ``smart profiles'' by clustering the participants and creating a separate cross-validated tree for each cluster. For each procedure, we try various numbers of clusters and pruning parameters. The solutions with the most parsimonious trees and the highest accuracies of each approach are reported in Table~\ref{tab:comp_approach}; more detailed results of the parsimony/accuracy trade-off are presented in Figures~\ref{fig:smart_default_optimal}, \ref{fig:attitudesum}, \ref{fig:conglosum} and \ref{fig:fitsum} throughout the paper, and combined in Figure~\ref{fig:summary}.
+Our prediction target is the participants' decision to \textit{enable} or \textit{disable} the data collection described in each scenario. The scenario parameters serve as input attributes. Using Java and Weka's Java library~\cite{witten2016data} for modeling and evaluation, we implement progressively sophisticated methods for predicting participants' decisions. After discussing naive (enable/disable all) solutions and One Rule Prediction, we first present a cross-validated tree learning solution that results in a single ``smart default'' setting that is the same for everyone. Subsequently, we discuss three different procedures that create a number of ``smart profiles'' by clustering the participants and creating a separate cross-validated tree for each cluster. For each procedure, we try various numbers of clusters and pruning parameters. The solutions with the most parsimonious trees and the highest accuracies of each approach are reported in Table~\ref{tab:comp_approach2}; more detailed results of the parsimony/accuracy trade-off are presented in Figures~\ref{fig:smart_default_optimal}, \ref{fig:attitudesum}, \ref{fig:conglosum} and \ref{fig:fitsum} throughout the paper, and combined in Figure~\ref{fig:summary}.
 
 \newcommand{\specialcell}[2][c]{%
 	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
@@ -380,7 +380,7 @@ Our prediction target is the participants' decision to \textit{enable} or \texti
 \begin{table}
 	\centering
 	\caption{Comparison of clustering approaches (highest parsimony and highest accuracy)}
-	\label{tab:comp_approach}
+	\label{tab:comp_approach2}
 	\begin{tabular}{l|c|c|c|c}
 		\hline
 		Approach & \specialcell{Inital \\ clusters} & \specialcell{Final \# of \\ profiles} & \specialcell{Complexity \\ (avg. tree size/profile)} & Accuracy \\ \hline
@@ -452,13 +452,13 @@ The resulting tree has an accuracy of 63.76\%. As shown in Figure~\ref{fig:smart
 	\label{fig:smart_default}
 \end{figure}
 
-On the downside, this ``smart default'' setting is quite complex---the ``smart default'' in our previous work~\cite{bahiratiui2018} contained only 49 nodes, whereas the ``smart default'' for our current dataset has 264 nodes. Compared to \textit{One Rule} algorithm, which only has 4 nodes in its decision tree and is thus much easier to explain, the accuracy improvement of Smart Default is only 3.8\%. This highlights the trade-off between parsimony and prediction accuracy that we have to make when developing ``smart default'' settings. On the upside, though, the prediction of the J48 decision tree algorithm is more balanced, with a roughly equal number of false positives and false negatives (see Table~\ref{tab:confusion_matrix}).
+On the downside, this ``smart default'' setting is quite complex---the ``smart default'' in our previous work~\cite{bahiratiui2018} contained only 49 nodes, whereas the ``smart default'' for our current dataset has 264 nodes. Compared to \textit{One Rule} algorithm, which only has 4 nodes in its decision tree and is thus much easier to explain, the accuracy improvement of Smart Default is only 3.8\%. This highlights the trade-off between parsimony and prediction accuracy that we have to make when developing ``smart default'' settings. On the upside, though, the prediction of the J48 decision tree algorithm is more balanced, with a roughly equal number of false positives and false negatives (see Table~\ref{tab:confusion_matrix2}).
 
 
 \begin{table}
 	\centering
 	\caption{Confusion matrix for the overall prediction}
-	\label{tab:confusion_matrix}
+	\label{tab:confusion_matrix2}
 	\begin{tabular}{c|c|c|c} \hline
 		Observed &\multicolumn{2}{c|}{Prediction} & Total\\ \cline{2-3}
 		& Enable     & Disable       &  \\ \hline
@@ -508,7 +508,8 @@ In the remainder of this section we apply existing and new clustering methods wi
 
 
 \subsection{Attitude-Based Clustering}
-As shown in Figure~\ref{fig:mediation_test}, our statistical results indicate that the effects of scenario parameters on users' decisions are mediated by their attitudes (Risk, Comfort, Appropriateness, Expectedness and Usefulness). Therefore, our first attempt to develop ``smart profiles'' is to cluster participants with similar attitudes towards the 12 scenarios they evaluated. We averaged the values per attitude across each participant's 12 answers, and ran a \textit{k-means} clustering algorithm to divide them into 2, 3, 4, 5, and 6 clusters. We then added the participants' cluster assignments back to our original dataset, and ran the J48 decision tree algorithm on the dataset with this additional \emph{Cluster} attribute for each number of clusters, varying the Confidence Factor from 0.01 to 0.25 with increments of 0.01. The results are summarized in Figure~\ref{fig:attitudesum}, which displays the most accurate solution for any given tree size and number of clusters.
+%As shown in Figure~\ref{fig:mediation_test}, 
+Our statistical results indicate that the effects of scenario parameters on users' decisions are mediated by their attitudes (Risk, Comfort, Appropriateness, Expectedness and Usefulness). Therefore, our first attempt to develop ``smart profiles'' is to cluster participants with similar attitudes towards the 12 scenarios they evaluated. We averaged the values per attitude across each participant's 12 answers, and ran a \textit{k-means} clustering algorithm to divide them into 2, 3, 4, 5, and 6 clusters. We then added the participants' cluster assignments back to our original dataset, and ran the J48 decision tree algorithm on the dataset with this additional \emph{Cluster} attribute for each number of clusters, varying the Confidence Factor from 0.01 to 0.25 with increments of 0.01. The results are summarized in Figure~\ref{fig:attitudesum}, which displays the most accurate solution for any given tree size and number of clusters.
 
 %Actual profile numbers, average tree sizes per profile, and accuracies for resulting solutions are reported in Table~\ref{tab:attitude_results}.
 
