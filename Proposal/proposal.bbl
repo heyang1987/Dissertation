@@ -1,5 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{al2016modeling}
+Adai~Mohammad Al-Momani, Moamin~A Mahmoud, and S~Ahmad.
+\newblock Modeling the adoption of internet of things services: A conceptual
+  framework.
+\newblock {\em International Journal of Applied Research}, 2(5):361--367, 2016.
+
+\bibitem{ashton2009internet}
+Kevin Ashton et~al.
+\newblock That ‘internet of things’ thing.
+\newblock {\em RFID journal}, 22(7):97--114, 2009.
+
+\bibitem{atzori2010internet}
+Luigi Atzori, Antonio Iera, and Giacomo Morabito.
+\newblock The internet of things: A survey.
+\newblock {\em Computer networks}, 54(15):2787--2805, 2010.
+
 \bibitem{awad_2006}
 Naveen~Farag Awad and M.~S. Krishnan.
 \newblock The {Personalization} {Privacy} {Paradox}: {An} {Empirical}
@@ -7,12 +23,18 @@ Naveen~Farag Awad and M.~S. Krishnan.
   {Profiled} {Online} for {Personalization}.
 \newblock {\em MIS Quarterly}, 30(1):13--28, March 2006.
 
-\bibitem{bahiratiui2018}
-Paritosh Bahirat, Yangyang He, Abhilash Menon, and Bart Knijnenburg.
-\newblock A {Data}-{Driven} {Approach} to {Developing} {IoT}
-  {Privacy}-{Setting} {Interfaces}.
-\newblock In {\em 23rd {International} {Conference} on {Intelligent} {User}
-  {Interfaces}}, {IUI} '18, pages 165--176, Toyko, Japan, 2018. ACM.
+\bibitem{bauer2005driving}
+Hans~H Bauer, Tina Reichardt, Stuart~J Barnes, and Marcus~M Neumann.
+\newblock Driving consumer acceptance of mobile marketing: A theoretical
+  framework and empirical study.
+\newblock {\em Journal of electronic commerce research}, 6(3):181, 2005.
+
+\bibitem{beresford2011mockdroid}
+Alastair~R Beresford, Andrew Rice, Nicholas Skehin, and Ripduman Sohan.
+\newblock Mockdroid: trading privacy for application functionality on
+  smartphones.
+\newblock In {\em Proceedings of the 12th workshop on mobile computing systems
+  and applications}, pages 49--54. ACM, 2011.
 
 \bibitem{chellappa_2005}
 Ramnath~K. Chellappa and Raymond~G. Sin.
@@ -20,14 +42,17 @@ Ramnath~K. Chellappa and Raymond~G. Sin.
   online consumer's dilemma.
 \newblock {\em Information Technology and Management}, 6(2-3):181--202, 2005.
 
-\bibitem{chow2015hci}
-Richard Chow, Serge Egelman, Raghudeep Kannavara, Hosub Lee, Suyash Misra, and
-  Edward Wang.
-\newblock {HCI} in {Business}: {A} {Collaboration} with {Academia} in {IoT}
-  {Privacy}.
-\newblock In Fiona Fui-Hoon Nah and Chuan-Hoo Tan, editors, {\em {HCI} in
-  {Business}}, number 9191 in Lecture Notes on Computer Science. Springer,
-  2015.
+\bibitem{chen2014vision}
+Shanzhi Chen, Hui Xu, Dake Liu, Bo~Hu, and Hucheng Wang.
+\newblock A vision of iot: Applications, challenges, and opportunities with
+  china perspective.
+\newblock {\em IEEE Internet of Things journal}, 1(4):349--359, 2014.
+
+\bibitem{culnan1993did}
+Mary~J Culnan.
+\newblock " how did they get my name?": An exploratory investigation of
+  consumer attitudes toward secondary information use.
+\newblock {\em MIS quarterly}, pages 341--363, 1993.
 
 \bibitem{davies_privacy_2016}
 Nigel Davies, Nina Taft, Mahadev Satyanarayanan, Sarah Clinch, and Brandon
@@ -36,6 +61,12 @@ Nigel Davies, Nina Taft, Mahadev Satyanarayanan, Sarah Clinch, and Brandon
 \newblock In {\em Proceedings of the 17th {International} {Workshop} on
   {Mobile} {Computing} {Systems} and {Applications}}, {HotMobile} '16, pages
   39--44, New York, NY, USA, 2016. ACM.
+
+\bibitem{davis1989user}
+Fred~D Davis, Richard~P Bagozzi, and Paul~R Warshaw.
+\newblock User acceptance of computer technology: a comparison of two
+  theoretical models.
+\newblock {\em Management science}, 35(8):982--1003, 1989.
 
 \bibitem{dong2016ppm}
 Cailing Dong, Hongxia Jin, and Bart~P Knijnenburg.
@@ -60,12 +91,38 @@ Lujun Fang and Kristen LeFevre.
 \newblock In {\em Proceedings of the 19th international conference on World
   wide web}, pages 351--360, 2010.
 
+\bibitem{fantana2013iot}
+NK~Fantana, Till Riedel, Jochen Schlick, Stefan Ferber, J{\"u}rgen Hupp,
+  Stephen Miles, Florian Michahelles, and Stefan Svensson.
+\newblock Iot applications—value creation for industry.
+\newblock {\em Internet of Things: Converging Technologies for Smart
+  Environments and Integrated Ecosystems}, page 153, 2013.
+
+\bibitem{felt2012android}
+Adrienne~Porter Felt, Elizabeth Ha, Serge Egelman, Ariel Haney, Erika Chin, and
+  David Wagner.
+\newblock Android permissions: User attention, comprehension, and behavior.
+\newblock In {\em Proceedings of the eighth symposium on usable privacy and
+  security}, pages 1--14. ACM, 2012.
+
 \bibitem{feth_user-centered_2017}
 Denis Feth, Andreas Maier, and Svenja Polst.
 \newblock A {User}-{Centered} {Model} for {Usable} {Security} and {Privacy}.
 \newblock In Theo Tryfonas, editor, {\em Human {Aspects} of {Information}
   {Security}, {Privacy} and {Trust}}, Lecture {Notes} in {Computer} {Science},
   pages 74--89. Springer International Publishing, 2017.
+
+\bibitem{gao2014unified}
+Lingling Gao and Xuesong Bai.
+\newblock A unified perspective on the factors influencing consumer acceptance
+  of internet of things technology.
+\newblock {\em Asia Pacific Journal of Marketing and Logistics},
+  26(2):211--231, 2014.
+
+\bibitem{gefen2003trust}
+David Gefen, Elena Karahanna, and Detmar~W Straub.
+\newblock Trust and tam in online shopping: An integrated model.
+\newblock {\em MIS quarterly}, 27(1):51--90, 2003.
 
 \bibitem{hemant2015internet}
 Hemant Ghayvat, S.C. Mukhopadhyay, Jie Liu, Arun Babu, Md~Alahi, and Xiang Gui.
@@ -82,11 +139,20 @@ Nathaniel Good, Rachna Dhamija, Jens Grossklags, David Thaw, Steven Aronowitz,
 \newblock In {\em Proceedings of the 2005 {Symposium} on {Usable} {Privacy} and
   {Security}}, pages 43--52, 2005.
 
-\bibitem{hall2009weka}
-Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
-  and Ian~H Witten.
-\newblock The weka data mining software: an update.
-\newblock {\em ACM SIGKDD explorations newsletter}, 11(1):10--18, 2009.
+\bibitem{guinard2011internet}
+Dominique Guinard, Vlad Trifa, Friedemann Mattern, and Erik Wilde.
+\newblock From the internet of things to the web of things: Resource-oriented
+  architecture and best practices.
+\newblock In {\em Architecting the Internet of things}, pages 97--129.
+  Springer, 2011.
+
+\bibitem{hassanalieragh2015health}
+Moeen Hassanalieragh, Alex Page, Tolga Soyata, Gaurav Sharma, Mehmet Aktas,
+  Gonzalo Mateos, Burak Kantarci, and Silvana Andreescu.
+\newblock Health monitoring and management using internet-of-things (iot)
+  sensing with cloud-based processing: Opportunities and challenges.
+\newblock In {\em 2015 IEEE International Conference on Services Computing},
+  pages 285--292. IEEE, 2015.
 
 \bibitem{henka2016personalizing}
 Alexander Henka, Lukas Smirek, and Gottfried Zimmermann.
@@ -99,12 +165,6 @@ Shuk~Ying Ho and Kar Tam.
 \newblock Understanding the {Impact} of {Web} {Personalization} on {User}
   {Information} {Processing} and {Decision} {Outcomes}.
 \newblock {\em MIS Quarterly}, 30(4):865--890, December 2006.
-
-\bibitem{Holte1993}
-Robert~C. Holte.
-\newblock Very simple classification rules perform well on most commonly used
-  datasets.
-\newblock {\em Machine Learning}, 11(1):63--90, Apr 1993.
 
 \bibitem{hui_2006}
 Kai-Lung Hui, Bernard C.~Y. Tan, and Chyan-Yee Goh.
@@ -126,17 +186,35 @@ Carlos Jensen and Colin Potts.
 \newblock In {\em 2004 {Conference} on {Human} {Factors} in {Computing}
   {Systems}}, pages 471--478, 2004.
 
+\bibitem{jia2012rfid}
+Xiaolin Jia, Quanyuan Feng, Taihua Fan, and Quanshui Lei.
+\newblock Rfid technology and its applications in internet of things (iot).
+\newblock In {\em Consumer Electronics, Communications and Networks (CECNet),
+  2012 2nd International Conference on}, pages 1282--1285. IEEE, 2012.
+
+\bibitem{kelly2013towards}
+Sean Dieter~Tebje Kelly, Nagender~Kumar Suryadevara, and Subhas~Chandra
+  Mukhopadhyay.
+\newblock Towards the implementation of iot for environmental condition
+  monitoring in homes.
+\newblock {\em IEEE Sensors Journal}, 13(10):3846--3853, 2013.
+
+\bibitem{knijnenburg2015user}
+Bart~P. Knijnenburg.
+\newblock {\em A user-tailored approach to privacy decision support}.
+\newblock Ph.{D}. {Thesis}, University of California, Irvine, Irvine, CA, 2015.
+
 \bibitem{knijnenburg2017}
 Bart~P. Knijnenburg.
 \newblock Privacy? {I} {Can}'t {Even}! {Making} a {Case} for {User}-{Tailored}
   {Privacy}.
 \newblock {\em IEEE Security \& Privacy}, 15(4):62--67, 2017.
 
-\bibitem{knijnenburg2013dimensionality}
-Bart~P Knijnenburg, Alfred Kobsa, and Hongxia Jin.
-\newblock Dimensionality of information disclosure behavior.
-\newblock {\em International Journal of Human-Computer Studies},
-  71(12):1144--1162, 2013.
+\bibitem{kobsa2006privacy}
+Alfred Kobsa, Ramnath~K Chellappa, and Sarah Spiekermann.
+\newblock Privacy-enhanced personalization.
+\newblock In {\em CHI'06 extended abstracts on Human factors in computing
+  systems}, pages 1631--1634. ACM, 2006.
 
 \bibitem{kobsa_2016}
 Alfred Kobsa, Hichang Cho, and Bart~P. Knijnenburg.
@@ -146,16 +224,49 @@ Alfred Kobsa, Hichang Cho, and Bart~P. Knijnenburg.
 \newblock {\em Journal of the Association for Information Science and
   Technology}, 67:2587--2606, February 2016.
 
-\bibitem{lee2016understanding}
-Hosub Lee and Alfred Kobsa.
-\newblock Understanding user privacy in internet of things environments.
-\newblock {\em 2016 IEEE 3rd World Forum on Internet of Things (WF-IoT)}, pages
-  407--412, 2016.
+\bibitem{laufer1977privacy}
+Robert~S Laufer and Maxine Wolfe.
+\newblock Privacy as a concept and a social issue: A multidimensional
+  developmental theory.
+\newblock {\em Journal of social Issues}, 33(3):22--42, 1977.
+
+\bibitem{lazarescu2013design}
+Mihai~T Lazarescu.
+\newblock Design of a wsn platform for long-term environmental monitoring for
+  iot applications.
+\newblock {\em IEEE Journal on emerging and selected topics in circuits and
+  systems}, 3(1):45--54, 2013.
+
+\bibitem{lee2012effect}
+Woojin Lee, Lina Xiong, and Clark Hu.
+\newblock The effect of facebook users’ arousal and valence on intention to
+  go to the festival: Applying an extension of the technology acceptance model.
+\newblock {\em International Journal of Hospitality Management},
+  31(3):819--827, 2012.
+
+\bibitem{li2011smart}
+Xu~Li, Rongxing Lu, Xiaohui Liang, Xuemin Shen, Jiming Chen, and Xiaodong Lin.
+\newblock Smart community: an internet of things application.
+\newblock {\em IEEE Communications Magazine}, 49(11), 2011.
 
 \bibitem{li2017cross}
 Yao Li, Alfred Kobsa, Bart~P Knijnenburg, and MH~Carolyn Nguyen.
 \newblock Cross-cultural privacy prediction.
 \newblock {\em Proceedings on Privacy Enhancing Technologies}, 2:93--112, 2017.
+
+\bibitem{lin2014modeling}
+Jialiu Lin, Bin Liu, Norman Sadeh, and Jason~I Hong.
+\newblock Modeling users’ mobile app privacy preferences: Restoring usability
+  in a sea of permission settings.
+\newblock pages 199--212, 2014.
+
+\bibitem{liu2016follow}
+Bin Liu, Mads~Schaarup Andersen, Florian Schaub, Hazim Almuhimedi,
+  Shikun~(Aerin) Zhang, Norman Sadeh, Yuvraj Agarwal, and Alessandro Acquisti.
+\newblock Follow {My} {Recommendations}: {A} {Personalized} {Privacy}
+  {Assistant} for {Mobile} {App} {Permissions}.
+\newblock In {\em Proceedings of the 2016 {Symposium} on {Usable} {Privacy} and
+  {Security}}, 2016.
 
 \bibitem{loi_systematically_2017}
 Franco Loi, Arunan Sivanathan, Hassan~Habibi Gharakheili, Adam Radford, and
@@ -166,17 +277,17 @@ Franco Loi, Arunan Sivanathan, Hassan~Habibi Gharakheili, Adam Radford, and
   {Security} and {Privacy}}, {IoTS}\&{P} '17, pages 1--6, New York, NY, USA,
   2017. ACM.
 
-\bibitem{nissenbaum_privacy_2004}
-Helen Nissenbaum.
-\newblock Privacy as {Contextual} {Integrity} {Symposium} - {Technology},
-  {Values}, and the {Justice} {System}.
-\newblock {\em Washington Law Review}, 79:119--158, 2004.
+\bibitem{lu2014overview}
+Chris Lu.
+\newblock Overview of security and privacy issues in the internet of things,
+  2014.
 
-\bibitem{olson2005study}
-Judith~S Olson, Jonathan Grudin, and Eric Horvitz.
-\newblock A study of preferences for sharing and privacy.
-\newblock In {\em CHI'05 extended abstracts on Human factors in computing
-  systems}, pages 1985--1988, 2005.
+\bibitem{mital2018adoption}
+Monika Mital, Victor Chang, Praveen Choudhary, Armando Papa, and Ashis~K Pani.
+\newblock Adoption of internet of things in india: A test of competing models
+  using a structured equation modeling approach.
+\newblock {\em Technological Forecasting and Social Change}, 136:339--346,
+  2018.
 
 \bibitem{pallapa2014adaptive}
 Gautham Pallapa, Sajal~K Das, Mario Di~Francesco, and Tuomas Aura.
@@ -184,13 +295,10 @@ Gautham Pallapa, Sajal~K Das, Mario Di~Francesco, and Tuomas Aura.
   interactions in smart environments.
 \newblock {\em Pervasive and Mobile Computing}, 12:232--243, 2014.
 
-\bibitem{Pejovic2014}
-Veljko Pejovic and Mirco Musolesi.
-\newblock Interruptme: Designing intelligent prompting mechanisms for pervasive
-  applications.
-\newblock In {\em Proceedings of the 2014 ACM International Joint Conference on
-  Pervasive and Ubiquitous Computing}, UbiComp '14, pages 897--908, New York,
-  NY, USA, 2014. ACM.
+\bibitem{park2007acceptance}
+Yangil Park and Jengchung~V Chen.
+\newblock Acceptance and adoption of the innovative use of smartphone.
+\newblock {\em Industrial Management \& Data Systems}, 107(9):1349--1365, 2007.
 
 \bibitem{perera_privacy-by-design_2016}
 Charith Perera, Ciaran McCormick, Arosha~K. Bandara, Blaine~A. Price, and
@@ -201,11 +309,29 @@ Charith Perera, Ciaran McCormick, Arosha~K. Bandara, Blaine~A. Price, and
   {Internet} of {Things}}, {IoT}'16, pages 83--92, New York, NY, USA, 2016.
   ACM.
 
+\bibitem{pfitzmann2001anonymity}
+Andreas Pfitzmann and Marit K{\"o}hntopp.
+\newblock Anonymity, unobservability, and pseudonymity—a proposal for
+  terminology.
+\newblock In {\em Designing privacy enhancing technologies}, pages 1--9.
+  Springer, 2001.
+
 \bibitem{phelps_2000}
 Joseph Phelps, Glen Nowak, and Elizabeth Ferrell.
 \newblock Privacy {Concerns} and {Consumer} {Willingness} to {Provide}
   {Personal} {Information}.
 \newblock {\em Journal of Public Policy \& Marketing}, 19(1):27--41, 2000.
+
+\bibitem{pikkarainen2004consumer}
+Tero Pikkarainen, Kari Pikkarainen, Heikki Karjaluoto, and Seppo Pahnila.
+\newblock Consumer acceptance of online banking: an extension of the technology
+  acceptance model.
+\newblock {\em Internet research}, 14(3):224--235, 2004.
+
+\bibitem{porter2014smart}
+Michael~E Porter and James~E Heppelmann.
+\newblock How smart, connected products are transforming competition.
+\newblock {\em Harvard business review}, 92(11):64--88, 2014.
 
 \bibitem{pricewaterhousecoopers_smart_nodate}
 PwC.
@@ -218,6 +344,13 @@ Frederic Raber, Alexander~De Luca, and Moritz Graus.
   posts.
 \newblock In {\em Proceedings of the 2016 {Symposium} on {Usable} {Privacy} and
   {Security}}, 2016.
+
+\bibitem{rauniar2014technology}
+Rupak Rauniar, Greg Rawski, Jei Yang, and Ben Johnson.
+\newblock Technology acceptance model (tam) and social media usage: an
+  empirical study on facebook.
+\newblock {\em Journal of Enterprise Information Management}, 27(1):6--30,
+  2014.
 
 \bibitem{ravichandran2009capturing}
 Ramprasad Ravichandran, Michael Benisch, Patrick~Gage Kelley, and Norman~M
@@ -245,6 +378,13 @@ R.~S. Sandhu and P.~Samarati.
 \newblock Access control: principle and practice.
 \newblock {\em IEEE Communications Magazine}, 32(9):40--48, 1994.
 
+\bibitem{shang2012internet}
+Xiaopu Shang, Runtong Zhang, and Ying Chen.
+\newblock Internet of things (iot) service architecture and its application in
+  e-commerce.
+\newblock {\em Journal of Electronic Commerce in Organizations (JECO)},
+  10(3):44--55, 2012.
+
 \bibitem{sheng_experimental_2008}
 Hong Sheng, Fiona Fui-Hoon Nah, and Keng Siau.
 \newblock An {Experimental} {Study} on {Ubiquitous} commerce {Adoption}:
@@ -252,17 +392,23 @@ Hong Sheng, Fiona Fui-Hoon Nah, and Keng Siau.
 \newblock {\em Journal of the Association for Information Systems},
   9(6):344--376, June 2008.
 
-\bibitem{smith2013choice}
-N.~Craig Smith, Daniel~G. Goldstein, and Eric~J. Johnson.
-\newblock Choice {Without} {Awareness}: {Ethical} and {Policy} {Implications}
-  of {Defaults}.
-\newblock {\em Journal of Public Policy \& Marketing}, 32(2):159--172, 2013.
+\bibitem{solima2016object}
+Ludovico Solima, Maria~Rosaria Della~Peruta, and Manlio Del~Giudice.
+\newblock Object-generated content and knowledge sharing: the forthcoming
+  impact of the internet of things.
+\newblock {\em Journal of the Knowledge Economy}, 7(3):738--752, 2016.
 
 \bibitem{sutanto_2013}
 Juliana Sutanto, Elia Palme, Chuan-Hoo Tan, and Chee~Wei Phang.
 \newblock Addressing the {Personalization}-{Privacy} {Paradox}: {An}
   {Empirical} {Assessment} from a {Field} {Experiment} on {Smartphone} {Users}.
 \newblock {\em MIS Quarterly}, 37(4):1141--1164, 2013.
+
+\bibitem{taylor2009privacy}
+David~G Taylor, Donna~F Davis, and Ravi Jillapalli.
+\newblock Privacy concern and online personalization: The moderating effects of
+  information control and compensation.
+\newblock {\em Electronic commerce research}, 9(3):203--223, 2009.
 
 \bibitem{teltzrow_2004}
 Max Teltzrow and Alfred Kobsa.
@@ -277,6 +423,12 @@ Max Teltzrow and Alfred Kobsa.
 Horst Treiblmaier and Irene Pollach.
 \newblock Users' {Perceptions} of {Benefits} and {Costs} of {Personalization}.
 \newblock In {\em {ICIS} 2007 {Proceedings}}, 2007.
+
+\bibitem{uckelmann2011architectural}
+Dieter Uckelmann, Mark Harrison, and Florian Michahelles.
+\newblock An architectural approach towards the future internet of things.
+\newblock In {\em Architecting the internet of things}, pages 1--24. Springer,
+  2011.
 
 \bibitem{ur_intruders_2014}
 Blase Ur, Jaeyeon Jung, and Stuart Schechter.
@@ -299,11 +451,33 @@ Gregg Vanderheiden and Jutta Treviranus.
 \newblock In {\em International Conference on Universal Access in
   Human-Computer Interaction}, pages 517--526. Springer, 2011.
 
+\bibitem{venkatesh2001longitudinal}
+Viswanath Venkatesh and Susan~A Brown.
+\newblock A longitudinal investigation of personal computers in homes: adoption
+  determinants and emerging challenges.
+\newblock {\em MIS quarterly}, pages 71--102, 2001.
+
+\bibitem{venkatesh2003user}
+Viswanath Venkatesh, Michael~G Morris, Gordon~B Davis, and Fred~D Davis.
+\newblock User acceptance of information technology: Toward a unified view.
+\newblock {\em MIS quarterly}, pages 425--478, 2003.
+
+\bibitem{verykios2004state}
+Vassilios~S Verykios, Elisa Bertino, Igor~Nai Fovino, Loredana~Parasiliti
+  Provenza, Yucel Saygin, and Yannis Theodoridis.
+\newblock State-of-the-art in privacy preserving data mining.
+\newblock {\em ACM Sigmod Record}, 33(1):50--57, 2004.
+
 \bibitem{watson12}
 Jason Watson, Andrew Besmer, and Heather~Richter Lipford.
 \newblock +{Your} circles: sharing behavior on {Google}+.
 \newblock In {\em Proceedings of the 8th {Symposium} on {Usable} {Privacy} and
   {Security}}, pages 12:1--12:10, 2012.
+
+\bibitem{weinberg2015internet}
+Bruce~D Weinberg, George~R Milne, Yana~G Andonova, and Fatima~M Hajjat.
+\newblock Internet of things: Convenience vs. privacy and secrecy.
+\newblock {\em Business Horizons}, 58(6):615--624, 2015.
 
 \bibitem{williams2016perfect}
 Meredydd Williams, Jason~RC Nurse, and Sadie Creese.
@@ -311,17 +485,11 @@ Meredydd Williams, Jason~RC Nurse, and Sadie Creese.
 \newblock In {\em 11th International Conference on Availability, Reliability
   and Security}, pages 644--652, 2016.
 
-\bibitem{wisniewski2017making}
-Pamela~J Wisniewski, Bart~P Knijnenburg, and Heather~Richter Lipford.
-\newblock Making privacy personal: Profiling social network users to inform
-  privacy education and nudging.
-\newblock {\em International Journal of Human-Computer Studies}, 98:95--108,
-  2017.
-
-\bibitem{witten2016data}
-Ian~H Witten, Eibe Frank, Mark~A Hall, and Christopher~J Pal.
-\newblock {\em Data Mining: Practical machine learning tools and techniques}.
-\newblock Morgan Kaufmann, 2016.
+\bibitem{wixom2005theoretical}
+Barbara~H Wixom and Peter~A Todd.
+\newblock A theoretical integration of user satisfaction and technology
+  acceptance.
+\newblock {\em Information systems research}, 16(1):85--102, 2005.
 
 \bibitem{worthy_trust_2016}
 Peter Worthy, Ben Matthews, and Stephen Viller.
