@@ -1,16 +1,16 @@
 \contentsline {chapter}{Author's Publications on this topic}{i}{chapter*.1}
-\contentsline {chapter}{List of Tables}{iii}{section*.2}
-\contentsline {chapter}{List of Figures}{iv}{section*.3}
+\contentsline {chapter}{List of Tables}{iv}{section*.2}
+\contentsline {chapter}{List of Figures}{v}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}IoT Technology}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Model the Acceptance of IoT}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Technology Acceptance Model}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}UTAUT}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}UTAUT}{6}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}The Acceptance of IoT}{7}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Privacy in IoT}{8}{section.2.3}
+\contentsline {section}{\numberline {2.3}Privacy in IoT}{7}{section.2.3}
 \contentsline {section}{\numberline {2.4}Existing Privacy Control Schemes}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}Privacy-Setting Interfaces}{11}{section.2.5}
+\contentsline {section}{\numberline {2.5}Privacy-Setting Interfaces}{10}{section.2.5}
 \contentsline {section}{\numberline {2.6}Privacy Prediction}{11}{section.2.6}
 \contentsline {chapter}{Bibliography}{12}{section*.4}
-\contentsline {chapter}{Appendices}{19}{section*.6}
+\contentsline {chapter}{Appendices}{20}{section*.6}
