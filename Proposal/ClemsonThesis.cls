@@ -246,6 +246,9 @@ Advisor/Committee Chair\\\\
 Committee Member\\\\
 \underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\
 \ifx \@ClemsonCommitteeMemberTwo   \empty \else \@ClemsonCommitteeMemberTwo\\   \fi
+Committee Member\\\\
+\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\
+\ifx \@ClemsonCommitteeMemberThree   \empty \else \@ClemsonCommitteeMemberThree\\   \fi
 Committee Member
    \end{titlepage}
 }

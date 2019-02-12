@@ -1,10 +1,30 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
+
+\bibitem{acquisti2006imagined}
+Alessandro Acquisti and Ralph Gross.
+\newblock Imagined communities: Awareness, information sharing, and privacy on
+  the facebook.
+\newblock In {\em International workshop on privacy enhancing technologies},
+  pages 36--58, 2006.
 
 \bibitem{al2016modeling}
 Adai~Mohammad Al-Momani, Moamin~A Mahmoud, and S~Ahmad.
 \newblock Modeling the adoption of internet of things services: A conceptual
   framework.
 \newblock {\em International Journal of Applied Research}, 2(5):361--367, 2016.
+
+\bibitem{almuhimedi2015your}
+Hazim Almuhimedi, Florian Schaub, Norman Sadeh, Idris Adjerid, Alessandro
+  Acquisti, Joshua Gluck, Lorrie~Faith Cranor, and Yuvraj Agarwal.
+\newblock Your location has been shared 5,398 times!: A field study on mobile
+  app privacy nudging.
+\newblock In {\em Proceedings of the 33rd annual ACM conference on human
+  factors in computing systems}, pages 787--796. ACM, 2015.
+
+\bibitem{anthony2007privacy}
+Denise Anthony, Tristan Henderson, and David Kotz.
+\newblock Privacy in location-aware computing environments.
+\newblock {\em IEEE Pervasive Computing}, (4):64--72, 2007.
 
 \bibitem{ashton2009internet}
 Kevin Ashton et~al.
@@ -36,12 +56,43 @@ Hans~H Bauer, Tina Reichardt, Stuart~J Barnes, and Marcus~M Neumann.
   framework and empirical study.
 \newblock {\em Journal of electronic commerce research}, 6(3):181, 2005.
 
+\bibitem{benisch2011capturing}
+Michael Benisch, Patrick~Gage Kelley, Norman Sadeh, and Lorrie~Faith Cranor.
+\newblock Capturing location-privacy preferences: quantifying accuracy and
+  user-burden tradeoffs.
+\newblock {\em Personal and Ubiquitous Computing}, 15(7):679--694, 2011.
+
 \bibitem{beresford2011mockdroid}
 Alastair~R Beresford, Andrew Rice, Nicholas Skehin, and Ripduman Sohan.
 \newblock Mockdroid: trading privacy for application functionality on
   smartphones.
 \newblock In {\em Proceedings of the 12th workshop on mobile computing systems
   and applications}, pages 49--54. ACM, 2011.
+
+\bibitem{brar2004privacy}
+Ajay Brar and Judy Kay.
+\newblock {\em Privacy and security in ubiquitous personalized applications}.
+\newblock School of Information Technologies, University of Sydney, 2004.
+
+\bibitem{brodie2004personalization}
+C~Brodie, CM~Karat, and J~Karat.
+\newblock How personalization of an e-commerce website affects consumer trust.
+\newblock {\em Designing Personalized User Experience for eCommerce, Karat, J.,
+  Ed. Dordrecht, Netherlands: Kluwer Academic Publishers}, pages 185--206,
+  2004.
+
+\bibitem{chakraborty2014ipshield}
+Supriyo Chakraborty, Chenguang Shen, Kasturi~Rangan Raghavan, Yasser Shoukry,
+  Matt Millar, and Mani~B Srivastava.
+\newblock ipshield: A framework for enforcing context-aware privacy.
+\newblock In {\em NSDI}, pages 143--156, 2014.
+
+\bibitem{ref:chaudhry}
+Amir Chaudhry, Jon Crowcroft, Heidi Howard, Anil Madhavapeddy, Richard Mortier,
+  Hamed Haddadi, and Derek McAuley.
+\newblock Personal data: thinking inside the box.
+\newblock In {\em Proceedings of The Fifth Decennial Aarhus Conference on
+  Critical Alternatives}, pages 29--32. Aarhus University Press, 2015.
 
 \bibitem{chellappa_2005}
 Ramnath~K. Chellappa and Raymond~G. Sin.
@@ -95,6 +146,13 @@ Nathan Eddy.
 \newblock Gartner: 21 billion iot devices to invade by 2020.
 \newblock {\em InformationWeek, Nov}, 10, 2015.
 
+\bibitem{egelman2009timing}
+Serge Egelman, Janice Tsai, Lorrie~Faith Cranor, and Alessandro Acquisti.
+\newblock Timing is everything?: the effects of timing and placement of online
+  privacy indicators.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, pages 319--328. ACM, 2009.
+
 \bibitem{etzion2014personalization}
 Opher Etzion and Fabiana Forunier.
 \newblock On the personalization of event-based systems.
@@ -128,6 +186,17 @@ Denis Feth, Andreas Maier, and Svenja Polst.
   {Security}, {Privacy} and {Trust}}, Lecture {Notes} in {Computer} {Science},
   pages 74--89. Springer International Publishing, 2017.
 
+\bibitem{fu2014field}
+Huiqing Fu, Yulong Yang, Nileema Shingte, Janne Lindqvist, and Marco Gruteser.
+\newblock A field study of run-time location access disclosures on android
+  smartphones.
+\newblock {\em Proc. Usable Security (USEC)}, 14:10--pp, 2014.
+
+\bibitem{furnell2015managing}
+Steven Furnell.
+\newblock Managing privacy settings: lots of options, but beyond control?
+\newblock {\em Computer Fraud \& Security}, 2015(4):8--13, 2015.
+
 \bibitem{gao2014unified}
 Lingling Gao and Xuesong Bai.
 \newblock A unified perspective on the factors influencing consumer acceptance
@@ -154,6 +223,11 @@ Nathaniel Good, Rachna Dhamija, Jens Grossklags, David Thaw, Steven Aronowitz,
   {Notice} and {Spyware}.
 \newblock In {\em Proceedings of the 2005 {Symposium} on {Usable} {Privacy} and
   {Security}}, pages 43--52, 2005.
+
+\bibitem{acquity2014internet}
+ACQUITY GROUP et~al.
+\newblock The internet of things: The future of consumer adoption.
+\newblock {\em ACQUITY GROUP}, 2014.
 
 \bibitem{guinard2011internet}
 Dominique Guinard, Vlad Trifa, Friedemann Mattern, and Erik Wilde.
@@ -220,6 +294,13 @@ Xiaolin Jia, Quanyuan Feng, Taihua Fan, and Quanshui Lei.
 \newblock In {\em Consumer Electronics, Communications and Networks (CECNet),
   2012 2nd International Conference on}, pages 1282--1285. IEEE, 2012.
 
+\bibitem{kelley2012conundrum}
+Patrick Kelley, Sunny Consolvo, Lorrie Cranor, Jaeyeon Jung, Norman Sadeh, and
+  David Wetherall.
+\newblock A conundrum of permissions: installing applications on an android
+  smartphone.
+\newblock {\em Financial cryptography and data security}, pages 68--79, 2012.
+
 \bibitem{kelly2013towards}
 Sean Dieter~Tebje Kelly, Nagender~Kumar Suryadevara, and Subhas~Chandra
   Mukhopadhyay.
@@ -231,6 +312,11 @@ Sean Dieter~Tebje Kelly, Nagender~Kumar Suryadevara, and Subhas~Chandra
 Bart~P. Knijnenburg.
 \newblock {\em A user-tailored approach to privacy decision support}.
 \newblock Ph.{D}. {Thesis}, University of California, Irvine, Irvine, CA, 2015.
+
+\bibitem{knijnenburg2017privacy}
+Bart~P Knijnenburg.
+\newblock Privacy? i can’t even! making a case for user-tailored privacy.
+\newblock {\em IEEE Security \& Privacy}, 15(4):62--67, 2017.
 
 \bibitem{knijnenburg2017}
 Bart~P. Knijnenburg.
@@ -294,11 +380,19 @@ Yao Li, Alfred Kobsa, Bart~P Knijnenburg, and MH~Carolyn Nguyen.
 \newblock Cross-cultural privacy prediction.
 \newblock {\em Proceedings on Privacy Enhancing Technologies}, 2:93--112, 2017.
 
+\bibitem{lian2015critical}
+Jiunn-Woei Lian.
+\newblock Critical factors for cloud based e-invoice service adoption in
+  taiwan: An empirical study.
+\newblock {\em International Journal of Information Management}, 35(1):98--109,
+  2015.
+
 \bibitem{lin2014modeling}
 Jialiu Lin, Bin Liu, Norman Sadeh, and Jason~I Hong.
 \newblock Modeling users’ mobile app privacy preferences: Restoring usability
   in a sea of permission settings.
-\newblock pages 199--212, 2014.
+\newblock In {\em Symposium on Usable Privacy and Security (SOUPS)}, pages
+  199--212, 2014.
 
 \bibitem{liu2016follow}
 Bin Liu, Mads~Schaarup Andersen, Florian Schaub, Hazim Almuhimedi,
@@ -325,8 +419,9 @@ Chris Lu.
 \bibitem{madejski2012study}
 Michelle Madejski, Maritza Johnson, and Steven~M Bellovin.
 \newblock A study of privacy settings errors in an online social network.
-\newblock In {\em IEEE International Conference on Pervasive Computing and
-  Communications Workshops}, pages 340--345, 2012.
+\newblock In {\em Pervasive Computing and Communications Workshops (PERCOM
+  Workshops), 2012 IEEE International Conference on}, pages 340--345. IEEE,
+  2012.
 
 \bibitem{mital2018adoption}
 Monika Mital, Victor Chang, Praveen Choudhary, Armando Papa, and Ashis~K Pani.
@@ -393,13 +488,8 @@ Michael~E Porter and James~E Heppelmann.
 
 \bibitem{press2014idc}
 Gil Press.
-\newblock Internet of things by the numbers: Market estimates and forecasts.
-\newblock 2014.
-
-\bibitem{pricewaterhousecoopers_smart_nodate}
-PwC.
-\newblock Smart home, seamless life: Unlocking a culture of convenience, 2017.
-\newblock [Online; accessed 1-Jan-2019].
+\newblock Internet of things by the numbers: Market estimates and forecasts,
+  2014.
 
 \bibitem{197908}
 Frederic Raber, Alexander~De Luca, and Moritz Graus.
@@ -499,6 +589,13 @@ Horst Treiblmaier and Irene Pollach.
 \newblock Users' {Perceptions} of {Benefits} and {Costs} of {Personalization}.
 \newblock In {\em {ICIS} 2007 {Proceedings}}, 2007.
 
+\bibitem{tsai2017turtle}
+Lynn Tsai, Primal Wijesekera, Joel Reardon, Irwin Reyes, Serge Egelman, David
+  Wagner, Nathan Good, and Jung-Wei Chen.
+\newblock Turtle guard: Helping android users apply contextual privacy
+  preferences.
+\newblock In {\em Symposium on Usable Privacy and Security (SOUPS)}, 2017.
+
 \bibitem{uckelmann2011architectural}
 Dieter Uckelmann, Mark Harrison, and Florian Michahelles.
 \newblock An architectural approach towards the future internet of things.
@@ -543,22 +640,58 @@ Vassilios~S Verykios, Elisa Bertino, Igor~Nai Fovino, Loredana~Parasiliti
 \newblock State-of-the-art in privacy preserving data mining.
 \newblock {\em ACM Sigmod Record}, 33(1):50--57, 2004.
 
+\bibitem{ref:vescovi}
+Michele Vescovi, Corrado Moiso, Mattia Pasolli, Lorenzo Cordin, and Fabrizio
+  Antonelli.
+\newblock Building an eco-system of trusted services via user control and
+  transparency on personal data.
+\newblock In {\em IFIP International Conference on Trust Management}, pages
+  240--250. Springer, 2015.
+
+\bibitem{wang2009interactive}
+Weiquan Wang and Izak Benbasat.
+\newblock Interactive decision aids for consumer decision making in e-commerce:
+  The influence of perceived strategy restrictiveness.
+\newblock {\em MIS quarterly}, pages 293--320, 2009.
+
 \bibitem{watson12}
 Jason Watson, Andrew Besmer, and Heather~Richter Lipford.
 \newblock +{Your} circles: sharing behavior on {Google}+.
 \newblock In {\em Proceedings of the 8th {Symposium} on {Usable} {Privacy} and
   {Security}}, pages 12:1--12:10, 2012.
 
+\bibitem{weerakkody2013examining}
+Vishanth Weerakkody, Ramzi El-Haddadeh, Faris Al-Sobhi, Mahmud~Akhter Shareef,
+  and Yogesh~K Dwivedi.
+\newblock Examining the influence of intermediaries in facilitating
+  e-government adoption: An empirical investigation.
+\newblock {\em International Journal of Information Management},
+  33(5):716--725, 2013.
+
 \bibitem{weinberg2015internet}
 Bruce~D Weinberg, George~R Milne, Yana~G Andonova, and Fatima~M Hajjat.
 \newblock Internet of things: Convenience vs. privacy and secrecy.
 \newblock {\em Business Horizons}, 58(6):615--624, 2015.
+
+\bibitem{wijesekera2017feasibility}
+Primal Wijesekera, Arjun Baokar, Lynn Tsai, Joel Reardon, Serge Egelman, David
+  Wagner, and Konstantin Beznosov.
+\newblock The feasibility of dynamically granted permissions: Aligning mobile
+  privacy with user preferences.
+\newblock In {\em Security and Privacy (SP), 2017 IEEE Symposium on}, pages
+  1077--1093. IEEE, 2017.
 
 \bibitem{williams2016perfect}
 Meredydd Williams, Jason~RC Nurse, and Sadie Creese.
 \newblock The perfect storm: The privacy paradox and the internet-of-things.
 \newblock In {\em 11th International Conference on Availability, Reliability
   and Security}, pages 644--652, 2016.
+
+\bibitem{wisniewski2014profiling}
+Pamela Wisniewski, Bart~P Knijnenburg, and H~Richter Lipford.
+\newblock Profiling facebook users privacy behaviors.
+\newblock In {\em SOUPS2014 Workshop on Privacy Personas and Segmentation},
+  2014.
 
 \bibitem{wisniewski2017making}
 Pamela~J Wisniewski, Bart~P Knijnenburg, and Heather~Richter Lipford.
