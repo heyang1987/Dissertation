@@ -1,26 +1,30 @@
 % !TeX root = proposal.tex
 \chapter{Recommending Privacy Settings for General/Public IoT}\label{chapter:generalIoT}
 
-In chapter~\ref{chapter:acceptability}, we have discussed what are the key factors affecting users to adopt IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure and the difficulties that people have when manually configuring their privacy-setting for their IoT systems/devices. To alleviate similar burden of doing this in OSN/mobile areas, researchers have applied machine learning techniques to predict people’s location-privacy preferences, thereby automatically configuring their location-privacy settings. 
-%But none similar research has been done in IoT domain yet. 
-Therefore, we speculate that machine learning algorithm based user clustering can also be used to recommend privacy-setting for IoT users.
+\section{Introduction}
+In chapter~\ref{chapter:Relatedwork1} and~\ref{chapter:Relatedwork2}, we have discussed the benefits and risks of IoT technology, the key factors affecting users to adopt IoT systems/devices, the privacy risks caused by inappropriate privacy disclosure. We also discussed that people’s information disclosure behaviours are affected by multiple dimensions~\cite{knijnenburg2013dimensionality}, which enables us to classify users into their respective privacy groups and to adapt the privacy practices to the disclosure style of each group to satisfy different types of information and users. 
 
-In this chapter, we demonstrate our work completed in exploring recommending privacy settings for general IoT, including the dataset that we use, our methodology, the inspection of users' behaviors using statistical analyses, prediction of users' behaviors using machine learning techniques, and the privacy-setting prototypes that we create based on both statistical and machine learning results.
+The current privacy control schemes make it difficult for IoT users to manually configuring their privacy settings. We developed a data-driven approach to solve this problem: statistical analysis is used to inform the construction of a layered settings interface, while machine learning-based algorithms are used to predict people’s privacy decisions and helps us find most suitable smart privacy profiles. By using this data-driven approach, we design a set of intelligent user interfaces which are able to help user configure their IoT privacy settings by a single click. Note that, the novelty of our work is about the statistical analysis or the machine learning techniques that we used. The real invention is that we are using these techniques (a data-driven approach) to have a direct influence on design of privacy interface settings. Arguably, there is no existing work have done similar work in this area.
 
-In this chapter the following questions will be answered:
+In this chapter, we intend to answer the following questions:
 \begin{itemize}
-	\item Q1: What are the key parameters affecting the users' privacy decisions in a general IoT scenario?
-	\item Q2: Can you cluster users of general IoT and provide them effective and accurate smart default/profiles of privacy-settings using machine learning techniques?
+	\item Q1: Is our data-driven approach useful in the general/public IoT context?
+	\item Q2: What results can be achieved by using our approach?
 \end{itemize}
 
-As we have already discussed, there is similarity in people’s privacy preferences. Therefore,
-neighbourhood-based recommendations may be as accurate as model-based recommendations.
-Furthermore, neighbourhood-based recommendations are made from crowdsourcing sources,
-which means that their performance may be better than that of model-based recommenders when
-the data of individual users are insufficient.
+%\section{Definition of General/Public IoT}
+By general/public IoT, we are referring to those IoT devices deployed in public space, such as on the street, near a restaurant, in friends' place, etc. These IoT devices can be used by many entities (i.e. government, employers, friends, colleagues, etc) to collect data with or without people's attention. Those personal data type could be photo, video, or location. These collected data can be used to track people or provide convenience, health-related or social-related information/advice. These data collection can be done continuously or only once. In general, all the IoT devices deployed outside people' home, where they have little control over the data IoT devices collect, can be categorized as general/public IoT. General/public IoT has arguably high uncerntainty and the uncontrollability. It's possible that people are tracked or monitor by cameras without any notification in these public space, leading high the privacy risks and concerns. The demand to get notified about surrounding IoT devices or be able to control these devices is urgent. Researchers at Intel are working on a framework that allows people to be notified about surrounding IoT devices collecting personal information, and to control these collection practices~\cite{chow2015hci}.
+
+Smartphones give users control over their privacy settings in the form of prompts that ask whether the user allows or denies a certain app access to a certain type of information. Such prompts are problematic for IoT, because IoT devices are supposed to operate in the background. Moreover, as the penetration of IoT devices in our environment continues to increase, prompts would become a constant noise which users will soon start to ignore, like software EULAs~\cite{good2005spyware} or privacy policies~\cite{jensen2004privacy}. 
+
+Another solution is to regulate privacy with global settings. But research has shown that users are highly concerned about their privacy, but find it difficult to implement privacy settings~\cite{acquisti2006imagined, gross2005inf, madejski2012study}. Indeed, the vast number of encounters people have with a myriad of different IoT devices makes chosing adequate privacy settings a very challenging task that is likely to result in information and choice overload~\cite{williams2016perfect}.
+
+Developing a usable privacy-setting interface for IoT to simplify users' task of managing privacy settings seems promising. However, developing such an interface would commonly require user studies with existing systems. Since the Intel control framework~\cite{chow2015hci} has not been implemented yet, this method is also not possible. We therefore propose to develop user interface designs for managing the privacy settings of general/public IoT devices using a \emph{data driven design} approach: rather than evaluating and incrementally improving an existing interface, we leveraged data collected by Lee and Kobsa~\cite{lee2016understanding}, which gathered users' feedback on general/public IoT scenarios \emph{before} developing the interface. This approach allows us to create a navigational structure that preemptively maximizes users' efficiency in expressing their privacy preferences. Moreover, it allows us to anticipate the most common privacy settings, and capture them into a series of `privacy profiles' that allow users to express a complex set of privacy preferences with the single click of a button.
+
+In this chapter, we first discuss the dataset that we use, then we present how we apply our data-driven approach in the general/public IoT context, including the inspection of users' behaviors using statistical analyses and prediction of users' behaviors using machine learning techniques. Finally, we present the privacy-setting prototypes that we create based on both statistical and machine learning results.
 
 \section{Dataset and design}
-As we have discussed in Chapter \ref{chapter:intro}, the development of usable privacy interfaces commonly relies on user studies with existing systems. Since the Intel control framework has yet to be implemented~\cite{chow2015hci}, this method is not possible. We therefore we leveraged data collected by Lee and Kobsa~\cite{lee2016understanding}, which asked 200 participants about their intention to allow or reject the IoT features presented in 14 randomized scenarios. They varied the scenarios in a mixed fractional factorial design along the following dimensions: `Who', `What', `Where', `Reason', and `Persistence' (See Table~\ref{tab:parameter}). A total of 2800 scenarios were presented to 200 participants (100 male, 99 female, 1 undisclosed) through Amazon Mechanical Turk. Four participants were aged between 18 and 20, 75 aged 20--30, 68 aged 30--40, 31 aged 40--50, 20 aged 50--60, and 2 aged $>$ 60.
+In the data collected by Lee and Kobsa~\cite{lee2016understanding}, 200 participants were asked about their intention to allow or reject the IoT features presented in 14 randomized scenarios. These scenarios are manipulated in a mixed fractional factorial design along the following dimensions: `Who', `What', `Where', `Reason', and `Persistence' (See Table~\ref{tab:parameter}). A total of 2800 scenarios were presented to 200 participants (100 male, 99 female, 1 undisclosed) through Amazon Mechanical Turk. Four participants were aged between 18 and 20, 75 aged 20--30, 68 aged 30--40, 31 aged 40--50, 20 aged 50--60, and 2 aged $>$ 60.
 
 For every scenario, participants were asked a total of 9 questions. Our study focuses on the \textbf{allow/reject} question: ``If you had a choice to allow/reject this, what would you choose?'', with options ``I would allow it'' and ``I would reject it''. We also used participants' answers to three attitudinal questions regarding the scenario:
 \begin{itemize}
@@ -247,8 +251,6 @@ We discuss progressively sophisticated methods for predicting participants' deci
 \subsection{Naive Prediction Methods}
 We start with naive or ``information-less'' predictions. Our dataset contains 793 `yes'es and 2007 `no's. Therefore, predicting `yes' for every scenario gives us a 28.33\% prediction accuracy, while making a `no' prediction gives us an accuracy of 71.67\%. In other words, if we disallow all information collection by default, users will on average be happy with this default for 71.67\% of the settings.
 
-
-
 \begin{table}
 	\centering
 	\caption{Comparison of clustering approaches}
@@ -269,13 +271,13 @@ We start with naive or ``information-less'' predictions. Our dataset contains 79
 		%	& 5 & 75.07\% & 2 \\ \hline
 		\multirow{2}{6em}{Fit-based clustering} & 2 & 77.99\% & 2 \\ %\cline{2-4}
 		& 3 & 81.54\% & 3 \\ \hline
-		\multirow{2}{6em}{Agglomerative  clustering} & 200 & 78.13\% & 4 \\ %\cline{2-4}
+		\multirow{2}{7em}{Agglomerative  clustering} & 200 & 78.13\% & 4 \\ %\cline{2-4}
 		& 200 & 78.27\% & 5 \\ \hline %\cline{2-4} 
 	\end{tabular}
 \end{table}
 
 \subsection{Overall Prediction}
-We next create a ``smart default'' by predicting the allow/reject decision with the scenario parameters using J48 with Weka's~\cite{hall2009weka} default settings. The resulting tree is shown in Figure~\ref{fig:naive_cls}). The confusion matrix (Table~\ref{tab:confusion_matrix}) shows that this model results in overly conservative settings; only 208 `yes'es are predicted.
+We next create a ``smart default'' by predicting the allow/reject decision with the scenario parameters using J48 with Weka's~\cite{hall2009weka} default settings. The resulting tree is shown in Figure~\ref{fig:naive_cls}. The confusion matrix (Table~\ref{tab:confusion_matrix}) shows that this model results in overly conservative settings; only 208 `yes'es are predicted.
 
 \begin{table}
 	\centering
@@ -364,6 +366,7 @@ Given that people differ substantially in their privacy preferences, it is not u
 		Health-related & Yes \\
 		None & Yes \\
 		\end{tabular}\right.$ \\
+		\hline
 	\end{tabular}
 \end{table}
 
@@ -414,14 +417,14 @@ The 3-cluster solution has a slightly lower accuracy of 75.17\%, but is more par
 \subsection{Fit-based clustering}
 Our fit-based clustering approach clusters participants without using any additional information. It instead uses the fit of the tree models to bootstrap the process of sorting participants into clusters. Like many bootstrapping methods, ours uses \emph{random starts} and \emph{iterative improvements} to find the optimal solution. The process is depicted in Figure~\ref{fig:flow_chart_fit}, and described in detail below. Accuracies of the resulting solutions are reported in Table~\ref{tab:comp_approach} under ``fit-based clustering''.
 
-\begin{figure}[htp]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/flowchartFit.png}
 	\caption{The Flow Chart for Fit-based Clustering}
 	\label{fig:flow_chart_fit}
 \end{figure}
 
-\textbf{Random starts:} We randomly divide particpants over $N$ separate groups, and learn a tree for each group. This is repeated until a non-trivial starting solution (i.e., with distinctly different trees per cluster) is found. 
+\textbf{Random starts:} We randomly divide participants over $N$ separate groups, and learn a tree for each group. This is repeated until a non-trivial starting solution (i.e., with distinctly different trees per cluster) is found. 
 
 \textbf{Iterative improvements:} Once each of the $N$ groups has a unique decision tree, we evaluate for each participant which of the trees best represents their 14 decisions. If this is the tree of a different group, we switch the participant to this group. Once all participants are evaluated and put in the group of their best-fitting tree, the tree in each group is re-learned with the data of the new group members. This then prompts another round of evaluations, and this process continues until no further switches are performed. 
 
@@ -455,7 +458,7 @@ We were able to reach a 5- and 4-cluster solution. The 3-cluster solution collap
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.43\textwidth]{figures/compare.pdf}
+	\includegraphics[width=0.98\textwidth]{figures/compare.pdf}
 	\caption{Accuracy of our clustering approaches}
 	\label{fig:comp_approach}
 \end{figure}
@@ -481,16 +484,16 @@ To improve the accuracy of the default setting, we can instead build two ``smart
 
 Once the user chooses a profile, they will move to the manual settings interface (Screens 2--4), where they can further change some of their settings.
 
-\begin{figure}[htb]
+\begin{figure}
 	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
+	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
 		\includegraphics[height=2.8in]{figures/profiles2.pdf}
 		\caption{2-profile choice interface}
 		\label{fig:2profile_default_setting}
 	\end{subfigure}%
-	~~~~~~~~~
-	\begin{subfigure}[t]{0.24\textwidth}
+	~~
+	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
 		\includegraphics[height=2.8in]{figures/profiles3.pdf}
 		\caption{3-profile choice interface}
@@ -499,16 +502,7 @@ Once the user chooses a profile, they will move to the manual settings interface
 	\caption{Two types of profile choice interfaces}
 \end{figure}
 
-\section{Summary}
-In this chapter, we have presented the following:
-
-\begin{itemize}
-	\item Using statistical analysis, uncover the relative importance of the parameters that influence users' privacy decisions. Develop a ``layered interface'' in which these parameters are presented in decreasing order of importance.
-	\item Using a tree-learning algorithm, create a decision tree that best predicts participants' choices based on the parameters. Use this tree to create a ``smart default'' setting.
-	\item Using a combination of clustering and tree-learning algorithms, create a set of $N$ decision trees that best predict participants' choices. Use the trees to create $N$ ``smart profiles''.
-	\item Develop a prototype for an IoT privacy-setting interface that integrates the layered interface with the smart default or the smart profiles.
-\end{itemize}
-
+\section{Discussion and Limitation}~\label{sec:publiclim}
 Our statistical and machine learning results both indicated that recipient of the information (\textbf{who}) is the most significant parameter in users' decision to allow or reject IoT-based information collection. This parameter therefore features at the forefront in our layered settings interface, and plays an important role in our smart profiles. The \textbf{what} parameter was the second-most important decision parameter, and interacted significantly with the \textbf{who} parameter. This parameter therefore features at the second level of our settings interface, and further qualifies some of the settings in our smart profiles.
 
 Our layered interface allows a further drill-down to the \textbf{reason} and \textbf{persistence} parameters, but given the relatively lesser importance of these parameters, we expect few users to engage with the interface at this level. Moreover, the \textbf{where} parameter was not significant, so we left it out of the interface.
@@ -519,6 +513,18 @@ The fit-based clustering approach, which iteratively clusters users and fits an 
 
 The scenario-based method presented in this paper is particularly suited for novel domains where few real interaction exist. We note, though, that this novelty may hamper our approach: users' decisions are inherently limited by the knowledge they have about IoT. Lee and Kobsa~\cite{lee2016understanding} made sure to educate users about the presented scenarios, hence their data is arguably better in this regard than data from ``live'' systems. However, as the adaptation of IoT becomes more widespread, the mindset and knowledge regarding such technologies---and thus their privacy preferences---might change. Our ``smart profiles'' may thus eventually have to be updated in future work, but for now, our current profiles can at least help users make make better privacy decisions in their initial stages of usage.
 
-Our analysis allowed us to use \emph{data-driven design} to bootstrap the development of a privacy-setting interface, but a future user experiment could investigate whether users are comfortable with the layered interface, and whether they prefer a single ``smart default'' setting or a choice among ``smart profiles''.
+One limitation of our work is that we did not test our layered interface, so we do not know whether users are comfortable with the interface or whether they prefer a single ``smart default'' setting or a choice among ``smart profiles'' (i.e.  at what level of complexity in terms of profiles the user would prefer.). This is why I propose a user study in Chapter~\ref{chapter:evaluation} to investigate this problem. Another caveat of our work is that we did not manipulate the pruning parameter of our machine learning models in the privacy decision prediction. Note that, the decision tree shown in Figure~\ref{fig:3clustersFit} is rather complicated, leading to a complicated privacy profile implicated by the decision tree. It will be difficult to explain a privacy profile in nature language to the users when the profile is getting too complicated. We note, though, that pruning the decision tree may reduce the accuracy of our models' results. We would like to explore this interesting trade-off between the accuracy and parsimony (i.e. simpler profile) in our next work when we apply our data-driven approach in the Household IoT context. 
 
-In the next chapter, we discuss the challenges and solutions when we extended work that we have done in the domain of household IoT ("smart home") domain.
+\section{Summary}
+In this chapter, we have presented the following:
+
+\begin{itemize}
+    \item The definition of general/public IoT, and how we come up with the data-driven approach.
+    \item The dataset we use and the process of the data-driven design.
+	\item Using statistical analysis, uncover the relative importance of the parameters that influence users' privacy decisions. Develop a ``layered interface'' in which these parameters are presented in decreasing order of importance.
+	\item Using a tree-learning algorithm, create a decision tree that best predicts participants' choices based on the parameters. Use this tree to create a ``smart default'' setting.
+	\item Using a combination of clustering and tree-learning algorithms, create a set of $N$ decision trees that best predict participants' choices. Use the trees to create $N$ ``smart profiles''.
+	\item Develop a prototype for an IoT privacy-setting interface that integrates the layered interface with the smart default or the smart profiles.
+\end{itemize}
+
+In the next chapter, we discuss the challenges and solutions when we apply our approach in the household IoT context. 
