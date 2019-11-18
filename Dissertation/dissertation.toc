@@ -1,7 +1,7 @@
 \contentsline {chapter}{Abstract}{ii}{section*.1}%
-\contentsline {chapter}{Author's Publications on this topic}{iii}{chapter*.3}%
-\contentsline {chapter}{List of Tables}{vi}{section*.4}%
-\contentsline {chapter}{List of Figures}{vii}{section*.5}%
+\contentsline {chapter}{Author's Publications on this topic}{iv}{chapter*.3}%
+\contentsline {chapter}{List of Tables}{vii}{section*.4}%
+\contentsline {chapter}{List of Figures}{viii}{section*.5}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}IoT technology and IoT Acceptance}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}IoT Technology}{6}{section.2.1}%
@@ -72,7 +72,7 @@
 \contentsline {subsubsection}{\numberline {6.4.2.2}The \textit {A} Set}{82}{subsubsection.6.4.2.2}%
 \contentsline {subsubsection}{\numberline {6.4.2.3}The \textit {F} Set}{82}{subsubsection.6.4.2.3}%
 \contentsline {subsubsection}{\numberline {6.4.2.4}The \textit {G} Set}{82}{subsubsection.6.4.2.4}%
-\contentsline {section}{\numberline {6.5}Profile Prediction (original work)}{82}{section.6.5}%
+\contentsline {section}{\numberline {6.5}Profile Prediction (partial original work)}{82}{section.6.5}%
 \contentsline {subsection}{\numberline {6.5.1}Direct Prediction Questions}{83}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Indirect Prediction Questions}{84}{subsection.6.5.2}%
 \contentsline {subsubsection}{\numberline {6.5.2.1}Privacy Attitudes}{85}{subsubsection.6.5.2.1}%
@@ -80,7 +80,7 @@
 \contentsline {subsubsection}{\numberline {6.5.2.3}Negotiability of Privacy Settings}{87}{subsubsection.6.5.2.3}%
 \contentsline {subsubsection}{\numberline {6.5.2.4}Exercise Tendencies and User Demographics}{88}{subsubsection.6.5.2.4}%
 \contentsline {subsection}{\numberline {6.5.3}Tree Evaluation}{88}{subsection.6.5.3}%
-\contentsline {section}{\numberline {6.6}Privacy-setting Recommendations (original work)}{89}{section.6.6}%
+\contentsline {section}{\numberline {6.6}Privacy-setting Recommendations (partial original work)}{89}{section.6.6}%
 \contentsline {subsection}{\numberline {6.6.1}Manual Setting}{89}{subsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.6.2}Single Smart Default Setting}{89}{subsection.6.6.2}%
 \contentsline {subsection}{\numberline {6.6.3}Pick Subprofiles}{90}{subsection.6.6.3}%
@@ -88,21 +88,22 @@
 \contentsline {subsection}{\numberline {6.6.5}Indirect Prediction}{91}{subsection.6.6.5}%
 \contentsline {section}{\numberline {6.7}Validation}{91}{section.6.7}%
 \contentsline {section}{\numberline {6.8}Summary}{92}{section.6.8}%
-\contentsline {chapter}{\numberline {7}Evaluating the Household IoT Privacy-setting Interface}{100}{chapter.7}%
+\contentsline {chapter}{\numberline {7}Evaluate the Household IoT Privacy-setting User Interfaces}{100}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Introduction}{100}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Study Design}{101}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Dependent Variables}{101}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Independent Variables}{101}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Profile/Interface Selection}{102}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Interfaces Implementation}{103}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}Participants}{104}{subsection.7.2.5}%
-\contentsline {subsection}{\numberline {7.2.6}Measurements}{104}{subsection.7.2.6}%
-\contentsline {subsection}{\numberline {7.2.7}Procedure}{107}{subsection.7.2.7}%
-\contentsline {section}{\numberline {7.3}Expected Results}{108}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Interface Complexity and SSA}{108}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Profile Complexity and SSA}{112}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Personal/Situational Characteristics and SSA}{113}{subsection.7.3.3}%
-\contentsline {chapter}{\numberline {8}Expected Contribution}{116}{chapter.8}%
-\contentsline {chapter}{Bibliography}{116}{section*.80}%
-\contentsline {chapter}{Appendices}{127}{section*.82}%
-\contentsline {chapter}{Appendices}{128}{section*.83}%
+\contentsline {section}{\numberline {7.2}Manipulations and hypothesis development}{101}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Manipulations}{101}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Profile/Interface Selection}{102}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Hypothesis}{103}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Profile Complexity and SSA}{104}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Personal/Situational Characteristics and SSA}{105}{subsection.7.2.5}%
+\contentsline {section}{\numberline {7.3}Experimental setup}{107}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Participants and Procedures}{108}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Results}{109}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Confirmatory Factor Analysis}{109}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Structural Equation Modeling}{110}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Discussion}{111}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Conclusion}{111}{section.7.6}%
+\contentsline {chapter}{\numberline {8}Conclusion}{115}{chapter.8}%
+\contentsline {chapter}{Bibliography}{116}{section*.73}%
+\contentsline {chapter}{Appendices}{127}{section*.75}%
+\contentsline {chapter}{Appendices}{128}{section*.76}%

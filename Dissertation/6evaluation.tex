@@ -1,29 +1,26 @@
-% !TeX root = proposal.tex
-\chapter{Evaluating the Household IoT Privacy-setting Interface}\label{chapter:evaluation}
+% !TeX root = dissertation.tex
+\chapter{Evaluate the Household IoT Privacy-setting User Interfaces}\label{chapter:evaluation}
 
 \section{Introduction}
 
-In the previous chapters, we have described a series of studies on recommending privacy settings for general/public IoT, household IoT, and fitness IoT. A ``data-driven” approach has been used in all three studies, to gain the underlying insights of IoT users' privacy decision behavior, and to design a set of interfaces to incorporate the ``smart" privacy default/profiles created based on the insights. Users can apply these smart defaults/profiles by either a single click or by answering a few related questions. When applying this approach on the household IoT dataset in Chapter~\ref{chapter:householdIoT}, we explored the trade-off between parsimony and accuracy when creating the ``smart" privacy defaults/profiles. We manipulate the pruning parameter for the decision trees of the C4.5 algorithm, which impacted the complexity of the generated profiles based on the decision trees. We have already known that accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments, while parsimony, on the other hand, prevents overfitting and promotes fairness. In Chapter~\ref{chapter:householdIoT}, we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
+In the previous chapters, we have described the three studies on recommending privacy settings for general/public IoT, household IoT, and fitness IoT, respectively. A ``data-driven” approach has been used in all three studies, to gain the underlying insights of IoT users' privacy decision behavior, and to design a set of User interfaces (UI) to incorporate the ``smart" privacy default/profiles created based on the insights. Users can apply these smart defaults/profiles by either a single click or by answering a few related questions. When applying this approach on the household IoT dataset in Chapter~\ref{chapter:householdIoT}, we explored the trade-off between parsimony and accuracy when creating the ``smart" privacy defaults/profiles. We manipulate the pruning parameter for the decision trees of the C4.5 algorithm, which impacted the complexity of the generated profiles based on the decision trees. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments, while parsimony, on the other hand, prevents overfitting and promotes fairness. In Chapter~\ref{chapter:householdIoT}, we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
 
-The biggest limitation of our previous work is that we did not test any of the proposed interfaces, so we do not know what level of complexity (both in terms of the user interface and the in terms of the profiles) is most suitable. Thus, to further test this trade-off between accuracy and parsimony in a real usage environment and test the user experience of using the interfaces that we designed in Chapter~\ref{chapter:householdIoT}, in this chapter, I will address this limitation by conducting another user study to evaluate the new interface prototypes of recommending privacy-settings for household IoT.
+The biggest limitation of our work so far is that we did not test any of the proposed UIs, so we do not know what level of complexity (both in terms of the user interface and the in terms of the profiles) is most suitable. Thus, to further test this trade-off between accuracy and parsimony in a real usage environment and test the user experience of using the interfaces that we designed in Chapter~\ref{chapter:householdIoT}, in this chapter, I address this limitation by discussing our final study on evaluating the new interface prototypes of recommending privacy-settings for household IoT. The main purpose of this proposed work is to test the user experience of the privacy-setting interfaces.
 
 In this chapter, we first discuss the design of our evaluation system, then we present my proposed study plan, including how we recruit participants for our study, our experimental design, how we measure our results, and expected results.
 
-\section{Study Design}
 
+\section{Manipulations and hypothesis development}
 
-In this section, we discuss the experimental design of our user study. This proposed user study will be a between-subject study, which takes about 15 -- 20 minutes to finish. All participants will be recruited via Amazon Mechanical Turk.
+\subsection{Manipulations}
+%Since we want to test the user experience when they use our privacy-setting interfaces and , the Dependent Variable of our study will be the user experience of the system, namely their \textbf{satisfaction to the system}, \textbf{the perceived usefulness of the system}, \textbf{and the trust to the company}. 
 
-\subsection{Dependent Variables}
-Since we want to test the user experience when they use our privacy-setting interfaces and , the Dependent Variable of our study will be the user experience of the system. 
-
-\subsection{Independent Variables}
-In Chapter~\ref{chapter:householdIoT},  we first designed a set of interfaces, as shown in Figure~\ref{fig:interface2}, based on the results from our statistical analysis (\textbf{UI1}). Further, we modified these interfaces to integrate the ``smart defaults/profiles" generated from our machine learning results. This modification separated the Storage and sharing modules from the Data usage, leading a more complex interface design (\textbf{UI2}). For our study, we need to test these two groups of interfaces (UI1 vs UI2) in terms of interface complexity.
+In Chapter~\ref{chapter:householdIoT},  we first designed a set of interfaces, as shown in Figure~\ref{fig:interface2}, based on the results from our statistical analysis (\textbf{UI1}). Further, we modified these interfaces to integrate the ``smart defaults/profiles" generated from our machine learning results. This modification separated the Storage and sharing modules from the Data usage, leading a slightly more complex interface design (\textbf{UI2}). For our study, we need to test these two groups of interfaces (UI1 vs UI2) in terms of interface complexity. Compared to UI1, UI2 has more granularity when setting on different storage. In UI1, users can only configure all the privacy-settings to be the same for the three different types of storage (Local, Remote, and Third-party sharing), while they can configure those setting for each type of storage differently in UI2. Brandimarte et al. demonstrate that users perceive more control when privacy controls are more granular~\cite{brandimarte2013misplaced}.
 
 In terms of the complexity of ``smart defaults/profiles", we consider 4 different experimental conditions as follows:
 \begin{itemize}
-	\item \textbf{Everything-Off}: With all the data access and usage being turned off, this is considered as the most simple and conservative default settings.
-	\item \textbf{Everything-On}: With all the data access and usage being turned on, this is considered as the most simple and open default settings.
+	\item \textbf{Everything-On}: With all the data access and usage being turned on, this is considered as the open default settings. This profile also means nothing has been done for the users. They have to make every change for themselves.
+	\item \textbf{Everything-Off}: With all the data access and usage being turned off, this is considered as the most conservative default settings. In our previous studies, this is also the profile that more than 50\% participants want to use.
 	\item \textbf{Smart Default}: One single ``smart profile" will be provided to the users. This is considered as the experimental condition with intermediate complexity.
 	\item \textbf{Smart Profiles}: Multiple ``smart profiles" will be provided to the users. This is considered as the most sophisticated settings with high complexity in ``smart profiles".
 \end{itemize}
@@ -40,299 +37,17 @@ For \textbf{Smart Default} and \textbf{Smart Profiles} selection, noted that, wh
 
 \textbf{Smart Default:} In section~\ref{subsection:onerule2}, we have applied a one-rule algorithm to our dataset. The resulting ``smart default" in shown in Figure~\ref{fig:oneR}. This is the simplest ``smart default" settings across all the different ``smart defaults" settings with lowest accuracy (61.39\%) but highest parsimony. In addition, this ``smart default" can be easily integrate into the \textbf{UI1}, the simpler interfaces. Thus, we choose this ``smart default" as the target interface for experimental condition --- \textbf{UI1:Smart Default}. In contrast, we created a ``smart default" setting with only 8 nodes shown in Figure~\ref{fig:smart_default_new} in section~\ref{subsection:overall2}. This ``smart default" has the very high parsimony and the close to highest accuracy of 63.32\% across all the ``smart default" settings. In addition, this ``smart default" can be easily integrate into the \textbf{UI2}, the simpler interfaces. Thus, we choose this ``smart default" as the target interface for experimental condition --- \textbf{UI2:Smart Default}.
 
-\textbf{Smart Profiles:} For ``smart profiles" selection, we want this interface differ as much as possible comparing the ``smart default", so we search across all the ``smart profiles" with large number of clusters. In addition, the ``smart profiles" should be easily integrated into UI1 or UI2. Figure~\ref{fig:conglo_5_profile001} is considered for UI1 because it has 5 clusters with a high accuracy of 80.35\%. And it has no interaction between \textbf{Storage} and other parameters. This is suitable for our UI1 design, serving as the target interface profiles for experimental condition --- \textbf{UI1:Smart Profiles}. We have separated the Data Storage and Data Usage modules in UI2. Thus, we choose Figure~\ref{fig:fit_5_profile003} for UI2 because it has 5 clusters, a close to highest accuracy of 83.11\%. In addition, in the cluster 3, it has a 2-way interaction between \textbf{Storage} and \textbf{Purpose}; in cluster 4, it has a 2-way interaction between \textbf{Storage} and \textbf{Action}. It does not have an 3-way interaction between any of these parameters in any of its clusters. Thus, we choose this set of ``smart profiles" as the target interface profiles for experimental condition --- \textbf{UI2:Smart Profiles}.
+\textbf{Smart Profiles:} For ``smart profiles" selection, we want this interface differ as much as possible comparing the ``smart default", so we search across all the ``smart profiles" with large number of clusters. In addition, the ``smart profiles" should be easily integrated into UI1 or UI2. Figure~\ref{fig:conglo_5_profile001} is considered for UI1 because it has 5 clusters with a high accuracy of 80.35\%. And it has no interaction between \textbf{Storage} and other parameters. This is suitable for our UI1 design, serving as the target interface profiles for experimental condition --- \textbf{UI1:Smart Profiles}. We have separated the Data Storage and Data Usage modules in UI2. Thus, we choose Figure~\ref{fig:fit_5_profile003} for UI2 because it has 5 clusters, a close to highest accuracy of 83.11\%. In addition, in the cluster 3, it has a 2-way interaction between \textbf{Storage} and \textbf{Purpose}; in cluster 4, it has a 2-way interaction between \textbf{Storage} and \textbf{Action}. It does not have an 3-way interaction between any of these parameters in any of its clusters. Thus, we choose this set of ``smart profiles" as the target interface profiles for experimental condition --- \textbf{UI2:Smart Profiles}. We implemented above 8 different sets of user interfaces using HTML, PHP, CSS, and SQL.
 
+\subsection{Hypothesis}
 
-\subsection{Interfaces Implementation}
-We have implemented above 8 different sets of user interfaces using HTML, PHP, CSS, and SQL. Figure~\ref{fig:ui1AllOff} shows the experimental condition --- UI1:Everything-Off.
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1allOff1.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1allOff2.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff3.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1allOff4.png}
-	\end{subfigure}%
-	\caption{User Interface 1 with all settings turned off}
-	\label{fig:ui1AllOff}
-\end{figure}
-
-Figure~\ref{fig:ui2AllOff} shows the experimental condition --- UI2:Everything-Off.
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff1.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-	\centering
-	\includegraphics[height=2.8in]{figures/ui2allOffLocal.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff2.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff3.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff4.png}
-	\end{subfigure}%
-	\caption{User Interface 2 with all settings turned off}
-	\label{fig:ui2AllOff}
-\end{figure}
-
-Figure~\ref{fig:ui1AllOn} shows the experimental condition --- UI1:Everything-On.
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1allOff1.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1allOff2.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOn3.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1allOn4.png}
-	\end{subfigure}%
-	\caption{User Interface 1 with all settings turned on}
-	\label{fig:ui1AllOn}
-\end{figure}
-
-Figure~\ref{fig:ui2AllOn} shows the experimental condition --- UI2:Everything-On.
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{0.19\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff1.png}
-	\end{subfigure}%
-	~~~~~~
-	\begin{subfigure}[t]{0.19\textwidth}
-	\centering
-	\includegraphics[height=2.8in]{figures/ui2allOffLocal.png}
-	\end{subfigure}%
-	~~~~~~
-	\begin{subfigure}[t]{0.19\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOff2.png}
-	\end{subfigure}%
-	~~~~~~
-	\begin{subfigure}[t]{0.19\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOn3.png}
-	\end{subfigure}%
-	~~~~~~
-	\begin{subfigure}[t]{0.19\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2allOn4.png}
-	\end{subfigure}%
-	\caption{User Interface 2 with all settings turned on}
-	\label{fig:ui2AllOn}
-\end{figure}
-
-Figure~\ref{fig:ui1OneR} shows the experimental condition --- UI1:Smart Default.
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sd1.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sd2.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sd3.png}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.24\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sd4.png}
-	\end{subfigure}%
-	\caption{User Interface 1 with Smart Default}
-	\label{fig:ui1OneR}
-\end{figure}
-
-Figure~\ref{fig:ui2SD} shows the experimental condition --- UI2:Smart Default.
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{0.2\textwidth}
-	\centering
-	\includegraphics[height=2.8in]{figures/ui2sd1.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sd2.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sd3.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sd4.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sd5.png}
-	\end{subfigure}%
-	\caption{User Interface 2 with Smart Default}
-	\label{fig:ui2SD}
-\end{figure}
-
-Figure~\ref{fig:ui1Profiles} shows the experimental condition --- UI1:Smart Profiles.
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sp1.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sp2.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sp3.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sp4.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sp5.png}
-	\end{subfigure}%
-	\caption{User Interface 1 with Smart Profiles}
-	\label{fig:ui1Profiles}
-\end{figure}
-
-Figure~\ref{fig:ui2Profiles} shows the experimental condition --- UI2:Smart Profiles.
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sp1.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sp2.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui1sp3.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sp4.png}
-	\end{subfigure}%
-	~~~~~
-	\begin{subfigure}[t]{0.2\textwidth}
-		\centering
-		\includegraphics[height=2.8in]{figures/ui2sp5.png}
-	\end{subfigure}%
-	\caption{User Interface 2 with Smart Profiles}
-	\label{fig:ui2Profiles}
-\end{figure}
-
-\subsection{Participants}
-A power analysis shows that 400 participants will be needed for this study. In the study, all participants will be recruited via Amazon Mechanical Turk. After the study, each participant that successfully finishes the study and passes the attention check will be compensated \$1.5 dollars.
-
-%To identify suitable participants, we will have screening questions on the recruitment ad:
-%1). Do you currently have a household IoT device?
-%2). Have you ever changed your privacy-settings of your household IoT devices?
-%Participants will be enrolled in the study only if they meet all the screening criteria.
-
-
-
-\subsection{Measurements}\label{subsection:measures}
-A post-test survey questionnaire will be constructed to measure users' experience using our privacy-setting interfaces. The questionnaire will include three groups of questions. As shown in Figure~\ref{fig:uimodel}, the orange color items are experience (i.e. satisfaction with the system); the green color items are \textit{Subjective System Aspects} (SSA), including Perceived usefulness, Perceived easy of use, perceived privacy threats, perceived control); the blue color items are the personal/situational characteristics (General privacy concerns, Data Collection Concerns, Knowledge, Rational Decision Style, and Emotional Decision Style), the yellow color items are the experimental conditions (Interface Complexity and Profile Complexity). All items are adapted from previous published studies with minor modifications in wording to accommodate the IoT privacy-setting context. Each item will be measured on five-point Likert scales with 1 being "strongly disagree" to 7 being "strongly agree". All the items of the questionnaire are shown in Appendix.
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{figures/uimodel.pdf}
-	\caption{Expected Structural Model for Proposed User Study}
+	\caption{Hypothesized effects on users’ experience and subjective evaluations.}
 	\label{fig:uimodel}
 \end{figure}
 
-\subsection{Procedure}
-During the user study~\footnote{The user study url can be found here: http://yyhe.people.clemson.edu/uistudy/}, the users will first be welcome with brief introduction of the experimental instructions, as shown in Figure~\ref{fig:us1}). We explicitly introduce that the goal of this study is to test a new Smart User Interface for Household IoT users.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.85\textwidth]{figures/userstudy1.png}
-	\caption{Experiment Welcome and Introduction Page}
-	\label{fig:us1}
-\end{figure}
-
-Then the participants will be shown a consent form, as shown in Figure~\ref{fig:us2}.
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/userstudy2.png}
-	\caption{User Consent Form}
-	\label{fig:us2}
-\end{figure}
-
-After signing the consent form, participants will be educated with the concept of the household IoT devices that appearing in this study, corresponding to the `Who' and `What' parameters of an IoT scenario, as shown in Figure~\ref{fig:us3}. This introduction to the household IoT contains figures, text, and audio information. After the introduction, participant will be given an example scenario to further understand the context of our study. Attention checks will also be given here to make sure the participants have paid attention to the explanations.
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{figures/userstudy3.png}
-	\caption{Introduction to Household IoT}
-	\label{fig:us3}
-\end{figure}
-
-After above procedures, one out of the 8 user interfaces will be randomly chosen for each participants. Participants need to go through the whole interface to see if the preset privacy settings is suitable for them, and make necessary changes to accommodate their actual privacy demands. All these changes will be recorded to compared with the preset settings for further analysis purpose. 
-
-Next, the participants will be give a survey questionnaire discussed in Section~\ref{subsection:measures}.
-
-After the user study is finished, We will first use \textit{confirmatory factor analysis} to clean up the items and then use \textit{linear mixed effects regression} to analyze the effect of the independent variables on the subjective system aspects, and further mediation effect on the user experience. We also wonder how the personal/situational characteristics affect the user experience.
-
-
-\section{Expected Results}
-In this section, we present our hypothesis on the expected results.
-
-\subsection{Interface Complexity and SSA}
 Compared to UI1, UI2 has more granularity when setting on different storage. In UI1, users can only configure all the privacy-settings to be the same for the three different types of storage (Local, Remote, and Third-party sharing), while they can configure those setting for each type of storage differently in UI2. Brandimarte et al. demonstrate that users perceive more control when privacy controls are more granular~\cite{brandimarte2013misplaced}. Therefore, we hypothesize the following:
 \theoremgroup
 \begin{theorem}
@@ -424,4 +139,109 @@ The rest hypothesis are related to the rational decision style and emotional dec
 	The positive association between perceived control and system satisfaction will be stronger for users with a high level of emotional decision style.
 \end{theorem}
 
+\section{Experimental setup}
 
+In this section, we discuss the Experimental setup of our user study. This proposed user study will be a between-subject study, which takes about 15 -- 20 minutes to finish. All participants will be recruited via Amazon Mechanical Turk.
+
+\subsection{Participants and Procedures}
+Based on the power analysis results, to collect our dataset, 504 adult U.S.-based participants were recruited through Amazon Mechanical Turk. Participation was restricted to Mechanical Turk workers with a high reputation (at least 50 completed tasks, average accuracy of $> 96\%$). Participants were paid \$1.50 upon successful completion of the study. The participants were warned about not getting paid in case they failed attention checks (see below). The study participants represented a wide range of ages, with 44 aged 18-24, 298 aged 25-34, 116 aged 35-44, 29 aged 45-54, 12 aged 55-64, and 5 participants over 65 years old.
+
+During the study~\footnote{The user study url can be found here: http://iot.usabart.nl/}, the participants were first welcome with brief introduction of the experimental instructions. We explicitly introduce that the goal of this study is to test a new setting interfaces for Smart Home Users.
+
+After signing the consent form, each participant was first shown a video with a brief introduction to various smart home devices, which also mentioned various ways in which the different appliances would cooperate and communicate within a home. After the video, participants were asked to answer two attention check questions depicted in Figure~\ref{fig:yangAttentionCheck} in the Appendix.
+
+Each participant was first shown a video with a brief introduction to various smart home devices, which also mentioned various ways in which the different appliances would cooperate and communicate within a home. After the video, participants were asked to answer two attention check questions depicted in Figure~\ref{fig:yangAttentionCheck} in the Appendix.
+
+After the introduction video, each participant was shown the basic of our UI and usage instructions, shown in~Figure~\ref{fig:yangPrepage} in the Appendix. Then each participant was presented with one privacy-setting user interface for household IoT that was randomly choosen from the previous discussed 8 different experimental conditions. Participants were asked to set all the privacy-settings to best fit their own privacy preferences. They were required to spend at least 25 seconds before they can leave the UI page and will be warned if they spent too less time on the UI page.
+
+Finally, a post-test survey questionnaire were shown to each participant, asking their user experience using our privacy-setting interfaces. The questionnaire included three groups of questions -- \textit{experience} (i.e. satisfaction with the system); \textit{Subjective System Aspects} (SSA), including Perceived usefulness, Perceived easy of use, perceived privacy threats, perceived control); and \textit{personal/situational characteristics} (General privacy concerns, Data Collection Concerns, Knowledge, Rational Decision Style, and Emotional Decision Style). All items were adapted from previous published studies with minor modifications in wording to accommodate the IoT privacy-setting context. Each item was measured on five-point Likert scales with 1 being "strongly disagree" to 7 being "strongly agree". All the items of the questionnaire are shown in Appendix.
+
+%After the user study is finished, We will first use \textit{confirmatory factor analysis} to clean up the items and then use \textit{linear mixed effects regression} to analyze the effect of the independent variables on the subjective system aspects, and further mediation effect on the user experience. We also wonder how the personal/situational characteristics affect the user experience.
+
+
+\section{Results}
+In this section, I present the statistical analysis results. I first discuss the confirmatory factor analysis that I conducted to clean up the survey question items. Then I discuss the structure equation modeling (SEM) that I used to analyze the effect of the independent variables on the subjective systems aspects and user experience. And finally, I present the effect of personal/situational characteristics on the subjective systems aspects and user experience.
+
+\subsection{Confirmatory Factor Analysis}
+As shown in Table~\ref{tab:cfa}, I conducted a Confirmatory Factor Analysis (CFA) and examined the validity and reliability scores of the constructs measured in the study. Upon inspection of the CFA model, I removed items that have low communality. And at the end, I also checked that no item has high cross-loadings with other factors. %The remaining items shared at least 48\% of their variance with their designated construct.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[ht]
+	\begin{tabular}{l|l|l}
+		\hline
+		Construct                                                                            & Item                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          & Loading                                                                                                                                           \\ \hline
+		\begin{tabular}[c]{@{}l@{}}System\\ satisfaction\\ \\ AVE: 0.829\end{tabular}        & \begin{tabular}[c]{@{}l@{}}The system has no real benefit to me.\\ Using the system is annoying.\\ Using the system is a pleasant experience.\\ Using the system makes me happy.\\ Overall, I am satisfied with the system.\\ I would recommend the system to others.\\ I would use this system if it were available.\\ I would pay a monthly fee to use this system.\\ I would quickly abandon using this system.\\ It would take a lot of convincing for me to use this system.\end{tabular}                                                                                                                                                                                                                                                                                & \begin{tabular}[c]{@{}l@{}}0.584\\ 0.700\\ \\ \\ \\ \\ \\ \\ 0.755\\ 0.709\end{tabular}                                                           \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Trust\\ \\ \\ AVE: 0.835\end{tabular}                     & \begin{tabular}[c]{@{}l@{}}I believe the company providing this software is \\     trustworthy in handling my information.\\ I believe this company tells the truth and fulfills promises\\     related to the information I provide.\\ I believe this company is predictable and consistent regarding\\     the usage of my information.\\ I believe this company is honest when it comes to using\\     the information I provide.\\ I think it is risky to give my information to this company.\\ There is too much uncertainty associated with giving my\\     information to this company.\\ Providing this company my information would involve\\     many unexpected problems.\\ I feel safe giving my information to this company.\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}0.634\\ 0.750\\ \\ \\ 0.709\end{tabular}                                                                               \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Perceived \\ Usefulness\\ \\ \\ AVE: 0.763\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Based on what I have seen, the system is useful.\\ The system helps me more effectively set my privacy preferences.\\ The system gives me more control over my Smart home devices.\\ The privacy setting task would be easier to finish with the help of this system.\\ The system saves me time when I use it.\\ The system meets my needs.\\ The system does everything that I expect it to do.\end{tabular}                                                                                                                                                                                                                                                                                                                                     & \begin{tabular}[c]{@{}l@{}}U1                 0.741\\ U3                 0.483\\ U5                 0.527\\ U6                 0.580\end{tabular} \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Perceived \\ Ease of Use\\ \\ AVE: 0.806\end{tabular}     & \begin{tabular}[c]{@{}l@{}}It is convenient to set my preferences in the system.\\ It requires the fewest mouse-clicks possible to set my privacy preferences with the system.\\ It takes too many mouse-clicks to set my privacy preferences with the system.\\ I was able to quickly set my privacy-setting preferences in the system.\\ I feel setting my privacy preferences within the system is easy.\\ I feel setting my preferences in the system was unnecessarily complex.\\ I can set my privacy-setting preferences without written instructions.\\ I felt lost using the system’s privacy settings.\\ I felt this privacy-setting interface is designed for all levels of users.\\ I can use the Privacy-setting interface successfully every time.\end{tabular} & \begin{tabular}[c]{@{}l@{}}E3                 0.500\\ E6                 0.676\\ E8                 0.774\end{tabular}                            \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Perceived\\ privacy \\ Helpfulness\\ AVE:\end{tabular}    & \begin{tabular}[c]{@{}l@{}}The system helped me to decide what information I should disclose.\\ The system explained how useful providing each piece of information was.\\ The system helped me to make a tradeoff between privacy and usefulness.\\ I felt clueless about what information to disclose.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                         & \begin{tabular}[c]{@{}l@{}}H1                 0.626\\ H2                 0.561\\ H3                 0.629\end{tabular}                            \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Perceived\\ Privacy\\ Threat\\ \\ AVE: \\ 0.780\end{tabular} & \begin{tabular}[c]{@{}l@{}}I am afraid that I am sharing my personal information too freely,\\ due to my privacy settings.\\ I am comfortable with amount of data that is used/shared by smart \\ homesystem based on my settings.\\ Due to the system, the manufacturer will know too much about me.\\ Due to the system, third-parties will know too much about me.\\ I made sure only information that I am comfortable with will be used or shared.\\ My privacy settings are spot on; I am not disclosing too much to anyone.\\ I fear that I have been too liberal in selecting my privacy settings.\end{tabular}                                                                                                                                                            & \begin{tabular}[c]{@{}l@{}}TH1                0.602\\ \\ \\ TH3                0.557\\ TH4                0.612\\ TH7                0.668\end{tabular} \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Perceived\\ Control\\  AVE: 0.817\\ 0.817\end{tabular}          & \begin{tabular}[c]{@{}l@{}}I had limited control over the way this system made privacy settings.\\ The system restricted me in my choice of settings.\\ Compared to how I normally configure privacy settings, the system was very limited.\\ I would like to have more control over the recommendations.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                        & \begin{tabular}[c]{@{}l@{}}C1                 0.630\\ C2                 0.809\\ C3                 0.731\\ \\ C4                 0.500\end{tabular} \\ \hline
+	\end{tabular}
+	\caption {Factor Items}\label{tab:cfa}
+\end{table}
+
+Also, to ensure the convergent validity of constructs, I examined the average variance extracted (AVE) of each construct. The AVEs were all higher than the recommended value of 0.50, indicating adequate convergent validity. To ensure discriminant validity, we ascertained that the square root of the AVE for each construct was higher than the correlations of the construct with other constructs. As shown in Table~\ref{tab:CorrelationMatrix}, trust, satisfaction, perceived privacy threat, perceived ease of use, and perceived control all have high correlation with each other (at least 0.746). Out of them, perceived privacy threat and perceived ease of use have the lowest AVE but with the highest correlation with other constructs. And if these two constructs are removed from the model, the square root of the AVE for other construct will be higher than their correlations with the left constructs, which indicates the discriminant validity. Thus, we removed perceived privacy threat and perceive ease of use from the final model.
+The model has a following model fit: ${\chi}^{2}(125) = 298.507, p = .0000; RMSEA =
+0.067, 90\% CI: [0.058, 0.077], CFI = 0.975, TLI = 0.970$.
+\begin{table}[]
+	\begin{tabular}{l|l|l|l|l|l|l|l|l}
+		\hline
+		& AVE   & Satisfaction & Usefulness & Trust  & Ease   & Helfpf & Threat & Control \\ \hline
+		Satisfaction & 0.829 & 0.829        & -0.383     & 0.486  & 0.440  & -0.003       & 0.442  & 0.476   \\ \hline
+		Usefulness   & 0.763 & -0.383       & 0.763      & -0.268 & -0.225 & 0.416        & -0.202 & -0.172  \\ \hline
+		Trust        & 0.835 & 0.486        & -0.268     & 0.835  & 0.467  & 0.027        & 0.543  & 0.507   \\ \hline
+		Ease of use  & 0.806 & 0.440        & -0.225     & 0.467  & 0.806  & 0.044        & 0.466  & 0.477   \\ \hline
+		Helfulness   & 0.778 & -0.003       & 0.416      & -0.027 & 0.044  & 0.778        & 0.035  & 0.126   \\ \hline
+		Threat       & 0.780 & 0.442        & -0.202     & 0.543  & 0.466  & 0.035        & 0.780  & 0.507   \\ \hline
+		Control      & 0.817 & 0.476        & -0.172     & 0.507  & 0.477  & 0.126        & 0.507  & 0.817   \\ \hline
+	\end{tabular}
+	\caption {Factor Correlation Matrix}\label{tab:CorrelationMatrix}
+\end{table}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{figures/sem_model.pdf}
+	\caption{ Trimmed structural equation model. $** p < .01, *** p < .001$.}
+	\label{fig:finalcoremodel}
+\end{figure}
+
+\subsection{Structural Equation Modeling}
+
+As shown in Figure~\ref{fig:finalcoremodel}, we subjected the rest 5 factors (Trust, Satisfaction, Perceived Usefulness, Perceived Control, and Perceived Helpfulness) and the experimental conditions to structural equation modeling, which simultaneously fits the factor measurement model and the structural relations between factors and other variables. The model has following model fit: ${\chi}^{2}(176) = 284.160, p = .0000; RMSEA = 0.045, 90\% CI: [0.035, 0.054], CFI = 0.986, TLI = 0.983$.
+
+The model shows that the smart defaults/profiles manipulation has a significant effect on the helpfulness of the system: Participants in Everything-Off, Smart Defaults, and Smart Profiles conditions perceived more helpfulness than the Everything-On condition. The two different UIs, however, doesn't have significant effect on anything. The helpfulness in turn related to users' perceived control. Here we see that perceived helpfulness have a negative effect on users' perceived control. The reason for this is: users in ``smart defaults" and ``smart profiles" condition will find that their privacy has already been set by defaults, and think those ``smart defaults" and ``smart profiles" that we generated from previous study are helpful. However, due to these helpful pre-settings, users feel that their choice of settings have been limited. It is also possible that users feel although the pre-set settings are help but also complicated. They feel they don't have control over these settings. These are also corresponding to our previous discussion on the trade-off between accuracy and parsimony. A more parsimonious profile would be easier to explain to the users and also make them less scary about the pre-defined settings. So users are debating between the benefit brought by the ``smart defaults" and ``smart profiles" and the control they like to have over these privacy settings of their household IoT devices.
+
+Control in turn has a significant positive effect on perceived usefulness, satisfaction, and trust. Both the perceived control and perceived helpfulness determine participants satisfaction with the system. The perceived helpfulness, perceived control, and the satisfaction will finally determine particpants' perceived usefulness and trust in the company. Increasing perceived control will increase trust and satisfaction.
+
+We also investigated the total effect of experimental conditions on the user experience and subjective system aspects. The results show that the manipulation of the complexity of profile only have significant total effect on perceived control and perceived userfulness, as shown in Table~\ref{tab:totaleffect}.
+
+\begin{table}[]
+	\begin{tabular}{l|l|l|l}
+		\hline
+		& Estimate & S.E.  & p-Value \\ \hline
+		Effects from Everything-Off to control    & 0.079    & 0.039 & 0.044   \\\hline
+		Effects from Smart Defaults to control    & 0.160    & 0.058 & 0.005   \\\hline
+		Effects from Smart Profiles to control    & 0.129    & 0.050 & 0.010   \\\hline
+		Effects from Everything-Off to usefulness & 0.252    & 0.109 & 0.020   \\\hline
+		Effects from Smart Defaults to usefulness & 0.515    & 0.115 & 0.000   \\\hline
+		Effects from Smart Profiles to usefulness & 0.414    & 0.105 & 0.000  \\\hline
+	\end{tabular}
+	\caption{Total Effect from experimental conditions on control and usefulness}\label{tab:totaleffect}
+\end{table}
+
+\section{Discussion}
+Although we remove perceived threat and perceived ease of use from our final model. We still tested the hypothesis that we made. For profile complexity and SSA related hypothesis, only Hypothesis 2d holds. Actually, we only find that profile complexity only significant effect on perceived helpfulness and perceived ease of use.
+
+Need a table here to summarize Overview of supported and rejected hypotheses.
+
+We also test the effect from personal characteristics on the SSA and user experience (Hypothesis 7).
+
+\section{Conclusion}
+In this paper we conducted a systematic evaluation of the effect of several design parameters of a household IoT privacy settings interface on users’ evaluation of the system. In terms of managerial implications, we find that it is useful to utilize the data-driven approach to develop ``smart defaults" and ``smart profiles", and corresponding setting interfaces to improve users' experience and satisfaction. We didn't significant difference between the two UIs since the difference between those two UIs are very subtle.
+
+There are several limitations to our work. First of all, our study design is rather complex, and while our sample has sufficient power to test the hypothesized main and 2-way interaction effects, it is not large enough to carefully examine 3- or 4-way interaction effects. A larger sample is needed to test these effects and assure the robustness of our results.
+
+From the results of this study, we encourage privacy researchers, policy-makers, and industry executives to consider the effects of privacy settings interfaces on privacy outcomes. This paper shows that subtle changes in the design of such interfaces can have important subjective and behavioral consequences. Careful design of these systems is help users better setting their IoT devices.
