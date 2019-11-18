@@ -7,6 +7,17 @@ Alessandro Acquisti and Ralph Gross.
 \newblock In {\em International workshop on privacy enhancing technologies},
   pages 36--58, 2006.
 
+\bibitem{acquisti2005privacy}
+Alessandro Acquisti and Jens Grossklags.
+\newblock Privacy and rationality in individual decision making.
+\newblock {\em IEEE security \& privacy}, 3(1):26--33, 2005.
+
+\bibitem{acquisti2007can}
+Alessandro Acquisti and Jens Grossklags.
+\newblock What can behavioral economics teach us about privacy.
+\newblock {\em Digital privacy: theory, technologies and practices},
+  18:363--377, 2007.
+
 \bibitem{al2016modeling}
 Adai~Mohammad Al-Momani, Moamin~A Mahmoud, and S~Ahmad.
 \newblock Modeling the adoption of internet of things services: A conceptual
@@ -43,6 +54,13 @@ Naveen~Farag Awad and M.~S. Krishnan.
   {Profiled} {Online} for {Personalization}.
 \newblock {\em MIS Quarterly}, 30(1):13--28, March 2006.
 
+\bibitem{bahirat2018exploring}
+Paritosh Bahirat and Yangyang He.
+\newblock Exploring defaults and framing effects on privacy decision making in
+  smarthomes.
+\newblock In {\em Proceedings of the SOUPS 2018 Workshop on the Human aspects
+  of Smarthome Security and Privacy (WSSP)}, 2018.
+
 \bibitem{bahiratiui2018}
 Paritosh Bahirat, Yangyang He, Abhilash Menon, and Bart Knijnenburg.
 \newblock A {Data}-{Driven} {Approach} to {Developing} {IoT}
@@ -68,6 +86,12 @@ Alastair~R Beresford, Andrew Rice, Nicholas Skehin, and Ripduman Sohan.
   smartphones.
 \newblock In {\em Proceedings of the 12th workshop on mobile computing systems
   and applications}, pages 49--54. ACM, 2011.
+
+\bibitem{brandimarte2013misplaced}
+Laura Brandimarte, Alessandro Acquisti, and George Loewenstein.
+\newblock Misplaced confidences: Privacy and the control paradox.
+\newblock {\em Social Psychological and Personality Science}, 4(3):340--347,
+  2013.
 
 \bibitem{brar2004privacy}
 Ajay Brar and Judy Kay.
@@ -106,6 +130,12 @@ Shanzhi Chen, Hui Xu, Dake Liu, Bo~Hu, and Hucheng Wang.
   china perspective.
 \newblock {\em IEEE Internet of Things journal}, 1(4):349--359, 2014.
 
+\bibitem{choi2016smartwatch}
+Jaewon Choi and Seongcheol Kim.
+\newblock Is the smartwatch an it product or a fashion product? a study on
+  factors affecting the intention to use smartwatches.
+\newblock {\em Computers in Human Behavior}, 63:777--786, 2016.
+
 \bibitem{chow2015hci}
 Richard Chow, Serge Egelman, Raghudeep Kannavara, Hosub Lee, Suyash Misra, and
   Edward Wang.
@@ -114,6 +144,14 @@ Richard Chow, Serge Egelman, Raghudeep Kannavara, Hosub Lee, Suyash Misra, and
 \newblock In Fiona Fui-Hoon Nah and Chuan-Hoo Tan, editors, {\em {HCI} in
   {Business}}, number 9191 in Lecture Notes on Computer Science. Springer,
   2015.
+
+\bibitem{coughlan2012exploring}
+Tim Coughlan, Michael Brown, Richard Mortier, Robert~J Houghton, Murray
+  Goulden, and Glyn Lawson.
+\newblock Exploring acceptance and consequences of the internet of things in
+  the home.
+\newblock In {\em 2012 IEEE International Conference on Green Computing and
+  Communications}, pages 148--155. IEEE, 2012.
 
 \bibitem{culnan1993did}
 Mary~J Culnan.
@@ -140,6 +178,20 @@ Cailing Dong, Hongxia Jin, and Bart~P Knijnenburg.
 \newblock Ppm: A privacy prediction model for online social networks.
 \newblock In {\em International Conference on Social Informatics}, pages
   400--420, 2016.
+
+\bibitem{dong2017understanding}
+Xuebing Dong, Yaping Chang, Yawei Wang, and Jun Yan.
+\newblock Understanding usage of internet of things (iot) systems in china:
+  Cognitive experience and affect experience as moderator.
+\newblock {\em Information Technology \& People}, 30(1):117--138, 2017.
+
+\bibitem{earp2005examining}
+Julia~Brande Earp, Annie~I Ant{\'o}n, Lynda Aiman-Smith, and William~H
+  Stufflebeam.
+\newblock Examining internet privacy policies within the context of user
+  privacy values.
+\newblock {\em IEEE Transactions on Engineering Management}, 52(2):227--237,
+  2005.
 
 \bibitem{eddy2015gartner}
 Nathan Eddy.
@@ -186,6 +238,12 @@ Denis Feth, Andreas Maier, and Svenja Polst.
   {Security}, {Privacy} and {Trust}}, Lecture {Notes} in {Computer} {Science},
   pages 74--89. Springer International Publishing, 2017.
 
+\bibitem{forbesIoT}
+forbes.
+\newblock Iot: Don't forget privacy and security while racing to the price
+  bottom, 2017.
+\newblock [Online; accessed 1-Feb-2019].
+
 \bibitem{fu2014field}
 Huiqing Fu, Yulong Yang, Nileema Shingte, Janne Lindqvist, and Marco Gruteser.
 \newblock A field study of run-time location access disclosures on android
@@ -216,6 +274,12 @@ Hemant Ghayvat, S.C. Mukhopadhyay, Jie Liu, Arun Babu, Md~Alahi, and Xiang Gui.
 \newblock {\em Australian Journal of Telecommunications and the Digital
   Economy}, 3:33--47, 12 2015.
 
+\bibitem{gindin2009nobody}
+Susan~E Gindin.
+\newblock Nobody reads your privacy policy or online contract: Lessons learned
+  and questions raised by the ftc's action against sears.
+\newblock {\em Nw. J. Tech. \& Intell. Prop.}, 8:1, 2009.
+
 \bibitem{good2005spyware}
 Nathaniel Good, Rachna Dhamija, Jens Grossklags, David Thaw, Steven Aronowitz,
   Deirdre Mulligan, and Joseph Konstan.
@@ -242,6 +306,12 @@ Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
 \newblock The weka data mining software: an update.
 \newblock {\em ACM SIGKDD explorations newsletter}, 11(1):10--18, 2009.
 
+\bibitem{hann2007overcoming}
+Il-Horn Hann, Kai-Lung Hui, Sang-Yong~Tom Lee, and Ivan~PL Png.
+\newblock Overcoming online information privacy concerns: An
+  information-processing theory approach.
+\newblock {\em Journal of Management Information Systems}, 24(2):13--42, 2007.
+
 \bibitem{hassanalieragh2015health}
 Moeen Hassanalieragh, Alex Page, Tolga Soyata, Gaurav Sharma, Mehmet Aktas,
   Gonzalo Mateos, Burak Kantarci, and Silvana Andreescu.
@@ -249,6 +319,11 @@ Moeen Hassanalieragh, Alex Page, Tolga Soyata, Gaurav Sharma, Mehmet Aktas,
   sensing with cloud-based processing: Opportunities and challenges.
 \newblock In {\em 2015 IEEE International Conference on Services Computing},
   pages 285--292. IEEE, 2015.
+
+\bibitem{He2018data}
+Yangyang He, Paritosh Bahirat, Abhilash Menon, and Bart~P Knijnenburg.
+\newblock A data driven approach to designing for privacy in household iot.
+\newblock {\em Transactions on Interactive Intelligent Systems}, 2018.
 
 \bibitem{henka2016personalizing}
 Alexander Henka, Lukas Smirek, and Gottfried Zimmermann.
@@ -273,6 +348,11 @@ Kai-Lung Hui, Bernard C.~Y. Tan, and Chyan-Yee Goh.
 \newblock Online information disclosure: {Motivators} and measurements.
 \newblock {\em ACM Transactions on Internet Technology}, 6(4):415--441,
   November 2006.
+
+\bibitem{iyengar2000choice}
+Sheena~S Iyengar and Mark~R Lepper.
+\newblock When choice is demotivating: Can one desire too much of a good thing?
+\newblock {\em Journal of personality and social psychology}, 79(6):995, 2000.
 
 \bibitem{jayaraman_privacy_2017}
 Prem~Prakash Jayaraman, Xuechao Yang, Ali Yavari, Dimitrios Georgakopoulos, and
@@ -324,11 +404,29 @@ Bart~P. Knijnenburg.
   {Privacy}.
 \newblock {\em IEEE Security \& Privacy}, 15(4):62--67, 2017.
 
+\bibitem{knijnenburg2013persuasive}
+Bart~P Knijnenburg and Hongxia Jin.
+\newblock The persuasive effect of privacy recommendations.
+\newblock In {\em Twelfth Annual Workshop on HCI Research in MIS}, 2013.
+
+\bibitem{knijnenburg2013helping}
+Bart~P Knijnenburg and Alfred Kobsa.
+\newblock Helping users with information disclosure decisions: potential for
+  adaptation.
+\newblock In {\em Proceedings of the 2013 international conference on
+  Intelligent user interfaces}, pages 407--416. ACM, 2013.
+
 \bibitem{knijnenburg2013dimensionality}
 Bart~P Knijnenburg, Alfred Kobsa, and Hongxia Jin.
 \newblock Dimensionality of information disclosure behavior.
 \newblock {\em International Journal of Human-Computer Studies},
   71(12):1144--1162, 2013.
+
+\bibitem{knijnenburg2014increasing}
+Bart~Piet Knijnenburg and Alfred Kobsa.
+\newblock Increasing sharing tendency without reducing satisfaction: finding
+  the best privacy-settings user interface for social networks.
+\newblock 2014.
 
 \bibitem{kobsa2006privacy}
 Alfred Kobsa, Ramnath~K Chellappa, and Sarah Spiekermann.
@@ -343,6 +441,17 @@ Alfred Kobsa, Hichang Cho, and Bart~P. Knijnenburg.
   {Model} {Approach}.
 \newblock {\em Journal of the Association for Information Science and
   Technology}, 67:2587--2606, February 2016.
+
+\bibitem{kodinariya2013review}
+Trupti~M Kodinariya and Prashant~R Makwana.
+\newblock Review on determining number of cluster in k-means clustering.
+\newblock {\em International Journal}, 1(6):90--95, 2013.
+
+\bibitem{krasnova2009investigating}
+Hanna Krasnova, Thomas Hildebrand, and Oliver Guenther.
+\newblock Investigating the value of privacy on online social networks:
+  conjoint analysis.
+\newblock 2009.
 
 \bibitem{laufer1977privacy}
 Robert~S Laufer and Maxine Wolfe.
@@ -362,6 +471,13 @@ Hosub Lee and Alfred Kobsa.
 \newblock Understanding user privacy in internet of things environments.
 \newblock {\em 2016 IEEE 3rd World Forum on Internet of Things (WF-IoT)}, pages
   407--412, 2016.
+
+\bibitem{lee2019empirical}
+Wonjun Lee and Seungjae Shin.
+\newblock An empirical study of consumer adoption of internet of things
+  services.
+\newblock {\em INTERNATIONAL JOURNAL OF ENGINEERING AND TECHNOLOGY INNOVATION},
+  9(1):1--11, 2019.
 
 \bibitem{lee2012effect}
 Woojin Lee, Lina Xiong, and Clark Hu.
@@ -422,6 +538,23 @@ Michelle Madejski, Maritza Johnson, and Steven~M Bellovin.
 \newblock In {\em Pervasive Computing and Communications Workshops (PERCOM
   Workshops), 2012 IEEE International Conference on}, pages 340--345. IEEE,
   2012.
+
+\bibitem{malhotra2004internet}
+Naresh~K Malhotra, Sung~S Kim, and James Agarwal.
+\newblock Internet users' information privacy concerns (iuipc): The construct,
+  the scale, and a causal model.
+\newblock {\em Information systems research}, 15(4):336--355, 2004.
+
+\bibitem{medaglia2010overview}
+Carlo~Maria Medaglia and Alexandru Serbanati.
+\newblock An overview of privacy and security issues in the internet of things.
+\newblock In {\em The Internet of Things}, pages 389--395. Springer, 2010.
+
+\bibitem{milne2004strategies}
+George~R Milne and Mary~J Culnan.
+\newblock Strategies for reducing online privacy risks: Why consumers read (or
+  don’t read) online privacy notices.
+\newblock {\em Journal of interactive marketing}, 18(3):15--29, 2004.
 
 \bibitem{mital2018adoption}
 Monika Mital, Victor Chang, Praveen Choudhary, Armando Papa, and Ashis~K Pani.
@@ -531,6 +664,11 @@ R.~S. Sandhu and P.~Samarati.
 \newblock Access control: principle and practice.
 \newblock {\em IEEE Communications Magazine}, 32(9):40--48, 1994.
 
+\bibitem{schwartz2004paradox}
+Barry Schwartz.
+\newblock {\em The paradox of choice: Why more is less}, volume~6.
+\newblock HarperCollins New York, 2004.
+
 \bibitem{shang2012internet}
 Xiaopu Shang, Runtong Zhang, and Ying Chen.
 \newblock Internet of things (iot) service architecture and its application in
@@ -562,6 +700,13 @@ Juliana Sutanto, Elia Palme, Chuan-Hoo Tan, and Chee~Wei Phang.
 \newblock Addressing the {Personalization}-{Privacy} {Paradox}: {An}
   {Empirical} {Assessment} from a {Field} {Experiment} on {Smartphone} {Users}.
 \newblock {\em MIS Quarterly}, 37(4):1141--1164, 2013.
+
+\bibitem{tang2012implications}
+Karen Tang, Jason Hong, and Dan Siewiorek.
+\newblock The implications of offering more disclosure choices for social
+  location sharing.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, pages 391--394. ACM, 2012.
 
 \bibitem{taylor2009privacy}
 David~G Taylor, Donna~F Davis, and Ravi Jillapalli.
@@ -595,6 +740,12 @@ Lynn Tsai, Primal Wijesekera, Joel Reardon, Irwin Reyes, Serge Egelman, David
 \newblock Turtle guard: Helping android users apply contextual privacy
   preferences.
 \newblock In {\em Symposium on Usable Privacy and Security (SOUPS)}, 2017.
+
+\bibitem{tuunainen2009users}
+Virpi~Kristiina Tuunainen, Olli Pitk{\"a}nen, and Marjaana Hovi.
+\newblock Users' awareness of privacy on online social networking sites-case
+  facebook.
+\newblock {\em Bled 2009 Proceedings}, page~42, 2009.
 
 \bibitem{uckelmann2011architectural}
 Dieter Uckelmann, Mark Harrison, and Florian Michahelles.

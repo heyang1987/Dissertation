@@ -1,192 +1,97 @@
 % !TeX root = proposal.tex
 \chapter{Recommending Privacy Settings for Fitness IoT}\label{chapter:fitnessIoT}
 
-In Chapter~\ref{chapter:generalIoT} and~\ref{chapter:householdIoT}, we have discussed how we apply the data-driven approach in the general/public IoT and household IoT contexts, respectively, and developed corresponding IoT privacy-setting interface prototypes that integrated with smart defaults/profiles by predicting users' privacy decisions. In this chapter, we present the work completed to date in the areas of designing for privacy for Household IoT. We expand and improve upon the previously-developed data-driven approach to design privacy-setting interfaces for users of household IoT devices. Moving the context to a more narrow environment shifts the focus of the privacy decision from the entity collecting information (which was the dominant parameter in our previous work) to a more contextual evaluation of the content or nature of the information ~\cite{nissenbaum_privacy_2004}.
+\section{Introduction}\label{fitnessIntro}
+In Chapter~\ref{chapter:generalIoT} and~\ref{chapter:householdIoT}, we have discussed how we apply the data-driven approach to the general/public IoT and household IoT contexts, respectively. We developed corresponding IoT privacy-setting interface prototypes that integrated with smart defaults/profiles by predicting users' privacy decisions. In this chapter, we present the work we did in the domain of fitness IoT. We further test the previously-developed data-driven approach to design privacy-setting interfaces for users of fitness IoT devices. Note that moving the context from general/public IoT to household IoT, now to fitness IoT, the context that we are focusing is becoming more narrow. The change of environment brought more challenge. For example, now for fitness IoT, there is no contextual scenario existing, which we focused on in Chapter~\ref{chapter:generalIoT} and~\ref{chapter:householdIoT}. Considering almost all the current fitness IoT devices require corresponding mobile Apps to be used together and the mobile Apps are usually the ones who are take charge of users' privacy information, we focus on the privacy permissions asked by the mobile Apps. In this Chapter, we first collect users permission decisions to the fitness IoT permissions. Then we apply our data-driven approach to classify users into groups based on their permission decisions, and create permission profiles for each groups. This allows new users to answer very few questions before getting a recommendation of a set of permission profile, which simplifies users' task of setting every permission for fitness IoT devices.
 
-In Chapter~\ref{chapter:householdIoT}, we have discussed recommending privacy preference for household IoT users. In this chapter, we present the work completed to date in the areas of recommending privacy for Fitness IoT. 
+%As fitness-related data are persistently captured, stored, processed and shared by these devices and related services, the issue of privacy management is becoming increasingly urgent both for the user and the service, which has to respect privacy law, including the new European Union's General Data Protection Regulation (GDPR). This concerns all third parties that manage user data and has of course a major impact on personalization services.
 
-Wearable fitness trackers are undoubtedly gaining popularity. As fitness-related data are persistently captured, stored, processed and shared by these devices and related services, the issue of privacy management is becoming increasingly urgent both for the user and the service, which has to respect privacy law, including the new European Union's General Data Protection Regulation (GDPR). This concerns all third parties that manage user data and has of course a major impact on personalization services.
-
-Previous studies in mobile privacy (e.g.,\cite{felt2012android}) have proven that mobile interfaces lack the potential to provide the necessary user privacy information and control for both Android and iOS systems~\cite{lin2014modeling}. Several solutions from literature have been proposed from then on to improve mobile privacy protection and offer users more privacy control (e.g.,~\cite{beresford2011mockdroid}). These leads into rapid improvement of privacy management of current mobile systems (i.e., from Android 6.0+ and iOS 5.0+), providing more control on the user's privacy settings.
-
-As of May 25, 2018, the European Union (EU) enforce the General Data Protection Regulation (GDPR)~\cite{ref:GDPR} which applies to the storage, processing and use of the subject's personal data from the TPs which may or may not have been established in the EU as long as they operate in an EU market or acess data of EU residents. It requires users to provide explicit consent to privacy options expressed by TPs. This results in a complex task for the users given the number of devices and applications which have to be read and processed specifically.
+%As of May 25, 2018, the European Union (EU) enforce the General Data Protection Regulation (GDPR)~\cite{ref:GDPR} which applies to the storage, processing and use of the subject's personal data from the third parties which may or may not have been established in the EU as long as they operate in an EU market or acess data of EU residents. It requires users to provide explicit consent to privacy options expressed by third parties. This results in a complex task for the users given the number of devices and applications which have to be read and processed specifically.
 
 \section{Data Model}
-As discussed in Section~\ref{label}, the mechanism that most fitnes tracker used to guide their user to manage privacy settings is by asking users various permission questions. We first investigated the questions asked by mainstream fitness trackers, and then adapt those questions for the use of our data model in this study.
+As discussed in Section~\ref{fitnessIntro}, the mechanism that most modern fitness trackers use to guide their user to manage privacy settings is by asking users various permission questions. We first investigate the questions asked by mainstream fitness trackers, and then adapt those questions for the use of our data model in this study.
 
-By examing the permission questions from the mainstream fitness trackers (Fitbit, Garmin, Jawbone, and Misfit), we categorize these questions into 3 groups -- \textit{Smartphone Persmission}, \textit{In-app Requests}, and \textit{FItness Data}, as shown in Table~\ref{}. 
-
-%\begin{table*}
-%	\centering
-%	
-%	\caption{Comparison of permissions asked by Fitness Trackers and the fitness IoT Data Model used for this study.}
-%	\label{tab:trackerspermission}       
-%	
-%	\begin{tabular}{llllll}
-%		\hline\noalign{\smallskip}
-%		& Fitbit & Garmin & Jawbone & Misfit & Our Data Model \\
-%		\noalign{\smallskip}\cmidrule(r){2-6}\noalign{\smallskip}
-%		
-%		(S Set)
-%		& $\bullet$ Identity & $\bullet$ Identity & $\bullet$ Identity & $\bullet$ Identity & $\bullet$ Identity \\
-%		Smartphone 
-%		& $\bullet$ Contacts  & $\bullet$ Calendar & $\bullet$ Contacts & $\bullet$ Contacts & $\bullet$ Contacts \\
-%		Permissions
-%		& $\bullet$ Location  & $\bullet$ Contacts & $\bullet$ Location &  $\bullet$ Location &  $\bullet$ Location\\ & $\bullet$ SMS  & $\bullet$ Location & $\bullet$ SMS & $\bullet$ SMS & $\bullet$ Phone\\
-%		& $\bullet$ Camera  & $\bullet$ Phone & $\bullet$ Microphone & $\bullet$ Camera & $\bullet$ Camera \\
-%		& $\bullet$ Bluetooth  & $\bullet$ Camera & $\bullet$ Phone & $\bullet$ Phone & $\bullet$ Storage\\
-%		&$\bullet$ Storage & $\bullet$ SMS & $\bullet$ Storage  & $\bullet$ Storage  & $\bullet$ Media \& Music\\
-%		&$\bullet$ Device \&  & $\bullet$ Device \& & $\bullet$ Device \& & $\bullet$ Device \& & $\bullet$ Photos\\
-%		& Call Inf.  &  Call Inf.&  Call Inf.& Call Inf. & $\bullet$ Motion \& Fitness\\
-%		& $\bullet$ Photos/ & $\bullet$ Photos/ & $\bullet$ Photos/ & $\bullet$ Photos/ & $\bullet$ SMS\\
-%		& Media/Files & Media/Files & Media/Files & Media/Files & $\bullet$ Bluetooth\\
-%		&  & $\bullet$ WiFi Inf.& & & $\bullet$ Mobile Data\\
-%		&  & $\bullet$ Storage & & & \\
-%		&  & & & & \\
-%		
-%		\cmidrule(r){2-6}
-%		(A set)
-%		& $\bullet$ First Name & $\bullet$ Full Name & $\bullet$ First Name & $\bullet$ Full name & $\bullet$ First Name\\
-%		In-app
-%		&$\bullet$ Last Name & $\bullet$ Display Name & $\bullet$ Last Name & $\bullet$ Gender & $\bullet$ Last Name\\
-%		Requests
-%		&$\bullet$ Gender & $\bullet$ Birth date & $\bullet$ Gender & $\bullet$ Weight & $\bullet$ Gender \\
-%		& $\bullet$ Height & $\bullet$ Gender & $\bullet$ Height & $\bullet$ Height & $\bullet$ Height \\
-%		& $\bullet$ Weight & $\bullet$ Height & $\bullet$ Weight & $\bullet$ Birth date &  $\bullet$ Weight\\
-%		&$\bullet$ Birth date & $\bullet$ Weight & $\bullet$ Birth date & $\bullet$ Occupation & $\bullet$ Birth date\\
-%		&&&&(optional)&\\
-%		
-%		\cmidrule(r){2-6}
-%		
-%		(F Set)
-%		& $\bullet$ Activity \& Exercise & $\bullet$ Full data & $\bullet$ Basic Info & $\bullet$ Profile & $\bullet$ steps \\
-%		Fitness 
-%		& -- steps &$\bullet$ Location & $\bullet$ Extended Info&$\bullet$ Goal  & $\bullet$ distance\\
-%		Data 
-%		& -- distance & $\bullet$ Sync Device & $\bullet$ Heartrate&$\bullet$ Device  & $\bullet$ elevation\\
-%		& -- elevation & & $\bullet$ Meals &$\bullet$ Summary & $\bullet$ floors\\
-%		& -- floors && $\bullet$ Moves&-- steps & $\bullet$ activity minutes\\
-%		& -- activity minutes & &$\bullet$ Sleep   & -- calories  & $\bullet$ calories activity\\
-%		& -- calories activity & & $\bullet$ Friends list & -- activity calories  & $\bullet$ weight\\
-%		& $\bullet$ Weight & & & -- distance & $\bullet$ Sleep\\
-%		& $\bullet$ Sleep & & & $\bullet$ Session & $\bullet$ Heartrate\\
-%		& $\bullet$ Heartrate & & & $\bullet$ Sleep & $\bullet$ Food \& Water Logs\\
-%		& $\bullet$ Food \& Water Logs & & & & $\bullet$ Location\\
-%		& $\bullet$ Devices \& Settings & & & & $\bullet$  Devices \& Settings\\
-%		& $\bullet$ Location \& GPS & & & & $\bullet$ Friends\\
-%		& $\bullet$ Friends & & & & $\bullet$ Profile\\
-%		& $\bullet$ Profile & & & & \\
-%		
-%		\cmidrule(r){2-6}
-%		& & & & & Entity Types\\
-%		& & & & & $\bullet$ SN (public)\\
-%		(G Set)
-%		& & & & & $\bullet$ SN (friends only)\\
-%		GDPR 
-%		& & & & & $\bullet$ health/fitness apps\\
-%		Permissions
-%		& & & & & $\bullet$ other apps\\
-%		& & & & & $\bullet$ corp. fitness programs\\\vspace{7pt}
-%		& & & & & $\bullet$ gov't. fitness programs\\
-%		& & & & & Purposes\\
-%		& & & & & $\bullet$ safety\\ 
-%		& & & & & $\bullet$ health\\ 
-%		& & & & & $\bullet$ social\\ 
-%		& & & & & $\bullet$ commercial\\
-%		\vspace{7pt} 
-%		& & & & & $\bullet$ convenience\\
-%		& & & & & $\bullet$ Frequency\\ 
-%		& & & & & $\bullet$ Retention\\
-%		
-%		\noalign{\smallskip}\hline
-%	\end{tabular}
-%\end{table*}
+As shown in Figure~\ref{tab:trackerspermission}, we examined the permission questions asked by the mainstream fitness trackers (Fitbit, Garmin, Jawbone, and Misfit) and categorized these questions into 3 groups -- \textit{Smartphone Persmission}, \textit{In-app Requests}, and \textit{Fitness Data},.
+ 
+\begin{figure*}
+	\centering
+	\includegraphics[width=\textwidth]{figures/fitnessCompare.png}
+	\caption{Comparison of permissions asked by Fitness Trackers and the fitness IoT Data Model used for this study.}
+	\label{tab:trackerspermission}
+\end{figure*}
 
 \subsection{Smartphone Permissions (S set)}
-The first group of permissions are the smartphones permissions, which are requested during the installing or the first use of the mobile application. The requested smartphone permissions differs by the brands of the fitness trackers as well as the mobile Operation System of the smartphones. As shown in Figures~\ref{fig:dataa} and~\ref{fig:datab}, even for the mobile application from the same manufacturer (Fitbit), the requested smartphone permissions are different between the iOS version and the Android version. We summarize all the requested smartphone permissions by popular brands of fitness trackers' mobile application across different mobile Operating Systems (i.e. iOS, Android, and Windows Mobile).
+The first group of permissions are the smartphones permissions, which are requested during the installing or the first use of the mobile application. The requested smartphone permissions differs by the brands of the fitness trackers as well as the mobile Operation System of the smartphones. As shown in Figures~\ref{fig:iosS} and~\ref{fig:androidS}, even for the mobile application from the same manufacturer (Fitbit), the requested smartphone permissions are different between the iOS version and the Android version. We summarize all the requested smartphone permissions by popular brands of fitness trackers' mobile application across different mobile Operating Systems (i.e. iOS, Android, and Windows Mobile).
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.33\linewidth}
+	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=120pt]{figures/ios.png}
 		\caption{The interface of smartphone permissions of Fitbit iOS App}
 		\label{fig:iosS}
 	\end{subfigure}%
-	\begin{subfigure}[b]{0.33\linewidth}
+	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=120pt]{figures/android6.png}
 		\caption{The interface of smartphone permissions of Fitbit Android App}
 		\label{fig:androidS}
 	\end{subfigure}
-	\begin{subfigure}[b]{0.33\linewidth}
-		\centering
-		\includegraphics[width=120pt]{figures/Aset.png}
-		\caption{The interface of In-App permissions of Fitbit Android App}
-		\label{fig:fitbitA}
-	\end{subfigure}
-	\caption{Interface examples of permission requests for Fitbit fitness trackers}
+	\caption{Interface examples of Smartphone Permissions requests for Fitbit trackers (S set)}
 	%\caption{\subref{fig:iosS} shows Figure~1 and~\subref{fig:androidS} shows Figure~2.}
 \end{figure}
 
 \subsection{In-App Requests (A set)}
-Fitness tracks also intend to collect user's data in their mobile applications. For example, Fitbit asks users to provide their \textit{First Name}, \textit{Last Name}, \textit{Gender}, \textit{Height},  \textit{Weight}, \textit{Birth Date}, as shown in Figure~\ref{} when signing up an account during the first-time using the mobile App. Note that these data are mandatory for all fitness trackers in Table~\ref{tab:trackerspermission}; the only optional piece of information is Misfit's request on users' occupation. Figure~\ref{fig:fitbitA} shows the \emph{A set} for the Fitbit app (other apps are similar), as reported in Table~\ref{tab:trackers}.
+Fitness tracks also intend to collect user's data in their mobile applications. For example, Fitbit asks users to provide their \textit{First Name}, \textit{Last Name}, \textit{Gender}, \textit{Height}, \textit{Weight}, \textit{Birth Date}, as shown in Figure~\ref{fig:fitbitA} when signing up an account during the first-time using the mobile App. Note that these data are mandatory for all fitness trackers in Figure~\ref{tab:trackerspermission}; the only optional piece of information is Misfit's request on users' occupation. Figure~\ref{fig:fitbitA} shows the \emph{A set} for the Fitbit app (other apps are similar).
+\begin{figure}
+	\centering
+	\includegraphics[width=0.2\textheight]{figures/Aset.png}
+	\caption{Interface example of In-App Permissions requests in Fitbit Android App (A set)}
+	\label{fig:fitbitA}
+\end{figure}
 
-\subsection{The F set (fitness data)}
+\subsection{Fitness Data Permissions (F set)}
 \label{sec:fset}
-
-%Bart: Added a preamble
-The F set contains the data fitness trackers collect while the user is using the device. Some of this data is automatically collected by the tracker (e.g., steps, distance) and shared with the device's own fitness tracking app (e.g. the Fitbit device shares fitness data with the Fitbit app), while the user has to enter other data manually into the app (e.g., food and water logs, friend list).
-
-While this data is ``shared'' with the native fitness tracker TP by default (since this TP serves as the collecting TP), most trackers have an API that allows users to further share this data with other TPs in exchange for additional fitness or health services the user can benefit from. This data sharing was modeled in~\cite{torre2017supporting} together with its associated risks. Table~\ref{tab:trackers} shows the data that can be shared to other TPs from the four considered fitness apps. In this comparison, Fitbit gives the users more granular control over which of the fitness data can be shared with other TPs through their API, as shown in Figure~\ref{fig:datad}\footnote{\url{https://dev.fitbit.com/build/reference/web-api/oauth2/}}. Additionally, these settings can be revisited in their web app\footnote{\url{https://community.fitbit.com/t5/Flex-2/How-do-I-revoke-access/td-p/2701359}}, where users have the option to revoke the granted access. The other apps in Table~\ref{tab:trackers} also give users control, but only give users the option to allow/deny the other TP access to the entire F set. We follow Fitbit's permission model for this set but give users even more fine-grained control over \textit{Activity and Exercise} data, breaking these permissions down into steps, distance, elevation, floors, activity minutes, and calories activity. We implement this additional granularity because these data involve a particular inference risk, potentially exposing some of the other data in this set~\cite{torre2017supporting}. A total of 14 permissions are included in the F set. 
+F set contains fitness-related data that is either automatically collected by the fitness tracker or manually input by the users, such as food and water logs, friend list. As shown in Figure~\ref{tab:trackerspermission}, we follow Fitbit's permission model for F set but give users more fine-grained control over \textit{Activity and Exercise} data by breaking these permissions down into steps, distance, elevation, floors, activity minutes, and calories activity. A total of 14 permissions are included in the F set for our study. 
 
 %NEW
 %new: according to Prof. Bart, explain the F-G connection
-Note that the F set permissions are repeated for \emph{each additional TP} that requests access to this data. As such, these permissions are not for the native app of the fitness tracker, but for other TP apps that the user desires to use and allow access to her/his fitness tracking data. In this study, instead of taking into account individual TPs, we use the PPIoT \textit{EntityType}, discussed in Section \ref{sec:ppiot}, to investigate which group category of TP apps (namely ``who") the user prefers to share with. This parameter has been shown to be important in determining users' privacy settings~\cite{lee2017privacy}. Since Entity Types are intimately related to GDPR-based requirements, these permissions are included in the G set. 
+%Note that the F set permissions are repeated for \emph{each additional TP} that requests access to this data. As such, these permissions are not for the native app of the fitness tracker, but for other TP apps that the user desires to use and allow access to her/his fitness tracking data. In this study, instead of taking into account individual third parties, we use the PPIoT \textit{EntityType}, discussed in Section \ref{sec:ppiot}, to investigate which group category of TP apps (namely ``who") the user prefers to share with. This parameter has been shown to be important in determining users' privacy settings~\cite{lee2017privacy}. Since Entity Types are intimately related to GDPR-based requirements, these permissions are included in the G set. 
 
-%BART: I think we should move this subsection to section 5.
-%ODNAN:ok, added also in the table
-\subsection{G Set (GDPR-based permissions)}
+\subsection{GDPR-based Permissions (G set)}
 \label{sec:gset}
+As of May 25, 2018, the European Union (EU) enforce the General Data Protection Regulation (GDPR)~\cite{ref:GDPR} which applies to the storage, processing and use of the subject's personal data from the third parties which may or may not have been established in the EU as long as they operate in an EU market or acess data of EU residents. It requires users to provide explicit consent to privacy options expressed by third parties.
+The G set includes permissions that are based on GDPR requirements. The purpose of data collection, \textit{hasReason}, includes \textit{safety}, \textit{health}, \textit{social}, \textit{commercial} and \textit{convenience}. The frequency of data access, \textit{hasPersistence}, includes \textit{continuous access}, \textit{continuous access but only when using the app}, and \textit{separate permissions for each workout}. For the retention period of collected data, \textit{hasMaxRetentionPeriod}, permissions include \textit{retain until no longer necessary}, \textit{retain until the app is uninstalled}, and \textit{retain indefinitely}. We did not include the \textit{hasMethod} property since it involves technical background.
 
-The G set includes permissions that are based on GDPR requirements.  
-We report the exact terms used in  PPIoT to unambiguously represent these permissions.  The purpose of data collection, \textit{hasReason}, includes \textit{safety}, \textit{health}, \textit{social}, \textit{commercial} and \textit{convenience}. The frequency of data access, \textit{hasPersistence}, includes \textit{continuous access}, \textit{continuous access but only when using the app}, and \textit{separate permissions for each workout}. For the retention period of collected data, \textit{hasMaxRetentionPeriod}, permissions include \textit{retain until no longer necessary}, \textit{retain until the app is uninstalled}, and \textit{retain indefinitely}. 
-
-The types of TPs  (instances of \textit{EntityType}) that can request access to the user's Fitness data include \textit{health/fitness apps}, \textit{Social Network (SN) apps} (\textit{public} or \textit{friends} only), \textit{other apps on the user's phone}, and \textit{corporate} and \textit{government fitness programs}.
-
-%new: reason for not adding hasMethod
-We did not include the \textit{hasMethod} property since it involves technical background, as stated in Section~\ref{sec:gdpr}, which may not be known to the users. For simplicity, we assume that the TPs' \textit{hasMethod} data access are \textit{encrypted}.
+The types of third parties  (instances of \textit{EntityType}) that can request access to the user's Fitness data include \textit{health/fitness apps}, \textit{Social Network (SN) apps} (\textit{public} or \textit{friends} only), \textit{other apps on the user's phone}, and \textit{corporate} and \textit{government fitness programs}.
 
 
 
-\subsection{A Conundrum of Settings}
+%\subsection{A Conundrum of Settings}
+%
+%We note that Fitbit asks for a staggering total of 24 permissions across the S, A, and F data sets. Our data model, which takes a superset of permissions asked by all four fitness trackers, more granular \textit{Activity and Exercise} data, and the additional G set, includes 45 permissions in total. Moreover, if the user wants to share their fitness data (F set) with one or more additional health or fitness tracking apps, the permissions for this must be decided upon for each additional TP individually. 
+%
+%Most current fitness tracker apps do not ask these permissions in a very clear manner, and the settings are often hard to find in case the user wants to change them. That said, even with a more usable UI for making these settings the sheer number of them is arguably a significant burden to the user and cause of possible errors. This is why we advocate the use of semi-automated interactive \emph{privacy recommendations} to partially relieve users' burden of setting each of these individual permissions and meanwhile maintain the control on privacy preferences.
 
-We note that Fitbit asks for a staggering total of 24 permissions across the S, A, and F data sets. Our data model, which takes a superset of permissions asked by all four fitness trackers, more granular \textit{Activity and Exercise} data, and the additional G set, includes 45 permissions in total. Moreover, if the user wants to share their fitness data (F set) with one or more additional health or fitness tracking apps, the permissions for this must be decided upon for each additional TP individually. 
+\section{Dataset}
+The dataset we use in this study was collected by my colleague Odnan. 310 participants were asked to set up a new account using a fitness tracker mobile App similar to Fitbit. They were then asked the 4 groups of questions that we discussed in our data model. For each question, the answer will be either ``Allow" or ``Deny", meaning the participants are either willing to provide information for that permission or not. After answering these questions, participants were then asked to fill our a survey questionnaire measuring their privacy-related attitudes (i.e. Trust, Privacy concerns, Perceived surveillance and intrusion, and Concerns about the secondary use of personal information), the negotiability of their privacy settings, their social behaviour (social influence and sociability), exercise tendencies (a proxy for their attitude and knowledge about fitness tracking), and demographic information.
+%To conduct the data collection, a mobile fitness application mock-up, named \textit{FitPro} was developed. FitPro systematically asked for all of the permissions in the Data Model for Fitness IoT that we defined in Section~\ref{sec:trackers}. Participants were asked to set up an new account by providing their information. All the questions at this stage are organized according to our data model discussed in previous section, including 1) In-app permissions, 2) Smartphone permissions, 3) Fitness data permissions, and 4) GDPR-based permissions. After providing answers to these questions, participants were asked to fill our a survey questionnaire. We aimed to measure the users' privacy-related attitudes (trust, privacy concerns, perceived surveillance and intrusion, and concerns about the secondary use of personal information), the negotiability of their privacy settings, their social behaviour (social influence and sociability), exercise tendencies (a proxy for their attitude and knowledge about fitness tracking), and demographic information. The questionnaire is shown in Appendix.
 
-Most current fitness tracker apps do not ask these permissions in a very clear manner, and the settings are often hard to find in case the user wants to change them. That said, even with a more usable UI for making these settings the sheer number of them is arguably a significant burden to the user and cause of possible errors. This is why we advocate the use of semi-automated interactive \emph{privacy recommendations} to partially relieve users' burden of setting each of these individual permissions and meanwhile maintain the control on privacy preferences.
+%A total number of 310 participants were recruited through Amazon Mechanical Turk. After data preprocessing, 295 user samples were utilized. We asked people to only participate if they were active Fitbit users\footnote{We restricted our study to Fitbit users rather than users of any fitness trackers to make sure that our sample had a more homogeneous existing experience with fitness permission-setting interfaces.}, and checked this requirement by asking participants to enter the initial and last few digits of their Fitibit serial number. The participants consisted  of 34.2\% males and 65.8\% females, had mean age of 35, and were generally highly educated (62\% had at least a bachelor's degree). We restricted our study to fitness tracker users to detect the real preferences of target users.
 
-\section{Data Collection}
-To conduct the data collection, a mobile fitness application mock-up, named \textit{FitPro} was developed. FitPro systematically asked for all of the permissions in the Data Model for Fitness IoT that we defined in Section~\ref{sec:trackers}. Participants were asked to set up an new account by providing their information. All the questions at this stage are organized according to our data model discussed in previous section, including 1) In-app permissions, 2) Smartphone permissions, 3) Fitness data permissions, and 4) GDPR-based permissions. After providing answers to these questions, participants were asked to fill our a survey questionnaire. We aimed to measure the users' privacy-related attitudes (trust, privacy concerns, perceived surveillance and intrusion, and concerns about the secondary use of personal information), the negotiability of their privacy settings, their social behaviour (social influence and sociability), exercise tendencies (a proxy for their attitude and knowledge about fitness tracking), and demographic information. The questionnaire is shown in Appendix.
+%\section{Data Analysis}
+%In this section, we present our data analysis on the dataset. 
+As shown in Figure~\ref{fig:mean}, participants intend to have a higher disclose rate for their demographics information (A set), which is in line with the results of other studies~\cite{knijnenburg2013helping}.
 
-A total number of 310 participants were recruited through Amazon Mechanical Turk. After data preprocessing, 295 user samples were utilized. We asked people to only participate if they were active Fitbit users\footnote{We restricted our study to Fitbit users rather than users of any fitness trackers to make sure that our sample had a more homogeneous existing experience with fitness permission-setting interfaces.}, and checked this requirement by asking participants to enter the initial and last few digits of their Fitibit serial number. The participants consisted  of 34.2\% males and 65.8\% females, had mean age of 35, and were generally highly educated (62\% had at least a bachelor's degree). We restricted our study to fitness tracker users to detect the real preferences of target users.
+For the smartphone permissions (S set), participants are more likely to allow motion, location, bluetooth, and mobile data, which are usually the minimum permissions required for a fitness mobile App to work. In S set, the access to contacts and photos are the least allowed permissions.
 
-\section{Data Analysis}
-In this section, we present our data analysis on the data we collected. Figure ~\ref{fig:mean} shows that there is considerable variability in the average rate at which each permission is allowed or denied in our study. The permissions requested by the application (A set), mainly concerning demographics (see Table 1), have a high disclosure rate, which is in line with the results of other studies (cf.~\cite{knijnenburg2013helping}).
+Regarding the G set, participants seem most open to data collection for health (the main purpose of a fitness tracker) and safety (another popular purpose often advertised by the manufacturers). On the other hand, users are less likely to agree to data collection with an indefinite retention period, and they prefer not to share data with government fitness programs or publicly on social media. 
 
-For the smartphone permissions (S set), participants are more likely to allow motion, location, bluetooth, and mobile data. This makes sense, because these are the minimum permissions needed to run a fitness tracker app. In this set, the permission to access photos or contacts is granted much less often.
-
-Regarding the purpose, frequency and retention period of data collection (G set), participants seem most open to data collection for health (the main purpose of a fitness tracker) and safety (another purpose often indicated by fitness trackers for continuous location-tracking services). On the other hand, users are less likely to agree to data collection with an indefinite retention period, and they prefer not to share data with government fitness programs or publicly on social media. 
-
-
-%BART: aren't those latter ones part of the F set?
-%ODNAN: I explained that part already, as you suggested. Below, in the f set, I will try to remind this concept
-
-
-%\begin{figure}[ht]
-%	\includegraphics[width=1\linewidth]{figures/sum2.png}
-%	\caption{Average values of each privacy permissions (1-allow, 0-deny).}
-%	\label{fig:mean}      
-%\end{figure}
+\begin{figure}
+	\includegraphics[width=\linewidth]{figures/sum2.png}
+	\caption{Average values of each privacy permissions (1-allow, 0-deny).}
+	\label{fig:mean}      
+\end{figure}
 %
 %\begin{figure}[ht]
 %	\includegraphics[width=0.98\linewidth]{figures/fdata6.png}
@@ -195,20 +100,20 @@ Regarding the purpose, frequency and retention period of data collection (G set)
 %\end{figure}
 
 %ODNAN: edited a little to connect F-G entity types
-We do not show the fitness data (F set) in Figure~\ref{fig:mean} because the permissions for these data are requested for multiple entity types of the G set, as discussed in Section~\ref{sec:fset}. Hence, we present these data in Figure~\ref{fig:fdata} instead, showing each permission for each GDPR \textit{EntityType}. 
-%Participants are likely to share their Fitness data (as 40.33\% of the respondents have already shared them in real life scenario). What differs is their perception for the receiving entity of the data. Figure~\ref{fig:fdata} shows the distribution of permissions for different entity types. 
-Users are more likely to give permission to their friends on social networks and to other health/fitness apps, and they are less likely to give permission to share their data with government fitness programs or publicly on social media. As for various data types, steps are shared most openly, while location, friends, and weight are shared less openly.
+%We do not show the fitness data (F set) in Figure~\ref{fig:mean} because the permissions for these data are requested for multiple entity types of the G set, as discussed in Section~\ref{sec:fset}. Hence, we present these data in Figure~\ref{fig:fdata} instead, showing each permission for each GDPR \textit{EntityType}. 
+%%Participants are likely to share their Fitness data (as 40.33\% of the respondents have already shared them in real life scenario). What differs is their perception for the receiving entity of the data. Figure~\ref{fig:fdata} shows the distribution of permissions for different entity types. 
+%Users are more likely to give permission to their friends on social networks and to other health/fitness apps, and they are less likely to give permission to share their data with government fitness programs or publicly on social media. As for various data types, steps are shared most openly, while location, friends, and weight are shared less openly.
+%
+%Upon further inspection, we note that participants tend to share either (almost) all or (almost) none of fitness data with an entity. This suggests that Fitness data permissions are more likely to be influenced by the receiver (``who'') rather than the specific data item (``what'').
+%%NEW
+%%NEW:ODNAN: i am trying to remind again the reader here that entity type is from G and is split from F 
+%As discussed in Section \ref{sec:ppiot}, these ``who'' parameters are instances of the GDPR \textit{EntityType}. Therefore, we expect that clustering F permissions should provide a unanimous deny/share for all items, while clustering G permissions should provide more nuanced clusters of different entity types receiving the data specified in the F set.
 
-Upon further inspection, we note that participants tend to share either (almost) all or (almost) none of fitness data with an entity. This suggests that Fitness data permissions are more likely to be influenced by the receiver (``who'') rather than the specific data item (``what'').
-%NEW
-%NEW:ODNAN: i am trying to remind again the reader here that entity type is from G and is split from F 
-As discussed in Section \ref{sec:ppiot}, these ``who'' parameters are instances of the GDPR \textit{EntityType}. Therefore, we expect that clustering F permissions should provide a unanimous deny/share for all items, while clustering G permissions should provide more nuanced clusters of different entity types receiving the data specified in the F set.
 
+\section{Predicting users' Preference (partial original work)}
+We predict participants' \textit{allow}/\textit{deny} decision using machine learning methods. Our dataset shows considerable variability between participants' privacy preferences---a finding that is broadly reflected in the privacy literature~\cite{knijnenburg2013dimensionality}. Using clustering, one can capture the preferences of various users with a higher level of accuracy. Hence, the goal of this section is to find a concise set of profiles, clusters, that can represent the variability of the permission settings among our study participants. 
 
-\section{Predicting users' Preference (original work)}
-We predict participants' \textit{enable}/\textit{disable} decision using machine learning methods. Our dataset shows considerable variability between participants' privacy preferences---a finding that is broadly reflected in the privacy literature (cf.~\cite{knijnenburg2013dimensionality}). Using clustering, one can capture the preferences of various users with a higher level of accuracy. Hence, the goal of this section is to find a concise set of profiles, clusters, that can represent the variability of the permission settings among our study participants. 
-
-To this end, we cluster participants' permissions with Weka\footnote{\url{https://www.cs.waikato.ac.nz/ml/weka/}} using the K-modes clustering algorithm~\cite{chaturvedi2001k} with default settings. The K-modes algorithm follows the same principles as the more common K-means algorithm, but it is more suitable for the nominal variables in our dataset.
+We cluster participants' permissions with Weka\footnote{\url{https://www.cs.waikato.ac.nz/ml/weka/}} using the K-modes clustering algorithm with default settings. The K-modes algorithm follows the same principles as the more common K-means algorithm, but it is more suitable for the nominal variables in our dataset.
 
 %Privacy-setting Profiles are then generated from each cluster. The advantage of this method is that users can set up all their privacy settings by one or few clicks. However, in the other hand, there are some drawbacks about this approach. Advanced users may still need to check each of the settings and change what they need. And the profile provided will be long since all the settings from four different sets are presented in a single profile. Moreover, assume we cluster the users into $n$ clusters, the naive method will only provide $n$ possible profile recommendations to the users. However, if we generate profiles from each of the four datasets (A, F, S, and G), a total number of $n^4$ different combinations of profiles can be recommended, providing a more fine-grained privacy-setting control to the users than the naive method. In the following, we will discuss our method that generates set-based profiles for each of the four datasets, called \textit{sub-profile}.
 
@@ -218,38 +123,34 @@ To this end, we cluster participants' permissions with Weka\footnote{\url{https:
 		\centering
 		\includegraphics[width=150pt]{figures/Scluster_new4.png}
 		\caption{S dataset}
-		\label{fig:iosS}
+		\label{fig:numS}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.4\linewidth}
 		\centering
 		\includegraphics[width=150pt]{figures/Acluster_new4.png}
 		\caption{A dataset}
-		\label{fig:androidS}
+		\label{fig:numA}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.4\linewidth}
 		\centering
 		\includegraphics[width=150pt]{figures/Fcluster_new4.png}
 		\caption{F dataset}
-		\label{fig:fitbitA}
+		\label{fig:numF}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.4\linewidth}
 		\centering
 		\includegraphics[width=150pt]{figures/Gcluster_new4.png}
 		\caption{G dataset}
-		\label{fig:fitbitA}
+		\label{fig:numG}
 	\end{subfigure}
 	\caption{Evaluation of different numbers of clusters for each set.}
 	\label{fig:cluster_evaluation}
 \end{figure*}
 
 
-
-%Odnan: i expanded the drawbacks part as suggested by Prof. Ilaria
+\subsection{Overall Prediction}
 In our first clustering attempt we tried to find a set of profiles by clustering the full dataset, including the A, F, S, and G subsets.
-A drawback of this method is that, assume we cluster the users into $n$ clusters, this  method will  only provide $n$ possible profiles to be used for recommendations to the users. A further drawback of clustering the full set of 45 permissions is that it gives  large error rates (e.g., the sum of squared error for the viable 4-cluster solution is 1435),
-%the 2-cluster is 1688
-for anything but a very large number of clusters. 
-% the profile provided will be long since all the settings from four different sets are presented in a single profile.
+A drawback of this method is that, assume we cluster the users into $n$ clusters, this  method will  only provide $n$ possible profiles to be used for recommendations to the users. A further drawback of clustering based on the full set of 45 permissions is that it has high error rates (e.g., the sum of squared error for the viable 4-cluster solution is 1435 and 1688 for 2-cluster solution). In addition, the profile provided will be complicated since all the settings from four different sets are presented in a single profile, making it difficult to explain to the users.
 
 If we instead generate a separate set of $n$ ``subprofiles'' for each of the four datasets (A, F, S, and G), $n^4$  different combinations of profiles can be used for recommendation, providing finer-grained privacy-setting controls to the users compared to clustering the full set. In addition, error rates are lower when clustering each set separately, as shown in Figure \ref{fig:cluster_evaluation}. For example, with only 2 clusters per set, the sum of squared error reduces to 1277 (a 24.3\% reduction). %BART: please enter this number %ODNAN: 1277 is the total sum of the S F A G sum of squared error
 An additional benefit is that the profiles for each set can be investigated in more detail. 
@@ -261,7 +162,7 @@ In our dataset the fitness data permissions (F set) are specified repeatedly for
 In the following, we will discuss our method that generates subprofiles for each of the four datasets.
 
 
-\subsection{Clustering Outcomes}
+\subsection{2-Cluster Solution}
 
 We first investigate the optimal number of clusters by running the K-modes algorithm for 1-6 clusters with a 70/30 train/test ratio, using the sum of squared errors of the test set for evaluation. The results are shown in Figure~\ref{fig:cluster_evaluation}. Using the elbow method~\cite{kodinariya2013review}, we conclude that 2 is the optimal number of clusters for each dataset\footnote{We obtain similar results using other clustering algorithms, such as Hierarchical Clustering.}. 
 %More importantly, the F set shows a distinctive 2-cluster solution as shown in Figure~\ref{figures/fig:fgraph}, which is consistent to the reasons mentioned on Section~\ref{sec:analysis} about the requesting entity type. It is also consistent with the results in~\cite{lee2017privacy}, where the identity of the information requester (\textit{who} context) is an important determinant of people’s privacy decisions, thus in turn results in unanimous allow or deny for the fitness data permissions.
@@ -274,26 +175,31 @@ We describe the subprofiles of each set in the subsections below.
 
 %BART: Should we provide accuracies here?
 %there is no accuracy yet, instead, the error rates of the clusters which are already in the Figure 7, these are their respective centroid
-%\begin{figure}
-%	\centering
-%	\subfloat[S set (allow=1, deny=0)]
-%	{\includegraphics[width=0.85\linewidth]{figures/S_new2.png}
-%		\label{fig:scluster}}
-%	
-%	\subfloat[A set (allow=1, deny=0)]
-%	{\includegraphics[width=0.83\linewidth]{figures/A_new2.png}
-%		\label{fig:acluster}}
-%	
-%	\subfloat[F set (allow=1, deny=0)]
-%	{\includegraphics[width=0.85\linewidth]{figures/F_new2.png}
-%		\label{fig:fcluster}}
-%	
-%	\subfloat[G set (allow=1, deny=0, except for frequency \& retention)]
-%	{\includegraphics[width=0.9\linewidth]{figures/G_new2.png}
-%		\label{fig:gcluster}}  
-%	\caption{Privacy profiles from the two clustering methods:  1-cluster results (full data) and 2-clusters results (privacy subprofiles)  for each dataset}
-%	\label{fig:privacy_profiles}
-%\end{figure}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.85\linewidth]{figures/S_new2.png}
+		\caption{S dataset}
+		\label{fig:scluster}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.85\linewidth]{figures/A_new2.png}
+		\caption{A dataset}
+		\label{fig:acluster}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.85\linewidth]{figures/F_new2.png}
+		\caption{F dataset}
+		\label{fig:fcluster}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.85\linewidth]{figures/G_new2.png}
+		\caption{G dataset}
+		\label{fig:gcluster}
+	\end{subfigure} 
+	\caption{Privacy profiles from the two clustering methods:  1-cluster results (full data) and 2-clusters results (privacy subprofiles)  for each dataset(allow=1, deny=0, except for frequency \& retention)}
+	\label{fig:privacy_profiles}
+\end{figure}
 
 
 \subsubsection{The \textit{S} Set}
@@ -312,9 +218,9 @@ We describe the subprofiles of each set in the subsections below.
 
 \subsubsection{The \textit{F} Set}
 \begin{itemize}
-	\item \textbf{Unconcerned} (cluster 0): this subprofile shares all fitness data with TPs.
+	\item \textbf{Unconcerned} (cluster 0): this subprofile shares all fitness data with third parties.
 	
-	\item \textbf{Strict} (cluster 1): this subprofile does not share any fitness data with TPs.
+	\item \textbf{Strict} (cluster 1): this subprofile does not share any fitness data with third parties.
 \end{itemize}
 
 %The unanimous deny/allow permission behavior of F set is consistent with the reason provided on Section~\ref{sec:analysis} regarding the effect of the requesting entity type.
@@ -327,21 +233,22 @@ We describe the subprofiles of each set in the subsections below.
 	%ODNAN: ALready resolved on the email thread
 	Sharing is allowed for health, safety, and social purposes but not for commercial purposes.
 	
-	\item \textbf{Health-focused} (cluster 1): this subprofile does not allow sharing with any TPs. Sharing is allowed only for health and safety purposes. 
+	\item \textbf{Health-focused} (cluster 1): this subprofile does not allow sharing with any third parties. Sharing is allowed only for health and safety purposes. 
 \end{itemize}
 
 \section{Profile Prediction (original work)}
 \label{sec:prediction}
 
 
-Now that we have identified two privacy ``subprofiles'' per dataset, the next step is to find predictors for the profiles and predict which subprofiles each participant belongs to. This section aims to answer the research question: \textbf{RQ3} Are there any privacy profile items or questionnaire items that can be used as a determiner to predict which privacy profile best describes a user? 
+Now that we have identified two privacy ``subprofiles'' per dataset, the next step is to find predictors for the profiles and predict which subprofiles each participant belongs to.  
 
-Recommender systems usually ask users to evaluate a few items before giving recommendations regarding all remaining items. Likewise, in our system, we might be able to identify certain permission items inside each privacy subprofile that---when answered by the user---could drive the prediction. Since the items are the  permission preferences included in the subprofiles, collected through our FitPro prototype app, we call this the ``direct predicition'' approach.
-Additionally, we also explored whether the items from our questionnaire (see Section~\ref{sec:questionnaire}) could drive the predicition. Since these items are not part of the privacy subprofiles, we call this the ``indirect prediction'' approach. For each approach and for each subset of data (S, A, F, and G sets), we develop decision trees that will enable us to predict which subprofile best describes a user. The trees contain the subprofile items (direct prediction) or questionnaire items (indirect prediction) that can be asked to classify each user into their correct subprofile.
+Recommender systems usually ask users to evaluate a few items before giving recommendations regarding all remaining items. Likewise, in our system, we might be able to identify certain permission items inside each privacy subprofile that---when answered by the user---could drive the prediction. Since the items are the permission preferences included in the subprofiles, we define this as the ``direct predicition'' approach.
 
-We developed our decision trees using the J48 tree learning algorithm. J48 is an efficient and widely used decision tree algorithm that can be used for classification~\cite{patil2013performance}. Previous work shows the effectiveness of this approach to predict privacy settings within each cluster~\cite{bahirat2018data}; here we take the opposite approach and use it to predict cluster assignments instead. In our approach, the J48 algorithm extracts the permission items (for the direct prediction) or questionnaire items (for the indirect prediction) that classify a new user into the correct subprofile with the highest possible accuracy.
+Additionally, we also explored whether the items from our questionnaire could drive the predicition. Since these items are not part of the privacy subprofiles, we define this as the ``indirect prediction'' approach. For each approach and for each subset of data (S, A, F, and G sets), we develop decision trees that will enable us to predict which subprofile best describes a user. The trees contain the subprofile items (direct prediction) or questionnaire items (indirect prediction) that can be asked to classify each user into their correct subprofile.
 
-The evaluation of all developed J48 trees was performed using k-fold cross validation. %\cite{kohavi1995study}. 
+We developed our decision trees using the J48 decision tree learning algorithm and evaluated the resulting decision tree using cross validation.%J48 is an efficient and widely used decision tree algorithm that can be used for classification~\cite{patil2013performance}. Previous work shows the effectiveness of this approach to predict privacy settings within each cluster~\cite{bahirat2018data}; here we take the opposite approach and use it to predict cluster assignments instead. In our approach, the J48 algorithm extracts the permission items (for the direct prediction) or questionnaire items (for the indirect prediction) that classify a new user into the correct subprofile with the highest possible accuracy.
+
+%The evaluation of all developed J48 trees was performed using k-fold cross validation. %\cite{kohavi1995study}. 
 
 
 % will we include all the cross-validation results?
@@ -355,7 +262,7 @@ In our direct prediction approach, the aim is to ask users to answer certain per
 
 Our results for this approach are reported in Figure~\ref{fig:tree1}. It shows for each subset the question that best classifies our study participants into the correct subprofile.
 
-\begin{figure}[t]
+\begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
 		\includegraphics[width=0.5\linewidth]{figures/s_tree1new.png}
@@ -383,7 +290,7 @@ Our results for this approach are reported in Figure~\ref{fig:tree1}. It shows f
 \end{figure} 
 
 
-When running tree-based algorithms, a trade-off has to be made between the parsimony and the accuracy of the solution. Parsimony prevents over-fitting and promotes fairness~\cite{bahirat2018data} and can be accomplished by pruning the decision trees. In our study, while multi-item trees may provide better predictions, the increase in accuracy is not significant compared to the single-item trees presented in Figure~\ref{fig:tree1}. These single-item solutions already obtained a high accuracy, and their parsimony prevents over-fitting and minimizes the number of questions that will need to be asked to the users in order to provide them accurate recommendations. The resulting solution involves a 4-question input sequence---one question for each subset. 
+When running tree-based algorithms, a trade-off has to be made between the parsimony and the accuracy of the solution. Parsimony prevents over-fitting and promotes fairness and can be accomplished by pruning the decision trees. In our study, while multi-item trees may provide better predictions, the increase in accuracy is not significant compared to the single-item trees presented in Figure~\ref{fig:tree1}. These single-item solutions already obtained a high accuracy, and their parsimony prevents over-fitting and minimizes the number of questions that will need to be asked to the users in order to provide them accurate recommendations. The resulting solution involves a 4-question input sequence---one question for each subset. 
 
 For the S set, the Photo permission is the best subprofile predictor. This is one of the least-shared permissions (see Figure~\ref{fig:mean}), and 94\% of participants who give this permission are correctly classified into the ``Unconcerned'' subprofile, while 83\% of participants who do not give this permission are correctly classified into the ``Minimal'' subprofile. 
 
@@ -405,24 +312,31 @@ These results are still interesting, though, since they allow the user to avoid 
 We first attempted to use privacy attitudes as predictors of users' subprofiles. The resulting trees for this indirect prediction are shown in Figure~\ref{fig:tree2}.
 
 
-%\begin{figure}[ht]
-%	\centering
-%	\subfloat[S set (66.04\%)] % with hle(70.19\%)
-%	{  \includegraphics[width=0.5\linewidth]{figures/s_tree2new.png}
-%		\label{fig:stree2}}    
-%	\subfloat[A set (65.28\%)]
-%	{\includegraphics[width=0.5\linewidth]{figures/a_tree2new.png}
-%		\label{fig:atree2}}
-%	
-%	\subfloat[F set (69.81\%)] %67.54
-%	{\includegraphics[width=0.5\linewidth]{figures/f_tree2new.png}
-%		\label{fig:ftree2}}  
-%	\subfloat[G set (62.26\%)]
-%	{\includegraphics[width=0.5\linewidth]{figures/g_tree2new.png}
-%		\label{fig:gtree2}}
-%	\caption{The attitude drivers for the privacy subprofiles and their respective prediction accuracies.}
-%	\label{fig:tree2}
-%\end{figure} 
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.5\linewidth]{figures/s_tree2new.png}
+		\label{fig:stree2}
+		\caption{S set (66.04\%)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}  
+		\includegraphics[width=0.5\linewidth]{figures/a_tree2new.png}
+		\label{fig:atree2}
+		\caption{A set (65.28\%)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth} 
+		\includegraphics[width=0.5\linewidth]{figures/f_tree2new.png}
+		\label{fig:ftree2}
+		\caption{F set (69.81\%)}
+	\end{subfigure} 
+	\begin{subfigure}[b]{0.4\linewidth} 
+		\includegraphics[width=0.5\linewidth]{figures/g_tree2new.png}
+		\label{fig:gtree2}
+		\caption{G set (62.26\%)}
+	\end{subfigure}
+	\caption{The attitude drivers for the privacy subprofiles and their respective prediction accuracies.}
+	\label{fig:tree2}
+\end{figure} 
 
 
 
@@ -440,7 +354,7 @@ Among all the privacy attitude questions, ``trust'' and ``privacy concern'' are 
 
 For the trust question, ``I believe the company is honest when it comes to using the information they provide'', it can be used to predict users' subprofile for the A set. Participants are assigned to the ``Anonymous'' subprofile if they answer this question with ``somewhat disagree'' (3) or below. Those who indicate higher levels of trust are assigned to the ``unconcerned'' subprofile. The A set concerns information provided directly to the fitness app, so it makes sense that trust is a significant predictor of users' willingness to provide such information.
 
-For the G set, those users who agree (6) or extremely agree (7) with the question ``I believe the company providing this fitness tracker is trustworthy in handling my information'' are classified in the ``Socially active'' subprofile, while the remaining users are classified in the ``Health-focused'' subprofile. The question really fits the G set since GDPR permissions are mostly about handling the user information by the TPs. Particularly, it makes sense that users who do not trust the fitness app in handling their information would be assigned to the ``Health-focused'' profile, since this profile prevents the app from sharing their data to any other entity and only allows data collection for the purpose of health and/or safety.
+For the G set, those users who agree (6) or extremely agree (7) with the question ``I believe the company providing this fitness tracker is trustworthy in handling my information'' are classified in the ``Socially active'' subprofile, while the remaining users are classified in the ``Health-focused'' subprofile. The question really fits the G set since GDPR permissions are mostly about handling the user information by the third parties. Particularly, it makes sense that users who do not trust the fitness app in handling their information would be assigned to the ``Health-focused'' profile, since this profile prevents the app from sharing their data to any other entity and only allows data collection for the purpose of health and/or safety.
 
 %Those who agree that other people are too concerned with online privacy issues and believe they are able to choose the right healthy-living measures are people who are unconcerned (cluster 1)
 
@@ -470,7 +384,31 @@ We also tried to find predictors among the questions about social influence and 
 %	\caption{The social behavior drivers for the privacy subprofiles and their respective prediction accuracies.}
 %	\label{fig:tree3}
 %\end{figure} 
-
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.5\linewidth]{figures/s_tree3new.png}
+		\label{fig:stree3}
+		\caption{S set (65.66\%)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}  
+		\includegraphics[width=0.5\linewidth]{figures/a_tree3new.png}
+		\label{fig:atree3}
+		\caption{A set (61.89\%)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth} 
+		\includegraphics[width=0.5\linewidth]{figures/f_tree3new.png}
+		\label{fig:ftree3}
+		\caption{F set (69.43\%)}
+	\end{subfigure} 
+	\begin{subfigure}[b]{0.4\linewidth} 
+		\includegraphics[width=0.5\linewidth]{figures/g_tree3new.png}
+		\label{fig:gtree3}
+		\caption{G set (61.89\%)}
+	\end{subfigure}
+	\caption{The social behavior drivers for the privacy subprofiles and their respective prediction accuracies.}
+	\label{fig:tree3}
+\end{figure}
 
 
 A single sociability question can be used to predict subprofiles for both the S and A sets. For the S set, users who are completely open (1) to the idea of meeting new friends when they exercise are classified in the ``Unconcerned'' subprofile, otherwise they are classified in the ``Minimal'' subprofile.
@@ -506,15 +444,39 @@ We also attempted to use the negotiability of users' privacy settings as input f
 %	\caption{The user negotiability drivers for the privacy subprofiles and their respective prediction accuracies.}
 %	\label{fig:tree4}
 %\end{figure} 
-
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=0.5\linewidth]{figures/s_tree4new.png}
+		\label{fig:stree4}
+		\caption{S set (73.21\%)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}  
+		\includegraphics[width=0.5\linewidth]{figures/a_tree4new.png}
+		\label{fig:atree4}
+		\caption{A set (62.26\%)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth} 
+		\includegraphics[width=0.5\linewidth]{figures/f_tree4new.png}
+		\label{fig:ftree4}
+		\caption{F set (72.08\%)}
+	\end{subfigure} 
+	\begin{subfigure}[b]{0.4\linewidth} 
+		\includegraphics[width=0.5\linewidth]{figures/g_tree4new.png}
+		\label{fig:gtree4}
+		\caption{G set (66.41\%)}
+	\end{subfigure}
+	\caption{The user negotiability drivers for the privacy subprofiles and their respective prediction accuracies.}
+	\label{fig:tree4}
+\end{figure}
 
 For the S set, users who are willing to give the Phone permission (access phone calls and call settings) if the benefits increase are classified into the ``Unconcerned'' subprofile, while users who refuse to share the Phone permission even if the benefits increase are classified into the ``Minimal'' subprofile. In other words, the privacy preferences of the latter group are not negotiable; they will still share only the minimum permissions needed to run the tracker, even if the benefits increase.
 
 For the A set, users who are willing to give the Identity permission (account and/or profile information) if the risks decrease are classified into the ``Unconcerned'' subprofile, otherwise they are classified into the ``Anonymous'' subprofile. Interestingly, the Identity permission is part of the S set rather than the A set, but it semantically coincides with the items in the A set, which include the user's name and birth date (i.e., identifying information). As such, it makes sense that users who are unwilling to share their phone's identifier even when the risks decrease are also unwilling to share their personal identity information.
 
-For the F set, users who share their Sleep fitness data with other TPs if the risks decrease are classified into the ``Unconcerned'' subprofile, otherwise they are classified into the ``Strict'' subprofile. Users in the latter subprofile will not share their fitness data with any other TPs, even if the risk decreases.
+For the F set, users who share their Sleep fitness data with other third parties if the risks decrease are classified into the ``Unconcerned'' subprofile, otherwise they are classified into the ``Strict'' subprofile. Users in the latter subprofile will not share their fitness data with any other third parties, even if the risk decreases.
 
-For the G set, users who share their fitness app Profile with other TPs if the risks decrease are classified into the ``Socially active'' subprofile, otherwise they are classified into the ``Health-focused'' subprofile. Even though Profile is a permission from the F set, it semantically coincides with the subprofiles of the G set: users in the ``Socially active'' subprofile tend to have permissions that allow them to connect to others while exercising, and sharing one's fitness app Profile is indeed a potential way to connect to other users. As such, it makes sense that users in this subprofile are more willing to share their fitness app Profile if the risks of doing so decrease.
+For the G set, users who share their fitness app Profile with other third parties if the risks decrease are classified into the ``Socially active'' subprofile, otherwise they are classified into the ``Health-focused'' subprofile. Even though Profile is a permission from the F set, it semantically coincides with the subprofiles of the G set: users in the ``Socially active'' subprofile tend to have permissions that allow them to connect to others while exercising, and sharing one's fitness app Profile is indeed a potential way to connect to other users. As such, it makes sense that users in this subprofile are more willing to share their fitness app Profile if the risks of doing so decrease.
 %BONUS: both profile and friends are good identifiers for G set 
 
 The classification accuracy of the negotiability questions is the highest among all ``indirect prediction'' approaches. The most predictive questions also have understandable semantic relationships with the datasets they predict.
@@ -523,7 +485,7 @@ The classification accuracy of the negotiability questions is the highest among 
 
 %ODNAN:For the exercise questions, the F set do not have a tree formation, but S A and G have, A for exercise_often=60\%, S for hle3=65.66\%, for G only exercise_often=52\% very low! 
 
-We applied tree learning algorithms to the group of exercise tendency questions and user demographics as well, but we found no significant predictors among these questions. While other studies have found user demographics to be significant predictors of privacy behaviors~\cite{knijnenburg2013helping}, in this particular study we were not able to find any significant predictors among the group of user demographics. 
+We applied J48 learning algorithms to the group of exercise tendency questions and user demographics as well, but we found no significant predictors among these questions. While other studies have found user demographics to be significant predictors of privacy behaviors~\cite{knijnenburg2013helping}, in this particular study we were not able to find any significant predictors among the group of user demographics. 
 
 %User demographics was also found to be weak in providing profiles in the domain of household IoT~\cite{bahirat2018data}.
 
@@ -541,29 +503,38 @@ Figure~\ref{fig:treermse} shows the root mean square error of all the trees prod
 As expected, the ``direct prediction'' approach results in lower error rates than the various ``indirect prediction'' approaches, since in the former approach the items are a direct part of the privacy settings that constitute the subprofiles. Among the ``indirect prediction'' approaches, the \textit{negotiability of privacy settings} has slightly lower error rates. This is not surprising, since it is at least partially related to the privacy settings (yet evaluates whether those settings will change under certain conditions). The prediction accuracies of each tree are reported on the branches in their respective figures (Figure~\ref{fig:tree1} to~\ref{fig:tree4}), and take the form of (\# assigned / \# incorrect). 
 
 \section{Privacy-setting Recommendations (original work)}
-In this section, we describe  different types of guided privacy-setting approaches for IoWT users that are based on the previous clustering and tree-learning results. When implemented in the PDM, the guided interface simplifies the privacy-setting experience by providing privacy recommendations. This answers \textbf{RQ4}: How can we effectively exploit the results to provide recommendation?  
-% add this or not?
-The PDM design prototype implementing the recommendation strategies is available online\footnote{The UI design can be found in \url{http://pdm-aids.dibris.unige.it/interface/}}.
+In this section, we describe different types of guided privacy-setting approaches for fitness Iot users that are based on the previous clustering and machine learning results. 
+
 \subsection{Manual Setting}
 \label{sec:manual}
 
-The baseline privacy settings interface is one where users have to manually set their settings (see Figure \ref{fig:manual}). If users do this correctly these manual settings should match their privacy preferences 100\%. However, the process of manually setting one's privacy settings can be very burdensome for the user; our system has a total of 45 permissions that are required to be managed. Under such burden, users are likely going to make mistakes (cf.~\cite{madejski2012study}), so the 100\% accuracy may not be achieved through manual settings.
+The baseline privacy settings interface is one where users have to manually set their settings (see Figure \ref{fig:manual}). If users do this correctly these manual settings should match their privacy preferences 100\%. However, the process of manually setting one's privacy settings can be very burdensome for the user; our system has a total of 45 permissions that are required to be managed. Under such burden, users are likely going to make mistakes~\cite{madejski2012study}, so the 100\% accuracy may not be achieved through manual settings.
 
-% need change
-%\begin{figure}[t]
-%	\centering
-%	\subfloat[A set]{\includegraphics[width=0.36\linewidth]{figures/manual1.png}\label{fig:manuala}} \hspace{0.25cm}
-%	% \subfloat[Fitness Data  Permissions.]
-%	\subfloat[F set]
-%	{\includegraphics[width=0.36\linewidth]{figures/manual2.png}\label{fig:manualb}}
-%	
-%	\subfloat[S set]
-%	{\includegraphics[width=0.36\linewidth]{figures/manual3.png}\label{fig:manualc}}
-%	\hspace{0.25cm}
-%	\subfloat[G set]{\includegraphics[width=0.36\linewidth]{figures/manual4.png}\label{fig:manuald}}
-%	\caption{Manual settings}
-%	\label{fig:manual}
-%\end{figure}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/manual1.png}
+		\label{fig:manuala}
+		\caption{A set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/manual2.png}
+		\label{fig:manualb}
+		\caption{F set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/manual3.png}
+		\label{fig:manualc}
+		\caption{S set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/manual4.png}
+		\label{fig:manuald}
+		\caption{G set}
+	\end{subfigure}
+	\caption{Manual settings}
+	\label{fig:manual}
+\end{figure}
 
 %Ilaria
 The next strategies exploit the results of the analysis in the previous section to provide \textit{interactive recommendations} that simplify the task of privacy permission setting, with different levels and type of user intervention.
@@ -592,28 +563,63 @@ The optimal ``smart'' default is a set of settings that is aligned with the pref
 %	\caption{Smart Single settings.}
 %	\label{fig:default}
 %\end{figure}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/default1.png}
+		\label{fig:defaulta}
+		\caption{A set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/default2.png}
+		\label{fig:defaultb}
+		\caption{F set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/default3.png}
+		\label{fig:defaultc}
+		\caption{S set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/default4.png}
+		\label{fig:defaultd}
+		\caption{G set}
+	\end{subfigure}
+	\caption{Smart Single settings.}
+	\label{fig:default}
+\end{figure}
 
 
 \subsection{Pick Subprofiles}
 
-The single smart default setting works best when most users have preferences similar to the average. However, our dataset shows considerable variability in participants' privacy preferences---a finding that is broadly reflected in the privacy literature (cf.~\cite{knijnenburg2013dimensionality}). This bring us to our clustering solutions, which create \emph{separate} default settings (in the form of subprofiles) for distinct groups of users.
+The single smart default setting works best when most users have preferences similar to the average. However, our dataset shows considerable variability in participants' privacy preferences---a finding that is broadly reflected in the privacy literature~\cite{knijnenburg2013dimensionality}. This bring us to our clustering solutions, which create \emph{separate} default settings (in the form of subprofiles) for distinct groups of users.
 
-Our first approach in this regard is to have users manually select which privacy subprofiles they prefer. Figure \ref{fig:pickprofilea} shows the subprofile selection interface for the S set. Users can choose either the `'`Minimal'' or ``Unconcerned'' subprofile, which are shown in Figures \ref{fig:pickprofileb} and \ref{fig:pickprofilec} respectively. Similar interfaces are provided for the F, A, and G sets (not depicted here).
+Our first approach in this regard is to have users manually select which privacy subprofiles they prefer. Figure~\ref{fig:pp} shows the subprofile selection interface for the S set. Users can choose either the ``Minimal'' or ``Unconcerned'' subprofile. Similar interfaces are provided for the F, A, and G sets.
 
-The subprofiles provided by this approach have a higher overall accuracy than the single ``smart'' default described in Section~\ref{sec:manual}, meaning that the user will have to spend less effort changing the settings. However, the user \emph{will} have to select a subprofile for each dataset. This highlights the importance of having a small number of subprofiles and making these subprofiles easy to understand. That said, even with only two subprofiles per dataset, this can be a challenging task. In the next two subsections, we address this problem by automatically selecting subprofiles based on users' answers to specific subprofile items (``direct prediction'') or questionnaire items (``indirect prediction'').
+The subprofiles provided by this approach have a higher overall accuracy than the single ``smart'' default described in Section~\ref{sec:manual}, meaning that the user could possibly spend less effort changing the settings. However, the user \emph{will} have to select a subprofile for each dataset. This highlights the importance of having a small number of subprofiles and making these subprofiles easy to understand. That said, even with only two subprofiles per dataset, this can be a challenging task. In the next two subsections, we address this problem by automatically selecting subprofiles based on users' answers to specific subprofile items (``direct prediction'') or questionnaire items (``indirect prediction'').
 
-%% need change
-%\begin{figure}[t]
-%	\centering
-%	\subfloat[S set subprofiles]{\includegraphics[width=0.31\linewidth]{figures/pickprofile.pdf}\label{fig:pickprofilea}}
-%	\hspace{0.1cm}
-%	\subfloat[The ``Minimal'' subprofile]{\includegraphics[width=0.31\linewidth]{figures/pickprofile1.pdf}\label{fig:pickprofileb}}
-%	\hspace{0.1cm}
-%	\subfloat[The ``Unconcerned'' subprofile]{\includegraphics[width=0.31\linewidth]{figures/pickprofile2.pdf}\label{fig:pickprofilec}}
-%	\caption{Interaction for picking a subprofile for the S set.}
-%	\label{fig:pickprofile}
-%\end{figure}
-
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.22\textheight}
+		\includegraphics[width=0.2\textheight]{figures/pickprofile.pdf}
+		\label{fig:ppa}
+		\caption{S set subprofiles}
+	\end{subfigure}
+~~
+	\begin{subfigure}[b]{0.22\textheight}
+		\includegraphics[width=0.2\textheight]{figures/pickprofile1.pdf}
+		\label{fig:ppb}
+		\caption{The ``Minimal'' subprofile}
+	\end{subfigure}
+~~
+	\begin{subfigure}[b]{0.22\textheight}
+		\includegraphics[width=0.2\textheight]{figures/pickprofile2.pdf}
+		\label{fig:ppc}
+		\caption{The ``Unconcerned'' subprofile}
+	\end{subfigure}
+	\caption{Interaction for picking a subprofile for the S set.}
+	\label{fig:pp}
+\end{figure}
 
 
 \subsection{Direct Prediction}
@@ -634,6 +640,31 @@ For the direct prediction approach, we devise an interactive 4-question input se
 %	\caption{Direct Prediction questions.}
 %	\label{fig:direct}
 %\end{figure}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/direct1.png}
+		\label{fig:directa}
+		\caption{A set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/direct2.png}
+		\label{fig:directb}
+		\caption{F set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/direct3.png}
+		\label{fig:directc}
+		\caption{S set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/direct4.png}
+		\label{fig:directd}
+		\caption{G set}
+	\end{subfigure}
+	\caption{Direct Prediction questions.}
+	\label{fig:direct}
+\end{figure}
 
 
 
@@ -655,6 +686,31 @@ For the direct prediction approach, we devise an interactive 4-question input se
 %	\caption{Indirect Prediction questions.}
 %	\label{fig:indirect}
 %\end{figure}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/indirect1.png}
+		\label{fig:indirecta}
+		\caption{A set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/indirect2.png}
+		\label{fig:indirectb}
+		\caption{F set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/indirect3.png}
+		\label{fig:indirectc}
+		\caption{S set}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textheight}
+		\includegraphics[width=0.24\textheight]{figures/indirect4.png}
+		\label{fig:indirectd}
+		\caption{G set}
+	\end{subfigure}
+	\caption{Indirect Prediction questions.}
+	\label{fig:indirect}
+\end{figure}
 
 For the indirect prediction approach, we take a similar approach, but the interactive 4-question input sequence is based on the analysis of questionnaire items rather than permission settings. 
 
@@ -671,8 +727,8 @@ The benefit of the indirect prediction approach is that the user does not have t
 We conducted a validation of these different approaches by running the recommendation strategies on the 30 users in our holdout dataset. The resulting recommended privacy subprofiles are then compared with their actual privacy preference. Figure~\ref{fig:aveaccuracy} shows the average accuracies of each of the presented approaches.
 
 \begin{figure}[ht]
-	\includegraphics[width=1\linewidth]{figures/aveaccuracy4.png}
-	\caption{Average accuracies of the recommender strategies on the 30 users.}
+	\includegraphics[width=0.5\textheight]{figures/aveaccuracy4.png}
+	\caption{Average accuracies of the recommender strategies on the holdout 30 users.}
 	\label{fig:aveaccuracy}      
 \end{figure}
 
@@ -882,59 +938,15 @@ The details about accuracies are provided in Table~\ref{tab:allaccuracy} in Appe
 % FIP 71.02 76.41\%
 % Over-all=84.74\%
 
-\section{Conclusion}
-In this chapter, we presented a data-driven approach to develop recommendation strategies for supporting users to set permissions on their personal data collected and shared by tracking devices in the fitness domain.  
+\section{Summary}
+In this chapter, we have presented the following:
 
-The motivating issue is the complex scenario of data sharing among devices and Third Party applications in the Internet-of-Wearable-Things (IoWT), which makes setting
-one's privacy preferences  an increasingly complex task. 
-% Therefore, the guiding principle was to support IoWT users to set the privacy permissions for their personal tracking data (with specific regards to the fitness domain) 
-The goal is to balance the users' control over their data and the simplicity of setting, in the light of the GDPR (General Data Protection Regulation) requirements.
-% The main contribution of this paper is to develop a Personal Data Manager (PDM) for aiding IoT users in setting their privacy preferences by recommending privacy profiles. This issue requires immediate attention in light of the GDPR and the complex management of user's privacy preference in the domain of IoWT.
+\begin{itemize}
+	\item The dataset we used and Data modeling to fitness IoT permissions.
+	\item Using a data-driven approach to developing user permission profiles
+	\item A series of recommendation strategies that we developed for privacy management including direct prediction and more interestingly, indirect prediction using some user traits (users' privacy attitudes, the negotiability of their preferences, and social influence). 
+\end{itemize}
 
-First, we defined  a data model of privacy preferences for the fitness domain  that can
-be represented using our PPIoT (Privacy Preference for Internet of Things) Ontology.
-The data model is based on the whole set of permissions required by the most popular fitness trackers and includes the permissions specified in the GDPR.
+One limitation of this work is that we have not tested the suitability of the recommendation strategies from the user's perspective. Specifically, we have conjectured that profile-based approaches reduce the hassle of making privacy settings but that the manual selection of a privacy profile might be difficult for a user. These conjectures should be evaluated in a user study, which we are currently working on.
 
-In our approach, we use the Semantic Web to define a semantic layer that aims to provide unambiguous and formal  representation of the user's
-privacy preferences, regardless of the diverse representations used by the TPs themselves. The PPIoT ontology is part of our Personal Data Manager (PDM) framework which is the intended testbed for the recommendation strategies of privacy preferences that we propose in this paper.
-
-Despite the vast variation in user privacy preferences, we managed to find a concise set of relevant privacy profiles that are able to represent these preferences. With two subprofiles for four subsets of permissions (sets S, A, F and G in the paper), a total of 16 possible privacy profiles can be recommended to the user. Additionally, we managed to determine specific subprofile items (``direct prediction'') and questionnaire items (``indirect prediction'') that serve as predictors for these profiles.
-
-Our results also show interesting semantic relationships between predictors and privacy settings. In particular, users' tendency to make friends while using the fitness tracker is a significant predictor that they accept smartphone data permission requests (the S set), answer in-app requests (the A set), and share their fitness tracking data (the F set).  
-
-This study also found that in sharing fitness tracking data, users care more about ``who'' will receive that data rather than ``what'' data is shared specifically. This confirms  previous studies \cite{lee2016understanding,bahirat2018data} showing  no significant interaction between these two parameters. Initial results also show that knowledge about users' actions when risks decrease is more useful to give good recommendations than knowledge about users' actions when benefits increase.
-% We presented a data model in our study that can be represented using the introduced PPIOT ontology. The strength of the Semantic Web approach lies in introducing a semantic layer that will be able provide a universally agreed-upon representation of the user's privacy preferences, regardless of the diverse representations used by the TPs themselves. 
-%ODNAN: same with Prof. Ilaria, we dont have the paper published yet
-%A more in-depth discussion of the PPIoT Ontology and how it complies with the GDPR can be found in~\cite{}.
-Finally, we proposed different recommendation strategies and related user interfaces for supporting users to set their privacy permissions. They  include a fully manual approach, as well as interactive prediction-based recommendations that are based on our clustering and classification results. Users can interact with the user interface by answering the ``trigger questions'' that are selected by our classifiers as predictors of users' subprofiles. These recommendation approaches are aligned with the PPIoT ontology: the data model vocabularies and the recommendation strategies will be used by the PDM to model the user privacy preferences and support privacy settings.
-
-Even though several works exist on privacy preference modeling, this paper makes a contribution in modeling privacy preferences for data sharing and processing of tracked data in the IoT and fitness domain, with specific attention to GDPR compliance. Moreover, the identification of well-defined clusters of preferences and predictors of such clusters is a relevant contribution for the design of recommendation strategies and interactive user interfaces that aim to balance users' control over their privacy permissions and the simplicity of setting these permissions. 
-
-In this light, our main contribution is a generic method to develop user profiles and a series of recommendation strategies for privacy management that can be applied to any user-tailored privacy decision-support systems that model and manage the user privacy permissions, like our PDM.
-%(ii) personalized systems in the fitness domain.
-%BART: I don't really see the second one (it's a stretch) and I also don't think that it's necessary, even though the special issue is about this topic. We already focus on IoWT as our main application area; that should be sufficient.
-Our main contribution in this light is a process that can be used for the identification of privacy profiles and  predictors of these profiles. Such predictors include  privacy setting preferences (direct prediction) but also, and more interestingly, some user traits (indirect prediction): 
-users' privacy attitudes, the negotiability of their preferences, and social influence. 
-
-One of the main limitations of our work is the fact that the recommendation strategies are static: they do not update automatically based on new input. A dynamic recommender has some drawbacks, though: if the recommender is to update predictions for the \textit{current user} based on their feedback, it has only very limited opportunities to do so, since the interaction consists of only four screens (unlike a typical recommender system, where users have continual interactions with the system). Likewise, if the recommender is to learn from each user and recalculate the recommendations for \textit{subsequent users}, it means that the system needs some sort of centralized learning component where all users' privacy preferences are stored. This in itself 
-% could be a privacy violation 
-requires that users agree and give  their  permissions for their privacy preferences to be stored and processed. 
-
-As such, our aim is to study which tracking data are viable for determining the right recommendation in a simplified manner. For future refinements, we plan to use dynamic cognitive environment techniques (e.g., Dynamic Bayesian Filtering, Kalman Filtering, PhD filtering, etc.) that provide update steps to extend our static approach.
-Moreover, for future refinement we plan also to combine direct recommendation and indirect recommendation, which are currently two different strategies that result from our study.
-
-% we already did this though, but better to be a limit since we dont tackle this in the paper
-% I:
-With regard to the PPIoT ontology, while its logical consistency has been evaluated  using  Jena Semantic Web reasoner, we are currently working on extending the use case scenarios in order to comprehensively evaluate its  feasibility to model the user and TP privacy preferences in the IoWT.
-
-% of our work is the PDM implementation using the PPIoT Ontology. While we have evaluated our Ontology with regard to its correctness and consistency, we have not yet conducted a rigorous evaluation of its feasibility. We are currently extending this study with a particular focus on the PPIoT Ontology. 
-
-Another limitation of our work is that we have not tested the suitability of the recommendation strategies from the user's perspective. Specifically, we have conjectured that profile-based approaches reduce the hassle of making privacy settings but that the manual selection of a privacy profile might be difficult for a user. These conjectures should be evaluated in a user study, which is another suggestion for future work. The user study should also evaluate the user control provided by the PDM.  
-% Currently, the user control is based on the principle that users manage their preferences for all their devices reducing the risk of wrong settings for each single device. instead of for each one with high graularity her the assured by the interactive approach and the possibility for users to change
-
-Last, we discuss a limitation of our dataset. The permission settings that we collected could be biased by the fact that the subjects knew it was a simulation of an app privacy setting. In order to reduce this possible effect, the interaction design and the user interface  of the app were made very realistic and we asked users to behave like when they usually install an app.
-
-With the limitations discussed above, our results could be immediately integrated in personalized services in the fitness domain. In fact, our data model for the fitness domain has a wide coverage of tracking data that should likely include those used by personalized fitness service.
-% through an interactive approach  and privacy-aware personalization systems. component for  scrutable and usable privacy permission management. With the limitations discussed in Section XX, this could be immediately feasible for personalized services that harness fitness tracking data. In fact, our data model for the fitness domain has a wide coverage of tracking data that should likely include those used by personalized fitness service. 
-% We present our approach as an interactive privacy recommendation for fitness trackers, i.e., the Internet of Wearable Things (IoWT). In effect, we use user modeling on users' activity data to protect the privacy of their activity data, thereby simplifying their lives as they no longer have to manually make a large number of privacy decisions.
-As argued, though, this approach can also be applied to other IoT scenarios (e.g. household IoT, public IoT), or even other complex privacy situations (e.g., social networking, online shopping) as well. We encourage researchers to adopt and further extend this ``User-Tailored Privacy'' approach (cf. \cite{knijnenburg2017privacy}) in their own work.
+In the next chapter, we discuss the evaluation study plan for our household IoT privacy-setting interface prototype.

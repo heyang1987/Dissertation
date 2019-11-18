@@ -27,7 +27,15 @@
 \usepackage{color}
 \usepackage{balance}
 \usepackage{arydshln}
+\usepackage{ntheorem}
+\newtheorem{theorem}{Hypothesis}
 
+\usepackage{chngcntr}
+\newcounter{pretheorem}
+\counterwithin{theorem}{pretheorem}
+
+\renewcommand\thetheorem{\arabic{pretheorem}\alph{theorem}}
+\newcommand{\theoremgroup}{\refstepcounter{pretheorem}}
 %
 % Make the document your own -- fill in these values to reflect the type of
 % document you are writing.
@@ -38,13 +46,13 @@
 \documentType{Dissertation Proposal}
 \major{Computer Science}
 \degree{Doctor of Philosophy}
-\graduationMonth{Jan}
+\graduationMonth{Feb}
 \graduationYear{2019}
 \author{Yangyang He}
 \committeeChair{Dr. Bart P. Knijnenburg}
 \committeeMemberOne{Dr. Larry F. Hodges}
-\committeeMemberTwo{Dr. Brian Malloy}
-\committeeMemberThree{Dr. Alexander Herzog}
+\committeeMemberTwo{Dr. Alexander Herzog}
+\committeeMemberThree{Dr. Brian Malloy}
 
 %% optional (for Master's) \committeeMemberThree{Dr. John Doe}
 %% optional \committeeMemberFour{Dr. Jane Doe}

@@ -1,6 +1,7 @@
-\contentsline {chapter}{Author's Publications on this topic}{i}{chapter*.1}
-\contentsline {chapter}{List of Tables}{iv}{section*.2}
-\contentsline {chapter}{List of Figures}{v}{section*.3}
+\contentsline {chapter}{Abstract}{ii}{section*.1}
+\contentsline {chapter}{Author's Publications on this topic}{iv}{chapter*.3}
+\contentsline {chapter}{List of Tables}{vii}{section*.4}
+\contentsline {chapter}{List of Figures}{viii}{section*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}IoT technology and IoT Acceptance}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}IoT Technology}{6}{section.2.1}
@@ -13,76 +14,95 @@
 \contentsline {chapter}{\numberline {3}Privacy setting technologies in IoT}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}Privacy Preference}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Privacy in IoT}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Existing Privacy Control Schemes}{13}{section.3.3}
+\contentsline {section}{\numberline {3.3}Existing Privacy Setting Models}{13}{section.3.3}
 \contentsline {section}{\numberline {3.4}Privacy-Setting Interfaces}{15}{section.3.4}
-\contentsline {section}{\numberline {3.5}Privacy Prediction}{16}{section.3.5}
+\contentsline {section}{\numberline {3.5}Privacy Prediction}{15}{section.3.5}
 \contentsline {section}{\numberline {3.6}Summary}{17}{section.3.6}
 \contentsline {chapter}{\numberline {4}Recommending Privacy Settings for General/Public IoT}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Dataset and design}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Statistical Analysis}{21}{section.4.2}
-\contentsline {section}{\numberline {4.3}Predicting users' behaviors (original work)}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Naive Prediction Methods}{24}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Overall Prediction}{24}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Attitude-Based Clustering}{25}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Fit-based clustering}{27}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Agglomerative clustering}{28}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Discussion of Machine Learning Results}{30}{subsection.4.3.6}
-\contentsline {section}{\numberline {4.4}Privacy-setting Prototypes (original work)}{31}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Smart Default Setting}{32}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Smart Profiles}{32}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Summary}{32}{section.4.5}
-\contentsline {chapter}{\numberline {5}Recommending Privacy Settings for Household IoT}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Experimental Setup}{35}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Contextual Scenarios}{36}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Scenario Evaluation Questions}{37}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Participants and Procedures}{37}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Statistical Analysis}{39}{section.5.2}
-\contentsline {section}{\numberline {5.3}Privacy-Setting Prototype Design}{40}{section.5.3}
-\contentsline {section}{\numberline {5.4}Predicting users' behaviors (original work)}{43}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Naive Prediction Model}{43}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}One Rule Prediction}{45}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Overall Prediction}{45}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Attitude-Based Clustering}{49}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Agglomerative Clustering}{51}{subsection.5.4.5}
-\contentsline {subsection}{\numberline {5.4.6}Fit-Based Clustering}{54}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}Discussion of machine learning results}{58}{subsection.5.4.7}
-\contentsline {section}{\numberline {5.5}Privacy-Setting Prototype Design Using Machine Learning Results (original work)}{60}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Interface for the 5-profile fit-based solution with an accuracy of 82.92\%}{60}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Interface for the 5-profile fit-based solution with an accuracy of 83.11\%}{61}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Reflection on design complexity}{63}{subsection.5.5.3}
-\contentsline {chapter}{\numberline {6}Recommending Privacy Settings for Fitness IoT}{65}{chapter.6}
-\contentsline {section}{\numberline {6.1}Data Model}{66}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Smartphone Permissions (S set)}{66}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}In-App Requests (A set)}{66}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}The F set (fitness data)}{67}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}G Set (GDPR-based permissions)}{68}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}A Conundrum of Settings}{69}{subsection.6.1.5}
-\contentsline {section}{\numberline {6.2}Data Collection}{69}{section.6.2}
-\contentsline {section}{\numberline {6.3}Data Analysis}{70}{section.6.3}
-\contentsline {section}{\numberline {6.4}Predicting users' Preference (original work)}{71}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Clustering Outcomes}{72}{subsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.1.1}The \textit {S} Set}{73}{subsubsection.6.4.1.1}
-\contentsline {subsubsection}{\numberline {6.4.1.2}The \textit {A} Set}{73}{subsubsection.6.4.1.2}
-\contentsline {subsubsection}{\numberline {6.4.1.3}The \textit {F} Set}{73}{subsubsection.6.4.1.3}
-\contentsline {subsubsection}{\numberline {6.4.1.4}The \textit {G} Set}{73}{subsubsection.6.4.1.4}
-\contentsline {section}{\numberline {6.5}Profile Prediction (original work)}{73}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Direct Prediction Questions}{74}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Indirect Prediction Questions}{76}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}Privacy Attitudes}{76}{subsubsection.6.5.2.1}
-\contentsline {subsubsection}{\numberline {6.5.2.2}Social Behavior}{77}{subsubsection.6.5.2.2}
-\contentsline {subsubsection}{\numberline {6.5.2.3}Negotiability of Privacy Settings}{78}{subsubsection.6.5.2.3}
-\contentsline {subsubsection}{\numberline {6.5.2.4}Exercise Tendencies and User Demographics}{79}{subsubsection.6.5.2.4}
-\contentsline {subsection}{\numberline {6.5.3}Tree Evaluation}{79}{subsection.6.5.3}
-\contentsline {section}{\numberline {6.6}Privacy-setting Recommendations (original work)}{79}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Manual Setting}{79}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Single Smart Default Setting}{80}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Pick Subprofiles}{80}{subsection.6.6.3}
-\contentsline {subsection}{\numberline {6.6.4}Direct Prediction}{81}{subsection.6.6.4}
-\contentsline {subsection}{\numberline {6.6.5}Indirect Prediction}{81}{subsection.6.6.5}
-\contentsline {section}{\numberline {6.7}Validation}{82}{section.6.7}
-\contentsline {section}{\numberline {6.8}Conclusion}{82}{section.6.8}
-\contentsline {chapter}{\numberline {7}Evaluate the Household IoT Privacy-setting Interface Prototype (Proposed original work)}{88}{chapter.7}
-\contentsline {section}{\numberline {7.1}Planned Experimental Setup}{88}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{93}{chapter.8}
-\contentsline {chapter}{Bibliography}{93}{section*.53}
-\contentsline {chapter}{Appendices}{102}{section*.55}
+\contentsline {section}{\numberline {4.1}Introduction}{18}{section.4.1}
+\contentsline {section}{\numberline {4.2}Dataset and design}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Statistical Analysis}{22}{section.4.3}
+\contentsline {section}{\numberline {4.4}Predicting users' behaviors (original work)}{23}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Naive Prediction Methods}{25}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Overall Prediction}{25}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Attitude-Based Clustering}{26}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Fit-based clustering}{28}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Agglomerative clustering}{29}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Discussion of Machine Learning Results}{32}{subsection.4.4.6}
+\contentsline {section}{\numberline {4.5}Privacy shortcuts (original work)}{33}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Smart Default Setting}{33}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Smart Profiles}{34}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Discussion and Limitations}{35}{section.4.6}
+\contentsline {section}{\numberline {4.7}Summary}{36}{section.4.7}
+\contentsline {chapter}{\numberline {5}Recommending Privacy Settings for Household IoT}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{37}{section.5.1}
+\contentsline {section}{\numberline {5.2}Experiment Setup}{38}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Dimension Design}{38}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Contextual Scenarios}{39}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Scenario Evaluation Questions}{40}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Participants and Procedures}{40}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Statistical Analysis}{46}{section.5.3}
+\contentsline {section}{\numberline {5.4}Privacy-Setting Prototype Design}{47}{section.5.4}
+\contentsline {section}{\numberline {5.5}Predicting users' behaviors (original work)}{49}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Naive Prediction Model}{50}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}One Rule Prediction}{51}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Overall Prediction}{51}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Attitude-Based Clustering}{55}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}Agglomerative Clustering}{58}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}Fit-Based Clustering}{61}{subsection.5.5.6}
+\contentsline {subsection}{\numberline {5.5.7}Discussion of machine learning results}{64}{subsection.5.5.7}
+\contentsline {section}{\numberline {5.6}Privacy-Setting Prototype Design Using Machine Learning Results (original work)}{66}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Interface for the 5-profile fit-based solution with an accuracy of 82.92\%}{67}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Interface for the 5-profile fit-based solution with an accuracy of 83.11\%}{69}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Reflection on design complexity}{69}{subsection.5.6.3}
+\contentsline {section}{\numberline {5.7}Limitations}{71}{section.5.7}
+\contentsline {section}{\numberline {5.8}Summary}{71}{section.5.8}
+\contentsline {chapter}{\numberline {6}Recommending Privacy Settings for Fitness IoT}{73}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{73}{section.6.1}
+\contentsline {section}{\numberline {6.2}Data Model}{74}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Smartphone Permissions (S set)}{74}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}In-App Requests (A set)}{74}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Fitness Data Permissions (F set)}{77}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}GDPR-based Permissions (G set)}{77}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3}Dataset}{77}{section.6.3}
+\contentsline {section}{\numberline {6.4}Predicting users' Preference (partial original work)}{78}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Overall Prediction}{78}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}2-Cluster Solution}{81}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}The \textit {S} Set}{82}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}The \textit {A} Set}{82}{subsubsection.6.4.2.2}
+\contentsline {subsubsection}{\numberline {6.4.2.3}The \textit {F} Set}{82}{subsubsection.6.4.2.3}
+\contentsline {subsubsection}{\numberline {6.4.2.4}The \textit {G} Set}{82}{subsubsection.6.4.2.4}
+\contentsline {section}{\numberline {6.5}Profile Prediction (original work)}{82}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Direct Prediction Questions}{83}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Indirect Prediction Questions}{84}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Privacy Attitudes}{85}{subsubsection.6.5.2.1}
+\contentsline {subsubsection}{\numberline {6.5.2.2}Social Behavior}{86}{subsubsection.6.5.2.2}
+\contentsline {subsubsection}{\numberline {6.5.2.3}Negotiability of Privacy Settings}{87}{subsubsection.6.5.2.3}
+\contentsline {subsubsection}{\numberline {6.5.2.4}Exercise Tendencies and User Demographics}{88}{subsubsection.6.5.2.4}
+\contentsline {subsection}{\numberline {6.5.3}Tree Evaluation}{88}{subsection.6.5.3}
+\contentsline {section}{\numberline {6.6}Privacy-setting Recommendations (original work)}{89}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Manual Setting}{89}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Single Smart Default Setting}{89}{subsection.6.6.2}
+\contentsline {subsection}{\numberline {6.6.3}Pick Subprofiles}{90}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.4}Direct Prediction}{90}{subsection.6.6.4}
+\contentsline {subsection}{\numberline {6.6.5}Indirect Prediction}{91}{subsection.6.6.5}
+\contentsline {section}{\numberline {6.7}Validation}{91}{section.6.7}
+\contentsline {section}{\numberline {6.8}Summary}{92}{section.6.8}
+\contentsline {chapter}{\numberline {7}Evaluate the Household IoT Privacy-setting Interface Prototype (Proposed work)}{100}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{100}{section.7.1}
+\contentsline {section}{\numberline {7.2}Study Design}{101}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Dependent Variables}{101}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Independent Variables}{101}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Profile/Interface Selection}{102}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Interfaces Implementation}{103}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Participants}{107}{subsection.7.2.5}
+\contentsline {subsection}{\numberline {7.2.6}Measurements}{107}{subsection.7.2.6}
+\contentsline {subsection}{\numberline {7.2.7}Procedure}{108}{subsection.7.2.7}
+\contentsline {section}{\numberline {7.3}Expected Results}{111}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Interface Complexity and SSA}{111}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Profile Complexity and SSA}{112}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Personal/Situational Characteristics and SSA}{113}{subsection.7.3.3}
+\contentsline {chapter}{\numberline {8}Expected Contribution}{116}{chapter.8}
+\contentsline {chapter}{Bibliography}{116}{section*.80}
+\contentsline {chapter}{Appendices}{127}{section*.82}
+\contentsline {chapter}{Appendices}{128}{section*.83}
