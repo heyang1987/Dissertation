@@ -1,0 +1,19 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Parameters used in the experiment. Example scenarios: \emph {``A device of a friend records your video to detect your presence. This happens continuously, while you are at someone else's place, for your safety.''} \emph {``A government device reads your phone ID to detect your identity. This happens once, while you are in a public place (e.g. on the street), for health-related purposes.''}\relax }}{21}{table.caption.8}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Comparison of clustering approaches\relax }}{25}{table.caption.10}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Confusion matrix for the overall prediction\relax }}{25}{table.caption.11}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Drill down of the Overall Prediction tree for `who' = `Own device'\relax }}{27}{table.caption.13}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Parameters used to construct the information-sharing scenarios. The ``codes'' are used as abbreviations in graphs and figures throughout the paper and the Appendix.\relax }}{42}{table.caption.21}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Comparison of clustering approaches (highest parsimony and highest accuracy)\relax }}{50}{table.caption.27}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Confusion matrix for the One Rule prediction\relax }}{51}{table.caption.29}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Confusion matrix for the overall prediction\relax }}{52}{table.caption.31}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Study Questionnaire.\relax }}{129}{table.caption.84}%
+\contentsline {table}{\numberline {2}{\ignorespaces Table of Accuracies.\relax }}{130}{table.caption.85}%
