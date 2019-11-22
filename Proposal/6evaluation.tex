@@ -1,21 +1,20 @@
 % !TeX root = proposal.tex
-\chapter{Evaluate the Household IoT Privacy-setting Interface Prototype (Proposed work)}\label{chapter:evaluation}
+\chapter{Evaluate the Household IoT Privacy-setting User Interface Prototype (Proposed work)}\label{chapter:evaluation}
 
 \section{Introduction}
 
-In the previous chapters, we have described the three studies on recommending privacy settings for general/public IoT, household IoT, and fitness IoT, respectively. A ``data-driven” approach has been used in all three studies, to gain the underlying insights of IoT users' privacy decision behavior, and to design a set of interfaces to incorporate the ``smart" privacy default/profiles created based on the insights. Users can apply these smart defaults/profiles by either a single click or by answering a few related questions. When applying this approach on the household IoT dataset in Chapter~\ref{chapter:householdIoT}, we explored the trade-off between parsimony and accuracy when creating the ``smart" privacy defaults/profiles. We manipulate the pruning parameter for the decision trees of the C4.5 algorithm, which impacted the complexity of the generated profiles based on the decision trees. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments, while parsimony, on the other hand, prevents overfitting and promotes fairness. In Chapter~\ref{chapter:householdIoT}, we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
+In the previous chapters, we have described the three studies on recommending privacy settings for general/public IoT, household IoT, and fitness IoT, respectively. A ``data-driven” approach has been used in all three studies, to gain the underlying insights of IoT users' privacy decision behavior, and to design a set of User interfaces (UI) to incorporate the ``smart" privacy default/profiles created based on the insights. Users can apply these smart defaults/profiles by either a single click or by answering a few related questions. When applying this approach on the household IoT dataset in Chapter~\ref{chapter:householdIoT}, we explored the trade-off between parsimony and accuracy when creating the ``smart" privacy defaults/profiles. We manipulate the pruning parameter for the decision trees of the C4.5 algorithm, which impacted the complexity of the generated profiles based on the decision trees. Accuracy is important to ensure that users' privacy preferences are accurately captured and/or need only few manual adjustments, while parsimony, on the other hand, prevents overfitting and promotes fairness. In Chapter~\ref{chapter:householdIoT}, we noticed that more complex models tended to increase overall accuracy by predicting a few users' preferences more accurately, with no effect on other users. Parsimony also makes the associated default setting easier to understand for the user. 
 
-The biggest limitation of our work so far is that we did not test any of the proposed interfaces, so we do not know what level of complexity (both in terms of the user interface and the in terms of the profiles) is most suitable. Thus, to further test this trade-off between accuracy and parsimony in a real usage environment and test the user experience of using the interfaces that we designed in Chapter~\ref{chapter:householdIoT}, for my proposed work, I will address this limitation by discussing our proposed study to evaluate the new interface prototypes of recommending privacy-settings for household IoT. The main purpose of this proposed work is to test the user experience of the privacy-setting interfaces.
+The biggest limitation of our work so far is that we did not test any of the proposed UIs, so we do not know what level of complexity (both in terms of the user interface and the in terms of the profiles) is most suitable. Thus, to further test this trade-off between accuracy and parsimony in a real usage environment and test the user experience of using the interfaces that we designed in Chapter~\ref{chapter:householdIoT}, for my proposed work, I will address this limitation by discussing our proposed study to evaluate the new interface prototypes of recommending privacy-settings for household IoT. The main purpose of this proposed work is to test the user experience of the privacy-setting interfaces.
 
 In this chapter, we first discuss the design of our evaluation system, then we present my proposed study plan, including how we recruit participants for our study, our experimental design, how we measure our results, and expected results.
 
 \section{Study Design}
 
-
 In this section, we discuss the experimental design of our user study. This proposed user study will be a between-subject study, which takes about 15 -- 20 minutes to finish. All participants will be recruited via Amazon Mechanical Turk.
 
 \subsection{Dependent Variables}
-Since we want to test the user experience when they use our privacy-setting interfaces and , the Dependent Variable of our study will be the user experience of the system. 
+Since we want to test the user experience when they use our privacy-setting interfaces and , the Dependent Variable of our study will be the user experience of the system, namely their \textbf{satisfaction to the system}, \textbf{the perceived usefulness of the system}, \textbf{and the trust to the company}. 
 
 \subsection{Independent Variables}
 In Chapter~\ref{chapter:householdIoT},  we first designed a set of interfaces, as shown in Figure~\ref{fig:interface2}, based on the results from our statistical analysis (\textbf{UI1}). Further, we modified these interfaces to integrate the ``smart defaults/profiles" generated from our machine learning results. This modification separated the Storage and sharing modules from the Data usage, leading a more complex interface design (\textbf{UI2}). For our study, we need to test these two groups of interfaces (UI1 vs UI2) in terms of interface complexity.
@@ -277,14 +276,12 @@ Figure~\ref{fig:ui2Profiles} shows the experimental condition --- UI2:Smart Prof
 	\label{fig:ui2Profiles}
 \end{figure}
 
-\subsection{Participants}
-A power analysis shows that 400 participants will be needed for this study. In the study, all participants will be recruited via Amazon Mechanical Turk. After the study, each participant that successfully finishes the study and passes the attention check will be compensated \$1.5 dollars.
+\subsection{Participants and Procedures}
+Based on the power analysis results, to collect our dataset, 504 adult U.S.-based participants were recruited through Amazon Mechanical Turk. Participation was restricted to Mechanical Turk workers with a high reputation (at least 50 completed tasks, average accuracy of > 96\%). Participants were paid \$1.50 upon successful completion of the study. The participants were warned about not getting paid in case they failed attention checks (see below). The study participants represented a wide range of ages, with 44 aged 18-24, 298 aged 25-34, 116 aged 35-44, 29 aged 45-54, 12 aged 55-64, and 5 participants over 65 years old.
 
-%To identify suitable participants, we will have screening questions on the recruitment ad:
-%1). Do you currently have a household IoT device?
-%2). Have you ever changed your privacy-settings of your household IoT devices?
-%Participants will be enrolled in the study only if they meet all the screening criteria.
+Each participant was first shown a video with a brief introduction to various smart home devices, which also mentioned various ways in which the different appliances would cooperate and communicate within a home. After the video, participants were asked to answer two attention check questions depicted in Figure~\ref{fig:attn1} in the Appendix.
 
+After the introduction video, each participant was presented with a privacy-setting user interface for household IoT. This 
 
 
 \subsection{Measurements}\label{subsection:measures}
@@ -329,7 +326,7 @@ Next, the participants will be give a survey questionnaire discussed in Section~
 After the user study is finished, We will first use \textit{confirmatory factor analysis} to clean up the items and then use \textit{linear mixed effects regression} to analyze the effect of the independent variables on the subjective system aspects, and further mediation effect on the user experience. We also wonder how the personal/situational characteristics affect the user experience.
 
 
-\section{Expected Results}
+\section{Results}
 In this section, we present our hypothesis on the expected results.
 
 \subsection{Interface Complexity and SSA}
@@ -423,5 +420,3 @@ The rest hypothesis are related to the rational decision style and emotional dec
 \begin{theorem}
 	The positive association between perceived control and system satisfaction will be stronger for users with a high level of emotional decision style.
 \end{theorem}
-
-
