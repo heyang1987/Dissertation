@@ -1,7 +1,10 @@
 
 \clearpage
 \onecolumn
-\begin{appendices}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{figure}} 
 
 %\vspace{-15pt}
 %\section{Appendix}
@@ -113,6 +116,7 @@
 
 
 \begin{table*}
+\scriptsize 
 \centering
 % table caption is above the table
 \caption{Table of Accuracies.}
@@ -312,7 +316,7 @@ Over-all Average & 84.74 \% & 68.74 \% & 83.41 \% & 68.52 \% & 69.70 \% & 73.11 
 % \label{fig:tree4appendix}
 % \end{figure*}
 
-Figure~\ref{fig:ui1AllOff} shows the experimental condition --- UI1:Everything-Off.
+%Figure~\ref{fig:ui1AllOff} shows the experimental condition --- UI1:Everything-Off.
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -338,7 +342,7 @@ Figure~\ref{fig:ui1AllOff} shows the experimental condition --- UI1:Everything-O
 	\label{fig:ui1AllOff}
 \end{figure}
 
-Figure~\ref{fig:ui2AllOff} shows the experimental condition --- UI2:Everything-Off.
+%Figure~\ref{fig:ui2AllOff} shows the experimental condition --- UI2:Everything-Off.
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.2\textwidth}
@@ -369,7 +373,7 @@ Figure~\ref{fig:ui2AllOff} shows the experimental condition --- UI2:Everything-O
 	\label{fig:ui2AllOff}
 \end{figure}
 
-Figure~\ref{fig:ui1AllOn} shows the experimental condition --- UI1:Everything-On.
+%Figure~\ref{fig:ui1AllOn} shows the experimental condition --- UI1:Everything-On.
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -395,7 +399,7 @@ Figure~\ref{fig:ui1AllOn} shows the experimental condition --- UI1:Everything-On
 	\label{fig:ui1AllOn}
 \end{figure}
 
-Figure~\ref{fig:ui2AllOn} shows the experimental condition --- UI2:Everything-On.
+%Figure~\ref{fig:ui2AllOn} shows the experimental condition --- UI2:Everything-On.
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.19\textwidth}
@@ -426,7 +430,7 @@ Figure~\ref{fig:ui2AllOn} shows the experimental condition --- UI2:Everything-On
 	\label{fig:ui2AllOn}
 \end{figure}
 
-Figure~\ref{fig:ui1OneR} shows the experimental condition --- UI1:Smart Default.
+%Figure~\ref{fig:ui1OneR} shows the experimental condition --- UI1:Smart Default.
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -452,7 +456,7 @@ Figure~\ref{fig:ui1OneR} shows the experimental condition --- UI1:Smart Default.
 	\label{fig:ui1OneR}
 \end{figure}
 
-Figure~\ref{fig:ui2SD} shows the experimental condition --- UI2:Smart Default.
+%Figure~\ref{fig:ui2SD} shows the experimental condition --- UI2:Smart Default.
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.2\textwidth}
@@ -483,7 +487,7 @@ Figure~\ref{fig:ui2SD} shows the experimental condition --- UI2:Smart Default.
 	\label{fig:ui2SD}
 \end{figure}
 
-Figure~\ref{fig:ui1Profiles} shows the experimental condition --- UI1:Smart Profiles.
+%Figure~\ref{fig:ui1Profiles} shows the experimental condition --- UI1:Smart Profiles.
 \begin{figure}[htb]
 	\centering
 	\begin{subfigure}[t]{0.2\textwidth}
@@ -514,7 +518,7 @@ Figure~\ref{fig:ui1Profiles} shows the experimental condition --- UI1:Smart Prof
 	\label{fig:ui1Profiles}
 \end{figure}
 
-Figure~\ref{fig:ui2Profiles} shows the experimental condition --- UI2:Smart Profiles.
+%Figure~\ref{fig:ui2Profiles} shows the experimental condition --- UI2:Smart Profiles.
 \begin{figure}[htb]
 	\centering
 	\begin{subfigure}[t]{0.2\textwidth}
@@ -544,7 +548,3 @@ Figure~\ref{fig:ui2Profiles} shows the experimental condition --- UI2:Smart Prof
 	\caption{User Interface 2 with Smart Profiles}
 	\label{fig:ui2Profiles}
 \end{figure}
-
-
-
-\end{appendices}

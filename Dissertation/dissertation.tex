@@ -28,8 +28,10 @@
 \usepackage{balance}
 \usepackage{arydshln}
 \usepackage{ntheorem}
-\newtheorem{theorem}{Hypothesis}
+\newtheorem{theorem}{RQ}
 \usepackage[normalem]{ulem}
+\usepackage{threeparttable}
+\usepackage{xcolor}
 
 \usepackage{chngcntr}
 \newcounter{pretheorem}
@@ -49,7 +51,7 @@
 \degree{Doctor of Philosophy}
 \graduationMonth{Dec}
 \graduationYear{2019}
-\author{Yangyang He}
+\author{Yang He}
 \committeeChair{Dr. Bart P. Knijnenburg}
 \committeeMemberOne{Dr. Larry F. Hodges}
 \committeeMemberTwo{Dr. Alexander Herzog}
@@ -85,7 +87,7 @@
 %% \renewcommand{\ttdefault}{pcr}
 %% \renewcommand\lstlistlistingname{List of Listings}
 \pagestyle{fancy}
-\lhead{Yangyang He}
+\lhead{Yang He}
 \rhead{Dissertation}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand*\contentsname{Outline}
@@ -177,10 +179,10 @@
 	\bibliographystyle{plain}
 	\addtotoc{Bibliography}{\bibliography{bibliography}}
 		\begin{appendices}
-		\begin{subappendices}
+		%\begin{subappendices}
 			\inputfile{appendix.tex}
 %			\inputfile{appendixB.tex}
 %			\inputfile{appendixC.tex}
-		\end{subappendices}
+		%\end{subappendices}
 	\end{appendices}
 \end{document}

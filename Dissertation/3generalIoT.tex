@@ -1,4 +1,4 @@
-% !TeX root = disseration.tex
+% !TeX root = dissertation.tex
 \chapter{Recommending Privacy Settings for General/Public IoT}\label{chapter:generalIoT}
 
 \section{Introduction}
@@ -13,7 +13,7 @@ In this chapter, we intend to answer the following questions:
 \end{itemize}
 
 %\section{Definition of General/Public IoT}
-By general/public IoT, we are referring to those IoT devices deployed in public space, outside people' home, where people have little control over. These IoT devices can be operated by many entities (i.e. government, employers, friends, colleagues, etc) to collect data with or without people's awareness. Different types of data, such as photos, videos, or locations, can be collected to track people or provide convenience, health-related or social-related information/advice. Due to the high uncertainty and low Controllability, general/public IoT can cause various privacy risks and concerns. The demand to get notified about surrounding public IoT devices or to be able to control these devices is urgent. Researchers at Intel are working on a framework that allows people to be notified about surrounding IoT devices collecting personal information, and to control these collection practices~\cite{chow2015hci}, but no suitable interface has been developed for this system yet.
+By general/public IoT, we are referring to those IoT devices deployed in public space, outside people' home, where people have little control over the data collection practices of the devices. These IoT devices can be operated by many entities (i.e. government, employers, friends, colleagues, etc) to collect data with or without people's awareness. Different types of data, such as photos, videos, or locations, can be collected to track people or provide convenience, health-related or social-related information/advice. Due to the high uncertainty and low Controllability, general/public IoT can cause various privacy risks and concerns. The demand to get notified about surrounding public IoT devices or to be able to control these devices is urgent. Researchers at Intel are working on a framework that allows people to be notified about surrounding IoT devices collecting personal information, and to control these collection practices~\cite{chow2015hci}, but no suitable interface has been developed for this system yet.
 
 %By general/public IoT, we are referring to those IoT devices deployed in public space, such as on the street, near a restaurant, in friends' house, etc. These IoT devices can be used by many entities (i.e. government, employers, friends, colleagues, etc) to collect data with or without people's attention. Those personal data type could be photo, video, or location. These collected data can be used to track people or provide convenience, health-related or social-related information/advice. These data collection can be done continuously or only once. In general, all the IoT devices deployed outside people' home, where they have little control over the data IoT devices collect, can be categorized as general/public IoT. General/public IoT has arguably high uncerntainty and the uncontrollability. It's possible that people are tracked or monitor by cameras without any notification in these public space, leading high the privacy risks and concerns. The demand to get notified about surrounding IoT devices or be able to control these devices is urgent. Researchers at Intel are working on a framework that allows people to be notified about surrounding IoT devices collecting personal information, and to control these collection practices~\cite{chow2015hci}, but no suitable interface has been developed for this system yet.
 
@@ -35,8 +35,10 @@ For every scenario, participants were asked a total of 9 questions. Our study fo
 	\item \textbf{Appropriateness:} How appropriate do you consider this situation? (7pt scale)
 \end{itemize}
 
-\begin{table*}
-	\caption{Parameters used in the experiment. Example scenarios: \\\emph{``A device of a friend records your video to detect your presence. This happens continuously, while you are at someone else's place, for your safety.''}\\\emph{``A government device reads your phone ID to detect your identity. This happens once, while you are in a public place (e.g. on the street), for health-related purposes.''}}
+\begin{table}
+	\centering
+	\begin{threeparttable}
+	\caption{Parameters used in the experiment\tnote{1}}
 	\label{tab:parameter}
 	\begin{tabular}{l | l}
 		\hline
@@ -86,7 +88,11 @@ For every scenario, participants were asked a total of 9 questions. Our study fo
 		& 2. Continuously \\ 
 		\emph{Whether data is collected once or continuously} & \\ \hline
 	\end{tabular}
-\end{table*}
+	\begin{tablenotes}
+		\item[1] Example scenarios: \\\emph{``A device of a friend records your video to detect your presence. This happens continuously, while you are at someone else's place, for your safety.''}\\\emph{``A government device reads your phone ID to detect your identity. This happens once, while you are in a public place (e.g. on the street), for health-related purposes.''}
+	\end{tablenotes}
+	\end{threeparttable}
+\end{table}
 
 We use this dataset in two phases. In our first phase, we develop a ``layered'' settings interface, where users make a decision on a less granular level (e.g., whether a certain recipient is allowed to collect their personal information or not), and only move to a more granular decision (e.g., what types of information this recipient is allowed to collect) when they desire more detailed control. This reduces the complexity of the decisions users have to make, without reducing the amount of control available to them. We use statistical analysis of the Lee and Kobsa dataset to decide which aspect should be presented at the highest layer of our IoT privacy-setting interface, and which aspects are relegated to subsequently lower layers.
 
@@ -516,7 +522,7 @@ The fit-based clustering approach, which iteratively clusters users and fits an 
 
 The scenario-based method presented in this paper is particularly suited for novel domains where few real interaction exist. We note, though, that this novelty may hamper our approach: users' decisions are inherently limited by the knowledge they have about IoT. Lee and Kobsa~\cite{lee2016understanding} made sure to educate users about the presented scenarios, hence their data is arguably better in this regard than data from ``live'' systems. However, as the adaptation of IoT becomes more widespread, the mindset and knowledge regarding such technologies---and thus their privacy preferences---might change. Our ``smart profiles'' may thus eventually have to be updated in future work, but for now, our current profiles can at least help users make make better privacy decisions in their initial stages of usage.
 
-One limitation of our work is that we did not test our layered interface, so we do not know whether users are comfortable with the interface or whether they prefer a single ``smart default'' setting or a choice among ``smart profiles'' (i.e.  at what level of complexity in terms of profiles the user would prefer.). This is why I propose a user study in Chapter~\ref{chapter:evaluation} to investigate this problem. Another caveat of our work is that we did not manipulate the pruning parameter of our machine learning models in the privacy decision prediction. Note that, the decision tree shown in Figure~\ref{fig:3clustersFit} is rather complicated, leading to a complicated privacy profile implicated by the decision tree. It will be difficult to explain a privacy profile in nature language to the users when the profile is getting too complicated. We note, though, that pruning the decision tree may reduce the accuracy of our models' results. I explore this interesting trade-off between the accuracy and parsimony (i.e. simpler profile) in Chapter~\ref{chapter:householdIoT} where I apply our data-driven approach in the Household IoT context. 
+One limitation of our work is that we did not test our layered interface, so we do not know whether users are comfortable with the interface or whether they prefer a single ``smart default'' setting or a choice among ``smart profiles'' (i.e.  at what level of complexity in terms of profiles the user would prefer.). This is why I conduct a user study in Chapter~\ref{chapter:evaluation} to investigate this problem. Another caveat of our work is that we did not manipulate the pruning parameter of our machine learning models in the privacy decision prediction. Note that, the decision tree shown in Figure~\ref{fig:3clustersFit} is rather complicated, leading to a complicated privacy profile implied by the decision tree. It will be difficult to explain a privacy profile in natural language to the users when the profile is getting too complicated. We note, though, that pruning the decision tree may reduce the accuracy of our models' results. I explore this interesting trade-off between the accuracy and parsimony (i.e. simpler profile) in Chapter~\ref{chapter:householdIoT} where I apply our data-driven approach in the Household IoT context. 
 
 \section{Summary}
 In this chapter, we have presented the following:

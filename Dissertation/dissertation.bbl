@@ -130,12 +130,6 @@ Shanzhi Chen, Hui Xu, Dake Liu, Bo~Hu, and Hucheng Wang.
   china perspective.
 \newblock {\em IEEE Internet of Things journal}, 1(4):349--359, 2014.
 
-\bibitem{choi2016smartwatch}
-Jaewon Choi and Seongcheol Kim.
-\newblock Is the smartwatch an it product or a fashion product? a study on
-  factors affecting the intention to use smartwatches.
-\newblock {\em Computers in Human Behavior}, 63:777--786, 2016.
-
 \bibitem{chow2015hci}
 Richard Chow, Serge Egelman, Raghudeep Kannavara, Hosub Lee, Suyash Misra, and
   Edward Wang.
@@ -144,14 +138,6 @@ Richard Chow, Serge Egelman, Raghudeep Kannavara, Hosub Lee, Suyash Misra, and
 \newblock In Fiona Fui-Hoon Nah and Chuan-Hoo Tan, editors, {\em {HCI} in
   {Business}}, number 9191 in Lecture Notes on Computer Science. Springer,
   2015.
-
-\bibitem{coughlan2012exploring}
-Tim Coughlan, Michael Brown, Richard Mortier, Robert~J Houghton, Murray
-  Goulden, and Glyn Lawson.
-\newblock Exploring acceptance and consequences of the internet of things in
-  the home.
-\newblock In {\em 2012 IEEE International Conference on Green Computing and
-  Communications}, pages 148--155. IEEE, 2012.
 
 \bibitem{culnan1993did}
 Mary~J Culnan.
@@ -167,6 +153,12 @@ Nigel Davies, Nina Taft, Mahadev Satyanarayanan, Sarah Clinch, and Brandon
   {Mobile} {Computing} {Systems} and {Applications}}, {HotMobile} '16, pages
   39--44, New York, NY, USA, 2016. ACM.
 
+\bibitem{davis1989perceived}
+Fred~D Davis.
+\newblock Perceived usefulness, perceived ease of use, and user acceptance of
+  information technology.
+\newblock {\em MIS quarterly}, pages 319--340, 1989.
+
 \bibitem{davis1989user}
 Fred~D Davis, Richard~P Bagozzi, and Paul~R Warshaw.
 \newblock User acceptance of computer technology: a comparison of two
@@ -178,12 +170,6 @@ Cailing Dong, Hongxia Jin, and Bart~P Knijnenburg.
 \newblock Ppm: A privacy prediction model for online social networks.
 \newblock In {\em International Conference on Social Informatics}, pages
   400--420, 2016.
-
-\bibitem{dong2017understanding}
-Xuebing Dong, Yaping Chang, Yawei Wang, and Jun Yan.
-\newblock Understanding usage of internet of things (iot) systems in china:
-  Cognitive experience and affect experience as moderator.
-\newblock {\em Information Technology \& People}, 30(1):117--138, 2017.
 
 \bibitem{earp2005examining}
 Julia~Brande Earp, Annie~I Ant{\'o}n, Lynda Aiman-Smith, and William~H
@@ -306,12 +292,6 @@ Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
 \newblock The weka data mining software: an update.
 \newblock {\em ACM SIGKDD explorations newsletter}, 11(1):10--18, 2009.
 
-\bibitem{hann2007overcoming}
-Il-Horn Hann, Kai-Lung Hui, Sang-Yong~Tom Lee, and Ivan~PL Png.
-\newblock Overcoming online information privacy concerns: An
-  information-processing theory approach.
-\newblock {\em Journal of Management Information Systems}, 24(2):13--42, 2007.
-
 \bibitem{hassanalieragh2015health}
 Moeen Hassanalieragh, Alex Page, Tolga Soyata, Gaurav Sharma, Mehmet Aktas,
   Gonzalo Mateos, Burak Kantarci, and Silvana Andreescu.
@@ -349,10 +329,21 @@ Kai-Lung Hui, Bernard C.~Y. Tan, and Chyan-Yee Goh.
 \newblock {\em ACM Transactions on Internet Technology}, 6(4):415--441,
   November 2006.
 
+\bibitem{hui2006online}
+Kai-Lung Hui, Bernard~CY Tan, and Chyan-Yee Goh.
+\newblock Online information disclosure: Motivators and measurements.
+\newblock {\em ACM Transactions on Internet Technology (TOIT)}, 6(4):415--441,
+  2006.
+
 \bibitem{iyengar2000choice}
 Sheena~S Iyengar and Mark~R Lepper.
 \newblock When choice is demotivating: Can one desire too much of a good thing?
 \newblock {\em Journal of personality and social psychology}, 79(6):995, 2000.
+
+\bibitem{jarvenpaa1999consumer}
+Sirkka~L Jarvenpaa, Noam Tractinsky, and Lauri Saarinen.
+\newblock Consumer trust in an internet store: A cross-cultural validation.
+\newblock {\em Journal of Computer-Mediated Communication}, 5(2):JCMC526, 1999.
 
 \bibitem{jayaraman_privacy_2017}
 Prem~Prakash Jayaraman, Xuechao Yang, Ali Yavari, Dimitrios Georgakopoulos, and
@@ -404,11 +395,6 @@ Bart~P. Knijnenburg.
   {Privacy}.
 \newblock {\em IEEE Security \& Privacy}, 15(4):62--67, 2017.
 
-\bibitem{knijnenburg2013persuasive}
-Bart~P Knijnenburg and Hongxia Jin.
-\newblock The persuasive effect of privacy recommendations.
-\newblock In {\em Twelfth Annual Workshop on HCI Research in MIS}, 2013.
-
 \bibitem{knijnenburg2013helping}
 Bart~P Knijnenburg and Alfred Kobsa.
 \newblock Helping users with information disclosure decisions: potential for
@@ -446,12 +432,6 @@ Alfred Kobsa, Hichang Cho, and Bart~P. Knijnenburg.
 Trupti~M Kodinariya and Prashant~R Makwana.
 \newblock Review on determining number of cluster in k-means clustering.
 \newblock {\em International Journal}, 1(6):90--95, 2013.
-
-\bibitem{krasnova2009investigating}
-Hanna Krasnova, Thomas Hildebrand, and Oliver Guenther.
-\newblock Investigating the value of privacy on online social networks:
-  conjoint analysis.
-\newblock 2009.
 
 \bibitem{laufer1977privacy}
 Robert~S Laufer and Maxine Wolfe.
@@ -539,16 +519,16 @@ Michelle Madejski, Maritza Johnson, and Steven~M Bellovin.
   Workshops), 2012 IEEE International Conference on}, pages 340--345. IEEE,
   2012.
 
-\bibitem{malhotra2004internet}
-Naresh~K Malhotra, Sung~S Kim, and James Agarwal.
-\newblock Internet users' information privacy concerns (iuipc): The construct,
-  the scale, and a causal model.
-\newblock {\em Information systems research}, 15(4):336--355, 2004.
-
 \bibitem{medaglia2010overview}
 Carlo~Maria Medaglia and Alexandru Serbanati.
 \newblock An overview of privacy and security issues in the internet of things.
 \newblock In {\em The Internet of Things}, pages 389--395. Springer, 2010.
+
+\bibitem{metzger2004privacy}
+Miriam~J Metzger.
+\newblock Privacy, trust, and disclosure: Exploring barriers to electronic
+  commerce.
+\newblock {\em Journal of computer-mediated communication}, 9(4):JCMC942, 2004.
 
 \bibitem{milne2004strategies}
 George~R Milne and Mary~J Culnan.
@@ -799,6 +779,13 @@ Michele Vescovi, Corrado Moiso, Mattia Pasolli, Lorenzo Cordin, and Fabrizio
 \newblock In {\em IFIP International Conference on Trust Management}, pages
   240--250. Springer, 2015.
 
+\bibitem{wang2007recommendation}
+Weiquan Wang and Izak Benbasat.
+\newblock Recommendation agents for electronic commerce: Effects of explanation
+  facilities on trusting beliefs.
+\newblock {\em Journal of Management Information Systems}, 23(4):217--246,
+  2007.
+
 \bibitem{wang2009interactive}
 Weiquan Wang and Izak Benbasat.
 \newblock Interactive decision aids for consumer decision making in e-commerce:
@@ -869,6 +856,26 @@ Peter Worthy, Ben Matthews, and Stephen Viller.
 \newblock In {\em Proceedings of the 2016 {ACM} {Conference} on {Designing}
   {Interactive} {Systems}}, {DIS} '16, pages 427--434, New York, NY, USA, 2016.
   ACM.
+
+\bibitem{xu2011personalization}
+Heng Xu, Xin~Robert Luo, John~M Carroll, and Mary~Beth Rosson.
+\newblock The personalization privacy paradox: An exploratory study of decision
+  making process for location-aware marketing.
+\newblock {\em Decision support systems}, 51(1):42--52, 2011.
+
+\bibitem{xu2009role}
+Heng Xu, Hock-Hai Teo, Bernard~CY Tan, and Ritu Agarwal.
+\newblock The role of push-pull technology in privacy calculus: the case of
+  location-based services.
+\newblock {\em Journal of management information systems}, 26(3):135--174,
+  2009.
+
+\bibitem{xu2012research}
+Heng Xu, Hock-Hai Teo, Bernard~CY Tan, and Ritu Agarwal.
+\newblock Research note—effects of individual self-protection, industry
+  self-regulation, and government regulation on privacy concerns: a study of
+  location-based services.
+\newblock {\em Information Systems Research}, 23(4):1342--1363, 2012.
 
 \bibitem{yu2015handling}
 Tianlong Yu, Vyas Sekar, Srinivasan Seshan, Yuvraj Agarwal, and Chenren Xu.

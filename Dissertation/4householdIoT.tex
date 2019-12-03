@@ -1,4 +1,4 @@
-% !TeX root = disseration.tex
+% !TeX root = dissertation.tex
 \chapter{Recommending Privacy Settings for Household IoT}\label{chapter:householdIoT}
 
 \section{Introduction}
@@ -44,11 +44,12 @@ The framing and default of the Decision question were manipulated between-subjec
 
 \begin{table}
 	\centering
-	\caption{Parameters used to construct the information-sharing scenarios. The ``codes'' are used as abbreviations in graphs and figures throughout the paper and the Appendix.}
+	\begin{threeparttable}
+	\caption{Parameters used to construct the information-sharing scenarios.}
 	\label{tab:parameter2}
 	\begin{tabular} {l|l|l}
 		\hline
-		\textbf{Parameter} & \textbf{Levels} & \textbf{Code} 	 \\ \hline
+		\textbf{Parameter} & \textbf{Levels} & \textbf{Code\tnote{1}} 	 \\ \hline
 		Who:  & 1. Home Security System & SS\\ 		
 		\emph{Your Smart...}	& 2. Refrigerator & RE							 \\
 		& 3. HVAC System							& HV	 \\
@@ -94,6 +95,10 @@ The framing and default of the Decision question were manipulated between-subjec
 		& 3. recommend you other services & R\\
 		& 4. [None] & N\\ \hline
 	\end{tabular}
+	\begin{tablenotes}
+		\item[1] The ``codes'' are used as abbreviations in graphs and figures throughout this chapter.
+	\end{tablenotes}
+	\end{threeparttable}
 \end{table}
 
 \subsection{Participants and Procedures}
@@ -393,7 +398,7 @@ Based on our statistical analysis in~\ref{sec:statAlys2}, we developed an intuit
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/interface_new.png}
-	\caption{Screen 1 (top left) is the landing page of our manual settings interface, screen 2 (top right) is the Device/Sensor Management page, screen 3 (bottom left) shows the explanation when you click on ``I want to learn more'', and screen 4 (bottom right) is the Data Storage \& Use page.}
+	\caption{Privacy-Setting Interfaces Prototype}
 	\label{fig:interface2}
 \end{figure}
 
@@ -466,12 +471,12 @@ We start with the naive or ``information-less" predictions. Compared to our prev
 \subsection{One Rule Prediction}\label{subsection:onerule2}
 Next, we use a ``\textit{One Rule}" (OneR) algorithm to predict users' decision using the simplest prediction model possible. OneR is a very simple but often surprisingly effective learning algorithm~\cite{Holte1993}. It creates a frequency table for each predictor against the target, and then find the best predictor with the smallest total error based on the frequencies.
 
-As shown in Figure~\ref{fig:oneR}, the OneR model predicts users' decision solely based on the \textbf{Storage} parameter with an accuracy of 61.39\%.  Based on this model, if we enable all information-sharing \emph{except} with third parties, we will on average satisfy 61.39\% of users' preferences---a 15.3\% improvement\footnote{61.39 / 53.26 = 1.153} over the naive ``disable all'' default. Note, though, that this default setting is overly permissive, with 3262 false positive predictions (see Table~\ref{tab:oner_confusion_matrix}).
+As shown in Figure~\ref{fig:oneR} (parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}), the OneR model predicts users' decision solely based on the \textbf{Storage} parameter with an accuracy of 61.39\%.  Based on this model, if we enable all information-sharing \emph{except} with third parties, we will on average satisfy 61.39\% of users' preferences---a 15.3\% improvement\footnote{61.39 / 53.26 = 1.153} over the naive ``disable all'' default. Note, though, that this default setting is overly permissive, with 3262 false positive predictions (see Table~\ref{tab:oner_confusion_matrix}).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/oneR.png}
-	\caption{A ``smart default'' setting based on the ``One Rule" algorithm (4 nodes, accuracy: 61.39\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{A ``smart default'' setting based on the ``One Rule" algorithm.}
 	\label{fig:oneR}
 \end{figure}
 
@@ -496,7 +501,7 @@ The resulting tree has an accuracy of 63.76\%. As shown in Figure~\ref{fig:smart
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/smartdefault025.png}
-	\caption{A ``smart default'' setting with 264 nodes (accuracy: 63.76\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{A ``smart default'' setting with 264 nodes with 63.76\% accuracy.}
 	\label{fig:smart_default}
 \end{figure}
 
@@ -545,7 +550,7 @@ Figure~\ref{fig:smart_default_optimal} summarizes accuracy as a function of pars
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/smartdefault001.png}
-	\caption{A ``smart default'' setting with only 8 nodes (accuracy: 63.32\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{A ``smart default'' setting with only 8 nodes 63.32\% accuracy.}
 	\label{fig:smart_default_new}
 \end{figure}
 
@@ -625,7 +630,7 @@ For the 2-cluster solutions (the blue line in Figure~\ref{fig:attitudesum}), the
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/fit_2_profile001.png}
-	\caption{The most parsimonious 2-profile attitude-based solution (2 nodes/profile, accuracy: 69.44\%). %Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.
+	\caption{The most parsimonious 2-profile attitude-based solution. %Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.
 	}
 	\label{fig:att_2_profile}
 \end{figure}
@@ -645,7 +650,7 @@ The 3-profile solution with an average of 18.33 nodes per profile and 73.26\% ac
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/attitude_3_profile.pdf}
-	\caption{A 3-profile solution example of attitude-based clustering (18.33 nodes/profile, accuracy: 73.26\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{A 3-profile solution example of attitude-based clustering.}
 	\label{fig:attitude_3profile}
 \end{figure}
 
@@ -702,12 +707,12 @@ To fit the trees, we use the J48 classifier with a Confidence Factor ranging fro
 	\label{fig:conglosum}
 \end{figure}
 
-The best 4-cluster solution has an average of 2 nodes per profile and an accuracy of 79.40\%---a 24.53\% improvement over the ``smart default'', and a 7.9\% increase over the most accurate 5-cluster/4-profile attitude-based clustering solution. The decision trees are shown in Figure~\ref{fig:conglo_4_profile001}: aside from the ``enable all'' and ``disable all'' profiles, there  is a ``disable sharing with third parties'' profile and a ``local storage only'' profile.
+The best 4-cluster solution has an average of 2 nodes per profile and an accuracy of 79.40\%---a 24.53\% improvement over the ``smart default'', and a 7.9\% increase over the most accurate 5-cluster/4-profile attitude-based clustering solution. The decision trees are shown in Figure~\ref{fig:conglo_4_profile001}\footnote{T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally. These are the same with the following figures in this chapter}: aside from the ``enable all'' and ``disable all'' profiles, there  is a ``disable sharing with third parties'' profile and a ``local storage only'' profile.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/conglo_4_profile001.png}
-	\caption{The best 4-profile agglomerative clustering solution (2 nodes/profile, accuracy: 79.40\%). T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally}
+	\caption{The best 4-profile agglomerative clustering solution.}
 	\label{fig:conglo_4_profile001}
 \end{figure}
 
@@ -716,7 +721,7 @@ The best 5-cluster solution has an average of 2.4 nodes per profile and an accur
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/conglo_5_profile001.png}
-	\caption{The best 5-profile agglomerative clustering solution (2.4 nodes/profile, Accuracy: 80.35\%). T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally.}
+	\caption{The best 5-profile agglomerative clustering solution.}
 	\label{fig:conglo_5_profile001}
 \end{figure}
 
@@ -725,7 +730,7 @@ Finally, the best 6-cluster solution\footnote{There is another solution with sli
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/conglo_6_profile001.png}
-	\caption{The best 6-profile agglomerative clustering solution (3.17 nodes/profile, Accuracy: 80.68\% ). T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally.}
+	\caption{The best 6-profile agglomerative clustering solution.}
 	\label{fig:conglo_6_profile001}
 \end{figure}
 
@@ -755,7 +760,7 @@ For the 3-cluster solutions (the orange line in Figure~\ref{fig:fitsum}), the hi
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/fit_3_profile001.png}
-	\caption{The most parsimonious 3-profile fit-based solution (7 nodes/profile, accuracy: 79.80\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{The most parsimonious 3-profile fit-based solution.}
 	\label{fig:fit_3_profile001}
 \end{figure}
 
@@ -764,7 +769,7 @@ For the 4-cluster solutions (the grey line in Figure~\ref{fig:fitsum}), the high
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/fit_4_profile010.png}
-	\caption{The most parsimonious 4-profile fit-based solution (9.25 nodes/profile, accuracy: 81.88\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{The most parsimonious 4-profile fit-based solution.}
 	\label{fig:fit_4_profile010}
 	\vspace{20px}
 \end{figure}
@@ -774,7 +779,7 @@ For the 5-cluster solutions (the yellow line in Figure~\ref{fig:fitsum}), the hi
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/fit_5_profile001.png}
-	\caption{The most parsimonious 5-profile fit-based solution (4.2 nodes/profile, accuracy: 82.92\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{The most parsimonious 5-profile fit-based solution.}
 	\label{fig:fit_5_profile001}
 \end{figure}
 
@@ -845,7 +850,7 @@ There is another 5-profile fit-based solution with a slightly higher accuracy (8
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/fit_5_profile003.png}
-	\caption{A good 5-profile fit-based clustering solution (5 nodes/profile, Accuracy: 83.11\%). Parameter value abbreviations correspond to the ``code'' column in Table~\ref{tab:parameter2}.}
+	\caption{A good 5-profile fit-based clustering solution.}
 	\label{fig:fit_5_profile003}
 \end{figure}
 
@@ -857,7 +862,8 @@ In Section~\ref{sec:design_stat} we developed a prototype interface that househo
 In this section we therefore present two modified prototypes that are designed to be compatible with these two 5-profile solutions. These two solutions are not the most accurate, but they produce a parsimonious set of profiles that require only minimal alterations to our interface design. They thus provide the optimal trade-off between reduction accuracy, profile parsimony, and interface complexity.
 
 \subsection{Interface for the 5-profile fit-based solution with an accuracy of 82.92\%}\label{sec:fit_simple}
-This machine learning solution (Figure~\ref{fig:fit_5_profile001}) requires an interaction between the \emph{Storage} parameter and the \emph{Purpose} parameter---two parameters that are controlled independently in the prototype in Figure~\ref{fig:interface2}. Our solution is to slightly alter the interface, and add the profile selection page at the beginning of the interface (see Figure~\ref{fig:cluster_simple}): 
+This machine learning solution (Figure~\ref{fig:fit_5_profile001}) requires an interaction between the \emph{Storage} parameter and the \emph{Purpose} parameter---two parameters that are controlled independently in the prototype in Figure~\ref{fig:interface2}. Our solution is to slightly alter the interface, and add the profile selection page at the beginning of the interface. As shown in Figure~\ref{fig:cluster_simple}, from top left, screen 1 is the profile selection page, screen 2 is the slightly altered landing page of our manual settings interface, screen 3 is the slightly altered Data Storage page, screen 4 (bottom left) is the Device/Sensor Management page, and screen 5 is the Data Use page.
+
 \begin{itemize}
 	\item \textbf{Screen 1:} On this screen users choose their most applicable default profile. For some users, the selected profile accurately represents their preferences, while others may want to adjust the individual settings manually.
 	\item \textbf{Screen 2:} After clicking `Next', users are given the option to select `Storage/Sharing  \& Device/Sensor Management' or `Data Use'.
@@ -869,12 +875,12 @@ This machine learning solution (Figure~\ref{fig:fit_5_profile001}) requires an i
 \begin{figure*}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/cluster_simple.pdf}
-	\caption{Design for 5-Profile solution presented in Section~\ref{sec:fit_simple}. From top left, screen 1 is the profile selection page, screen 2 is the slightly altered landing page of our manual settings interface, screen 3 is the slightly altered Data Storage page, screen 4 (bottom left) is the Device/Sensor Management page, and screen 5 is the Data Use page.}
+	\caption{Design for 5-Profile solution presented in Section~\ref{sec:fit_simple}.}
 	\label{fig:cluster_simple}
 \end{figure*}
 
 \subsection{Interface for the 5-profile fit-based solution with an accuracy of 83.11\%}\label{sec:fit_complex}
-The alternative machine learning solution presented in Figure~\ref{fig:fit_5_profile003} requires an additional interaction between the \emph{Storage} parameter and the \emph{Action} parameter. This requires us to slightly alter the interface again (see Figure~\ref{fig:cluster_complex}): 
+The alternative machine learning solution presented in Figure~\ref{fig:fit_5_profile003} requires an additional interaction between the \emph{Storage} parameter and the \emph{Action} parameter. This requires us to slightly alter the interface again. As shown in Figure~\ref{fig:cluster_complex},  from top left, screen 1 is the profile selection page, screen 2 is the slightly altered Data Storage page, screen 3 follows the `More' button to offer access to screen 4 (bottom left, the Data Use page) and screen 5 (bottom right, the Device/Sensor Management page) 
 \begin{itemize}
 	\item \textbf{Screen 1:} The profile selection screen remains unchanged, with the exception that the `Local storage only' profile is replaced by the more complex `Local Storage \& No Recommendations' profile.
 	\item \textbf{Screen 2:} After clicking `Next', users first get to set their sharing preferences for `local storage', `remote server' and `third party sharing' (\emph{Storage}). Each of these can independently be set to \emph{enabled} or \emph{disabled}, but users can also click on `More'.
@@ -886,7 +892,7 @@ The alternative machine learning solution presented in Figure~\ref{fig:fit_5_pro
 \begin{figure*}
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/cluster_complex.pdf}
-	\caption{Design for 5-Profile solution presented in Section~\ref{sec:fit_complex}. From top left, screen 1 is the profile selection page, screen 2 is the slightly altered Data Storage page, screen 3 follows the `More' button to offer access to screen 4 (bottom left, the Data Use page) and screen 5 (bottom right, the Device/Sensor Management page).}
+	\caption{Design for 5-Profile solution presented in Section~\ref{sec:fit_complex}.}
 	\label{fig:cluster_complex}
 \end{figure*}
 
@@ -907,7 +913,7 @@ We note that participants in our study made decisions about hypothetical rather 
 
 A limitation regarding our machine learning approach is that it assumes a perfect assignment of users to profiles. However, in our current approach, users of the profile-based interface make their own choice as to which profile they want to apply. If they do not make the correct choice, then this introduces additional uncertainty, and the accuracy of our approach will be substantially lower than described in our paper. This limitation highlights the importance of the parsimony/accuracy tradeoff: Users benefit from parsimony in the context of our study, because parsimony makes for simpler profiles, which are easier to understand and hence easier to choose from. At the same time, though, these more parsimonious profiles are likely going to be less accurate, which means that users need to make more manual adjustments to the profile-based settings.
 
-Our biggest limitation is that we did not test any of the presented interfaces, so we do not know what level of complexity (in term of both the complexity of the user interfaces and the profiles) is most suitable. I will address this limitation in my proposed work (Chapter~\ref{chapter:evaluation}).
+Our biggest limitation is that we did not test any of the presented interfaces, so we do not know what level of complexity (in term of both the complexity of the user interfaces and the profiles) is most suitable. I will address this limitation in my final study (Chapter~\ref{chapter:evaluation}).
 
 \section{Summary}
 In this chapter, we have presented the following:

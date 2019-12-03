@@ -5,71 +5,81 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Trust Chain\relax }}{10}{figure.caption.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces From Left, Screen 1 shows three default settings, Screen 2,3 and 4 shows layered interface\relax }}{24}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces The Overall Prediction decision tree. Further drill down for `who' = `Own device' is provided in Table\nobreakspace {}\ref {tab:decisions}\relax }}{26}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Attitude-based clustering: 2-cluster tree. \relax }}{28}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Attitude-based clustering: 3-cluster tree\relax }}{28}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The Flow Chart for Fit-based Clustering\relax }}{30}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Fit-based clustering: 3-cluster tree. Further drill down is hidden for space reasons.\relax }}{31}{figure.caption.17}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Accuracy of our clustering approaches\relax }}{32}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Two types of profile choice interfaces\relax }}{34}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces From Left, Screen 1 shows three default settings, Screen 2,3 and 4 shows layered interface\relax }}{24}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The Overall Prediction decision tree. Further drill down for `who' = `Own device' is provided in Table\nobreakspace {}\ref {tab:decisions}\relax }}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Attitude-based clustering: 2-cluster tree. \relax }}{28}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Attitude-based clustering: 3-cluster tree\relax }}{28}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The Flow Chart for Fit-based Clustering\relax }}{30}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Fit-based clustering: 3-cluster tree. Further drill down is hidden for space reasons.\relax }}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Accuracy of our clustering approaches\relax }}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Two types of profile choice interfaces\relax }}{34}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of one of the thirteen scenarios presented to the participants.\relax }}{41}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Attention check questions asked to participants\relax }}{43}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Transcript of video shown to participants if they failed attention checks.\relax }}{44}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Attention check question shown while participants are answering questions per scenario.\relax }}{45}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Attention check question asked to participants.\relax }}{46}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Screen 1 (top left) is the landing page of our manual settings interface, screen 2 (top right) is the Device/Sensor Management page, screen 3 (bottom left) shows the explanation when you click on ``I want to learn more'', and screen 4 (bottom right) is the Data Storage \& Use page.\relax }}{48}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces A ``smart default'' setting based on the ``One Rule" algorithm (4 nodes, accuracy: 61.39\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{51}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces A ``smart default'' setting with 264 nodes (accuracy: 63.76\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{52}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Accuracy and parsimony (tree size) of the smart default change as a function of Confidence Factor\relax }}{53}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Parsimony/accuracy comparison for Naive, One Rule, and Overall Prediction\relax }}{54}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces A ``smart default'' setting with only 8 nodes (accuracy: 63.32\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{54}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Different tests conducted for mediation analysis\relax }}{55}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Parsimony/accuracy comparison for attitude-based clustering\relax }}{56}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces The most parsimonious 2-profile attitude-based solution (2 nodes/profile, accuracy: 69.44\%). \relax }}{57}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces A 3-profile solution example of attitude-based clustering (18.33 nodes/profile, accuracy: 73.26\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{58}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Parsimony/accuracy comparison for agglomerative clustering\relax }}{59}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces The best 4-profile agglomerative clustering solution (2 nodes/profile, accuracy: 79.40\%). T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally\relax }}{59}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces The best 5-profile agglomerative clustering solution (2.4 nodes/profile, Accuracy: 80.35\%). T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally.\relax }}{60}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces The best 6-profile agglomerative clustering solution (3.17 nodes/profile, Accuracy: 80.68\% ). T: Data will be stored at the remote servers and will be shared with Third Parties; R: Data will be stored at the remote servers without sharing; L: Data will be stored locally.\relax }}{60}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Parsimony/accuracy comparison for fit-based clustering\relax }}{62}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces The most parsimonious 3-profile fit-based solution (7 nodes/profile, accuracy: 79.80\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{62}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces The most parsimonious 4-profile fit-based solution (9.25 nodes/profile, accuracy: 81.88\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{63}{figure.caption.45}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces The most parsimonious 5-profile fit-based solution (4.2 nodes/profile, accuracy: 82.92\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{63}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Summary of All our Approaches\relax }}{65}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces A good 5-profile fit-based clustering solution (5 nodes/profile, Accuracy: 83.11\%). Parameter value abbreviations correspond to the ``code'' column in Table\nobreakspace {}\ref {tab:parameter2}.\relax }}{66}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Design for 5-Profile solution presented in Section\nobreakspace {}\ref {sec:fit_simple}. From top left, screen 1 is the profile selection page, screen 2 is the slightly altered landing page of our manual settings interface, screen 3 is the slightly altered Data Storage page, screen 4 (bottom left) is the Device/Sensor Management page, and screen 5 is the Data Use page.\relax }}{68}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Design for 5-Profile solution presented in Section\nobreakspace {}\ref {sec:fit_complex}. From top left, screen 1 is the profile selection page, screen 2 is the slightly altered Data Storage page, screen 3 follows the `More' button to offer access to screen 4 (bottom left, the Data Use page) and screen 5 (bottom right, the Device/Sensor Management page).\relax }}{70}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of one of the thirteen scenarios presented to the participants.\relax }}{41}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Attention check questions asked to participants\relax }}{43}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Transcript of video shown to participants if they failed attention checks.\relax }}{44}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Attention check question shown while participants are answering questions per scenario.\relax }}{45}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Attention check question asked to participants.\relax }}{46}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Privacy-Setting Interfaces Prototype\relax }}{48}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces A ``smart default'' setting based on the ``One Rule" algorithm.\relax }}{51}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces A ``smart default'' setting with 264 nodes with 63.76\% accuracy.\relax }}{52}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Accuracy and parsimony (tree size) of the smart default change as a function of Confidence Factor\relax }}{53}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Parsimony/accuracy comparison for Naive, One Rule, and Overall Prediction\relax }}{54}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces A ``smart default'' setting with only 8 nodes 63.32\% accuracy.\relax }}{54}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Different tests conducted for mediation analysis\relax }}{55}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Parsimony/accuracy comparison for attitude-based clustering\relax }}{56}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces The most parsimonious 2-profile attitude-based solution. \relax }}{57}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces A 3-profile solution example of attitude-based clustering.\relax }}{58}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Parsimony/accuracy comparison for agglomerative clustering\relax }}{59}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces The best 4-profile agglomerative clustering solution.\relax }}{59}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces The best 5-profile agglomerative clustering solution.\relax }}{60}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces The best 6-profile agglomerative clustering solution.\relax }}{60}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Parsimony/accuracy comparison for fit-based clustering\relax }}{62}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces The most parsimonious 3-profile fit-based solution.\relax }}{62}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces The most parsimonious 4-profile fit-based solution.\relax }}{63}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces The most parsimonious 5-profile fit-based solution.\relax }}{63}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Summary of All our Approaches\relax }}{65}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces A good 5-profile fit-based clustering solution.\relax }}{66}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Design for 5-Profile solution presented in Section\nobreakspace {}\ref {sec:fit_simple}.\relax }}{68}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Design for 5-Profile solution presented in Section\nobreakspace {}\ref {sec:fit_complex}.\relax }}{70}{figure.caption.52}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison of permissions asked by Fitness Trackers and the fitness IoT Data Model used for this study.\relax }}{75}{figure.caption.51}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Interface examples of Smartphone Permissions requests for Fitbit trackers (S set)\relax }}{76}{figure.caption.52}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Interface example of In-App Permissions requests in Fitbit Android App (A set)\relax }}{76}{figure.caption.53}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Average values of each privacy permissions (1-allow, 0-deny).\relax }}{79}{figure.caption.54}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Evaluation of different numbers of clusters for each set.\relax }}{80}{figure.caption.55}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Privacy profiles from the two clustering methods: 1-cluster results (full data) and 2-clusters results (privacy subprofiles) for each dataset(allow=1, deny=0, except for frequency \& retention)\relax }}{81}{figure.caption.56}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces The permission drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{83}{figure.caption.57}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces The attitude drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{85}{figure.caption.58}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces The social behavior drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{86}{figure.caption.59}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces The user negotiability drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{87}{figure.caption.60}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Tree evaluation. Root mean square error for each J48 tree algorithm.\relax }}{93}{figure.caption.61}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Manual settings\relax }}{94}{figure.caption.62}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Smart Single settings.\relax }}{95}{figure.caption.63}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Interaction for picking a subprofile for the S set.\relax }}{96}{figure.caption.64}%
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Direct Prediction questions.\relax }}{97}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Indirect Prediction questions.\relax }}{98}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Average accuracies of the recommender strategies on the holdout 30 users.\relax }}{99}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison of permissions asked by Fitness Trackers and the fitness IoT Data Model used for this study.\relax }}{75}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Interface examples of Smartphone Permissions requests for Fitbit trackers (S set)\relax }}{76}{figure.caption.54}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Interface example of In-App Permissions requests in Fitbit Android App (A set)\relax }}{76}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Average values of each privacy permissions (1-allow, 0-deny).\relax }}{79}{figure.caption.56}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Evaluation of different numbers of clusters for each set.\relax }}{80}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Privacy profiles from the two clustering methods: 1-cluster results (full data) and 2-clusters results (privacy subprofiles) for each dataset(allow=1, deny=0, except for frequency \& retention)\relax }}{81}{figure.caption.58}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces The permission drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{83}{figure.caption.59}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces The attitude drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{85}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces The social behavior drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{86}{figure.caption.61}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces The user negotiability drivers for the privacy subprofiles and their respective prediction accuracies.\relax }}{87}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Tree evaluation. Root mean square error for each J48 tree algorithm.\relax }}{93}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Manual settings\relax }}{94}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Smart Single settings.\relax }}{95}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Interaction for picking a subprofile for the S set.\relax }}{96}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Direct Prediction questions.\relax }}{97}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Indirect Prediction questions.\relax }}{98}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Average accuracies of the recommender strategies on the holdout 30 users.\relax }}{99}{figure.caption.69}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Hypothesized effects on users’ experience and subjective evaluations.\relax }}{104}{figure.caption.68}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Trimmed structural equation model. $** p < .01, *** p < .001$.\relax }}{110}{figure.caption.71}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces CFA Saturated Model.\relax }}{107}{figure.caption.70}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Trimmed CFA Model.\relax }}{107}{figure.caption.71}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Factor Correlation Matrix (on the diagonal is the sqrt(AVE)).\relax }}{109}{figure.caption.74}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Preliminary SEM Model with perceived privacy threats\relax }}{109}{figure.caption.75}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Preliminary SEM Model with effect from manipulations to perceived control\relax }}{110}{figure.caption.76}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Trimmed structural equation model. $* p < .05, ** p < .01, *** p < .001$.\relax }}{110}{figure.caption.77}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Effects of profile complexity on perceived helpfulness\relax }}{111}{figure.caption.78}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Total Effects of profile complexity on perceived control\relax }}{112}{figure.caption.79}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Total Effects of profile complexity on satisfaction\relax }}{112}{figure.caption.80}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Total Effects of profile complexity on trust\relax }}{113}{figure.caption.81}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Total Effects of profile complexity on usefulness\relax }}{113}{figure.caption.82}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Effect size of average time spent on different UI pages\relax }}{114}{figure.caption.83}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Attention Check Question of Evaluating privacy-setting UI for Household IoT\relax }}{129}{figure.caption.78}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Instructions on how to use the UIs\relax }}{131}{figure.caption.79}%
-\contentsline {figure}{\numberline {3}{\ignorespaces User Interface 1 with all settings turned off\relax }}{132}{figure.caption.80}%
-\contentsline {figure}{\numberline {4}{\ignorespaces User Interface 2 with all settings turned off\relax }}{132}{figure.caption.81}%
-\contentsline {figure}{\numberline {5}{\ignorespaces User Interface 1 with all settings turned on\relax }}{133}{figure.caption.82}%
-\contentsline {figure}{\numberline {6}{\ignorespaces User Interface 2 with all settings turned on\relax }}{133}{figure.caption.83}%
-\contentsline {figure}{\numberline {7}{\ignorespaces User Interface 1 with Smart Default\relax }}{134}{figure.caption.84}%
-\contentsline {figure}{\numberline {8}{\ignorespaces User Interface 2 with Smart Default\relax }}{134}{figure.caption.85}%
-\contentsline {figure}{\numberline {9}{\ignorespaces User Interface 1 with Smart Profiles\relax }}{135}{figure.caption.86}%
-\contentsline {figure}{\numberline {10}{\ignorespaces User Interface 2 with Smart Profiles\relax }}{135}{figure.caption.87}%
+\contentsline {figure}{\numberline {A1}{\ignorespaces Attention Check Question of Evaluating privacy-setting UI for Household IoT\relax }}{129}{figure.caption.88}%
+\contentsline {figure}{\numberline {A2}{\ignorespaces Instructions on how to use the UIs\relax }}{131}{figure.caption.89}%
+\contentsline {figure}{\numberline {A3}{\ignorespaces User Interface 1 with all settings turned off\relax }}{132}{figure.caption.90}%
+\contentsline {figure}{\numberline {A4}{\ignorespaces User Interface 2 with all settings turned off\relax }}{132}{figure.caption.91}%
+\contentsline {figure}{\numberline {A5}{\ignorespaces User Interface 1 with all settings turned on\relax }}{133}{figure.caption.92}%
+\contentsline {figure}{\numberline {A6}{\ignorespaces User Interface 2 with all settings turned on\relax }}{133}{figure.caption.93}%
+\contentsline {figure}{\numberline {A7}{\ignorespaces User Interface 1 with Smart Default\relax }}{134}{figure.caption.94}%
+\contentsline {figure}{\numberline {A8}{\ignorespaces User Interface 2 with Smart Default\relax }}{134}{figure.caption.95}%
+\contentsline {figure}{\numberline {A9}{\ignorespaces User Interface 1 with Smart Profiles\relax }}{135}{figure.caption.96}%
+\contentsline {figure}{\numberline {A10}{\ignorespaces User Interface 2 with Smart Profiles\relax }}{135}{figure.caption.97}%
