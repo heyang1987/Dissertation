@@ -27,18 +27,18 @@
 \usepackage{color}
 \usepackage{balance}
 \usepackage{arydshln}
-\usepackage{ntheorem}
-\newtheorem{theorem}{RQ}
 \usepackage[normalem]{ulem}
 \usepackage{threeparttable}
 \usepackage{xcolor}
+%\usepackage{ntheorem}
 
-\usepackage{chngcntr}
-\newcounter{pretheorem}
-\counterwithin{theorem}{pretheorem}
-
-\renewcommand\thetheorem{\arabic{pretheorem}\alph{theorem}}
-\newcommand{\theoremgroup}{\refstepcounter{pretheorem}}
+\newtheorem{theorem}{RQ}
+%\usepackage{chngcntr}
+%\newcounter{pretheorem}
+%\counterwithin{theorem}{pretheorem}
+%
+%\renewcommand\thetheorem{\arabic{pretheorem}\alph{theorem}}
+%\newcommand{\theoremgroup}{\refstepcounter{pretheorem}}
 %
 % Make the document your own -- fill in these values to reflect the type of
 % document you are writing.
@@ -103,9 +103,21 @@
 	\setcounter{page}{2}                       % Abstract begins on page 2
 	\addtotoc{Abstract}{\input{abstract.tex}}  % Generate the abstract
 	
+    %
+	% The dedication page is optional.  Comment out this line if you do not
+	% want to include this page.
+	%
+	\addtotoc{Dedication}{\input{dedication.tex}}
+	
+	%
+	% The acknowledgment page is optional.  Comment out this line if you do
+	% not want to include this page.
+	%
+	\addtotoc{Acknowledgments}{\input{acknowledgments.tex}}
+	
 	\singlespacing                             % Single space the lists
-	\input{publication.tex} \clearpage
-	\tableofcontents \clearpage                % Generate the Table of Contents
+	\tableofcontents \clearpage                % Generate the Table of Contents               
+
 	\addtotoc{List of Tables}{\listoftables}   % Generate the List of Tables
 	\addtotoc{List of Figures}{\listoffigures} % Generate the List of Figures
 	%\addtotoc{List of Listings}{\lstlistoflistings}

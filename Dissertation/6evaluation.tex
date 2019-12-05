@@ -9,7 +9,7 @@ The biggest limitation of our work so far is that we did not test any of the pro
 
 
 \section{Study Design}
-In this chapter, we present the design our study, including the dependent variables and manipulations.
+In this section, we present the design our study, including the dependent variables and manipulations.
 \subsection{Dependent Variables}
 To test the user experience of our privacy-setting interfaces, the Dependent Variable of our study will be their \textbf{satisfaction to the system}, \textbf{and the trust to the company}, and several subjective system aspects, including \textbf{perceived usefulness}, \textbf{perceived ease of use}, \textbf{perceived privacy threats}, \textbf{perceived control}, \textbf{perceived privacy helpfulness}. As shown in Table~\ref{tab:cfa}, all the scales of these dependent variable are adapted from previous work.
 
@@ -54,7 +54,6 @@ For \textbf{Smart Default} and \textbf{Smart Profiles} selection, note that, whe
 Compared to UI1, UI2 has more granularity when setting on different storage. In UI1, users can only configure all the privacy-settings to be the same for the three different types of storage (Local, Remote, and Third-party sharing), while they can configure those setting for each type of storage differently in UI2. Brandimarte et al. demonstrate that users perceive more control when privacy controls are more granular~\cite{brandimarte2013misplaced}. But this control can at times be an illusion. More granular controls allow users to set their privacy settings to a level that better reflects their privacy preferences, this additional control may increase the perceived usefulness~\cite{tang2012implications, al2016modeling}. Similarly, more fine-grained control may reduce users' perceived privacy threats. Tang et al. (2012) found that users of a finer-grained settings interface were more comfortable with their privacy settings. Research has also shown that increasing the control often introduces choice overload issues~\cite{iyengar2000choice, schwartz2004paradox, acquisti2005privacy, acquisti2007can}, which makes it more difficult and time-consuming for users to accurately their privacy settings~\cite{madejski2012study, sadeh2009understanding}.
 
 Therefore, here are our first research question:
-\theoremgroup
 \begin{theorem}
 	Is there any significant difference between UI1 and UI2 on users experience and other subjective system aspects when using our system?
 \end{theorem}
@@ -76,7 +75,7 @@ Therefore, here are our first research question:
 
 %\subsection{Profile Complexity and SSA}
 In term of profile complexity, we have four different levels of experimental conditions. These different default/profile conditions map to users' ``preference fit". ``Smart profiles" provide the users more pre-configured options for users to choose from, leading to a better preference fit than the ``smart default" with only single ``smart" option provided, which in turn has a better fit than Everything-Off/Everything-On defaults. This additional freedom of choice and possible increased preference fit may increase the perceived control and perceived usefulness. Similarly, the increased preference fit may increase the level that the pre-configured profiles better reflect the users' privacy preferences, which may reduce the perceived privacy threats. The additional options in ``smart profiles" may introduce choice overload compared to the ``smart default" and Everything-Off and Everything-On defaults. This may lead to a low perceived ease of use for ``smart profiles". Compared to Everything-Off and Everything-On defaults, ``smart defaults" are generated from machine learning analysis results. The higher accuracy of ``smart defaults" can arguably result in fewer a lower manual changes that users would make to the system, leading to a higher perceived ease of use compared to Everything-Off and Everything-On defaults. Therefore, Here is our second research question:
-\theoremgroup
+
 \begin{theorem}
 	Is there any significant difference between the 4 experimental conditions on users experience and other subjective system aspects when using our system?
 \end{theorem}
@@ -322,7 +321,7 @@ The model answers the two first two research questions --- smart defaults/profil
 	\label{fig:effectonhelpfulness}
 \end{figure}
 
-Figure~\ref{fig:effectonhelpfulness} shows the effect of profile complexity on perceived helpfulness. Both Everything-On and Everything-Off have been used as the baseline to test the significance of the effect. The results shows that only the difference between pair (Everything-off -- smart profiles) and pair (smart profiles --- smart defaults) are not significant. The effect between all other manipulations are significant.
+Figure~\ref{fig:effectonhelpfulness} shows the effect of profile complexity on perceived helpfulness. Both Everything-On and Everything-Off have been used as the baseline to test the significance of the effect. The results shows that only the difference between pair (Everything-off -- smart profiles) and pair (smart profiles --- smart defaults) are not significant. The differences between all other conditions are significant.
 
 The helpfulness is in turn related to users' perceived control. Here we see that perceived helpfulness has a negative effect on users' perceived control. This indicates an interesting debate between perceived control and perceived helpfulness from the users. More details about this debate will be discussed in the next section. Figure~\ref{fig:effectoncontrol} shows the total effects of profile complexity on perceived control. All the effects are significant, which indicates that the effect of profile complexity on perceived control is mediated by perceived helpfulness. 
 
@@ -334,7 +333,7 @@ The helpfulness is in turn related to users' perceived control. Here we see that
 \end{figure}
 
 %Control in turn has a significant positive effect on satisfaction and trust.
-Both the perceived control and perceived helpfulness have a positive significant effect on users' satisfaction with the system. Figure~\ref{fig:effectoncontrol} shows the total effects of profile complexity on satisfaction. No significant effect was found. This, in the other hand, also proofs that the debating between perceived control and perceived helpfulness are canceling the effect from the manipulations on satisfaction.
+Both the perceived control and perceived helpfulness have a positive significant effect on users' satisfaction with the system. Figure~\ref{fig:effectonsatisfaction} shows the total effects of profile complexity on satisfaction. No significant effect was found. This, in the other hand, also proves that the trade-off between perceived control and perceived helpfulness is canceling the effect from the manipulations on satisfaction.
 
 \begin{figure}[ht]
 	\centering
@@ -343,7 +342,7 @@ Both the perceived control and perceived helpfulness have a positive significant
 	\label{fig:effectonsatisfaction}
 \end{figure}
 
-Perceived control, Perceived helpfulness, and the satisfaction all have significant positive effects on users' trust in the company. Figure~\ref{fig:effectoncontrol} shows the total effects of profile complexity on trust. No significant effect was found. Thus, the effect from the manipulations on trust were also being canceled by the debating between perceived control and perceived helpfulness.
+Perceived control, Perceived helpfulness, and the satisfaction all have significant positive effects on users' trust in the company. Figure~\ref{fig:effectontrust} shows the total effects of profile complexity on trust. No significant effect was found. Thus, the effect from the manipulations on trust were also being canceled by the debating between perceived control and perceived helpfulness.
 
 \begin{figure}[ht]
 	\centering
@@ -352,7 +351,7 @@ Perceived control, Perceived helpfulness, and the satisfaction all have signific
 	\label{fig:effectontrust}
 \end{figure}
 
-Perceived control, Perceived helpfulness, and the satisfaction all determine perceived usefulness. Both satisfaction and perceived helpfulness have a positive significant effect on perceived usefulness. Perceived control has a negative significant effect on perceived usefulness. Less perceived control indicates there were more perceived helpfulness. And more perceived helpfulness could lead to more perceived usefulness. Figure~\ref{fig:effectoncontrol} shows the total effects of profile complexity on perceived usefulness. All the effects are significant. This may be due to the effect from perceived helpfulness on perceived usefulness is strong and the effect from perceived control is weak. Also, the covariance between perceived helpfulness and perceived usefulness is 
+Perceived control, Perceived helpfulness, and the satisfaction all determine perceived usefulness. Both satisfaction and perceived helpfulness have a positive significant effect on perceived usefulness. Perceived control has a negative significant effect on perceived usefulness. Less perceived control indicates there were more perceived helpfulness. And more perceived helpfulness could lead to more perceived usefulness. Figure~\ref{fig:effectonusefulness} shows the total effects of profile complexity on perceived usefulness. All the effects are significant. This may be due to the effect from perceived helpfulness on perceived usefulness is stronger than the effect from perceived control.
 
 \begin{figure}
 	\centering
@@ -382,14 +381,14 @@ Perceived control, Perceived helpfulness, and the satisfaction all determine per
 \section{Discussion}
 In this chapter we conducted a systematic evaluation of the effect of several design parameters of a household IoT privacy settings interface on users’ evaluation of the system. In terms of managerial implications, we find that it is useful to utilize the data-driven approach to develop ``smart defaults" and ``smart profiles", and corresponding setting interfaces to improve users' experience and satisfaction. We did not find significant difference between the two UIs. A possible explanation for this is that design differences between the UIs were very subtle.
 
-Regarding the negative effect from perceived helpfulness on perceived control, there are a few possible explanations: i) It is possible that participants in ``smart defaults" and ``smart profiles" condition found their privacy-settings have already been set by defaults. Thus, they found those ``smart defaults" and ``smart profiles" generated from previous study are helpful. However, in the other hand, users may feel that their choice of settings have been limited due to these helpful pre-settings. ii) It is also possible that users feel as though the pre-set settings are helpful but also complicated. They feel they have less control over these settings. These are also corresponding to our previous discussion on the trade-off between accuracy and parsimony. A more parsimonious profile would be easier to explain to the users and also make them less worried about the pre-defined settings. So users are debating between the benefit brought by the ``smart defaults" and ``smart profiles" and the control they like to have over these privacy settings of their household IoT devices.
-iii) We also revisit the perceived scale that we used. It appear that all the items in that scale are reversed framed and related to the spirit of ``losing control" and having limited control when using the system. One example is question C4, ``I would like to have more control over the recommendations". Our system is all about make privacy setting recommendations. While we are making the right recommendation about the IoT privacy settings for users, they might still want more control and configure these settings by themselves, leading less control perceived.
+Regarding the negative effect from perceived helpfulness on perceived control, there are a few possible explanations: i) It is possible that participants in ``smart defaults" and ``smart profiles" condition found their privacy-settings have already been set by default. Thus, they found those ``smart defaults" and ``smart profiles" generated from previous study are helpful. However, on the other hand, users may feel that their choice of settings have been limited due to these helpful pre-settings. ii) It is also possible that users feel as though the pre-set settings are helpful but also complicated. They feel they have less control over these settings. These are also corresponding to our previous discussion on the trade-off between accuracy and parsimony. A more parsimonious profile would be easier to explain to the users and also make them less worried about the pre-defined settings. So users are debating between the benefit brought by the ``smart defaults" and ``smart profiles" and the control they like to have over these privacy settings of their household IoT devices.
+iii) We also revisit the perceived scale that we used. It appears that all the items in that scale are reversed framed and related to the spirit of ``losing control" and having limited control when using the system. One example is question C4, ``I would like to have more control over the recommendations". Our system is all about make privacy setting recommendations. While we are making the right recommendation about the IoT privacy settings for users, they might still want more control and configure these settings by themselves, leading less control perceived.
 
 Another interesting point is that the lack of difference between smart default and smart profiles in the effect on the user experience and subjective system aspects. We first investigated the time spent on the two conditions. Figure~\ref{fig:timeonui} shows the effect size of average time spent on different UI pages. Although the average time spent on smart defaults is higher than the smart profiles condition, the effect is not significant. So this could not be explained by the lack of interaction due to less time spent on the smart profiles than the smart defaults.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/timeonui.png}
+	\includegraphics[width=0.8\textwidth]{figures/timeonui.pdf}
 	\caption{Effect size of average time spent on different UI pages}
 	\label{fig:timeonui}
 \end{figure}

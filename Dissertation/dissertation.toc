@@ -1,7 +1,8 @@
 \contentsline {chapter}{Abstract}{ii}{section*.1}%
-\contentsline {chapter}{Author's Publications on this topic}{iv}{chapter*.3}%
-\contentsline {chapter}{List of Tables}{vii}{section*.4}%
-\contentsline {chapter}{List of Figures}{viii}{section*.5}%
+\contentsline {chapter}{Dedication}{iv}{section*.3}%
+\contentsline {chapter}{Acknowledgments}{v}{section*.5}%
+\contentsline {chapter}{List of Tables}{viii}{section*.7}%
+\contentsline {chapter}{List of Figures}{ix}{section*.8}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}IoT technology and IoT Acceptance}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}IoT Technology}{6}{section.2.1}%
@@ -104,5 +105,5 @@
 \contentsline {subsection}{\numberline {7.4.2}Structural Equation Modeling}{109}{subsection.7.4.2}%
 \contentsline {section}{\numberline {7.5}Discussion}{113}{section.7.5}%
 \contentsline {chapter}{\numberline {8}Conclusion}{116}{chapter.8}%
-\contentsline {chapter}{Bibliography}{117}{section*.84}%
-\contentsline {chapter}{Appendices}{128}{section*.86}%
+\contentsline {chapter}{Bibliography}{117}{section*.87}%
+\contentsline {chapter}{Appendices}{128}{section*.89}%
